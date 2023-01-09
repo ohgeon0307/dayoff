@@ -7,12 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>M.jsp 입니다 *</h2>
+	<h2>M.jsp 입니다 *!</h2>
 	<form action="modify.do" method="post">
 		<input type="hidden" name="bidx" value="${vo.bidx }">
 		<table border="1">
 			<tr>
-				<th>제목.</th>
+				<th>제목</th>
 				<td><input type="text" name="title" value="${vo.title }"></td>
 			</tr>
 			<tr>
