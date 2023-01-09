@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.study.mapper.userMapper"> <!-- DAO에서 Mybatis를 이용해 쿼리를 찾는 키워드 -->
+	<select id="list" resultType="userVo"> <!-- 쿼리의 row를 어떤 쿼리에 담을것이냐.. -->
+		SELECT uidx
+		, id
+		, password
+		, name
+		, addr
+		, phone
+		, rdate
+		FROM usertb
+	</select>
+	
+	<select id="selectByUidx" parameterType="int" resultType="userVo">
+		SELECT uidx
+		, id
+		, password
+		, name
+		, addr
+		, phone
+		, rdate
+		FROM usertb
+		WHERE uidx = #{uidx}
+	</select>
+	
+	<update id="modifyByUidx" parameterType="userVo">
+		UPDATE usertb
+		SET id = #{id}
+		, phone = #{phone}
+		WHERE uidx = #{uidx}
+	</update>
+	
+	<select id="login" parameterType="userVo" resultType="userVo">
+		SELECT uidx
+		, id
+		, name
+		FROM usertb
+		WHERE id = #{id}
+		and password = #{password}
+	</select>
+	
+	<insert id="insertUser" parameterType="userVo">
+		INSERT INTO usertb(
+			uidx
+		  , id
+		  , password
+		  , name
+		  , addr
+		  , phone
+		  , rdate
+		
+		)VALUES(
+			uidx_seq.nextval
+			, #{id}
+			, #{password}
+			, #{name}
+			, #{addr}
+			, #{phone}
+			, sysdate
+		)
+		
+	</insert>
+	
+	<select id="validation" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+		FROM usertb
+		WHERE id = #{id}
+	</select>
+</mapper>

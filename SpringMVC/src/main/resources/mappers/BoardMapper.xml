@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.study.mapper.boardMapper"> <!-- DAO에서 Mybatis를 이용해 쿼리를 찾는 키워드 -->
+	<!--  <select id="listSearch" resultType="boardVo" parameterType="scri"> 
+	
+		SELECT bidx
+		, title
+		, content
+		, wdate
+		, hit
+		, uidx
+		FROM boardtb
+		WHERE 1=1 
+		<if test= "searchType == 'title'"> 
+		
+			AND title like '%'||#{searchVal}||'%'
+		</if>
+		<if test="searchType == 'content'">
+			AND content like '%'||#{searchVal}||'%'
+		</if>
+	</select> --> <!-- getter를 호출함(searchType) -->
+	
+	<select id="list" resultType="boardVo" parameterType= "scri">
+	 SELECT * FROM (
+ 		SELECT ROWNUM AS rnum, A.* FROM (
+ 		SELECT * FROM boardtb 
+ 			<include refid="search"></include>
+ 		ORDER BY bidx DESC
+ 		) A
+ 		) WHERE rnum BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	<select id = "listCount" resultType="int">
+		select count(bidx)
+		from boardtb
+		<include refid="search"></include>
+		WHERE bidx > 0
+	</select>
+	
+	<sql id ="search">
+			<if test= "searchType == 'title'"> 
+			WHERE title like '%'||#{keyword}||'%'
+			</if>
+			<if test="searchType == 'content'">
+			WHERE content like '%'||#{keyword}||'%'
+			</if> 
+	</sql>
+
+	<select id="selectByBidx" parameterType="int" resultType="boardVo"> <!-- 데이터 타입을 외부로 부터 받을때 어떤 타입으로 받을 것 이냐?? -->
+		SELECT bidx
+		, title
+		, content
+		, wdate
+		, hit
+		, uidx
+		FROM boardtb
+		WHERE bidx =
+		#{bidx}
+	</select>
+
+	<select id="updateByBidx" parameterType="int"
+		resultType="boardVo">
+		SELECT bidx
+		, title
+		, content
+		, wdate
+		, hit
+		, uidx
+		FROM boardtb
+		WHERE bidx = #{bidx}
+	</select>
+
+	<update id="modifyByBidx" parameterType="boardVo">
+		UPDATE boardtb
+		SET title
+		= #{title}
+		, content = #{content}
+		WHERE bidx = #{bidx}
+	</update>
+
+	<delete id="deleteByBidx" parameterType="int">
+		DELETE FROM boardtb
+		WHERE bidx = #{bidx}
+	</delete>
+
+	<delete id="deleteFromReply" parameterType="int">
+		DELETE
+		FROM commentstb
+		WHERE bidx = #{bidx}
+	</delete>
+
+	<insert id="insertByUidx" parameterType="boardVo">
+		<!-- insert쿼리 부분 -->
+		<![CDATA[ 
+		INSERT INTO boardtb(
+			  bidx
+			, title
+			, content
+			, wdate
+			, uidx
+			, hit
+		)VALUES(
+			  bidx_seq.nextval
+			  , #{title}
+			  , #{content}
+			  , sysdate
+			  , #{uidx}
+			  , 0
+		) 
+		]]>
+		<!-- 하나의 mapper에서 두개의 쿼리 호출 -->
+		<selectKey resultType="int" keyProperty="bidx" order="AFTER"> <!-- = order = insert 이전이냐 이후냐? / keyProperty = 어떤컬럼에 적용할것인가? -->
+			SELECT MAX(bidx)
+			FROM boardtb
+		</selectKey>
+	</insert>
+</mapper>
