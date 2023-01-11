@@ -9,6 +9,8 @@
 		<typeAlias type="edu.study.vo.SearchVo" alias="searchVo"/>
 		<typeAlias type="edu.study.vo.SearchCriteria" alias="scri"/>
 		<typeAlias type="edu.study.vo.Criteria" alias="cri" />
+		<typeAlias type="edu.study.vo.PhotoVo" alias="photoVo"/>
+		<typeAlias type="edu.study.vo.TogetherVo" alias="togetherVo"/>
     </typeAliases>
     
     
