@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,18 +11,18 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
-    <link rel="stylesheet" href="board_list.css" />
+    <link rel="stylesheet" href="${path }/resources/css/board_list.css" />
   </head>
   <body>
     <header>
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-            <a href="home.html"
-              ><div class="item"><img src="img/logo.png" alt="" /></div
+            <a href="<%=request.getContextPath() %>/"
+              ><div class="item"><img src="${path}/resources/img/logo.png" alt="" /></div
             ></a>
             <div class="item">커뮤니티</div>
-            <a href="photo.html" class="a_tag_color"
+            <a href="photo.do" class="a_tag_color"
               ><div class="item">포토갤러리</div></a
             >
           </div>
@@ -31,21 +33,21 @@
               </button>
               <input type="text" placeholder="여행지를 찾아보세요!" />
             </div>
-            <a href="#" class="login_a"><div class="item">로그인</div></a>
+            <a href="login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
-            <a href="#" class="join_a"><div class="item">회원가입</div></a>
-            <a href="board_write.html"
-              ><button class="header_write_btn">글쓰기</button></a
-            >
+            <a href="join.do" class="join_a"><div class="item">회원가입</div></a>
+            <a href="<%= request.getContextPath()%>/board/write.do"
+              ><button class="header_write_btn">글쓰기</button></a>
+            
           </div>
         </div>
         <section class="second_section">
           <div class="second_header">
-            <div class="home">홈</div>
-            <a href="together_board_write.html"
+            <a href="/dayoff"><div class="home">홈</div></a>
+            <a href="together.do"
               ><div class="trip_info">동행</div></a
             >
-            <a href="#"><div class="board">게시판</div></a>
+            <a href="<%= request.getContextPath()%>/board/list.do"><div class="board">게시판</div></a>
           </div>
         </section>
       </section>
@@ -71,7 +73,7 @@
           <div class="board_contents_one">
             <div class="flex_title">
               <p>서울</p>
-              <a href="#"><p class="view_board">게시글 보기</p></a>
+              <a href="<%= request.getContextPath()%>/board/view.do"><p class="view_board">게시글 보기</p></a>
             </div>
             <p class="title">서울 자유여행</p>
             <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
@@ -87,7 +89,7 @@
           <div class="board_contents_two">
             <div class="flex_title">
               <p>서울</p>
-              <a href="#"><p class="view_board">게시글 보기</p></a>
+              <a href="board_view.do"><p class="view_board">게시글 보기</p></a>
             </div>
             <p class="title">서울 자유여행</p>
             <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
@@ -105,7 +107,7 @@
           <div class="board_contents_one">
             <div class="flex_title">
               <p>서울</p>
-              <a href="#"><p class="view_board">게시글 보기</p></a>
+              <a href="board_view.do"><p class="view_board">게시글 보기</p></a>
             </div>
             <p class="title">서울 자유여행</p>
             <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
@@ -120,7 +122,7 @@
           <div class="board_contents_two">
             <div class="flex_title">
               <p>서울</p>
-              <a href="#"><p class="view_board">게시글 보기</p></a>
+              <a href="board_view.do"><p class="view_board">게시글 보기</p></a>
             </div>
             <p class="title">서울 자유여행</p>
             <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>

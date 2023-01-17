@@ -238,7 +238,7 @@ button {
   height: 62px;
 }
 
-.second_header .trip_info {
+.second_header .board {
   position: relative;
   display: flex;
   -webkit-box-align: center;
@@ -275,7 +275,7 @@ button {
   margin: 0;
 }
 
-.second_header .board {
+.second_header .trip_info {
   position: relative;
   display: flex;
   -webkit-box-align: center;

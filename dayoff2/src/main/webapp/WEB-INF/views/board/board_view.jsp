@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +11,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
-    <link href="css/board_view.css" rel="stylesheet" />
+    <link href="${path }/resources/css/board_view.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
       rel="stylesheet"
@@ -62,7 +64,7 @@
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-            <div class="item"><img src="img/logo.png" alt="" /></div>
+            <div class="item"><img src="${path }/resources/img/logo.png" alt="" /></div>
             <div class="item">커뮤니티</div>
             <a href="#" class="a_tag_color"
               ><div class="item">포토갤러리</div></a
