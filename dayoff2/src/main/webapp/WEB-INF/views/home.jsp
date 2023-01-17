@@ -80,7 +80,7 @@
             <a href="login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
             <a href="join.html" class="join_a"><div class="item">회원가입</div></a>
-            <a href="board_write.html"><button class="header_write_btn">글쓰기</button></a>
+            <a href="together_write.do"><button class="header_write_btn">글쓰기</button></a>
           </div>
         </div>
         <section class="second_section">

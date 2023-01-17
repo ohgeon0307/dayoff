@@ -79,9 +79,9 @@
               </button>
               <input type="text" placeholder="여행지를 찾아보세요!" />
             </div>
-            <a href="#" class="login_a"><div class="item">로그인</div></a>
+            <a href="login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
-            <a href="#" class="join_a"><div class="item">회원가입</div></a>
+            <a href="join.html" class="join_a"><div class="item">회원가입</div></a>
             <a href="together_write.do"
               ><button class="header_write_btn">글쓰기</button></a
             >
@@ -89,7 +89,7 @@
         </div>
         <section class="second_section">
           <div class="second_header">
-            <div class="home">홈</div>
+            <a href="<%= request.getContextPath() %>/"><div class="home">홈</div></a>
             <a href="together.do"><div class="trip_info">동행</div></a>
             <a href="board.do"><div class="board">게시판</div></a>
           </div>
