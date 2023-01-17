@@ -9,7 +9,7 @@ public class TogetherController {
 
 	@RequestMapping(value = "/together_view.do", method = RequestMethod.GET)
 	public String view() {
-		
+		 
 		return "together/together_view";
 	}
 		
