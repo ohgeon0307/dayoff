@@ -198,13 +198,21 @@ button {
 
 .header_write_btn {
   display: inline-block;
-  background: lightgreen;
+  background: rgb(0, 206, 124);
   width: 100px;
   height: 40px;
   border-radius: 5px;
   color: white;
   font-weight: bold;
   font-size: 16px;
+}
+
+.left_header .a_tag_color {
+  color: rgb(106, 106, 106);
+}
+.header_write_btn:hover {
+  background: rgb(46, 156, 46);
+  transition: all 0.3s ease-in-out;
 }
 
 .second_section {
@@ -281,7 +289,8 @@ button {
 }
 .pic img {
   width: 100%;
-  margin: 150px auto 0;
+  height: 341px;
+  margin: 143px auto 0;
 }
 .pic a {
   font-size: 40px;
@@ -525,7 +534,7 @@ footer button {
   font-size: 16px;
 }
 
-.title{
+.title {
   font-size: 16px;
   font-weight: bold;
   overflow: hidden;

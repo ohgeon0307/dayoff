@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-    <title>게시판 답변하기</title>
+<title>게시판 답변하기</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
@@ -56,6 +56,7 @@
         pluginKey: "440ad304-9963-448a-9d8e-8efd8dfa9576",
       });
     </script>
+   
   </head>
   <body>
     <header>
@@ -65,8 +66,10 @@
             <a href="home.html"
               ><div class="item"><img src="img/logo.png" alt="" /></div
             ></a>
-            <div class="item" class="a_tag_color">커뮤니티</div>
-            <a href="#"><div class="item">포토갤러리</div></a>
+            <div class="item">커뮤니티</div>
+            <a href="#" class="a_tag_color"
+              ><div class="item">포토갤러리</div></a
+            >
           </div>
           <div class="right_header">
             <div class="item">
@@ -111,23 +114,23 @@
           class="WebSection"
           style="margin-top: 65px"
         >
-        
           <div class="que">
             <div class="titleq">
-              <i class="xi-quicktime"></i>&nbsp;<p>국내 자유여행</p>
+              <i class="xi-quicktime"></i>&nbsp;
+              <p>국내 자유여행</p>
             </div>
             <div class="content">
-                <p>2월 1일 출발해서 2월 3일 까지 놀수 있는 지역 추천부탁드립니다.</p>
+              <p>
+                2월 1일 출발해서 2월 3일 까지 놀수 있는 지역 추천부탁드립니다.
+              </p>
             </div>
-              <div class="profile">
-                <i class="xi-profile-o"></i><a href="#">sonny</a>
+            <div class="profile">
+              <i class="xi-profile-o"></i><a href="#">sonny</a>
             </div>
           </div>
-
         </section>
       </div>
       <section class="file_upload_section">
-
         <hr class="slide_hr" />
         <div>
           <textarea

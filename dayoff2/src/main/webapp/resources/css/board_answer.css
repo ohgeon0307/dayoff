@@ -141,6 +141,10 @@ button {
   font-size: 25px;
 }
 
+.left_header .a_tag_color {
+  color: rgb(106, 106, 106);
+}
+
 .right_header {
   display: flex;
   position: relative;
@@ -207,13 +211,18 @@ button {
 
 .header_write_btn {
   display: inline-block;
-  background: lightgreen;
+  background: rgb(0, 206, 124);
   width: 100px;
   height: 40px;
   border-radius: 5px;
   color: white;
   font-weight: bold;
   font-size: 16px;
+}
+
+.header_write_btn:hover {
+  background: rgb(46, 156, 46);
+  transition: all 0.3s ease-in-out;
 }
 
 .second_section {
@@ -229,7 +238,7 @@ button {
   height: 62px;
 }
 
-.second_header .trip_info {
+.second_header .board {
   position: relative;
   display: flex;
   -webkit-box-align: center;
@@ -266,7 +275,7 @@ button {
   margin: 0;
 }
 
-.second_header .board {
+.second_header .trip_info {
   position: relative;
   display: flex;
   -webkit-box-align: center;
@@ -637,20 +646,19 @@ footer button {
   height: 200px;
 }
 
-.titleq{
-  display: flex; flex-direction: row;
+.titleq {
+  display: flex;
+  flex-direction: row;
   padding: 20px 16px;
   font-size: 20px;
   align-items: baseline;
-  border-bottom: 1px solid lightgray ;
-  }
+  border-bottom: 1px solid lightgray;
+}
 
-.content{
+.content {
   padding: 20px 16px;
 }
 
-.profile{
+.profile {
   padding: 20px 16px;
 }
-
-

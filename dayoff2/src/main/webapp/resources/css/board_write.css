@@ -195,6 +195,10 @@ button {
   color: black;
 }
 
+.left_header .a_tag_color {
+  color: rgb(106, 106, 106);
+}
+
 .right_header .join_a {
   color: rgb(37, 37, 37);
   flex-basis: 30%;
@@ -207,13 +211,18 @@ button {
 
 .header_write_btn {
   display: inline-block;
-  background: lightgreen;
+  background: rgb(0, 206, 124);
   width: 100px;
   height: 40px;
   border-radius: 5px;
   color: white;
   font-weight: bold;
   font-size: 16px;
+}
+
+.header_write_btn:hover {
+  background: rgb(46, 156, 46);
+  transition: all 0.3s ease-in-out;
 }
 
 .second_section {
@@ -480,8 +489,9 @@ input[type="number"] {
   top: 60px;
 }
 
-.hashtag{
-  margin-top: 80px; margin-bottom: -150px;
+.hashtag {
+  margin-top: 80px;
+  margin-bottom: -150px;
 }
 
 .button_zone {
@@ -631,4 +641,3 @@ footer button {
 #sns a:hover {
   color: sandybrown;
 }
-

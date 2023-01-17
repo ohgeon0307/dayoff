@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-        <title>마이페이지_게시글보기</title>
+          <title>마이페이지_게시글보기</title>
         <link rel="stylesheet" href="css/mypage_post.css">
         <link
         rel="stylesheet"
@@ -61,7 +61,7 @@
                 <div class="left_header">
                   <div class="item"><img src="img/logo.png" alt="" /></div>
                   <div class="item">커뮤니티</div>
-                  <a href="#"><div class="item">포토갤러리</div></a>
+                  <a href="#" class="a_tag_color"><div class="item">포토갤러리</div></a>
                 </div>
                 <div class="right_header">
                   <div class="item">
@@ -216,6 +216,5 @@
                 </ul>
             </div>
             </footer>
-
 </body>
 </html>

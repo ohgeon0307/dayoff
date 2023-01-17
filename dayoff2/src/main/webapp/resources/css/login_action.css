@@ -1,228 +1,345 @@
 @charset "utf-8";
 
-html{
-    overflow-x: hidden;
-    --vh: 9.01px;
+html {
+  overflow-x: hidden;
+  --vh: 9.01px;
 }
 
 body {
-    color: #000;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  color: #000;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-body, input, button, textarea, select {
-    font-family: "NotoSanskr", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    color: #000;
+body,
+input,
+button,
+textarea,
+select {
+  font-family: "NotoSanskr", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
 }
 
-div{display: block;}
-
-h1, h2, h3, h4, h5, h6, button, th, td, img, select, option, strong, input::placeholder, textarea::placeholder, em {
-    -ms-user-select: none;
-    -moz-user-select: -moz-none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-user-drag: none;
+div {
+  display: block;
 }
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-style: normal;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+th,
+td,
+img,
+select,
+option,
+strong,
+input::placeholder,
+textarea::placeholder,
+em {
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
-input[type="text"], input[type="password"], input[type="number"] {
-    display: inline-block;
-    width: 100%;
-    font-size: 13px;
-    line-height: 20px;
-    padding: 16px 20px;
-    background: #fff;
-    border: 1px solid rgb(233 233 233);
-    border-radius: 4px;
-    box-sizing: border-box;
-    vertical-align: top;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-style: normal;
+}
+
+.left_header .a_tag_color {
+  color: rgb(106, 106, 106);
+}
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+  display: inline-block;
+  width: 100%;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 16px 20px;
+  background: #fff;
+  border: 1px solid rgb(233 233 233);
+  border-radius: 4px;
+  box-sizing: border-box;
+  vertical-align: top;
 }
 
 a {
-    display: inline-block;
-    text-decoration: none;
-    color: #000;
-    -webkit-tap-highlight-color: transparent;
-    outline: none;
-    vertical-align: top;
-    background-color: transparent;
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  vertical-align: top;
+  background-color: transparent;
 }
 
 button {
-    border: 0;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    outline: none;
-    vertical-align: top;
-    background: unset;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+  vertical-align: top;
+  background: unset;
 }
 
-button, input {
-    overflow: visible;
+button,
+input {
+  overflow: visible;
 }
 
-button, select {
-    text-transform: none;
+button,
+select {
+  text-transform: none;
 }
 
-
-
-button, input, optgroup, select, textarea {
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0px;
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0px;
 }
 
 h3 {
-    display: block;
-    font-size: 1.17em;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
 }
 
 fieldset {
-    padding: 0.35em 0.75em 0.625em;
+  padding: 0.35em 0.75em 0.625em;
 }
 
-img, fieldset {
-    border: 0;
+img,
+fieldset {
+  border: 0;
 }
 
-.frame{
-    width: 327px;
-    margin: 0px auto;
-    padding: 146px 0px 0px;
-    box-sizing: border-box;
+.frame {
+  width: 327px;
+  margin: 0px auto;
+  padding: 146px 0px 0px;
+  box-sizing: border-box;
 }
 
-.login{
-    font-size: 28px;
-    font-weight: 600;
-    color: rgb(0 0 0);
-    text-align: center;
-    margin-bottom: 52px;
+.login {
+  font-size: 28px;
+  font-weight: 600;
+  color: rgb(0 0 0);
+  text-align: center;
+  margin-bottom: 52px;
 }
 
-.row{
-    position: relative;
+.row {
+  position: relative;
 }
-
 
 .row + .row {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 element.style {
-    margin-top: 12px;
+  margin-top: 12px;
 }
 
 .checkbox {
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .checkbox input {
-    position: absolute;
-
+  position: absolute;
 }
 
 input:read-only {
-    color: rgb(154 154 154);
-    outline: none;
+  color: rgb(154 154 154);
+  outline: none;
 }
 
-[type="checkbox"], [type="radio"] {
-    box-sizing: border-box;
-    padding: 0px;
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0px;
 }
 
 .checkbox span {
-    position: relative;
-    display: block;
-    padding-left: 25px;
-    font-size: 15px;
-    line-height: 22px;
-    box-sizing: border-box;
-    color: rgb(154 154 154);
+  position: relative;
+  display: block;
+  padding-left: 25px;
+  font-size: 15px;
+  line-height: 22px;
+  box-sizing: border-box;
+  color: rgb(154 154 154);
 }
 
-.checkbox input{width:15px; height:15px; margin-top: 3px;}
-
-.btn{
-    margin-top: 25px;
-    position: relative;
-    width: 100%;
-    line-height: 20px;
-    border-radius: 4px;
-    padding: 17px 5px;
-    background-color: rgb(0 206 124);
-    font-size: 14px;
-    color: #fff;
-    box-sizing: border-box;
+.checkbox input {
+  width: 15px;
+  height: 15px;
+  margin-top: 3px;
 }
 
-button, [type="button"], [type="reset"], [type="submit"] {
-    appearance: button;
+.btn {
+  margin-top: 25px;
+  position: relative;
+  width: 100%;
+  line-height: 20px;
+  border-radius: 4px;
+  padding: 17px 5px;
+  background-color: rgb(0 206 124);
+  font-size: 14px;
+  color: #fff;
+  box-sizing: border-box;
 }
 
-.aaa{
-    position: relative;
-    margin-top: 14px;
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  appearance: button;
+}
+
+.aaa {
+  position: relative;
+  margin-top: 14px;
 }
 
 .btn_text {
-    position: relative;
-    font-size: 15px;
-    line-height: 22px;
-    color: rgb(145 145 145);
+  position: relative;
+  font-size: 15px;
+  line-height: 22px;
+  color: rgb(145 145 145);
 }
 
-.searchPwd{
-    margin-left: 17px;
-    position: relative;
-    font-size: 15px;
-    line-height: 22px;
-    color: rgb(145 145 145);
+.searchPwd {
+  margin-left: 17px;
+  position: relative;
+  font-size: 15px;
+  line-height: 22px;
+  color: rgb(145 145 145);
 }
 
 .searchPwd::before {
-    content: "";
-    position: absolute;
-    left: -10px;
-    top: 50%;
-    display: block;
-    width: 2px;
-    height: 2px;
-    background: rgb(145 145 145);
-    transform: translateY(-50%);
-    border-radius: 50%;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  display: block;
+  width: 2px;
+  height: 2px;
+  background: rgb(145 145 145);
+  transform: translateY(-50%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-.aa{
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    color: rgb(0 0 0);
-    cursor: pointer;
+.aa {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  color: rgb(0 0 0);
+  cursor: pointer;
 }

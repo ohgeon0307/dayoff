@@ -2,9 +2,9 @@
   margin: 0;
   font-family: "SUIT-Regular";
   padding: 0;
-  }
+}
 
-li{
+li {
   list-style: none;
 }
 
@@ -194,13 +194,22 @@ button {
 
 .header_write_btn {
   display: inline-block;
-  background: lightgreen;
+  background: #00ce7c;
   width: 100px;
   height: 40px;
   border-radius: 5px;
   color: white;
   font-weight: bold;
   font-size: 16px;
+}
+
+.left_header .a_tag_color {
+  color: rgb(106, 106, 106);
+}
+
+.header_write_btn:hover {
+  background: rgb(46, 156, 46);
+  transition: all 0.3s ease-in-out;
 }
 
 .second_section {
@@ -231,10 +240,9 @@ button {
   font-weight: 400;
   font-size: 16px;
   margin: 0;
-  
 }
 
-.second_header .trip_info {
+.second_header .board {
   position: relative;
   display: flex;
   -webkit-box-align: center;
@@ -254,9 +262,7 @@ button {
   margin: 0;
 }
 
-
-
-.second_header .board {
+.second_header .trip_info {
   position: relative;
   display: flex;
   -webkit-box-align: center;
@@ -274,12 +280,14 @@ button {
 }
 
 .pic {
-  position: relative; width: 1906px; margin-left: -355px;
+  position: relative;
+  width: 1906px;
+  margin-left: -355px;
 }
 .pic img {
   width: 100%;
-  margin: 150px auto 0;
-
+  height: 341px;
+  margin: 143px auto 0;
 }
 .pic a {
   font-size: 40px;
@@ -331,8 +339,6 @@ main {
   margin-left: 10px;
   background-color: #00ce7c;
 }
-
-
 
 footer {
   width: 1200px;
@@ -449,117 +455,87 @@ footer button {
   color: sandybrown;
 }
 
-.imgC p {
-	text-align: center;
-}
-
-.modal {
-	display: none;
-	z-index: 500;
-	width: 100%;
-	height: 100vh;
-	position: fixed;
-	top: 0;
-	left: 0;
-	background-color: rgba(0, 0, 0, 0.3);
-}
-
-.modal button {
-	position: absolute;
-	top: 3rem;
-	right: 3rem;
-	background: transparent;
-	border: 0;
-	color: #ffffff;
-	font-size: 3rem;
-}
-
-.modalBox {
-	position: relative;
-	top: 15%;
-	left: 50%;
-	transform: translate(-50%, -20%);
-	background-color: #ffffff;
-	width: 30%;
-	height: 30%;
-	text-align: center;
-}
-
-.modalBox img {
-	width: 100%;
-}
-
-/*.modalBox p {
-	color: #000000;
-	background-color: #ffffff;
-	font-size: 2rem;
-	padding: .2rem;
-}
-*/
-
-.images {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-}
-.images img {
-  width: 282px;
-  height: 282px;
-  border-radius: 4px;
-  border-style: none;
-}
-/*.imgC :hover {
-  transition: all 0.2s linear;
-  transform: scale(1);
-  box-shadow: 5px 5px 5px gray;
-  overflow: hidden;
-}*/
-.content {
-  width: 282px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-.content a {
-  text-decoration-line: none;
-  color: inherit;
-}
-.writer {
-  font-size: 16px;
-}
-.hashtag {
-  width: 282px;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.hashtag a {
-  padding: 0 5px;
-  text-decoration-line: none;
-  background-color: #eeeeee;
-  color: #767676;
-  margin-right: 5px;
-}
-
-.imgList {
-  position: relative;
-  width: 282px; height: 282px;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-  margin-bottom: 15px;
-}
-
-.imgList .content {
-  color: #fff;
-  position: absolute; left: 0; bottom: 0;
-  background: rgba(0,0,0,0.5);
+.wrapper {
+  max-width: 1200px;
   width: 100%;
-  height: 15%;
-  padding: 15px;
-  border-radius: 4px;
-  box-sizing: border-box;
-  opacity: 0;
-  transition: opacity 0.35s ease-in-out;
+  margin: 0 auto;
 }
 
-.imgList:hover .content {
+.wrapper h1 {
+  margin-left: 150px;
+}
+
+.swiper {
+  max-width: 1200px;
+  width: 100%;
+  height: 600px;
+  position: relative;
+  overflow: visible;
+}
+
+.swiper-slide {
+  max-width: 1200px;
+  width: 100%;
+  height: 600px;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  border-radius: 10px;
+
+  /* Center slide text vertically */
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide iframe {
+  display: block;
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+}
+
+/**/
+
+.swiper-slide {
+  opacity: 0.5;
+  transition: opacity 0.5s;
+}
+.swiper-slide-active {
   opacity: 1;
 }
+
+.changing {
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.changed {
+  transition: none;
+}
+
+/* pagination */
+.mySwiper .swiper-pagination {
+  justify-content: center;
+}
+
+/* nav btn*/
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+  top: 50%;
+}
+
+.custom-fraction {
+  justify-content: center;
+}
+/*
+.btn-wrapper {
+  margin-top: 50px;
+}
+*/

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-    <title>포토갤러리 글쓰기</title>
+<title>포토갤러리 글쓰기</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
@@ -62,22 +62,16 @@
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-            <a href="home.html"
-              ><div class="item"><img src="img/logo.png" alt="" /></div
-            ></a>
-            <div class="item" class="a_tag_color">커뮤니티</div>
-            <a href="#"><div class="item">포토갤러리</div></a>
+            <div class="item"><img src="img/logo.png" alt="" /></div>
+            <a href="#" class="a_tag_color"><div class="item">커뮤니티</div></a>
+            <div class="item">포토갤러리</div>
           </div>
           <div class="right_header">
             <div class="item">
               <button class="searchBtn">
                 <i class="xi-search xi-1x"></i>
               </button>
-              <input
-                type="text"
-                placeholder="여행지를 찾아보세요!"
-                class="header_input"
-              />
+              <input type="text" placeholder="해시태그로 검색해보세요!" />
             </div>
             <a href="#" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
@@ -87,30 +81,23 @@
         </div>
         <section class="second_section">
           <div class="second_header">
-            <a href="home.html"><div class="home">홈</div></a>
-            <a href="#"><div class="trip_info">동행</div></a>
-            <a href="#"><div class="board">게시판</div></a>
+            <a href="#"><div class="trip_info">포토갤러리</div></a>
+            <a href="#"><div class="board">쇼츠갤러리</div></a>
           </div>
         </section>
       </section>
     </header>
-    <main
-      class="LayoutItem"
-      id="contents"
-      style="background-color: rgb(248, 248, 248); padding-bottom: 320px"
-    >
-      <section class="FullSection">
-        <div class="FullSectionWrapper">
-          <p class="TopSection">나와 맞는 여행동행과 이야기를 나누어 보아요!</p>
-          <p class="TopSection">여행친구찾기</p>
-        </div>
-      </section>
+    <main>
+      <div class="pic">
+        <img src="img/Menu_Shop_Backpacks_2000x.progressive.jpg" alt="" />
+        <a>여행사진을 공유해봐요!</a>
+      </div>
 
       <section class="file_upload_section">
         <div class="title">
           <input
             type="text"
-            placeholder="제목을 입력해보세요!(100자 이내)"
+            placeholder="&nbsp&nbsp제목을 입력해보세요!(100자 이내)"
           />
         </div>
         <hr class="slide_hr" />
@@ -121,7 +108,7 @@
         <div class="hashtag">
           <input
             type="text"
-            placeholder="태그입력 (띄어쓰기로 구분) (100자 이내)"
+            placeholder="&nbsp&nbsp태그입력 (띄어쓰기로 구분) (100자 이내)"
           />
         </div>
         <div class="button_zone">

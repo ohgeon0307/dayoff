@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-    <title>게시판 글쓰기</title>
+	<title>게시판 글쓰기</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
@@ -66,7 +66,9 @@
               ><div class="item"><img src="img/logo.png" alt="" /></div
             ></a>
             <div class="item" class="a_tag_color">커뮤니티</div>
-            <a href="#"><div class="item">포토갤러리</div></a>
+            <a href="#" class="a_tag_color"
+              ><div class="item">포토갤러리</div></a
+            >
           </div>
           <div class="right_header">
             <div class="item">
@@ -237,10 +239,7 @@
       </div>
       <section class="file_upload_section">
         <div class="title">
-          <input
-            type="text"
-            placeholder="제목을 입력해보세요!(100자 이내)"
-          />
+          <input type="text" placeholder="제목을 입력해보세요!(100자 이내)" />
         </div>
         <hr class="slide_hr" />
         <div>

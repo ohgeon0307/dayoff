@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>동행 글쓰기</title>
+<title>동행글쓰기</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
@@ -66,7 +66,9 @@
               ><div class="item"><img src="img/logo.png" alt="" /></div
             ></a>
             <div class="item" class="a_tag_color">커뮤니티</div>
-            <a href="#"><div class="item">포토갤러리</div></a>
+            <a href="#" class="a_tag_color"
+              ><div class="item">포토갤러리</div></a
+            >
           </div>
           <div class="right_header">
             <div class="item">

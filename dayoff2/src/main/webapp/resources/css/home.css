@@ -202,7 +202,7 @@ button {
 
 .header_write_btn {
   display: inline-block;
-  background: lightgreen;
+  background: rgb(0, 206, 124);
   width: 100px;
   height: 40px;
   border-radius: 5px;

@@ -4,8 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-    <title>자유게시판</title>
- <link rel="stylesheet" href="board_list.css" />
+     <title>자유게시판</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link rel="stylesheet" href="board_list.css" />
   </head>
   <body>
     <header>
@@ -30,7 +34,9 @@
             <a href="#" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
             <a href="#" class="join_a"><div class="item">회원가입</div></a>
-            <a href="board_write.html"><button class="header_write_btn">글쓰기</button></a>
+            <a href="board_write.html"
+              ><button class="header_write_btn">글쓰기</button></a
+            >
           </div>
         </div>
         <section class="second_section">
