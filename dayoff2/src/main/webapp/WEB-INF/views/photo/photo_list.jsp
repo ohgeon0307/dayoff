@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,10 +12,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
-    <link rel="stylesheet" href="css/photo_list.css" />
-    <link rel="shortcut icon" href="../photo/img/favicon.png" />
+    <link rel="stylesheet" href="${path}/resources/css/photo_list.css" />
+    <link rel="shortcut icon" href="${path}/resources/img/favicon.png" />
 
-    <script src="jquery-3.6.1.min.js"></script>
+    <script src="${path}/resources/js/jquery-3.6.1.min.js"></script>
 
     <link
       rel="stylesheet"
@@ -124,13 +126,13 @@
             <a href="#" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
             <a href="#" class="join_a"><div class="item">회원가입</div></a>
-            <a href="#"><button class="header_write_btn">글쓰기</button></a>
+            <a href="pwrite.do"><button class="header_write_btn">글쓰기</button></a>
           </div>
         </div>
         <section class="second_section">
           <div class="second_header">
-            <a href="#"><div class="trip_info">포토갤러리</div></a>
-            <a href="#"><div class="board">쇼츠갤러리</div></a>
+            <a href="plist.do"><div class="trip_info">포토갤러리</div></a>
+            <a href="slist.do"><div class="board">쇼츠갤러리</div></a>
           </div>
         </section>
       </section>
