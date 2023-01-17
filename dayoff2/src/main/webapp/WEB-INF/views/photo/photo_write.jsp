@@ -65,7 +65,7 @@
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-            <div class="item"><img src="img/logo.png" alt="" /></div>
+            <div class="item"><img src="${path}/resources/img/logo.png" alt="" /></div>
             <a href="#" class="a_tag_color"><div class="item">커뮤니티</div></a>
             <div class="item">포토갤러리</div>
           </div>
@@ -79,20 +79,20 @@
             <a href="#" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
             <a href="#" class="join_a"><div class="item">회원가입</div></a>
-            <a href="#"><button class="header_write_btn">글쓰기</button></a>
+            <a href="<%= request.getContextPath()%>/photo/pwrite.do"><button class="header_write_btn">글쓰기</button></a>
           </div>
         </div>
         <section class="second_section">
           <div class="second_header">
-            <a href="#"><div class="trip_info">포토갤러리</div></a>
-            <a href="#"><div class="board">쇼츠갤러리</div></a>
+            <a href="<%= request.getContextPath()%>/photo.do"><div class="trip_info">포토갤러리</div></a>
+            <a href="<%= request.getContextPath()%>/photo/short.do"><div class="board">쇼츠갤러리</div></a>
           </div>
         </section>
       </section>
     </header>
     <main>
       <div class="pic">
-        <img src="img/Menu_Shop_Backpacks_2000x.progressive.jpg" alt="" />
+        <img src="${path}/resources/img/Menu_Shop_Backpacks_2000x.progressive.jpg" alt="" />
         <a>여행사진을 공유해봐요!</a>
       </div>
 
@@ -105,7 +105,7 @@
         </div>
         <hr class="slide_hr" />
         <div class="container">
-          <img src="img/picture.png" alt="" />
+          <a href="#"><img src="${path}/resources/img/picture.png" alt="" /></a>
           인생샷을 올려주세요💫
         </div>
         <div class="hashtag">
