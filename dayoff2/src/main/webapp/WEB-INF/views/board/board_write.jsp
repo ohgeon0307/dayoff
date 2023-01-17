@@ -251,7 +251,7 @@
           <input
             type="text"
             placeholder="태그입력 (띄어쓰기로 구분) (100자 이내)"
-          />
+         />
         </div>
         <div class="button_zone">
           <button class="cancel">취소</button>

@@ -279,7 +279,7 @@ button {
   margin: 0;
 }
 
-.board_banner {
+.board_banner{
   margin-top: 135px;
   display: flex;
   flex-direction: column;

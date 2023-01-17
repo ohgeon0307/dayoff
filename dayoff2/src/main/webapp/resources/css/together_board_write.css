@@ -469,7 +469,7 @@ input[type="number"] {
   border-bottom: 0.5px solid white;
 }
 
-.file_upload_section textarea {
+.file_upload_section textarea{
   position: relative;
   resize: none;
   display: block;

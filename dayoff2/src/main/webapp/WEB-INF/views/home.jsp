@@ -80,7 +80,7 @@
             <a href="login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
             <a href="join.html" class="join_a"><div class="item">회원가입</div></a>
-            
+           
           </div>
         </div>
         <section class="second_section">

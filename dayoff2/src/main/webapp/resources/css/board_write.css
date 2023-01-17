@@ -514,7 +514,7 @@ input[type="number"] {
   width: 600px;
 }
 
-.submit {
+.submit{
   position: relative;
   line-height: 20px;
   border-radius: 4px;

@@ -171,7 +171,7 @@
                             class="ShimmerImg2"
                             src="img/캡처.jpg"
                             alt="프로필사진"
-                          />
+                         />
                         </div>
                       </div>
                     </div>
