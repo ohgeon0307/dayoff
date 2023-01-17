@@ -90,7 +90,7 @@ button {
   margin-right: 23px;
 }
 
-.left_header .item:nth-child(2) {
+.left_header .item2 {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
@@ -109,7 +109,7 @@ button {
   font-size: 18px;
 }
 
-.left_header .item:nth-child(3) {
+.left_header .item3 {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
