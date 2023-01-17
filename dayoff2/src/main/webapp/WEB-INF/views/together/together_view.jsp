@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +11,15 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
-    <link href="css/together_view.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
-      rel="stylesheet"
+    <link href="${path}/resources/css/together_view.css" rel="stylesheet" />
+   <link rel="shortcut icon" href="${path}/resources/img/favicon.png">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script src="${path }/resources/js/script.js"></script>
     <script>
       (function () {
         var w = window;
@@ -62,11 +68,9 @@
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-            <div class="item"><img src="img/logo.png" alt="" /></div>
+            <a href="home.html"><div class="item"><img src="${path }/resources/img/logo.png" alt="" /></div></a>
             <div class="item">커뮤니티</div>
-            <a href="#" class="a_tag_color"
-              ><div class="item">포토갤러리</div></a
-            >
+            <a href="photo.do" class="a_tag_color"><div class="item">포토갤러리</div></a>
           </div>
           <div class="right_header">
             <div class="item">
@@ -78,14 +82,14 @@
             <a href="#" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
             <a href="#" class="join_a"><div class="item">회원가입</div></a>
-            <a href="#"><button class="header_write_btn">글쓰기</button></a>
+            <a href="together_write.do"><button class="header_write_btn">글쓰기</button></a>
           </div>
         </div>
         <section class="second_section">
           <div class="second_header">
             <a href="#"><div class="home">홈</div></a>
-            <a href="#"><div class="trip_info">동행</div></a>
-            <a href="#"><div class="board">게시판</div></a>
+            <a href="together.do"><div class="trip_info">동행</div></a>
+            <a href="board.do"><div class="board">게시판</div></a>
           </div>
         </section>
       </section>

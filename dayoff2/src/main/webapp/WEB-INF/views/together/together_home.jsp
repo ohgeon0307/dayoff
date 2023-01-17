@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +11,15 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
-    <link href="css/together_home.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
-      rel="stylesheet"
+    <link href="${path}/resources/css/together_home.css" rel="stylesheet" />
+   <link rel="shortcut icon" href="${path}/resources/img/favicon.png">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script src="${path }/resources/js/script.js"></script>
     <script>
       (function () {
         var w = window;
@@ -62,11 +68,9 @@
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-            <div class="item"><img src="img/logo.png" alt="" /></div>
+           <a href="home.html"><div class="item"><img src="${path }/resources/img/logo.png" alt="" /></div></a>
             <div class="item">커뮤니티</div>
-            <a href="#" class="a_tag_color"
-              ><div class="item">포토갤러리</div></a
-            >
+            <a href="photo.do" class="a_tag_color"><div class="item">포토갤러리</div></a>
           </div>
           <div class="right_header">
             <div class="item">
@@ -78,7 +82,7 @@
             <a href="#" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
             <a href="#" class="join_a"><div class="item">회원가입</div></a>
-            <a href="together_board_write.html"
+            <a href="together_write.do"
               ><button class="header_write_btn">글쓰기</button></a
             >
           </div>
@@ -86,8 +90,8 @@
         <section class="second_section">
           <div class="second_header">
             <div class="home">홈</div>
-            <a href="#"><div class="trip_info">동행</div></a>
-            <a href="#"><div class="board">게시판</div></a>
+            <a href="together.do"><div class="trip_info">동행</div></a>
+            <a href="board.do"><div class="board">게시판</div></a>
           </div>
         </section>
       </section>
@@ -266,10 +270,10 @@
           <ul class="Accompany" type="portrait">
             <div type="portrait" class="AccompanyItem">
               <div>
-                <img
+                <a href="together_view.do"><img
                   src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjExMjNfOTIg%2FMDAxNjY5MjA5NDM2NTEw.KeZsQi4hUkXYgwKV--nko3c2H3rBF15ayWYiU8U31v0g.kjSfkyN_ovdKSRbRRHIzWme4xCnn8Jv1Za4SpBAjuzEg.JPEG.leegh1224%2FL7R06739.jpg&type=sc960_832"
                   alt="배경사진"
-                />
+                /></a>
                 <div type="portrait" class="DateWrapper">
                   <div>
                     <div class="AreaWrapper">
