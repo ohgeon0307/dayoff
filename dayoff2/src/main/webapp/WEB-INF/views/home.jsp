@@ -1,21 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
     <title>데이오프</title>
-    <link rel="stylesheet" href="css/home.css" />
-    <link rel="shortcut icon" href="img/favicon.png">
-    <link
-      rel="stylesheet"
+    <link rel="stylesheet" href="${path}/resources/css/home.css" />
+    <link rel="shortcut icon" href="${path}/resources/img/favicon.png">
+    <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
-    <link
-      rel="stylesheet"
+    <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
-    <script src="script.js"></script>
+    <script src="${path }/resources/js/script.js"></script>
     <!--swiper plugin connect-->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
@@ -66,7 +66,7 @@
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-            <a href="home.html"><div class="item"><img src="img/logo.png" alt="" /></div></a>
+            <a href="home.html"><div class="item"><img src="${path }/resources/img/logo.png" alt="" /></div></a>
             <div class="item">커뮤니티</div>
             <a href="photo.html" class="a_tag_color"><div class="item">포토갤러리</div></a>
           </div>
@@ -102,7 +102,7 @@
                 <p>보험 포함 데이오프 렌트카!</p>
                 <p>1일 1만원대 렌트카 확인해보세요!</p>
               </div>
-              <img src="img/slideImg01.webp" alt="" />
+              <img src="${path }/resources/img/slideImg01.webp" alt="" />
               <button>데이오프 렌터카 보러가기</button>
             </div>
             <div class="swiper-slide">
@@ -111,7 +111,7 @@
                 <p>많은경품을 드립니다!</p>
                 <p>새해복 많이 받으세요 !!</p>
               </div>
-              <img src="img/slideImg02.webp" alt="" />
+              <img src="${path }/resources/img/slideImg02.webp" alt="" />
               <button>이벤트 참여하기</button>
             </div>
             <div class="swiper-slide">
@@ -120,7 +120,7 @@
                 <p>저희 데이오프와 함께</p>
                 <p>맛집투어를 떠나봐요!</p>
               </div>
-              <img src="img/slideImg03.webp" alt="" />
+              <img src="${path }/resources/img/slideImg03.webp" alt="" />
               <button>일본투어 보러가기</button>
             </div>
             <div class="swiper-slide">
@@ -129,7 +129,7 @@
                 <p>같이 날아가볼까요?</p>
                 <p>test by Controller team.</p>
               </div>
-              <img src="img/slideImg04.png" alt="" />
+              <img src="${path }/resources/img/slideImg04.png" alt="" />
               <button class="slide04_btn">질문 보러가기</button>
             </div>
           </div>
@@ -145,7 +145,7 @@
         </div>
         <div class="photo_zone">
           <div class="gallery">
-            <img src="img/photozone01.webp" alt="" />
+            <img src="${path }/resources/img/photozone01.webp" alt="" />
             <div class="gallery_text">
               <b class="gallery_text_green"> 포토갤러리 </b>
               <div class="photo_title">아름다운 싱가폴 뷰</div>
@@ -153,7 +153,7 @@
             </div>
           </div>
           <div class="gallery">
-            <img src="img/photozone02.webp" alt="" />
+            <img src="${path }/resources/img/photozone02.webp" alt="" />
             <div class="gallery_text">
               <b class="gallery_text_green"> 포토갤러리 </b>
               <div class="photo_title">여행의 끝, 세비야</div>
@@ -161,7 +161,7 @@
             </div>
           </div>
           <div class="gallery">
-            <img src="img/photozone03.webp" alt="" />
+            <img src="${path }/resources/img/photozone03.webp" alt="" />
             <div class="gallery_text">
               <b class="gallery_text_green"> 포토갤러리 </b>
               <div class="photo_title">애버딘, 위스키와 칵테일</div>
@@ -169,7 +169,7 @@
             </div>
           </div>
           <div class="gallery">
-            <img src="img/photozone04.webp" alt="" />
+            <img src="${path }/resources/img/photozone04.webp" alt="" />
             <div class="gallery_text">
               <b class="gallery_text_green"> 포토갤러리 </b>
               <div class="photo_title">풍경이 좋던 런던 하늘</div>
@@ -246,70 +246,70 @@
           <ul class="slider">
             <li class="item">
               <div class="box">
-                <p><img src="img/photozone01.webp" alt="" /></p>
+                <p><img src="${path }/resources/img/photozone01.webp" alt="" /></p>
                 <h4>꿈의 도시, 싱가폴</h4>
                 <p><i class="xi-paper-o"></i>dayoff</p>
               </div>
             </li>
             <li class="item">
               <div class="box">
-                <p><img src="img/photozone02.webp" alt="" /></p>
+                <p><img src="${path }/resources/img/photozone02.webp" alt="" /></p>
                 <h4>동화속 도시, 세비야</h4>
                 <p><i class="xi-paper-o"></i>dayoff</p>
               </div>
             </li>
             <li class="item">
               <div class="box">
-                <p><img src="img/photozone03.webp" alt="" /></p>
+                <p><img src="${path }/resources/img/photozone03.webp" alt="" /></p>
                 <h4>술의 도시, 애버딘</h4>
                 <p><i class="xi-paper-o"></i>dayoff</p>
               </div>
             </li>
             <li class="item">
               <div class="box">
-                <p><img src="img/photozone04.webp" alt="" /></p>
+                <p><img src="${path }/resources/img/photozone04.webp" alt="" /></p>
                 <h4>풍경이 아름다운, 런던</h4>
                 <p><i class="xi-paper-o"></i>dayoff</p>
               </div>
             </li>
             <li class="item">
               <div class="box">
-                <p><img src="img/photozone05.webp" alt="" /></p>
+                <p><img src="${path }/resources/img/photozone05.webp" alt="" /></p>
                 <h4>바다속으로, 나트랑</h4>
                 <p><i class="xi-paper-o"></i>dayoff</p>
               </div>
             </li>
             <li class="item">
               <div class="box">
-                <p><img src="img/photozone06.webp" alt="" /></p>
+                <p><img src="${path }/resources/img/photozone06.webp" alt="" /></p>
                 <h4>벚꽃 명소, 나고야</h4>
                 <p><i class="xi-paper-o"></i>dayoff</p>
               </div>
             </li>
             <li class="item">
               <div class="box">
-                <p><img src="img/photozone07.webp" alt="" /></p>
+                <p><img src="${path }/resources/img/photozone07.webp" alt="" /></p>
                 <h4>고즈넉한 한옥, 전주</h4>
                 <p><i class="xi-paper-o"></i>dayoff</p>
               </div>
             </li>
             <li class="item">
               <div class="box">
-                <p><img src="img/photozone08.webp" alt="" /></p>
+                <p><img src="${path }/resources/img/photozone08.webp" alt="" /></p>
                 <h4>눈앞의 애니메이션, 아키하바라</h4>
                 <p><i class="xi-paper-o"></i>dayoff</p>
               </div>
             </li>
             <li class="item">
               <div class="box">
-                <p><img src="img/photozone09.webp" alt="" /></p>
+                <p><img src="${path }/resources/img/photozone09.webp" alt="" /></p>
                 <h4>분위기있는 섬, 제주도</h4>
                 <p><i class="xi-paper-o"></i>dayoff</p>
               </div>
             </li>
             <li class="item">
               <div class="box">
-                <p><img src="img/photozone01.webp" alt="" /></p>
+                <p><img src="${path }/resources/img/photozone01.webp" alt="" /></p>
                 <h4>ⓒ. Team Controller</h4>
                 <p><i class="xi-paper-o"></i>dayoff</p>
               </div>
