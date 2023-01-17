@@ -147,7 +147,7 @@
         <div class="header">
           <div class="left_header">
             <div class="item"><img src="${path}/resources/img/logo.png" alt="" /></div>
-            <a href="#" class="a_tag_color"><div class="item">커뮤니티</div></a>
+            <a href="<%= request.getContextPath()%>/" class="a_tag_color"><div class="item">커뮤니티</div></a>
             <div class="item">포토갤러리</div>
           </div>
           <div class="right_header">
@@ -157,9 +157,9 @@
               </button>
               <input type="text" placeholder="해시태그로 검색해보세요!" />
             </div>
-            <a href="#" class="login_a"><div class="item">로그인</div></a>
+            <a href="login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
-            <a href="#" class="join_a"><div class="item">회원가입</div></a>
+            <a href="join.html" class="join_a"><div class="item">회원가입</div></a>
             <a href="<%= request.getContextPath()%>/photo/swrite.do"><button class="header_write_btn">글쓰기</button></a>
           </div>
         </div>
