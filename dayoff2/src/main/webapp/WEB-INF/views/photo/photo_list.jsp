@@ -104,13 +104,12 @@
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-            <a href="home.html">
+            <a href="#">
             <div class="item">
             <img src="${path}/resources/img/logo.png" alt="" />
             </div></a>
-            <a href="<%= request.getContextPath()%>/" class="a_tag_color">
-            <div class="item">커뮤니티</div></a>
-            <div class="item">포토갤러리</div>
+            <a href="<%= request.getContextPath()%>/" class="a_tag_color"><div class="item2">커뮤니티</div></a>
+            <a href="<%= request.getContextPath()%>/photo.do"><div class="item3">포토갤러리</div></a>
           </div>
           <div class="right_header">
             <div class="item">
@@ -119,7 +118,7 @@
               </button>
               <input type="text" placeholder="해시태그로 검색해보세요!" />
             </div>
-            <a href="login.do" class="login_a"><div class="item">로그인</div></a>
+            <a href="login.do" class="login_a"><div class="item ">로그인</div></a>
             <div class="bar">&#124;</div>
             <a href="join.html" class="join_a"><div class="item">회원가입</div></a>
             <a href="<%= request.getContextPath()%>/photo/pwrite.do"><button class="header_write_btn">글쓰기</button></a>
