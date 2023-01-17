@@ -82,11 +82,11 @@ button {
   margin-right: 130px;
 }
 
-.left_header .item:nth-child(1) {
+.left_header .item3 {
   margin-right: 23px;
 }
 
-.left_header .item:nth-child(3) {
+.left_header .item2 {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
