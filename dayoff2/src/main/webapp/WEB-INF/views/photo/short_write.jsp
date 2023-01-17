@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +11,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
-    <link href="${path}/resources/css/short_write.css"  rel="stylesheet" />
+    <link rel="stylesheet" href="${path}/resources/css/short_write.css"  />
     <link rel="shortcut icon" href="${path}/resources/img/favicon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
@@ -63,8 +65,8 @@
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-            <div class="item"><img src="img/logo.png" alt="" /></div>
-            <a href="#" class="a_tag_color"><div class="item">커뮤니티</div></a>
+            <div class="item"><img src="${path}/resources/img/logo.png" alt="" /></div>
+            <a href="<%= request.getContextPath()%>/" class="a_tag_color"><div class="item">커뮤니티</div></a>
             <div class="item">포토갤러리</div>
           </div>
           <div class="right_header">
@@ -74,23 +76,23 @@
               </button>
               <input type="text" placeholder="해시태그로 검색해보세요!" />
             </div>
-            <a href="#" class="login_a"><div class="item">로그인</div></a>
+            <a href="login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
-            <a href="#" class="join_a"><div class="item">회원가입</div></a>
-            <a href="#"><button class="header_write_btn">글쓰기</button></a>
+            <a href="join.html" class="join_a"><div class="item">회원가입</div></a>
+            <a href="<%= request.getContextPath()%>/photo/swrite.do"><button class="header_write_btn">글쓰기</button></a>
           </div>
         </div>
         <section class="second_section">
           <div class="second_header">
-            <a href="#"><div class="trip_info">포토갤러리</div></a>
-            <a href="#"><div class="board">쇼츠갤러리</div></a>
+            <a href="<%= request.getContextPath()%>/photo.do"><div class="trip_info">포토갤러리</div></a>
+            <a href="<%= request.getContextPath()%>/photo/short.do"><div class="board">쇼츠갤러리</div></a>
           </div>
         </section>
       </section>
     </header>
     <main>
       <div class="pic">
-        <img src="img/Menu_Shop_Backpacks_2000x.progressive.jpg" alt="" />
+        <img src="${path}/resources/img/Menu_Shop_Backpacks_2000x.progressive.jpg" alt="" />
         <a>여행영상을 공유해봐요!</a>
       </div>
 
@@ -103,7 +105,7 @@
         </div>
         <hr class="slide_hr" />
         <div class="container">
-          <img src="img/picture.png" alt="" />
+          <a href="#"><img src="${path}/resources/img/picture.png" alt="" /></a>
           인생영상을 올려주세요💫
         </div>
         <div class="button_zone">

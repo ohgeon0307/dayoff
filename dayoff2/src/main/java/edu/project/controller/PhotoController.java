@@ -11,19 +11,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class PhotoController {
 	
 	
-	@RequestMapping(value = "/plist.do", method = RequestMethod.GET)
-	public String plist() {
-		
-		return "photo/photo_list";
-	}
-	
 	@RequestMapping(value = "/pwrite.do", method = RequestMethod.GET)
 	public String pwrite() {
 		
 		return "photo/photo_write";
 	}
 	
-	@RequestMapping(value = "/slist.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/short.do", method = RequestMethod.GET)
 	public String slist() {
 		
 		return "photo/short_list";
