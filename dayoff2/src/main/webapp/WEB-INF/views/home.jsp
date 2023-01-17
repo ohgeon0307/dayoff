@@ -68,7 +68,7 @@
           <div class="left_header">
             <a href="home.html"><div class="item"><img src="${path }/resources/img/logo.png" alt="" /></div></a>
             <div class="item">커뮤니티</div>
-            <a href="photo.html" class="a_tag_color"><div class="item">포토갤러리</div></a>
+            <a href="photo.do" class="a_tag_color"><div class="item">포토갤러리</div></a>
           </div>
           <div class="right_header">
             <div class="item">
@@ -77,7 +77,7 @@
               </button>
               <input type="text" placeholder="여행지를 찾아보세요!" />
             </div>
-            <a href="login.html" class="login_a"><div class="item">로그인</div></a>
+            <a href="login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
             <a href="join.html" class="join_a"><div class="item">회원가입</div></a>
             <a href="board_write.html"><button class="header_write_btn">글쓰기</button></a>
@@ -86,8 +86,8 @@
         <section class="second_section">
           <div class="second_header">
             <div class="home">홈</div>
-            <a href="together_home.html"><div class="trip_info">동행</div></a>
-            <a href="board_list.html"><div class="board">게시판</div></a>
+            <a href="together.do"><div class="trip_info">동행</div></a>
+            <a href="board.do"><div class="board">게시판</div></a>
           </div>
         </section>
       </section>
