@@ -1,5 +1,5 @@
 package edu.project.service;
 
-public interface BoardService {
+public interface PhotoService {
 
 }

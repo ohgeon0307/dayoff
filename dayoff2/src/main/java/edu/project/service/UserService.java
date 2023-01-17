@@ -1,5 +1,5 @@
 package edu.project.service;
 
-public class UserService {
+public interface UserService {
 
 }

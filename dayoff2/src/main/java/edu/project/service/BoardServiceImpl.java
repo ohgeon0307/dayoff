@@ -1,5 +1,7 @@
 package edu.project.service;
 
-public class BoardServiceImpl {
+import edu.project.service.BoardService;
+
+public class BoardServiceImpl implements BoardService{
 
 }
