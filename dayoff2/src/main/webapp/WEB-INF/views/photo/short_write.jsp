@@ -76,9 +76,9 @@
               </button>
               <input type="text" placeholder="해시태그로 검색해보세요!" />
             </div>
-            <a href="login.do" class="login_a"><div class="item">로그인</div></a>
+            <a href="<%= request.getContextPath()%>/login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
-            <a href="join.html" class="join_a"><div class="item">회원가입</div></a>
+            <a href="<%= request.getContextPath()%>/join.do" class="join_a"><div class="item">회원가입</div></a>
             <a href="<%= request.getContextPath()%>/photo/swrite.do"><button class="header_write_btn">글쓰기</button></a>
           </div>
         </div>
