@@ -12,11 +12,18 @@ import edu.project.service.UserService;
 public class UserController {
 	
 
+	
 	@RequestMapping(value="/login.do",method=RequestMethod.GET)
 	public String login() {
 		
 		
 		return "user/login";
+	}
+	
+	@RequestMapping(value="/login_action.do", method=RequestMethod.GET)
+	public String loginAction() {
+		
+		return "user/login_action";
 	}
 	
 	@RequestMapping(value="/join_form.do",method=RequestMethod.GET)

@@ -79,7 +79,7 @@
             </div>
             <a href="#" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
-            <a href="#" class="join_a"><div class="item">회원가입</div></a>
+            <a href=""${path }/user/join.do"" class="join_a"><div class="item">회원가입</div></a>
             <a href="#"><button class="header_write_btn">글쓰기</button></a>
           </div>
         </div>

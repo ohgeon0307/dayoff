@@ -66,7 +66,7 @@
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-            <a href="home.html"><div class="item"><img src="${path }/resources/img/logo.png" alt="" /></div></a>
+            <a href="${path }/"><div class="item"><img src="${path }/resources/img/logo.png" alt="" /></div></a>
             <div class="item">커뮤니티</div>
             <a href="photo.do" class="a_tag_color"><div class="item">포토갤러리</div></a>
           </div>
@@ -79,7 +79,7 @@
             </div>
             <a href="login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
-            <a href="join.html" class="join_a"><div class="item">회원가입</div></a>
+            <a href="${path }/user/join.do" class="join_a"><div class="item">회원가입</div></a>
            
           </div>
         </div>

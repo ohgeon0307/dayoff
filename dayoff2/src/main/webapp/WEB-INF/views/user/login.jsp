@@ -63,7 +63,7 @@
         <div class="left_header">
           <div class="item"><a href="${ path}/"><img src="${path }/resources/img/logo.png" alt="" /></a></div>
           <div class="item">커뮤니티</div>
-          <a href="#"><div class="item">포토갤러리</div></a>
+          <a href="photo.do" class ="a_tag_color"><div class="item">포토갤러리</div></a>
         </div>
         <div class="right_header">
           <div class="item">
@@ -72,17 +72,17 @@
             </button>
             <input type="text" placeholder="여행지를 찾아보세요!" />
           </div>
-          <a href="${path }/user/login.do" class="login_a"><div class="item">로그인</div></a>
+          <a href="<%=request.getContextPath()%>/login.do" class="login_a"><div class="item">로그인</div></a>
           <div class="bar">&#124;</div>
-          <a href="${path }/user/join_form.do" class="join_a"><div class="item">회원가입</div></a>
+          <a href="${path }/user/join.do" class="join_a"><div class="item">회원가입</div></a>
           <a href="#"><button class="header_write_btn">글쓰기</button></a>
         </div>
       </div>
       <section class="second_section">
         <div class="second_header">
           <div class="home">홈</div>
-          <a href="#"><div class="trip_info">동행</div></a>
-          <a href="#"><div class="board">게시판</div></a>
+          <a href="together.do"><div class="trip_info">동행</div></a>
+          <a href="board.do"><div class="board">게시판</div></a>
         </div>
       </section>
     </section>
@@ -97,12 +97,12 @@
                 <p>카카오로 간편 로그인</p>
             </button>
             <button class="btn_join join_email">
-                <a href="${path }/user/join.do"><p>이메일 또는 전화번호로 로그인</p></a>
+                <a href="${path }/user/login_action.do"><p>이메일 또는 전화번호로 로그인</p></a>
             </button>
             <div class="ask">
                 <p class="exist">아직 계정이 없으신가요?</p>
                 <button class="btn_login">
-                <a href="${path }/user/join_form.do"><p>회원가입</p></a>
+                <a href="${path }/user/join.do"><p>회원가입</p></a>
                 </button>
             </div>
         </div>

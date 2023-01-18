@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+.left_header .a_tag_color {
+  color: rgb(106, 106, 106);
+}	
+
 p {
   margin: 0;
   padding: 0;

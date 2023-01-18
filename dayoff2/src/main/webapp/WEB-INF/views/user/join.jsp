@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +11,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
-    <link href="css/join.css" rel="stylesheet">
+    <link href="${path }/resources/css/join.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script>
         (function () {
@@ -59,9 +61,9 @@
         <section class="first_section">
           <div class="header">
             <div class="left_header">
-              <div class="item"><img src="img/logo.png" alt="" /></div>
+              <div class="item"><a href="${ path}/"><img src="${path}/resources/img/logo.png" alt="" /></a></div>
               <div class="item">커뮤니티</div>
-              <a href="#"><div class="item">포토갤러리</div></a>
+              <a href="<%=request.getContextPath()%>/photo.do"><div class="item">포토갤러리</div></a>
             </div>
             <div class="right_header">
               <div class="item">
@@ -70,17 +72,17 @@
                 </button>
                 <input type="text" placeholder="여행지를 찾아보세요!" />
               </div>
-              <a href="#" class="login_a"><div class="item">로그인</div></a>
+              <a href="<%=request.getContextPath() %>/login.do" class="login_a"><div class="item">로그인</div></a>
               <div class="bar">&#124;</div>
-              <a href="#" class="join_a"><div class="item">회원가입</div></a>
+              <a href="${path }/user/join.do" class="join_a"><div class="item">회원가입</div></a>
               <a href="#"><button class="header_write_btn">글쓰기</button></a>
             </div>
           </div>
           <section class="second_section">
             <div class="second_header">
               <div class="home">홈</div>
-              <a href="#"><div class="trip_info">동행</div></a>
-              <a href="#"><div class="board">게시판</div></a>
+              <a href="<%=request.getContextPath() %>/together.do"><div class="trip_info">동행</div></a>
+              <a href="<%=request.getContextPath() %>/board.do"><div class="board">게시판</div></a>
             </div>
           </section>
         </section>
@@ -89,18 +91,18 @@
         <div class="join">
             <p class="text_desc">동행부터 계획까지</p>
             <p class="text_desc">마음에 쏙 드는 여행 참 어렵죠?</p>
-            <img class="logo" src="img/login_logo.png" alt="" style="width:230px;">
+            <img class="logo" src="${path }/resources/img/login_logo.png" alt="" style="width:230px;">
             <p>내 취향에 딱 맞는 여행, DAY OFF</p>
             <button class="btn_join join_kakao">
                 <p>카카오로 간편 가입</p>
             </button>
             <button class="btn_join join_email">
-                <a href="joinform.html"><p>이메일 가입</p></a>
+                <a href="<%=request.getContextPath()%>/user/join_form.do"><p>이메일 가입</p></a>
             </button>
             <div class="ask">
                 <p class="exist">이미 계정이 있으신가요?</p>
                 <button class="btn_login">
-                    <p>로그인</p>
+                    <a href="<%=request.getContextPath()%>/user/login.do"><p>로그인</p></a>
                 </button>
             </div>
         </div>
