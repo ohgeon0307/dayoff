@@ -198,7 +198,7 @@ button {
   -webkit-box-align: center;
   align-items: center;
   -webkit-box-pack: center;
-  justify-content: center;
+  justify-content: center; 
   width: auto;
   height: fit-content;
   border-style: solid;
