@@ -6,6 +6,7 @@ public class ShortVo {
 	private int uidx;
 	private int sLikes;
 	private String sDelYn;
+	private int sHit;
 	
 	
 	public int getSidx() {
@@ -44,7 +45,6 @@ public class ShortVo {
 	public void setsHit(int sHit) {
 		this.sHit = sHit;
 	}
-	private int sHit;
 
 
 	@Override

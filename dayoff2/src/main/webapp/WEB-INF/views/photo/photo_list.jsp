@@ -97,7 +97,7 @@
       <section>
         <div class="pic">
           <img src="${path}/resources/img/Menu_Shop_Backpacks_2000x.progressive.jpg" alt="" />
-          <a>여행사진들을 공유해봐요!</a>
+          <a>여행사진을 공유해봐요!</a>
         </div>
       </section>
 
