@@ -97,7 +97,7 @@
                 <p>카카오로 간편 로그인</p>
             </button>
             <button class="btn_join join_email">
-                <a href="login_action.html"><p>이메일 또는 전화번호로 로그인</p></a>
+                <a href="${path }/user/join.do"><p>이메일 또는 전화번호로 로그인</p></a>
             </button>
             <div class="ask">
                 <p class="exist">아직 계정이 없으신가요?</p>
