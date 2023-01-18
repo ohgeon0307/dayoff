@@ -101,7 +101,6 @@ p {
 
 .header {
   display: flex;
-  /*flex-direction: column;*/
   margin: 0 auto;
   width: 1200px;
   height: 80px;
