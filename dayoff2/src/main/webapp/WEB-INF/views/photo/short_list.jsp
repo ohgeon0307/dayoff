@@ -7,21 +7,20 @@
 <head>
 <meta charset="UTF-8">
     <title>쇼츠갤러리</title>
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
-    <link rel="stylesheet" href="${path}/resources/css/short_list.css"  />
+    <link href="${path}/resources/css/short_list.css" rel="stylesheet" />
     <link rel="shortcut icon" href="${path}/resources/img/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
     <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
   />
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    
-    <script src="${path}/resources/js/jquery-3.6.1.min.js"></script>
 
     <script>
       (function () {
@@ -64,80 +63,6 @@
       ChannelIO("boot", {
         pluginKey: "440ad304-9963-448a-9d8e-8efd8dfa9576",
       });
-
-      $("document").ready(function () {
-    // 문서의 dom이 준비되면
-    // .mySwiper 클래스를 swiper 슬라이더로 만듦
-    // 이후에 swiper변수에 할당했기 때문에 스크립트로 제어할 수도 있음.
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 'auto',
-        spaceBetween: 80,
-        loop: true,
-
-        // pagination 기본은 bullet
-        pagination: {
-            el: ".swiper-pagination"
-        },
-
-        // 좌우 화살표 navigation element 지정
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
-        },
-        // 반응형
-        breakpoints: {
-            // 600px 이하가 되면 슬라이드 간 간격을 0으로
-            600: {
-                spaceBetween: 0
-            },
-        },
-
-        on: {
-            init: function() {
-                $('.swiper-slide').addClass('changed');
-
-                // fraction에 현재 인덱스와 전체 인덱스 표시
-                // this.loopedSlides는 loop, slidesPerView: 'auto'일 때 제대로 동작
-                $('.custom-fraction .current').text(this.realIndex + 1);
-                $('.custom-fraction .all').text(this.loopedSlides);
-                // console.log(this);
-                // console.log(this.loopedSlides)
-            },
-
-            slideChangeTransitionStart: function() {
-                // 기본적으로 제공하는 swiper-slide-active 클래스를 이용해
-                // css transition 애니메이션 작성 가능하다.
-                // 다만 루프 모드일 때에는 루프 픽스를 하며 slide를 바꿔치기를 하는데,
-                // 이 때 플리커링이 발생할 수 있다.
-                // css transition을 서로 다르게 설정한 changed, changing 클래스를 이용
-                $('.swiper-slide').addClass('changing');
-                $('.swiper-slide').removeClass('changed');
-
-                // 페이지 넘어갈 때마다 fraction 현재 인덱스 변경
-                $('.custom-fraction .current').text(this.realIndex + 1);
-            },
-
-            slideChangeTransitionEnd: function() {
-                // changing : transition O
-                // changed : transition X
-                $('.swiper-slide').removeClass('changing');
-                $('.swiper-slide').addClass('changed');
-            }
-        },
-    });
-
-    // 슬라이더 할당한 swiper로 슬라이더 제어
-    $(".auto-start").on("click", function() {
-        // 기본 설정으로 autoplay 시작
-        console.log("autoplay start");
-        swiper.autoplay.start();
-    });
-
-    $(".auto-stop").on("click", function() {
-        console.log("autoplay stop");
-        swiper.autoplay.stop();
-    });
-});
     </script>
   </head>
 
@@ -160,7 +85,7 @@
             <a href="<%= request.getContextPath()%>/login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
             <a href="<%= request.getContextPath()%>/join.do" class="join_a"><div class="item">회원가입</div></a>
-            <a href="<%= request.getContextPath()%>/photo/swrite.do"><button class="header_write_btn">글쓰기</button></a>
+            <a href="<%= request.getContextPath()%>/photo/pwrite.do"><button class="header_write_btn">글쓰기</button></a>
           </div>
         </div>
         <section class="second_section">
@@ -181,23 +106,45 @@
       <div class="wrapper">
         <!-- Swiper -->
         <div class="swiper mySwiper">
+          <div class="asdf">
+            <p>숏츠갤러리</p>
+          </div>
           <div class="swiper-wrapper">
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/7M5bDZ1EPVQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/wWg9zB6PlZc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/zuc3IbE8pIk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/oB3IIcpiPzU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/STN9upGDGRA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/qxD1fk2hM-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/B0ZfLo6gRGc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/B0ZfLo6gRGc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <div class="swiper-slide"><iframe src="https://www.youtube.com/embed/lHZ21eVdRo8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+            <div class="swiper-slide">
+              <div class="content">
+                <div class="title">
+                  <p>전주 한옥마을 풍경</p>
+                </div>
+                <div class="zxcv">
+                  <div class="writer">
+                    <i class="xi-profile-o"></i><a href="#">sonny</a>
+                  </div>
+                  <div>
+                    <i class="xi-eye-o">1500</i>
+                    <a href="#"><i class="xi-heart"></i></a>34
+                  </div>
+                </div>
+              </div>
+              <video src="${path}/resources/video/KakaoTalk_20230118_114744891.mp4" controls></video>
+            </div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
           </div>
           <div class="swiper-pagination"></div>
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
-          <div class="custom-fraction">
-            <span class="current">1</span>/<span class="all">9</span>
-          </div>
         </div>
         <!--
           <div class="btn-wrapper">
@@ -261,6 +208,28 @@
           </li>
         </ul>
       </div>
+
+      <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  keyboard: {
+    enabled: true,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+</script>
     </footer>
 </body>
 </html>

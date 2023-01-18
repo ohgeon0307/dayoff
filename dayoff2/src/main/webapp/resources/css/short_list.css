@@ -455,87 +455,70 @@ footer button {
   color: sandybrown;
 }
 
-.wrapper {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
+.wrapper{
+  margin-top: 50px;
 }
 
-.wrapper h1 {
-  margin-left: 150px;
+.asdf p{
+  font-size: 22px;
+  font-weight: 700;
+  margin-left: 120px;
+  
 }
 
 .swiper {
-  max-width: 1200px;
   width: 100%;
-  height: 600px;
-  position: relative;
-  overflow: visible;
+  height: 800px;
 }
 
 .swiper-slide {
-  max-width: 1200px;
-  width: 100%;
-  height: 600px;
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  border-radius: 10px;
-
-  /* Center slide text vertically */
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
   align-items: center;
+  flex-direction: column;
+
 }
 
-.swiper-slide iframe {
-  display: block;
+.swiper-slide video {
+  display: flex;
   width: 80%;
   height: 80%;
-  object-fit: cover;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #eeeeee;
 }
 
-/**/
-
-.swiper-slide {
-  opacity: 0.5;
-  transition: opacity 0.5s;
+.swiper-wrapper .content {
+  width: 80%;
+  height: 5%;
+  border-radius: 4px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  
 }
-.swiper-slide-active {
+
+.swiper-wrapper:hover .content {
   opacity: 1;
 }
 
-.changing {
-  transition: opacity 0.3s;
-  pointer-events: none;
+
+.content a {
+  text-decoration-line: none;
+  color: inherit;
 }
 
-.changed {
-  transition: none;
+.content .title{
+  display: flex;
+  justify-content: flex-start;
 }
 
-/* pagination */
-.mySwiper .swiper-pagination {
-  justify-content: center;
+.content .zxcv{
+  display: flex;
+  justify-content: flex-end;
 }
-
-/* nav btn*/
-.mySwiper .swiper-button-next,
-.mySwiper .swiper-button-prev {
-  top: 50%;
-}
-
-.custom-fraction {
-  justify-content: center;
-}
-/*
-.btn-wrapper {
-  margin-top: 50px;
-}
-*/

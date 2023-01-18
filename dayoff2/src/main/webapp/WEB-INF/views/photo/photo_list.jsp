@@ -7,16 +7,17 @@
 <head>
 <meta charset="UTF-8">
     <title>포토갤러리</title>
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
-    <link rel="stylesheet" href="${path}/resources/css/photo_list.css" />
+    <link href="${path}/resources/css/photo_list.css" rel="stylesheet" />
     <link rel="shortcut icon" href="${path}/resources/img/favicon.png" />
-
-    <script src="${path}/resources/js/jquery-3.6.1.min.js"></script>
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    
     <script>
       (function () {
         var w = window;
@@ -59,43 +60,6 @@
         pluginKey: "440ad304-9963-448a-9d8e-8efd8dfa9576",
       });
 
-      
-      
-      $(function () {
-        // 	이미지 클릭시 해당 이미지 모달
-        $(".imgC").click(function () {
-          $(".modal").show();
-          $("body").css("overflow", "hidden");
-          // 해당 이미지 가져오기
-          var imgSrc = $(this).children("img").attr("src");
-          //var imgAlt = $(this).children("img").attr("alt");
-          $(".modalBox img").attr("src", imgSrc);
-          //$(".modalBox img").attr("alt", imgAlt);
-
-          // 해당 이미지 텍스트 가져오기
-          //var imgTit = $(this).children("p").text();
-          //$(".modalBox p").text(imgTit);
-
-          // 해당 이미지에 alt값을 가져와 제목으로
-          //$(".modalBox p").text(imgAlt);
-        });
-
-        //.modal안에 button을 클릭하면 .modal닫기
-        $(".modal button").click(function () {
-          $(".modal").hide();
-          $("body").css("overflow", "scroll");
-        });
-
-        //.modal밖에 클릭시 닫힘
-        //$(".modal").click(function (e) {
-          //if (e.target.className != "modal") {
-            //return false;
-          //} else {
-            //$(".modal").hide();
-            //$("body").css("overflow", "scroll");
-          //}
-        //});
-      });
     </script>
   </head>
 
@@ -104,10 +68,7 @@
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-            <a href="#">
-            <div class="item">
-            <img src="${path}/resources/img/logo.png" alt="" />
-            </div></a>
+            <div class="item"><img src="${path}/resources/img/logo.png" alt="" /></div>
             <a href="<%= request.getContextPath()%>/" class="a_tag_color"><div class="item2">커뮤니티</div></a>
             <a href="<%= request.getContextPath()%>/photo.do"><div class="item3">포토갤러리</div></a>
           </div>
@@ -118,9 +79,9 @@
               </button>
               <input type="text" placeholder="해시태그로 검색해보세요!" />
             </div>
-            <a href="login.do" class="login_a"><div class="item ">로그인</div></a>
+            <a href="<%= request.getContextPath()%>/login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
-            <a href="join.do" class="join_a"><div class="item">회원가입</div></a>
+            <a href="<%= request.getContextPath()%>/join.do" class="join_a"><div class="item">회원가입</div></a>
             <a href="<%= request.getContextPath()%>/photo/pwrite.do"><button class="header_write_btn">글쓰기</button></a>
           </div>
         </div>
@@ -141,6 +102,9 @@
       </section>
 
       <section>
+        <div class="asdf">
+          <p>포토갤러리</p>
+        </div>
         <div class="subject">
           <h2>전라북도</h2>
           <h2>전주</h2>
@@ -158,7 +122,7 @@
       <section class="images">
         <div class="imgList">
           <div class="imgC">
-            <img src="${path}/resources/img/m-h-9im7JmZKDpY-unsplash.jpg" alt="" />
+            <img src="${path}/resources/img/m-h-9im7JmZKDpY-unsplash.jpg" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
@@ -176,7 +140,7 @@
         </div>
         <div class="imgList">
           <div class="imgC">
-            <img src="${path}/resources/img/rawkkim-JrUPwkbIIx8-unsplash.jpg" alt="" />
+            <img src="${path}/resources/img/rawkkim-JrUPwkbIIx8-unsplash.jpg" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
@@ -194,7 +158,7 @@
         </div>
         <div class="imgList">
           <div class="imgC">
-            <img src="${path}/resources/img/rawkkim-KKz6NgO69yQ-unsplash.jpg" alt="" />
+            <img src="${path}/resources/img/rawkkim-KKz6NgO69yQ-unsplash.jpg" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
@@ -212,7 +176,7 @@
         </div>
         <div class="imgList">
           <div class="imgC">
-            <img src="${path}/resources/img/yujeong-huh-PnO5Uh6Ms8M-unsplash.jpg" alt="" />
+            <img src="${path}/resources/img/yujeong-huh-PnO5Uh6Ms8M-unsplash.jpg" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
@@ -229,19 +193,16 @@
           </div>
         </div>
       </section>
-
-      <div class="modal">
-        <button>&times;</button>
-        <div class="modalBox">
-          <p></p>
-          <img src="" alt="" />
-        </div>
-      </div>
+    
+    <div class="modal">
+      <span class="close">&times;</span>
+      <img class="modal_content" id="img01">
+    </div>
 
       <section class="images">
         <div class="imgList">
           <div class="imgC">
-            <img src="${path}/resources/img/minku-kang-B9LU6tfetRQ-unsplash.jpg" alt="" />
+            <img src="${path}/resources/img/minku-kang-B9LU6tfetRQ-unsplash.jpg" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
@@ -259,7 +220,7 @@
         </div>
         <div class="imgList">
           <div class="imgC">
-            <img src="${path}/resources/img/minku-kang-F9l4HKHzR88-unsplash.jpg" alt="" />
+            <img src="${path}/resources/img/minku-kang-F9l4HKHzR88-unsplash.jpg" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
@@ -277,7 +238,7 @@
         </div>
         <div class="imgList">
           <div class="imgC">
-            <img src="${path}/resources/img/rawkkim-02dluo990Vw-unsplash.jpg" alt="" />
+            <img src="${path}/resources/img/rawkkim-02dluo990Vw-unsplash.jpg" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
@@ -295,7 +256,7 @@
         </div>
         <div class="imgList">
           <div class="imgC">
-            <img src="${path}/resources/img/drew-bae-u5skafPrb7A-unsplash.jpg" alt="" />
+            <img src="${path}/resources/img/drew-bae-u5skafPrb7A-unsplash.jpg" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
@@ -316,7 +277,7 @@
       <section class="images">
         <div class="imgList">
           <div class="imgC">
-            <img src="${path}/resources/img/m-h-9im7JmZKDpY-unsplash.jpg" alt="" />
+            <img src="${path}/resources/img/m-h-9im7JmZKDpY-unsplash.jpg" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
@@ -334,7 +295,7 @@
         </div>
         <div class="imgList">
           <div class="imgC">
-            <img src="${path}/resources/img/rawkkim-JrUPwkbIIx8-unsplash.jpg" alt="" />
+            <img src="${path}/resources/img/rawkkim-JrUPwkbIIx8-unsplash.jpg" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
@@ -352,7 +313,7 @@
         </div>
         <div class="imgList">
           <div class="imgC">
-            <img src="${path}/resources/img/rawkkim-KKz6NgO69yQ-unsplash.jpg" alt="" />
+            <img src="${path}/resources/img/rawkkim-KKz6NgO69yQ-unsplash.jpg" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
@@ -370,7 +331,7 @@
         </div>
         <div class="imgList">
           <div class="imgC">
-            <img src="${path}/resources/img/yujeong-huh-PnO5Uh6Ms8M-unsplash.jpg" alt="" />
+            <img src="${path}/resources/img/yujeong-huh-PnO5Uh6Ms8M-unsplash.jpg" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
@@ -391,7 +352,7 @@
       <section class="images">
         <div class="imgList">
           <div class="imgC">
-            <img src="${path}/resources/img/minku-kang-B9LU6tfetRQ-unsplash.jpg" alt="" />
+            <img src="${path}/resources/img/minku-kang-B9LU6tfetRQ-unsplash.jpg" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
@@ -409,7 +370,7 @@
         </div>
         <div class="imgList">
           <div class="imgC">
-            <img src="${path}/resources/img/minku-kang-F9l4HKHzR88-unsplash.jpg" alt="" />
+            <img src="${path}/resources/img/minku-kang-F9l4HKHzR88-unsplash.jpg" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
@@ -427,7 +388,7 @@
         </div>
         <div class="imgList">
           <div class="imgC">
-            <img src="${path}/resources/img/rawkkim-02dluo990Vw-unsplash.jpg" alt="" />
+            <img src="${path}/resources/img/rawkkim-02dluo990Vw-unsplash.jpg" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
@@ -445,7 +406,7 @@
         </div>
         <div class="imgList">
           <div class="imgC">
-            <img src="${path}/resources/img/drew-bae-u5skafPrb7A-unsplash.jpg" alt="" />
+            <img src="${path}/resources/img/drew-bae-u5skafPrb7A-unsplash.jpg" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
@@ -513,6 +474,33 @@
           </li>
         </ul>
       </div>
+
+      <script>
+        const modal = document.querySelector(".modal");
+        const modal_img = document.querySelector(".modal_content");
+        const span = document.querySelector(".close");
+        var img = document.getElementsByClassName('img');
+        var images = Array.prototype.filter.call(img, function(img) {
+          img.addEventListener('click', ()=>{
+            modalDisplay("block");
+            modal_img.src = img.src;
+          });
+          span.addEventListener('click', ()=>{
+            modalDisplay("none");
+          });
+          modal.addEventListener('click', ()=>{
+            modalDisplay("none");
+          });
+          function modalDisplay(text){
+            modal.style.display = text;
+          }
+          return img.nodeName === 'img';
+
+
+
+        });
+
+            </script>
     </footer>
 </body>
 </html>
