@@ -73,7 +73,7 @@
           <div class="board_contents_one">
             <div class="flex_title">
               <p>서울</p>
-              <a href="<%= request.getContextPath()%>/board/view.do"><p class="view_board">게시글 보기</p></a>
+              <a href="#"><p class="view_board">게시글 보기</p></a>
             </div>
             <p class="title">서울 자유여행</p>
             <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
@@ -86,28 +86,115 @@
               <div class="comments">댓글 : 0</div>
             </div>
           </div>
-          <div class="board_contents_two">
-            <div class="flex_title">
-              <p>서울</p>
-              <a href="<%= request.getContextPath()%>/board/view.do"><p class="view_board">게시글 보기</p></a>
-            </div>
-            <p class="title">서울 자유여행</p>
-            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
-            <p class="hashtag">#자유여행</p>
-            <div class="info_flex">
-              <div class="info">닉네임 : gunsi</div>
-
-              <div class="view">조회수 : 26</div>
-              <div class="comments">댓글 : 0</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="board_contents">
           <div class="board_contents_one">
             <div class="flex_title">
               <p>서울</p>
-              <a href="<%= request.getContextPath()%>/board/view.do"><p class="view_board">게시글 보기</p></a>
+              <a href="#"><p class="view_board">게시글 보기</p></a>
+            </div>
+            <p class="title">서울 자유여행</p>
+            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
+            <p class="hashtag">#자유여행</p>
+            <div class="info_flex">
+              <div class="info">닉네임 : gunsi</div>
+
+              <div class="view">조회수 : 26</div>
+              <div class="comments">댓글 : 0</div>
+            </div>
+          </div>
+          <div class="board_contents_one">
+            <div class="flex_title">
+              <p>서울</p>
+              <a href="#"><p class="view_board">게시글 보기</p></a>
+            </div>
+            <p class="title">서울 자유여행</p>
+            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
+            <p class="hashtag">#자유여행</p>
+            <div class="info_flex">
+              <div class="info">닉네임 : gunsi</div>
+
+              <div class="view">조회수 : 26</div>
+              <div class="comments">댓글 : 0</div>
+            </div>
+          </div>
+          <div class="board_contents_one">
+            <div class="flex_title">
+              <p>서울</p>
+              <a href="#"><p class="view_board">게시글 보기</p></a>
+            </div>
+            <p class="title">서울 자유여행</p>
+            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
+            <p class="hashtag">#자유여행</p>
+            <div class="info_flex">
+              <div class="info">닉네임 : gunsi</div>
+
+              <div class="view">조회수 : 26</div>
+              <div class="comments">댓글 : 0</div>
+            </div>
+          </div>
+          <div class="board_contents_one">
+            <div class="flex_title">
+              <p>서울</p>
+              <a href="#"><p class="view_board">게시글 보기</p></a>
+            </div>
+            <p class="title">서울 자유여행</p>
+            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
+            <p class="hashtag">#자유여행</p>
+            <div class="info_flex">
+              <div class="info">닉네임 : gunsi</div>
+
+              <div class="view">조회수 : 26</div>
+              <div class="comments">댓글 : 0</div>
+            </div>
+          </div>
+          <div class="board_contents_one">
+            <div class="flex_title">
+              <p>서울</p>
+              <a href="#"><p class="view_board">게시글 보기</p></a>
+            </div>
+            <p class="title">서울 자유여행</p>
+            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
+            <p class="hashtag">#자유여행</p>
+            <div class="info_flex">
+              <div class="info">닉네임 : gunsi</div>
+
+              <div class="view">조회수 : 26</div>
+              <div class="comments">댓글 : 0</div>
+            </div>
+          </div>
+          <div class="board_contents_one">
+            <div class="flex_title">
+              <p>서울</p>
+              <a href="#"><p class="view_board">게시글 보기</p></a>
+            </div>
+            <p class="title">서울 자유여행</p>
+            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
+            <p class="hashtag">#자유여행</p>
+            <div class="info_flex">
+              <div class="info">닉네임 : gunsi</div>
+
+              <div class="view">조회수 : 26</div>
+              <div class="comments">댓글 : 0</div>
+            </div>
+          </div>
+          <div class="board_contents_one">
+            <div class="flex_title">
+              <p>서울</p>
+              <a href="#"><p class="view_board">게시글 보기</p></a>
+            </div>
+            <p class="title">서울 자유여행</p>
+            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
+            <p class="hashtag">#자유여행</p>
+            <div class="info_flex">
+              <div class="info">닉네임 : gunsi</div>
+
+              <div class="view">조회수 : 26</div>
+              <div class="comments">댓글 : 0</div>
+            </div>
+          </div>
+          <div class="board_contents_one">
+            <div class="flex_title">
+              <p>서울</p>
+              <a href="#"><p class="view_board">게시글 보기</p></a>
             </div>
             <p class="title">서울 자유여행</p>
             <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
@@ -119,10 +206,10 @@
               <div class="comments">댓글 : 0</div>
             </div>
           </div>
-          <div class="board_contents_two">
+          <div class="board_contents_one">
             <div class="flex_title">
               <p>서울</p>
-              <a href="<%= request.getContextPath()%>/board/view.do"><p class="view_board">게시글 보기</p></a>
+              <a href="#"><p class="view_board">게시글 보기</p></a>
             </div>
             <p class="title">서울 자유여행</p>
             <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>

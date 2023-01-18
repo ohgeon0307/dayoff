@@ -279,7 +279,7 @@ button {
   margin: 0;
 }
 
-.board_banner{
+.board_banner {
   margin-top: 135px;
   display: flex;
   flex-direction: column;
@@ -369,19 +369,24 @@ button {
 
 .board_contents {
   padding-top: 30px;
-  width: 1200px;
+  width: 100%;
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   -webkit-box-pack: justify;
   justify-content: space-between;
 }
 
 .board_contents_one {
-  width: 546px;
+  width: 46.9%;
   border-radius: 2px;
   transition: all 0.3s ease 0s;
   padding: 20px 0px;
+}
+
+.board_contents_one {
+  border-bottom: 1px solid silver;
 }
 
 .board_contents_one p {
@@ -497,7 +502,7 @@ button {
   margin-right: 5px;
 }
 
-.board_contents::after {
+/* .board_contents::after {
   position: absolute;
   content: "";
   background: url(img/board_line.png);
@@ -505,20 +510,10 @@ button {
   left: 600px;
   height: calc(100% - 24px);
   width: 20px;
-}
+} */
 
 .board_contents:first-child::before {
   left: 0px;
-}
-
-.board_contents::before {
-  position: absolute;
-  content: "";
-  background: url(img/board_underline.png);
-  bottom: -15px;
-  left: -10px;
-  width: 1210px;
-  height: 20px;
 }
 
 /*footer 시작*/

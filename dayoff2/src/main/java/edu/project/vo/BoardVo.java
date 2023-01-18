@@ -11,6 +11,7 @@ public class BoardVo {
 	private String filename;
 	private int likes;
 	private String bDelYn;
+	
 	public int getBidx() {
 		return bidx;
 	}
