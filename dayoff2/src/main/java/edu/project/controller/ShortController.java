@@ -5,17 +5,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
-
-@RequestMapping(value = "/photo")
+@RequestMapping(value = "/short")
 @Controller
-public class PhotoController {
-	
+public class ShortController {
+
+	@RequestMapping(value = "/short.do", method = RequestMethod.GET)
+	public String list() {
+		
+		return "short/short_list";
+	}
 	
 	@RequestMapping(value = "/write.do", method = RequestMethod.GET)
 	public String write() {
 		
-		return "photo/photo_write";
+		return "short/short_write";
 	}
-	
-
 }

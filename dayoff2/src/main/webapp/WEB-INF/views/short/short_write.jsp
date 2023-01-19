@@ -79,13 +79,13 @@
             <a href="<%= request.getContextPath()%>/login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
             <a href="<%= request.getContextPath()%>/join.do" class="join_a"><div class="item">회원가입</div></a>
-            <a href="<%= request.getContextPath()%>/photo/swrite.do"><button class="header_write_btn">글쓰기</button></a>
+            <a href="<%= request.getContextPath()%>/short/write.do"><button class="header_write_btn">글쓰기</button></a>
           </div>
         </div>
         <section class="second_section">
           <div class="second_header">
             <a href="<%= request.getContextPath()%>/photo.do"><div class="trip_info">포토갤러리</div></a>
-            <a href="<%= request.getContextPath()%>/photo/short.do"><div class="board">쇼츠갤러리</div></a>
+            <a href="<%= request.getContextPath()%>/short/short.do"><div class="board">쇼츠갤러리</div></a>
           </div>
         </section>
       </section>
