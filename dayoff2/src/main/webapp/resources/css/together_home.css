@@ -600,7 +600,7 @@ button {
   margin-right: 0px !important;
 }
 
-.AccompanyItem > div:first-child > img {
+.AccompanyItem > div:first-child > a > img {
   transition: all 0.3s ease 0s;
   transform: scale(1);
   overflow: hidden;
