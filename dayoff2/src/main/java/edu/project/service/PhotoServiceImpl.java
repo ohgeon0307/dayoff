@@ -20,4 +20,9 @@ public class PhotoServiceImpl implements PhotoService{
 		return list;
 	}
 
+	@Override
+	public PhotoVo selectByPidx(int pidx) {
+		return photoDAO.selectByPidx(pidx);
+	}
+
 }
