@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
+<%@ page import="java.util.*" %>
+<%@ page import="edu.project.vo.PhotoVo" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -120,24 +122,26 @@
         </select>
       </section>
       <section class="images">
+      <c:forEach items="${datalist}" var="vo">
         <div class="imgList">
           <div class="imgC">
-            <img src="${path}/resources/img/m-h-9im7JmZKDpY-unsplash.jpg" alt="" class="img"/>
+            <img src="${vo.pContent }" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
               <i class="xi-profile-o"></i><a href="#">sonny</a>
             </div>
             <div>
-              <i class="xi-eye-o">1500</i>
-              <a href="#"><i class="xi-heart"></i></a>34
+              <i class="xi-eye-o">{vo.pHit}</i>
+              <a href="#"><i class="xi-heart"></i></a>{vo.pLike}
             </div>
           </div>
-          <div class="title">아름다운 우리 한옥</div>
+          <div class="title">{vo.pTitle}</div>
           <div class="hashtag">
-            <a href="#">전라북도</a><a href="#">전주</a><a href="#">한옥마을</a>
+            <a href="#">{vo.pHashTag}</a>
           </div>
         </div>
+      </c:forEach>
         <div class="imgList">
           <div class="imgC">
             <img src="${path}/resources/img/rawkkim-JrUPwkbIIx8-unsplash.jpg" alt="" class="img"/>

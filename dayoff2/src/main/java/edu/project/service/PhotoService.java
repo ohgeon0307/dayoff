@@ -1,5 +1,12 @@
 package edu.project.service;
 
-public interface PhotoService {
+import java.util.List;
 
+import edu.project.vo.PhotoVo;
+
+
+
+public interface PhotoService {
+	
+	List<PhotoVo> list(PhotoVo photoVo);
 }
