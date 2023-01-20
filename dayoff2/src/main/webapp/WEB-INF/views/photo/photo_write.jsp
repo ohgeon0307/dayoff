@@ -67,7 +67,7 @@
           <div class="left_header">
             <div class="item"><img src="${path}/resources/img/logo.png" alt="" /></div>
             <a href="<%= request.getContextPath()%>/" class="a_tag_color"><div class="item2">커뮤니티</div></a>
-            <a href="<%= request.getContextPath()%>/photo.do"><div class="item3">포토갤러리</div></a>
+            <a href="<%= request.getContextPath()%>/photo/list.do"><div class="item3">포토갤러리</div></a>
           </div>
           <div class="right_header">
             <div class="item">
@@ -84,8 +84,8 @@
         </div>
         <section class="second_section">
           <div class="second_header">
-            <a href="<%= request.getContextPath()%>/photo.do"><div class="trip_info">포토갤러리</div></a>
-            <a href="<%= request.getContextPath()%>/short/short.do"><div class="board">쇼츠갤러리</div></a>
+            <a href="<%= request.getContextPath()%>/photo/list.do"><div class="trip_info">포토갤러리</div></a>
+            <a href="<%= request.getContextPath()%>/short/list.do"><div class="board">쇼츠갤러리</div></a>
           </div>
         </section>
       </section>
@@ -99,18 +99,18 @@
       <section class="file_upload_section">
         <div class="title">
           <input
-            type="text"
+            type="text" name="title"
             placeholder="&nbsp&nbsp제목을 입력해보세요!(100자 이내)"
           />
         </div>
         <hr class="slide_hr" />
         <div class="container">
-          <a href="#"><img src="${path}/resources/img/picture.png" alt="" /></a>
+           <input type="file" name="upload"/> 
           인생샷을 올려주세요💫
         </div>
         <div class="hashtag">
           <input
-            type="text"
+            type="text" name="hashtag"
             placeholder="&nbsp&nbsp태그입력 (띄어쓰기로 구분) (100자 이내)"
           />
         </div>

@@ -26,7 +26,7 @@ public class PhotoController {
 	public String list(Model model) {
 		List<BoardVo> list = new ArrayList<BoardVo>();
 		model.addAttribute("datalist",list);
-		return "photo_list";
+		return "photo/photo_list";
 	}
 	
 	

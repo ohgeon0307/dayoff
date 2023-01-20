@@ -73,7 +73,7 @@
           <div class="left_header">
             <div class="item"><img src="${path}/resources/img/logo.png" alt="" /></div>
             <a href="<%= request.getContextPath()%>/" class="a_tag_color"><div class="item2">커뮤니티</div></a>
-            <a href="<%= request.getContextPath()%>/photo.do"><div class="item3">포토갤러리</div></a>
+            <a href="<%= request.getContextPath()%>/photo/list.do"><div class="item3">포토갤러리</div></a>
           </div>
           <div class="right_header">
             <div class="item">
@@ -90,8 +90,8 @@
         </div>
         <section class="second_section">
           <div class="second_header">
-            <a href="<%= request.getContextPath()%>/photo.do"><div class="trip_info">포토갤러리</div></a>
-            <a href="<%= request.getContextPath()%>/short/short.do"><div class="board">쇼츠갤러리</div></a>
+            <a href="<%= request.getContextPath()%>/photo/list.do"><div class="trip_info">포토갤러리</div></a>
+            <a href="<%= request.getContextPath()%>/short/list.do"><div class="board">쇼츠갤러리</div></a>
           </div>
         </section>
       </section>
