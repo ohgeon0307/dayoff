@@ -1,5 +1,7 @@
 package edu.project.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,13 @@ public class BoardServiceImpl implements BoardService{
 	public int boardInsert(BoardVo vo) {
 		// TODO Auto-generated method stub
 		return boardDao.boardInsert(vo);
+	}
+
+	@Override
+	public List<BoardVo> boardList(BoardVo vo) {
+		// TODO Auto-generated method stub
+		List<BoardVo> list = boardDao.boardList(vo);
+		return list;
 	}
 
 }

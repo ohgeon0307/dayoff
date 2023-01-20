@@ -31,5 +31,13 @@
 	</insert>
 	
 	<select id="boardList" resultType="boardVo" parameterType = "boardVo">
+		SELECT bidx
+		, title
+		, content
+		, hashTag
+		, uidx
+		, hit
+		FROM boardtable
+		WHERE 1=1
 	</select>
 </mapper>

@@ -42,12 +42,6 @@ public class HomeController {
 		return "board/board_list";
 	}
 	
-	@RequestMapping(value = "/photo", method = RequestMethod.GET)
-	
-	public String photo() {
-		
-		return "photo/photo_list";
-	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	

@@ -1,5 +1,7 @@
 package edu.project.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,9 +39,9 @@ public class BoardController {
 	@RequestMapping(value = "/list.do")
 	public String list(Model model, BoardVo vo) {
 		
-		//	List<BoardVo> list = boardService.boardList(vo);
+		List<BoardVo> list = boardService.boardList(vo);
 		
-//		model.addAttribute("datalist", list);
+		model.addAttribute("datalist", list);
 		
 		
 		return "board/board_list";
