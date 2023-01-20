@@ -272,7 +272,7 @@
               <div>
                 <a href="together_view.do"><img
                   src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjExMjNfOTIg%2FMDAxNjY5MjA5NDM2NTEw.KeZsQi4hUkXYgwKV--nko3c2H3rBF15ayWYiU8U31v0g.kjSfkyN_ovdKSRbRRHIzWme4xCnn8Jv1Za4SpBAjuzEg.JPEG.leegh1224%2FL7R06739.jpg&type=sc960_832"
-                  alt="배경사진"
+                  alt="배경사진" class="img1111"
                 /></a>
                 <div type="portrait" class="DateWrapper">
                   <div>

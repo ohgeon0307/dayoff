@@ -29,4 +29,7 @@
 		, 'N'
 		)
 	</insert>
+	
+	<select id="boardList" resultType="boardVo" parameterType = "boardVo">
+	</select>
 </mapper>

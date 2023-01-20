@@ -2,6 +2,7 @@ package edu.project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -33,11 +34,18 @@ public class BoardController {
 		return "redirect:list.do";
 	}
 	
-	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
-	public String list() {
+	@RequestMapping(value = "/list.do")
+	public String list(Model model, BoardVo vo) {
+		
+		//	List<BoardVo> list = boardService.boardList(vo);
+		
+//		model.addAttribute("datalist", list);
+		
 		
 		return "board/board_list";
 	}
+	
+	
 	
 	@RequestMapping(value = "/view.do", method = RequestMethod.GET)
 	public String view() {
