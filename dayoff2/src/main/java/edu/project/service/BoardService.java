@@ -1,5 +1,7 @@
 package edu.project.service;
 
-public interface BoardService {
+import edu.project.vo.BoardVo;
 
+public interface BoardService {
+	int boardInsert(BoardVo vo);
 }

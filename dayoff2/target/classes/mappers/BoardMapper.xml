@@ -4,6 +4,29 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="edu.project.mapper.boardMapper">
-
-
+	<insert id="boardInsert" parameterType="boardVo">
+		INSERT INTO boardtable(
+		  bidx
+		, title
+		, content
+		, wdate
+		, hit
+		, hashTag
+		, filename
+		, likes
+		, uidx
+		, bDelYn
+		)VALUES(
+		pbidx_seq.nextval
+		, #{title}
+		, #{content}
+		, sysdate
+		, 0
+		, 'hi'
+		, 'hi'
+		, 0
+		, 1
+		, 'N'
+		)
+	</insert>
 </mapper>
