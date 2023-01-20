@@ -5,6 +5,7 @@
 
 	<typeAliases>
 		<typeAlias type="edu.project.vo.UserVo" alias="userVo"/>
+		<typeAlias type="edu.project.vo.BoardVo" alias="boardVo"/>
     </typeAliases>
     
     
