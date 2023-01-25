@@ -10,7 +10,7 @@
 			, pContent
 			, pDate
 			, uidx
-			, pLike
+			, pLikes
 			, pDelYn
 			, pHashTag
 			, pHit
@@ -23,7 +23,7 @@
 			, pContent
 			, pDate
 			, uidx
-			, pLike
+			, pLikes
 			, pDelYn
 			, pHashTag
 			, pHit

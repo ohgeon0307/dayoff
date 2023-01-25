@@ -3,11 +3,13 @@ package edu.project.vo;
 public class PhotoVo {
 	private int pidx;
 	private String pTitle;
+	private String pContent;
 	private int uidx;
 	private int pLikes;
 	private String pDelYn;
 	private String pHashTag;
 	private int pHit;
+	
 	
 	public int getPidx() {
 		return pidx;
@@ -21,10 +23,15 @@ public class PhotoVo {
 	public void setpTitle(String pTitle) {
 		this.pTitle = pTitle;
 	}
+	public String getpContent() {
+		return pContent;
+	}
+	public void setpContent(String pContent) {
+		this.pContent = pContent;
+	}
 	public int getUidx() {
 		return uidx;
 	}
-	
 	public void setUidx(int uidx) {
 		this.uidx = uidx;
 	}
@@ -52,10 +59,11 @@ public class PhotoVo {
 	public void setpHit(int pHit) {
 		this.pHit = pHit;
 	}
-	
 	@Override
 	public String toString() {
-		return "PhotoVo [pidx=" + pidx + ", pTitle=" + pTitle + ", uidx=" + uidx + ", pLikes=" + pLikes + ", pDelYn="
-				+ pDelYn + ", pHashTag=" + pHashTag + ", pHit=" + pHit + "]";
+		return "PhotoVo [pidx=" + pidx + ", pTitle=" + pTitle + ", pContent=" + pContent + ", uidx=" + uidx
+				+ ", pLikes=" + pLikes + ", pDelYn=" + pDelYn + ", pHashTag=" + pHashTag + ", pHit=" + pHit + "]";
 	}
+	
+
 }
