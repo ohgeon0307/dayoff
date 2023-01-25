@@ -92,25 +92,11 @@
               <div class="comments">댓글 : 0</div>
             </div>
           </div>
-          <div class="board_contents_one">
-            <div class="flex_title">
-              <p>서울</p>
-              <a href="#"><p class="view_board">게시글 보기</p></a>
-            </div>
-            <p class="title">${vo.title }</p>
-            <p class="contents">${vo.content }</p>
-
-            <p class="hashtag">${vo.hashTag}</p>
-            <div class="info_flex">
-              <div class="info">닉네임 : gunsi</div>
-
-              <div class="view">조회수 : 26</div>
-              <div class="comments">댓글 : 0</div>
-            </div>
-          </div>
-          </div>
+          
+          
           </c:forEach>
-        </div>
+          </div>
+    
       </section>
     </main>
     <footer class="footer">

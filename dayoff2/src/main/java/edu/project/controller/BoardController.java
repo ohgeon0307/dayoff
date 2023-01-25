@@ -31,7 +31,7 @@ public class BoardController {
 		
 		System.out.println(result);
 		if(result > 0) {
-			return "redirect:view.do?bidx="+vo.getBidx();
+			return "redirect:list.do";
 		}
 		return "redirect:list.do";
 	}
@@ -52,7 +52,11 @@ public class BoardController {
 	
 	
 	@RequestMapping(value = "/view.do", method = RequestMethod.GET)
-	public String view() {
+	public String view(int bidx, Model model) {
+		
+//		BoardVo vo = boardService.selectByBidx(bidx);
+		
+//		model.addAttribute("vo", vo);
 		
 		return "board/board_view";
 	}

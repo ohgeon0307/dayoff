@@ -22,7 +22,7 @@
 		, #{content}
 		, sysdate
 		, 0
-		, 'hi'
+		, #{hashTag}
 		, 'hi'
 		, 0
 		, 1
@@ -38,6 +38,17 @@
 		, uidx
 		, hit
 		FROM boardtable
-		WHERE 1=1
+		ORDER BY bidx DESC
+	</select>
+	
+	<select id = "selectByBidx" parameterType="int" resultType="boardVo">
+		SELECT bidx
+		, title
+		, content
+		, hashTag
+		, uidx
+		, hit
+		FROM boardtable
+		WHERE bidx = #{bidx}
 	</select>
 </mapper>
