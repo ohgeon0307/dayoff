@@ -504,39 +504,33 @@ footer button {
   cursor: pointer;
 }
 
-/*.modalBox p {
-	color: #000000;
-	background-color: #ffffff;
-	font-size: 2rem;
-	padding: .2rem;
-}
-*/
-
 .images {
   width : 100%;
   display: flex;
   flex-wrap : wrap;
   margin-top: 30px;
   margin-bottom: 50px;
+  justify-content: space-between;
+  flex-direction: row;
+  
 }
 .images img {
-  width: 300px;
+  width: 282px;
   height: 282px;
   border-radius: 4px;
   border-style: none;
 }
-/*.imgC :hover {
-  transition: all 0.2s linear;
-  transform: scale(1);
-  box-shadow: 5px 5px 5px gray;
-  overflow: hidden;
-}*/
+
 .content {
   width: 282px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  flex-direction: row;
+  
 }
+
+
 .content a {
   text-decoration-line: none;
   color: inherit;
@@ -567,10 +561,11 @@ footer button {
 
 .imgList {
   position: relative;
-  width: 25%;
+  width: 282px;
   height: 282px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
   margin-bottom: 15px;
+  
 }
 
 .imgList .content {

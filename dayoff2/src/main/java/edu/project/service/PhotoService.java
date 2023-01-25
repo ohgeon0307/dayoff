@@ -10,4 +10,7 @@ public interface PhotoService {
 	
 	List<PhotoVo> list(PhotoVo photoVo);
 	PhotoVo selectByPidx(int pidx);
+	int updateByPidx(PhotoVo vo);
+	int deleteByPidx(int pidx);
+	int insert(PhotoVo vo);
 }

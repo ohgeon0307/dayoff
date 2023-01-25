@@ -3,11 +3,11 @@ package edu.project.vo;
 public class ShortVo {
 	private int sidx;
 	private String sTitle;
+	private String sContent;
 	private int uidx;
 	private int sLikes;
 	private String sDelYn;
 	private int sHit;
-	
 	
 	public int getSidx() {
 		return sidx;
@@ -20,6 +20,12 @@ public class ShortVo {
 	}
 	public void setsTitle(String sTitle) {
 		this.sTitle = sTitle;
+	}
+	public String getsContent() {
+		return sContent;
+	}
+	public void setsContent(String sContent) {
+		this.sContent = sContent;
 	}
 	public int getUidx() {
 		return uidx;
@@ -45,13 +51,15 @@ public class ShortVo {
 	public void setsHit(int sHit) {
 		this.sHit = sHit;
 	}
-
-
+	
 	@Override
 	public String toString() {
-		return "ShortVo [sidx=" + sidx + ", sTitle=" + sTitle + ", uidx=" + uidx + ", sLikes=" + sLikes + ", sDelYn="
-				+ sDelYn + ", sHit=" + sHit + "]";
+		return "ShortVo [sidx=" + sidx + ", sTitle=" + sTitle + ", sContent=" + sContent + ", uidx=" + uidx
+				+ ", sLikes=" + sLikes + ", sDelYn=" + sDelYn + ", sHit=" + sHit + "]";
 	}
 	
+
+
+
 	
 }

@@ -30,4 +30,42 @@
 		FROM PHOTOTABLE
 		WHERE pidx = #{pidx}
 	</select>
+	
+	<update id="updateByPidx" parameterType="photoVo">
+		UPDATE PHOTOTABLE
+			SET pTitle = #{pTtitle}
+			, pContent = #{pContent}
+			, pHashTag = #{pHashTag}
+			WHERE pidx = #{pidx} 
+	</update>
+	
+	<delete id="deleteByPidx" parameterType="int">
+		DELETE
+			FROM PHOTOTABLE
+		WHERE pidx = #{pidx}
+	</delete>
+	
+	<insert id="insert" parameterType="photoVo">
+	INSERT INTO phototable(
+			pidx
+			, pTitle
+			, pContent
+			, pDate
+			, uidx
+			, pLikes
+			, pDelYn
+			, pHashTag
+			, pHit
+			) VALUES(
+			PIDX_SEQ.NEXTVAL
+			, #{pTitle}
+			, #{pContent}
+			, sysdate
+			, #{uidx}
+			, 0
+			, 'N'
+			, #{pHashTag}
+			, 0)
+	</insert>
+	
 </mapper>

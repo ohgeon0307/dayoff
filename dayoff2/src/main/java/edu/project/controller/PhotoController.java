@@ -33,4 +33,5 @@ public class PhotoController {
 		return "photo/photo_write";
 	}
 	
+
 }
