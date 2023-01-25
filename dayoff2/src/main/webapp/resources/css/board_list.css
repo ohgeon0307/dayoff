@@ -334,7 +334,8 @@ button {
   line-height: 21px;
   color: rgb(37, 37, 37);
   padding: 8px 33px 8px 10px;
-  border: unset;
+  border: 1px solid black;
+  border-radius : 5px;
   background-color: unset;
 }
 
