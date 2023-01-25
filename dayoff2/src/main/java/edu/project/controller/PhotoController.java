@@ -33,5 +33,11 @@ public class PhotoController {
 		return "photo/photo_write";
 	}
 	
-
+	@RequestMapping(value = "/write.do", method = RequestMethod.POST)
+	public String write(PhotoVo vo) {
+		
+		int result = photoService.insert(vo);
+		
+		return "redirect:/list.do";
+	}
 }
