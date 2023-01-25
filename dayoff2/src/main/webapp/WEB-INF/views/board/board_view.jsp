@@ -148,7 +148,10 @@
                 작성일 : ${vo.wdate } , 조회수 : ${vo.hit }
               </p>
               <button class="AccompanyContainer_ReportButton">신고하기</button>
+              
             </div>
+            <button class="modify">수정하기</button>
+            <button class="delete">삭제하기</button>
             <div class="AccompanyContainer_InputBox">
               <div class="CommentInputBox">
                 <textarea placeholder="댓글을 입력해주세요."
