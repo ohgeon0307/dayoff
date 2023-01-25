@@ -8,6 +8,7 @@
 		<typeAlias type="edu.project.vo.BoardVo" alias="boardVo"/>
 		<typeAlias type="edu.project.vo.PhotoVo" alias="photoVo"/>
 		<typeAlias type="edu.project.vo.ShortVo" alias="shortVo"/>
+		<typeAlias type="edu.project.vo.TogetherVo" alias="togetherVo"/>
 		
     </typeAliases>
     

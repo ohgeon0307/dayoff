@@ -3,13 +3,22 @@ package edu.project.vo;
 public class TogetherVo {
 	private int tidx;
 	private String tContent;
-	private int tDate;
+	private String tDate;
 	private int uidx;
 	private int tHit;
 	private String tHashTag;
 	private String tFilename;
-	private int tDelYn;
+	private String tDelYn;
+	private String tTitle;
 	
+	public String gettTitle() {
+		return tTitle;
+	}
+
+	public void settTitle(String tTitle) {
+		this.tTitle = tTitle;
+	}
+
 	public int getTidx() {
 		return tidx;
 	}
@@ -23,10 +32,10 @@ public class TogetherVo {
 	public void settContent(String tContent) {
 		this.tContent = tContent;
 	}
-	public int gettDate() {
+	public String gettDate() {
 		return tDate;
 	}
-	public void settDate(int tDate) {
+	public void settDate(String tDate) {
 		this.tDate = tDate;
 	}
 	public int getUidx() {
@@ -53,10 +62,10 @@ public class TogetherVo {
 	public void settFilename(String tFilename) {
 		this.tFilename = tFilename;
 	}
-	public int gettDelYn() {
+	public String gettDelYn() {
 		return tDelYn;
 	}
-	public void settDelYn(int tDelYn) {
+	public void settDelYn(String tDelYn) {
 		this.tDelYn = tDelYn;
 	}
 	

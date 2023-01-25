@@ -240,26 +240,30 @@
         </section>
       </div>
       <section class="file_upload_section">
-        <div class="container">
-          <img src="${path}/resources/img/picture.png" alt="" />
-          배경 사진을 선택해주세요💫
-        </div>
-        <div class="title">
-          <input
-            type="text"
-            placeholder="ex)높은 산 좋아하시는 분 1~2명 구해봐요!"
-          />
-        </div>
-        <hr class="slide_hr" />
-        <div>
-          <textarea
-            placeholder="동행을 구할 내용을 작성해주세요! (1000자 이내🤩)"
-          ></textarea>
-        </div>
-        <div class="button_zone">
-          <button class="cancel">취소</button>
-          <button class="submit">작성하기</button>
-        </div>
+      	<form action="write.do" method="post">
+	        <div class="container">
+	          <img src="${path}/resources/img/picture.png" alt="" />
+	          배경 사진을 선택해주세요💫
+	        </div>
+	        <div class="title">
+	          <input
+	            type="text"
+	            placeholder="ex)높은 산 좋아하시는 분 1~2명 구해봐요!"
+	            name="title"
+	          />
+	        </div>
+	        <hr class="slide_hr" />
+	        <div>
+	          <textarea
+	            placeholder="동행을 구할 내용을 작성해주세요! (1000자 이내🤩)"
+	            name="content"
+	          ></textarea>
+	        </div>
+	        <div class="button_zone">
+	          <button class="cancel" type="reset">취소</button>
+	          <button class="submit">작성하기</button>
+	        </div>
+	     </form>
       </section>
     </main>
     <footer class="footer">
