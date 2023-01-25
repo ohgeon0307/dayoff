@@ -42,6 +42,7 @@ public class HomeController {
 		return "board/board_list";
 	}
 	
+
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	

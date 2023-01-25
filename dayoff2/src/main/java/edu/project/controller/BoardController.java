@@ -41,6 +41,8 @@ public class BoardController {
 		
 		List<BoardVo> list = boardService.boardList(vo);
 		
+		System.out.println("list는:"+ list);
+		
 		model.addAttribute("datalist", list);
 		
 		

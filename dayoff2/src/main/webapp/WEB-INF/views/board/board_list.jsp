@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="edu.project.vo.BoardVo" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
+<%
+	List<BoardVo> list = (List<BoardVo>)request.getAttribute("datalist");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,15 +75,16 @@
           <p>정렬</p>
         </div>
         <div class="board_contents">
+        <c:forEach items="${datalist }" var ="vo">
           <div class="board_contents_one">
             <div class="flex_title">
               <p>서울</p>
               <a href="#"><p class="view_board">게시글 보기</p></a>
             </div>
-            <p class="title">서울 자유여행</p>
-            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
+            <p class="title">${vo.title }</p>
+            <p class="contents">${vo.content }</p>
 
-            <p class="hashtag">#자유여행</p>
+            <p class="hashtag">${vo.hashTag}</p>
             <div class="info_flex">
               <div class="info">닉네임 : gunsi</div>
 
@@ -91,9 +97,10 @@
               <p>서울</p>
               <a href="#"><p class="view_board">게시글 보기</p></a>
             </div>
-            <p class="title">서울 자유여행</p>
-            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
-            <p class="hashtag">#자유여행</p>
+            <p class="title">${vo.title }</p>
+            <p class="contents">${vo.content }</p>
+
+            <p class="hashtag">${vo.hashTag}</p>
             <div class="info_flex">
               <div class="info">닉네임 : gunsi</div>
 
@@ -101,126 +108,8 @@
               <div class="comments">댓글 : 0</div>
             </div>
           </div>
-          <div class="board_contents_one">
-            <div class="flex_title">
-              <p>서울</p>
-              <a href="#"><p class="view_board">게시글 보기</p></a>
-            </div>
-            <p class="title">서울 자유여행</p>
-            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
-            <p class="hashtag">#자유여행</p>
-            <div class="info_flex">
-              <div class="info">닉네임 : gunsi</div>
-
-              <div class="view">조회수 : 26</div>
-              <div class="comments">댓글 : 0</div>
-            </div>
           </div>
-          <div class="board_contents_one">
-            <div class="flex_title">
-              <p>서울</p>
-              <a href="#"><p class="view_board">게시글 보기</p></a>
-            </div>
-            <p class="title">서울 자유여행</p>
-            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
-            <p class="hashtag">#자유여행</p>
-            <div class="info_flex">
-              <div class="info">닉네임 : gunsi</div>
-
-              <div class="view">조회수 : 26</div>
-              <div class="comments">댓글 : 0</div>
-            </div>
-          </div>
-          <div class="board_contents_one">
-            <div class="flex_title">
-              <p>서울</p>
-              <a href="#"><p class="view_board">게시글 보기</p></a>
-            </div>
-            <p class="title">서울 자유여행</p>
-            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
-            <p class="hashtag">#자유여행</p>
-            <div class="info_flex">
-              <div class="info">닉네임 : gunsi</div>
-
-              <div class="view">조회수 : 26</div>
-              <div class="comments">댓글 : 0</div>
-            </div>
-          </div>
-          <div class="board_contents_one">
-            <div class="flex_title">
-              <p>서울</p>
-              <a href="#"><p class="view_board">게시글 보기</p></a>
-            </div>
-            <p class="title">서울 자유여행</p>
-            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
-            <p class="hashtag">#자유여행</p>
-            <div class="info_flex">
-              <div class="info">닉네임 : gunsi</div>
-
-              <div class="view">조회수 : 26</div>
-              <div class="comments">댓글 : 0</div>
-            </div>
-          </div>
-          <div class="board_contents_one">
-            <div class="flex_title">
-              <p>서울</p>
-              <a href="#"><p class="view_board">게시글 보기</p></a>
-            </div>
-            <p class="title">서울 자유여행</p>
-            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
-            <p class="hashtag">#자유여행</p>
-            <div class="info_flex">
-              <div class="info">닉네임 : gunsi</div>
-
-              <div class="view">조회수 : 26</div>
-              <div class="comments">댓글 : 0</div>
-            </div>
-          </div>
-          <div class="board_contents_one">
-            <div class="flex_title">
-              <p>서울</p>
-              <a href="#"><p class="view_board">게시글 보기</p></a>
-            </div>
-            <p class="title">서울 자유여행</p>
-            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
-            <p class="hashtag">#자유여행</p>
-            <div class="info_flex">
-              <div class="info">닉네임 : gunsi</div>
-
-              <div class="view">조회수 : 26</div>
-              <div class="comments">댓글 : 0</div>
-            </div>
-          </div>
-          <div class="board_contents_one">
-            <div class="flex_title">
-              <p>서울</p>
-              <a href="#"><p class="view_board">게시글 보기</p></a>
-            </div>
-            <p class="title">서울 자유여행</p>
-            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
-            <a class="hashtag">#자유여행</a>
-            <div class="info_flex">
-              <div class="info">닉네임 : gunsi</div>
-
-              <div class="view">조회수 : 26</div>
-              <div class="comments">댓글 : 0</div>
-            </div>
-          </div>
-          <div class="board_contents_one">
-            <div class="flex_title">
-              <p>서울</p>
-              <a href="#"><p class="view_board">게시글 보기</p></a>
-            </div>
-            <p class="title">서울 자유여행</p>
-            <p class="contents">전주에서 서울 어떻게 가는게 가장 좋나요?</p>
-            <p class="hashtag">#같이여행가실분</p>
-            <div class="info_flex">
-              <div class="info">닉네임 : gunsi</div>
-
-              <div class="view">조회수 : 26</div>
-              <div class="comments">댓글 : 0</div>
-            </div>
-          </div>
+          </c:forEach>
         </div>
       </section>
     </main>

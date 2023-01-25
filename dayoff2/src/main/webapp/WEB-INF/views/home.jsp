@@ -87,7 +87,7 @@
           <div class="second_header">
             <div class="home">홈</div>
             <a href="together.do"><div class="trip_info">동행</div></a>
-            <a href="board.do"><div class="board">게시판</div></a>
+            <a href="<%= request.getContextPath()%>/board/list.do"><div class="board">게시판</div></a>
           </div>
         </section>
       </section>

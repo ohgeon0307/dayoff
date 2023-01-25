@@ -26,6 +26,7 @@ public class BoardServiceImpl implements BoardService{
 	public List<BoardVo> boardList(BoardVo vo) {
 		// TODO Auto-generated method stub
 		List<BoardVo> list = boardDao.boardList(vo);
+		System.out.println(list);
 		return list;
 	}
 
