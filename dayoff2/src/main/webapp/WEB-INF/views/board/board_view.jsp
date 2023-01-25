@@ -64,9 +64,10 @@
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-            <div class="item"><img src="${path }/resources/img/logo.png" alt="" /></div>
+          <a href="<%=request.getContextPath() %>/">
+            <div class="item"><img src="${path }/resources/img/logo.png" alt="" /></div></a>
             <div class="item">커뮤니티</div>
-            <a href="#" class="a_tag_color"
+            <a href="<%=request.getContextPath() %>/photo/list.do" class="a_tag_color"
               ><div class="item">포토갤러리</div></a
             >
           </div>
@@ -77,17 +78,17 @@
               </button>
               <input type="text" placeholder="여행지를 찾아보세요!" />
             </div>
-            <a href="#" class="login_a"><div class="item">로그인</div></a>
+            <a href="<%=request.getContextPath() %>/login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
-            <a href=""${path }/user/join.do"" class="join_a"><div class="item">회원가입</div></a>
-            <a href="#"><button class="header_write_btn">글쓰기</button></a>
+            <a href="${path }/user/join.do" class="join_a"><div class="item">회원가입</div></a>
+            <a href="<%= request.getContextPath()%>/board/write.do"><button class="header_write_btn">글쓰기</button></a>
           </div>
         </div>
         <section class="second_section">
           <div class="second_header">
-            <div class="home">홈</div>
-            <a href="#"><div class="trip_info">동행</div></a>
-            <a href="#"><div class="board">게시판</div></a>
+            <a href="/dayoff"><div class="home">홈</div></a>
+            <a href="<%= request.getContextPath() %>/together.do"><div class="trip_info">동행</div></a>
+            <a href="<%= request.getContextPath()%>/board/list.do"><div class="board">게시판</div></a>
           </div>
         </section>
       </section>
@@ -97,7 +98,7 @@
         <div class="InnerSection_AreaLeft">
           <div class="AccompanyContainer">
             <div class="AccompanyContainer_TitleBox">
-              <p style="font-weight: bold">전주 자유여행</p>
+              <p style="font-weight: bold">${vo.title }</p>
             </div>
             <div class="AccompanyContainer_TopInfoBox">
               <div class="AccompanyContainer_FlexBox">
@@ -108,8 +109,7 @@
               </div>
             </div>
             <p class="AccompanyContainer_ContentBox">
-              2월 13일 출발해서 2월 17일 도착하는 일정으로 전주 자유여행
-              가능한지요?
+              ${vo.content }
             </p>
             <div class="badge_HashTag">
               <div>
@@ -145,22 +145,20 @@
             </div>
             <div class="AccompanyContainer_BottomBox">
               <p class="AccompanyContainer_PreventDrag">
-                2023.01.12 02:13 조회수 86 메시지 1
+                작성일 : ${vo.wdate } , 조회수 : ${vo.hit }
               </p>
               <button class="AccompanyContainer_ReportButton">신고하기</button>
             </div>
             <div class="AccompanyContainer_InputBox">
               <div class="CommentInputBox">
-                <textarea
-                  placeholder="댓글을 입력해주세요."
+                <textarea placeholder="댓글을 입력해주세요."
                   class="CommentInputBox_Input"
                   style="height: 39px; resize: none"
-                >
-                </textarea>
+                ></textarea>
                 <button class="CommentInputBox_SubmitText">게시</button>
               </div>
             </div>
-            <div class="AccompanyContainer_CommentContainer">
+            <!--  <div class="AccompanyContainer_CommentContainer">
               <div class="AccompanyContainer_CommentInnerContainer">
                 <div class="Comment_Wrapper">
                   <div class="Comment_ProfileContainer">
@@ -206,7 +204,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="InnerSection_AreaRight">

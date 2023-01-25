@@ -27,7 +27,7 @@
               ><div class="item"><img src="${path}/resources/img/logo.png" alt="" /></div
             ></a>
             <a href="<%=request.getContextPath()%>/"><div class="item">커뮤니티</div>
-            <a href="photo.do" class="a_tag_color"
+            <a href="<%=request.getContextPath() %>/photo/list.do" class="a_tag_color"
               ><div class="item">포토갤러리</div></a
             >
           </div>
@@ -49,7 +49,7 @@
         <section class="second_section">
           <div class="second_header">
             <a href="/dayoff"><div class="home">홈</div></a>
-            <a href="together.do"
+            <a href="${path }/together.do"
               ><div class="trip_info">동행</div></a
             >
             <a href="<%= request.getContextPath()%>/board/list.do"><div class="board">게시판</div></a>
@@ -79,7 +79,7 @@
           <div class="board_contents_one">
             <div class="flex_title">
               <p>서울</p>
-              <a href="#"><p class="view_board">게시글 보기</p></a>
+              <a href="view.do?bidx=${vo.bidx}"><p class="view_board">게시글 보기</p></a>
             </div>
             <p class="title">${vo.title }</p>
             <p class="contents">${vo.content }</p>

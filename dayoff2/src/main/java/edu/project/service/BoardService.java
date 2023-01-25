@@ -5,7 +5,11 @@ import java.util.List;
 import edu.project.vo.BoardVo;
 
 public interface BoardService {
+	
+	
 	int boardInsert(BoardVo vo);
 	
 	List<BoardVo> boardList(BoardVo vo);
+	
+	BoardVo selectByBidx(int bidx);
 }

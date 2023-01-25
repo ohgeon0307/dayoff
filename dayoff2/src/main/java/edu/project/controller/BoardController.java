@@ -54,9 +54,9 @@ public class BoardController {
 	@RequestMapping(value = "/view.do", method = RequestMethod.GET)
 	public String view(int bidx, Model model) {
 		
-//		BoardVo vo = boardService.selectByBidx(bidx);
+		BoardVo vo = boardService.selectByBidx(bidx);
 		
-//		model.addAttribute("vo", vo);
+		model.addAttribute("vo", vo);
 		
 		return "board/board_view";
 	}

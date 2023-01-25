@@ -23,5 +23,11 @@ public class BoardDao {
 	public List<BoardVo> boardList(BoardVo vo) {
 		
 		return sqlSession.selectList("edu.project.mapper.boardMapper.boardList",vo);
+		
+	}
+	
+	public BoardVo selectByBidx(int bidx) {
+		
+		return sqlSession.selectOne("edu.project.mapper.boardMapper.selectByBidx",bidx);
 	}
 }
