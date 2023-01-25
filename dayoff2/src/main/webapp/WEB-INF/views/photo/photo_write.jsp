@@ -97,27 +97,29 @@
       </div>
 
       <section class="file_upload_section">
+      <form action="write.do" method="post">
         <div class="title">
           <input
-            type="text" name="title"
+            type="text" name="pTitle"
             placeholder="&nbsp&nbsp제목을 입력해보세요!(100자 이내)"
           />
         </div>
         <hr class="slide_hr" />
         <div class="container">
-           <input type="file" name="upload"/> 
+           <input type="text" name="pContent"/> 
           인생샷을 올려주세요💫
         </div>
         <div class="hashtag">
           <input
-            type="text" name="hashtag"
+            type="text" name="pHashTag"
             placeholder="&nbsp&nbsp태그입력 (띄어쓰기로 구분) (100자 이내)"
           />
         </div>
         <div class="button_zone">
-          <button class="cancel">취소</button>
+          <button type="reset" class="cancel">취소</button>
           <button class="submit">작성하기</button>
         </div>
+      </form>
       </section>
     </main>
     <footer class="footer">

@@ -46,26 +46,25 @@
 	</delete>
 	
 	<insert id="insert" parameterType="photoVo">
-	INSERT INTO phototable(
+		INSERT INTO phototable(
 			pidx
 			, pTitle
 			, pContent
 			, pDate
 			, uidx
 			, pLikes
-			, pDelYn
 			, pHashTag
 			, pHit
-			) VALUES(
-			PIDX_SEQ.NEXTVAL
+		) VALUES(
+			PPIDX_SEQ.NEXTVAL
 			, #{pTitle}
 			, #{pContent}
 			, sysdate
-			, #{uidx}
+			, 1
 			, 0
-			, 'N'
 			, #{pHashTag}
-			, 0)
+			, 0
+		)
 	</insert>
 	
 </mapper>
