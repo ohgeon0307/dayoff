@@ -75,6 +75,7 @@ public class BoardController {
 	public String modify(BoardVo vo) {
 		
 		int result = boardService.modifyByBidx(vo);
+		System.out.println(result +"< -- result값 ");
 		
 		if(result > 0) {
 			
