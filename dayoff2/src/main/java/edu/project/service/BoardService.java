@@ -12,4 +12,8 @@ public interface BoardService {
 	List<BoardVo> boardList(BoardVo vo);
 	
 	BoardVo selectByBidx(int bidx);
+	
+	BoardVo updateByBidx(int bidx);
+	
+	int modifyByBidx(BoardVo vo);
 }

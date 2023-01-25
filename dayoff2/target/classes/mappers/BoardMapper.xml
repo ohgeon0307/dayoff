@@ -51,4 +51,24 @@
 		FROM boardtable
 		WHERE bidx = #{bidx}
 	</select>
+	
+	<select id ="updateByBidx" parameterType = "int" resultType = "boardVo">
+	SELECT bidx
+	, title
+	, content
+	, hashTag
+	, uidx
+	, hit
+	FROM boardtable
+	WHERE bidx = #{bidx}
+	</select>
+	
+	<update id = "modifyByBidx" parameterType = "boardVo">
+		UPDATE boardtable
+		SET title
+		= #{title}
+		, content = #{content}
+		, hashTag = #{hashTag}
+		WHERE bidx = #{bidx}
+	</update>
 </mapper>

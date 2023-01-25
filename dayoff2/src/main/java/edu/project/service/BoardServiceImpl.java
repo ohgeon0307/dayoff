@@ -36,4 +36,16 @@ public class BoardServiceImpl implements BoardService{
 		return boardDao.selectByBidx(bidx);
 	}
 
+	@Override
+	public BoardVo updateByBidx(int bidx) {
+		// TODO Auto-generated method stub
+		return boardDao.updateByBidx(bidx);
+	}
+
+	@Override
+	public int modifyByBidx(BoardVo vo) {
+		// TODO Auto-generated method stub
+		return boardDao.modifyByBidx(vo);
+	}
+
 }

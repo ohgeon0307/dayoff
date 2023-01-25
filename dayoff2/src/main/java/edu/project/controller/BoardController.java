@@ -60,4 +60,27 @@ public class BoardController {
 		
 		return "board/board_view";
 	}
+	
+	@RequestMapping(value = "/modify.do", method = RequestMethod.GET)
+	public String modify(int bidx, Model model) {
+		
+		BoardVo vo = boardService.updateByBidx(bidx);
+		
+		model.addAttribute("vo", vo);
+		
+		return "board/board_modify";
+	}
+	
+	@RequestMapping(value = "/modify.do", method = RequestMethod.POST)
+	public String modify(BoardVo vo) {
+		
+		int result = boardService.modifyByBidx(vo);
+		
+		if(result > 0) {
+			
+			return "redirect:view.do?bidx="+vo.getBidx();
+		} else {
+			return "redirect:/";
+		}
+	}
 }

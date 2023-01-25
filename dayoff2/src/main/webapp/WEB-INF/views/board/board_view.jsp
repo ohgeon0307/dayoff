@@ -150,7 +150,7 @@
               <button class="AccompanyContainer_ReportButton">신고하기</button>
               
             </div>
-            <button class="modify">수정하기</button>
+            <button class="modify" onclick="location.href='modify.do?bidx=${vo.bidx}'">수정하기</button>
             <button class="delete">삭제하기</button>
             <div class="AccompanyContainer_InputBox">
               <div class="CommentInputBox">

@@ -30,4 +30,14 @@ public class BoardDao {
 		
 		return sqlSession.selectOne("edu.project.mapper.boardMapper.selectByBidx",bidx);
 	}
+	
+	public BoardVo updateByBidx(int bidx) {
+		
+		return sqlSession.selectOne("edu.project.mapper.boardMapper.updateByBidx", bidx);
+	}
+	
+	public int modifyByBidx(BoardVo vo) {
+		
+		return sqlSession.update("edu.project.mapper.boardMapper.modifyByBidx", vo);
+	}
 }
