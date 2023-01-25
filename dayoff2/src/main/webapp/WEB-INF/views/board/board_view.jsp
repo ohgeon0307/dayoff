@@ -121,23 +121,7 @@
                       font-weight="500"
                     >
                       <p class="HashTag">#</p>
-                      <p class="HashTag">여성</p>
-                    </div>
-                    <div
-                      class="badge_HashTag2"
-                      font-size="13px"
-                      font-weight="500"
-                    >
-                      <p class="HashTag">#</p>
-                      <p class="HashTag">20대</p>
-                    </div>
-                    <div
-                      class="badge_HashTag2"
-                      font-size="13px"
-                      font-weight="500"
-                    >
-                      <p class="HashTag">#</p>
-                      <p class="HashTag">아무나다좋아</p>
+                      <p class="HashTag">${vo.hashTag }</p>
                     </div>
                   </div>
                 </div>
