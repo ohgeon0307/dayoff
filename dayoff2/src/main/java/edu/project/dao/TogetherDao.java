@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import edu.project.vo.TogetherVo;
 
 
+
 @Repository
 public class TogetherDao {
 	
@@ -26,9 +27,15 @@ public class TogetherDao {
 	public int insert(TogetherVo vo) {
 			
 			
-			return sqlSession.insert("edu.project.mapper.togetherMapper.insert", vo);
+			return sqlSession.insert("edu.project.mapper.togetherMapper.togetherInsert", vo);
 		}	
 	
+	
+	public TogetherVo selectByTidx(int tidx) {
+		
+		
+		return sqlSession.selectOne("edu.project.mapper.togetherMapper.selectByTidx", tidx);
+	}
 	
 	
 }

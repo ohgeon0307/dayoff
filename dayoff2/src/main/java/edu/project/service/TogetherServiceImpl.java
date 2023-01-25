@@ -30,4 +30,11 @@ public class TogetherServiceImpl implements TogetherService{
 		return list;
 	}
 
+	@Override
+	public TogetherVo selectByTidx(int tidx) {
+		
+		
+		return togetherDAO.selectByTidx(tidx);
+	}
+
 }

@@ -10,4 +10,5 @@ public interface TogetherService {
 	int insert(TogetherVo vo);
 	List<TogetherVo> list();
 	
+	TogetherVo selectByTidx(int Tidx);
 }

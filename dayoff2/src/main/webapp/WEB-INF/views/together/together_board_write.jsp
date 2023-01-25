@@ -93,7 +93,7 @@
           <div class="second_header">
             <a href="<%= request.getContextPath() %>/"><div class="home">홈</div></a>
             <a href="together.do"><div class="trip_info">동행</div></a>
-            <a href="board.do"><div class="board">게시판</div></a>
+            <a href="board.list.do"><div class="board">게시판</div></a>
           </div>
         </section>
       </section>
@@ -249,14 +249,14 @@
 	          <input
 	            type="text"
 	            placeholder="ex)높은 산 좋아하시는 분 1~2명 구해봐요!"
-	            name="title"
+	            name="tTitle"
 	          />
 	        </div>
 	        <hr class="slide_hr" />
 	        <div>
 	          <textarea
 	            placeholder="동행을 구할 내용을 작성해주세요! (1000자 이내🤩)"
-	            name="content"
+	            name="tContent"
 	          ></textarea>
 	        </div>
 	        <div class="button_zone">

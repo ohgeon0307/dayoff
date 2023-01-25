@@ -21,10 +21,11 @@ public class TogetherController {
 	
 
 	@RequestMapping(value = "/together_view.do", method = RequestMethod.GET)
-	public String view(Model model ) {
+	public String view(int tidx, Model model ) {
 		 
+		TogetherVo vo = togetherService.selectByTidx(tidx);
 		
-		
+		model.addAttribute("vo",vo);
 		
 		return "together/together_view";
 	}

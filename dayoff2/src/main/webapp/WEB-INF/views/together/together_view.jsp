@@ -89,7 +89,7 @@
           <div class="second_header">
             <a href="<%= request.getContextPath() %>/"><div class="home">홈</div></a>
             <a href="together.do"><div class="trip_info">동행</div></a>
-            <a href="board.do"><div class="board">게시판</div></a>
+            <a href="board.list.do"><div class="board">게시판</div></a>
           </div>
         </section>
       </section>
@@ -105,7 +105,7 @@
         <div class="InnerSection_AreaLeft">
           <div class="AccompanyContainer">
             <div class="AccompanyContainer_TitleBox">
-              <p>1/27-1/29 오사카, 교토 동행 구해요</p>
+              <p>${vo.tTitle}</p>
             </div>
             <div class="AccompanyContainer_TopInfoBox">
               <div class="AccompanyContainer_FlexBox">
@@ -192,16 +192,7 @@
               </div>
             </div>
             <p class="AccompanyContainer_ContentBox">
-              1. 동행 성별: 무관 (여성분이시라면 숙소쉐어하고 싶어요!) 2. 동행
-              나이: 25-33 (제가 20후라 너무 어리거나 많으면 서로 불편할거 같아
-              나이제한 둡니다) 27일은 오후 3-4시 이후부터만 가능합니다 3.
-              부분동행 가능합니다 ex) 교토만 동행, 27일 저녁식사만 함께 4.
-              선호하는 스타일: 계획적인 분 약속 잘 지키시는 분. 예전에 뉴욕동행
-              구할때 당일파토/전날파토 당해봐서 이런분은 거절이요 5. 현재 계획
-              거의 무계획이나 다름없어서 짜신계획 있으시면 맞춰드리고 아니면
-              같이 계획해보겠습니다 6. 기타 ☆☆☆☆☆☆스시 못먹습니다☆☆☆☆☆☆☆ 익힌
-              해산물은 먹어요 유니버셜 스튜디오는 아직 미정이라(안갈확률 높)
-              유니버셜 동행 찾으시는 분은 거절할게요ㅠㅠ
+             ${vo.tContent}
             </p>
             <div class="badge_HashTag">
               <div>
@@ -237,7 +228,7 @@
             </div>
             <div class="AccompanyContainer_BottomBox">
               <p class="AccompanyContainer_PreventDrag">
-                2023.01.12 02:13 조회수 86 메시지 1
+                ${vo.tDate} 조회수 ${vo.tHit} 메시지 1
               </p>
               <button class="AccompanyContainer_ReportButton">신고하기</button>
             </div>
