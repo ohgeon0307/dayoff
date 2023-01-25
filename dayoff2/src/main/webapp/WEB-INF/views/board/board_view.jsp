@@ -135,7 +135,10 @@
               
             </div>
             <button class="modify" onclick="location.href='modify.do?bidx=${vo.bidx}'">수정하기</button>
-            <button class="delete">삭제하기</button>
+            <button class="delete" onclick="document.delfrm.submit()">삭제하기</button>
+            <form name="delfrm" action="delete.do" method="post">
+            	<input type="hidden" name="bidx" value="${vo.bidx }">
+            </form>
             <div class="AccompanyContainer_InputBox">
               <div class="CommentInputBox">
                 <textarea placeholder="댓글을 입력해주세요."

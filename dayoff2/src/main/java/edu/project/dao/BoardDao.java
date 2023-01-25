@@ -40,4 +40,9 @@ public class BoardDao {
 		
 		return sqlSession.update("edu.project.mapper.boardMapper.modifyByBidx", vo);
 	}
+	
+	public int deleteByBidx(int bidx) {
+		
+		return sqlSession.delete("edu.project.mapper.boardMapper.deleteByBidx", bidx);
+	}
 }

@@ -84,7 +84,7 @@
             <p class="title">${vo.title }</p>
             <p class="contents">${vo.content }</p>
 
-            <p class="hashtag">${vo.hashTag}</p>
+            <p class="hashtag"># ${vo.hashTag}</p>
             <div class="info_flex">
               <div class="info">닉네임 : gunsi</div>
 

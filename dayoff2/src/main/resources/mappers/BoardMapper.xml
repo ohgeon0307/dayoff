@@ -71,4 +71,9 @@
 		, hashTag = #{hashTag}
 		WHERE bidx = #{bidx}
 	</update>
+	
+	<delete id="deleteByBidx" parameterType="int">
+		DELETE FROM boardtable
+		WHERE bidx = #{bidx}
+	</delete>
 </mapper>

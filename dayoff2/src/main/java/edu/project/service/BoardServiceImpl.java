@@ -48,4 +48,10 @@ public class BoardServiceImpl implements BoardService{
 		return boardDao.modifyByBidx(vo);
 	}
 
+	@Override
+	public int deleteByBidx(int bidx) {
+		// TODO Auto-generated method stub
+		return boardDao.deleteByBidx(bidx);
+	}
+
 }

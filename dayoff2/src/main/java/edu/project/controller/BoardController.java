@@ -84,4 +84,16 @@ public class BoardController {
 			return "redirect:/";
 		}
 	}
+	
+	@RequestMapping(value = "/delete.do", method = RequestMethod.POST)
+	public String delete(int bidx) {
+		
+		int result = boardService.deleteByBidx(bidx);
+		
+		if(result > 0) {
+			return "redirect:list.do";
+		} else {
+			return "redirect:/";
+		}
+	}
 }
