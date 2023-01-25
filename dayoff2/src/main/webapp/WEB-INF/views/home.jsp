@@ -68,7 +68,7 @@
           <div class="left_header">
             <a href="${path }/"><div class="item"><img src="${path }/resources/img/logo.png" alt="" /></div></a>
             <div class="item">커뮤니티</div>
-            <a href="photo.do" class="a_tag_color"><div class="item">포토갤러리</div></a>
+            <a href="<%= request.getContextPath()%>/photo/list.do" class="a_tag_color"><div class="item">포토갤러리</div></a>
           </div>
           <div class="right_header">
             <div class="item">

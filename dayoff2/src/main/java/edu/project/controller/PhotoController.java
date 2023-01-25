@@ -26,9 +26,15 @@ public class PhotoController {
 	public String list(Model model) {
 		List<BoardVo> list = new ArrayList<BoardVo>();
 		model.addAttribute("datalist",list);
-		return "photo_list";
+		return "photo/photo_list";
 	}
 	
+	@RequestMapping(value = "/view.do", method = RequestMethod.GET)
+	public String view(int pidx, Model model) {
+		PhotoVo vo = photoService.selectByPidx(pidx);
+		model.addAttribute("vo",vo);
+		return "photo/photo_list";
+	}
 	
 	@RequestMapping(value = "/write.do", method = RequestMethod.GET)
 	public String write() {
@@ -36,5 +42,4 @@ public class PhotoController {
 		return "photo/photo_write";
 	}
 	
-
 }

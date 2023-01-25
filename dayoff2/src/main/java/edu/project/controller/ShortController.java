@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ShortController {
 
-	@RequestMapping(value = "/short.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
 	public String list() {
 		
 		return "short/short_list";

@@ -15,4 +15,7 @@ public class PhotoDao {
 		return sqlSession.selectList("edu.project.mapper.photoMapper.list", photoVo);
 	}
 	
+	public PhotoVo selectByPidx(int pidx) {
+		return sqlSession.selectOne("edu.project.mapper.photoMapper.selectByPidx", pidx);
+	}
 }

@@ -16,4 +16,18 @@
 			, pHit
 		FROM PHOTOTABLE
 	</select>
+	
+	<select id="selectByPidx" resultType="photoVo" parameterType="int">
+		select pidx
+			, pTitle
+			, pContent
+			, pDate
+			, uidx
+			, pLike
+			, pDelYn
+			, pHashTag
+			, pHit
+		FROM PHOTOTABLE
+		WHERE pidx = #{pidx}
+	</select>
 </mapper>

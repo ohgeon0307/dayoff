@@ -9,4 +9,5 @@ import edu.project.vo.PhotoVo;
 public interface PhotoService {
 	
 	List<PhotoVo> list(PhotoVo photoVo);
+	PhotoVo selectByPidx(int pidx);
 }
