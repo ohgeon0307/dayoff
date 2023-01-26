@@ -43,7 +43,7 @@ public class TogetherController {
 		
 		
 		
-		return "redirect:together/together_home";
+		return "redirect:together";
 	}
 	
 	

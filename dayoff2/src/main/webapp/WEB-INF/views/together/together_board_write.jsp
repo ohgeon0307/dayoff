@@ -93,7 +93,7 @@
           <div class="second_header">
             <a href="<%= request.getContextPath() %>/"><div class="home">홈</div></a>
             <a href="together.do"><div class="trip_info">동행</div></a>
-            <a href="board.list.do"><div class="board">게시판</div></a>
+            <a href="board/list.do"><div class="board">게시판</div></a>
           </div>
         </section>
       </section>
