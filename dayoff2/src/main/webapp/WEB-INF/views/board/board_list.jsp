@@ -30,10 +30,12 @@
           </div>
           <div class="right_header">
             <div class="item">
+           
               <button class="searchBtn">
                 <i class="xi-search xi-1x"></i>
               </button>
-              <input type="text" placeholder="여행지를 찾아보세요!" />
+              <input type="text" placeholder="게시글을 검색해보세요!" />
+     
             </div>
             <a href="${path }/user/login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
@@ -62,13 +64,14 @@
       </div>
       <section class="board_list">
         <div class="board_header">
-          <button>댓글이 달린 게시글만 보기</button>
-          <select>
-            <option>등록순</option>
-            <option>댓글순</option>
-            <p>⇩</p>
+          <form action="list.do" method="GET" class="form_item">
+          <select name="searchType">
+            <option value="title" <c:if test="${param.searchType == 'title' }">selected</c:if>>제목</option>
+            <option value="content" <c:if test="${patam.searchType == 'content' }">selected</c:if>>내용</option>
           </select>
-          <p>정렬</p>
+          <input type="text" class ="search_input" name="keyword" placeholder ="검색어를 입력하세요.." value="${param.keyword }">
+          <button class="search_btn">게시글 검색</button>
+          </form>
         </div>
         <div class="board_contents">
         <c:forEach items="${datalist }" var ="vo">
