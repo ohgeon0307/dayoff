@@ -1,12 +1,19 @@
 package edu.project.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 
 import edu.project.service.PhotoService;
 import edu.project.vo.PhotoVo;
@@ -34,8 +41,26 @@ public class PhotoController {
 	}
 	
 	@RequestMapping(value = "/write.do", method = RequestMethod.POST)
-	public String write(PhotoVo vo) {
+	public String write(PhotoVo vo, HttpServletRequest req,MultipartFile pContent) throws IllegalStateException, IOException {
 		
+		String path= req.getSession().getServletContext().getRealPath("/resources/img");
+		
+		File dir = new File(path);
+		if(!dir.exists()) {
+			dir.mkdirs();
+		}
+		
+		if(!pContent.getOriginalFilename().isEmpty()) { //isEmpty = 비워져있다.
+			int pos = pContent.getOriginalFilename().lastIndexOf(".");
+			String ext = pContent.getOriginalFilename().substring(pos+1);
+			
+			Date now = new Date();
+			String today = new SimpleDateFormat("yyyyMMddHHmmSS").format(now);
+			
+			int random = (int) ((Math.random() * 100) + 1);
+			String result = today + random;
+			pContent.transferTo(new File(path,result+"."+ext));
+		}
 		int result = photoService.insert(vo);
 		
 		return "redirect:list.do";

@@ -97,7 +97,7 @@
       </div>
 
       <section class="file_upload_section">
-      <form action="write.do" method="post">
+      <form action="write.do" method="post" enctype="multipart/form-data">
         <div class="title">
           <input
             type="text" name="pTitle"
@@ -106,7 +106,7 @@
         </div>
         <hr class="slide_hr" />
         <div class="container">
-           <input type="text" name="pContent"/> 
+           <input type="file" name="pContent"/> 
           인생샷을 올려주세요💫
         </div>
         <div class="hashtag">
