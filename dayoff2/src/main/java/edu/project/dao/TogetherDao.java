@@ -10,6 +10,7 @@ import edu.project.vo.TogetherVo;
 
 
 
+
 @Repository
 public class TogetherDao {
 	
@@ -35,6 +36,18 @@ public class TogetherDao {
 		
 		
 		return sqlSession.selectOne("edu.project.mapper.togetherMapper.selectByTidx", tidx);
+	}
+	
+	public int updateByTidx(TogetherVo vo) {
+		
+		
+		return sqlSession.update("edu.project.mapper.togetherMapper.updateByTidx", vo);
+	}
+	
+	public int deleteByTidx(int tidx) {
+		
+		
+		return sqlSession.delete("edu.project.mapper.togetherMapper.deleteByTidx", tidx);
 	}
 	
 	

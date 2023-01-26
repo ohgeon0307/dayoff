@@ -232,8 +232,11 @@
               </p>
               <button class="AccompanyContainer_ReportButton">신고하기</button>
             </div>
-            <button class="modify">수정하기</button>
-            <button class="delete">삭제하기</button>
+            <a href="together_modify.do?tidx=${vo.tidx}"><button class="modify">수정하기</button></a>
+            <button class="delete" onclick="document.delfrm.submit()">삭제하기</button>
+            <form name="delfrm" action="delete.do" method="post">
+            	<input type="hidden" name="tidx" value="${vo.tidx }">
+            </form>
             <div class="AccompanyContainer_InputBox">
               <div class="CommentInputBox">
                 <textarea

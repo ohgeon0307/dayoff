@@ -12,6 +12,9 @@ import edu.project.service.TogetherService;
 import edu.project.vo.TogetherVo;
 
 
+
+
+
 @Controller
 public class TogetherController {
 	
@@ -46,6 +49,53 @@ public class TogetherController {
 		return "redirect:together";
 	}
 	
+	
+	@RequestMapping(value = "/together_modify.do", method = RequestMethod.GET)
+	public String modify(int tidx, Model model) {
+		
+		TogetherVo vo = togetherService.selectByTidx(tidx);
+		
+		
+		model.addAttribute("vo",vo);
+		
+		return "together/together_modify";
+	}
+	
+	@RequestMapping(value="/modify.do", method=RequestMethod.POST)
+	public String modify(TogetherVo vo) {
+		
+		int result = togetherService.updateByTidx(vo);
+		
+		System.out.println(result +"< -- result값 ");
+		
+		if(result > 0) {
+			
+			return "redirect:together_view.do?tidx="+vo.getTidx();
+		} else {
+			return "redirect:/";
+		}
+		
+		
+	}
+	
+	
+	@RequestMapping(value="/delete.do", method=RequestMethod.POST)
+	public String delete(int tidx, HttpSession session) {
+		
+		
+		
+		
+		
+		int result = togetherService.deleteByTidx(tidx);
+		
+		if(result>0) {
+			return "redirect:together";
+		}else {
+			return "redirect:/";
+		}
+		
+		
+	}
 	
 	
 }

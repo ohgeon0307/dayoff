@@ -11,4 +11,8 @@ public interface TogetherService {
 	List<TogetherVo> list();
 	
 	TogetherVo selectByTidx(int Tidx);
+	
+	int updateByTidx(TogetherVo vo);
+	
+	int deleteByTidx(int tidx);
 }

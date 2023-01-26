@@ -53,5 +53,20 @@
     		FROM togethertable
     		WHERE tidx = #{tidx}	<!-- DAO에서 파라미터로 넘긴 변수명 -->
     </select>
+    
+    <update id="updateByTidx" parameterType="togetherVo" >
+    	UPDATE togethertable
+    	   SET ttitle = #{tTitle}
+    		 , tcontent= #{tContent}
+    	WHERE tidx = #{tidx} 
+    </update>
+    
+    <delete id="deleteByTidx" parameterType="int">
+    	DELETE 
+    	FROM  togethertable
+    	WHERE tidx = #{tidx} 
+    </delete>
+    
+    
 	
 </mapper>

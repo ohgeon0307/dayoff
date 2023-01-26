@@ -37,4 +37,16 @@ public class TogetherServiceImpl implements TogetherService{
 		return togetherDAO.selectByTidx(tidx);
 	}
 
+	@Override
+	public int updateByTidx(TogetherVo vo) {
+		
+		return togetherDAO.updateByTidx(vo);
+	}
+
+	@Override
+	public int deleteByTidx(int tidx) {
+	
+		return togetherDAO.deleteByTidx(tidx);
+	}
+
 }
