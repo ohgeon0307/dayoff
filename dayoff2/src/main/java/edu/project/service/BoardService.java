@@ -19,4 +19,6 @@ public interface BoardService {
 	int modifyByBidx(BoardVo vo);
 	
 	int deleteByBidx(int bidx);
+	
+	int listCount();
 }

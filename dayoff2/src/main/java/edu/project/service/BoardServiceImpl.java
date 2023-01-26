@@ -55,4 +55,10 @@ public class BoardServiceImpl implements BoardService{
 		return boardDao.deleteByBidx(bidx);
 	}
 
+	@Override
+	public int listCount() {
+		// TODO Auto-generated method stub
+		return boardDao.listCount();
+	}
+
 }

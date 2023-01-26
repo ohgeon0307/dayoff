@@ -53,7 +53,7 @@ public class BoardController {
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setScri(scri);
-//		pageMaker.setTotalCount(boardService.listCount());
+		pageMaker.setTotalCount(boardService.listCount());
 		model.addAttribute("pageMaker", pageMaker);
 		
 		return "board/board_list";
