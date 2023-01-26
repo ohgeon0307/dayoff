@@ -124,7 +124,7 @@
       </section>
       
       <section class="images">
-<c:forEach items="${datalist}" var="vo">
+		<c:forEach items="${datalist}" var="vo">
         <div class="imgList">
           <div class="imgC">
             <img src="${vo.pContent }" alt="" class="img"/>
