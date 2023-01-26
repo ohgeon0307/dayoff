@@ -23,14 +23,10 @@
     <header>
       <section class="first_section">
         <div class="header">
-          <div class="left_header">
-            <a href="<%=request.getContextPath() %>/"
-              ><div class="item"><img src="${path}/resources/img/logo.png" alt="" /></div
-            ></a>
-            <a href="<%=request.getContextPath()%>/"><div class="item">커뮤니티</div>
-            <a href="<%=request.getContextPath() %>/photo/list.do" class="a_tag_color"
-              ><div class="item">포토갤러리</div></a
-            >
+           <div class="left_header">
+            <a href="${path }/"><div class="item"><img src="${path }/resources/img/logo.png" alt="" /></div></a>
+            <div class="item">커뮤니티</div>
+            <a href="<%= request.getContextPath()%>/photo/list.do" class="a_tag_color"><div class="item">포토갤러리</div></a>
           </div>
           <div class="right_header">
             <div class="item">
@@ -39,12 +35,11 @@
               </button>
               <input type="text" placeholder="여행지를 찾아보세요!" />
             </div>
-            <a href="login.do" class="login_a"><div class="item">로그인</div></a>
+            <a href="${path }/user/login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
             <a href="${path }/user/join.do" class="join_a"><div class="item">회원가입</div></a>
             <a href="<%= request.getContextPath()%>/board/write.do"
-              ><button class="header_write_btn">글쓰기</button></a>
-            
+              ><button class="header_write_btn">글쓰기</button></a> 
           </div>
         </div>
         <section class="second_section">
