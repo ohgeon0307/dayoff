@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.project.service.UserService;
 
@@ -11,7 +12,8 @@ import edu.project.service.UserService;
 @Controller
 public class UserController {
 	
-
+	@Autowired
+	private UserService userService;
 	
 	@RequestMapping(value="/login.do",method=RequestMethod.GET)
 	public String login() {
@@ -37,6 +39,20 @@ public class UserController {
 	public String join() {
 		
 		return "user/join";
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "/validation.do", method = RequestMethod.POST)
+	public String validation(String id) {
+		
+		int result = userService.validation(id);
+		System.out.println(result);
+		
+		if(result > 0) {
+			return "1";
+		} else {
+			return "0";
+		}
 	}
 
 }
