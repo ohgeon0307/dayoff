@@ -3,13 +3,14 @@ package edu.project.service;
 import java.util.List;
 
 import edu.project.vo.BoardVo;
+import edu.project.vo.SearchCriteria;
 
 public interface BoardService {
 	
 	
 	int boardInsert(BoardVo vo);
 	
-	List<BoardVo> boardList(BoardVo vo);
+	List<BoardVo> boardList(SearchCriteria scri);
 	
 	BoardVo selectByBidx(int bidx);
 	
@@ -18,4 +19,6 @@ public interface BoardService {
 	int modifyByBidx(BoardVo vo);
 	
 	int deleteByBidx(int bidx);
+	
+	int listCount();
 }

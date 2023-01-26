@@ -9,7 +9,9 @@
 		<typeAlias type="edu.project.vo.PhotoVo" alias="photoVo"/>
 		<typeAlias type="edu.project.vo.ShortVo" alias="shortVo"/>
 		<typeAlias type="edu.project.vo.TogetherVo" alias="togetherVo"/>
-		
+		<typeAlias type="edu.project.vo.SearchCriteria" alias="scri"/>
+		<typeAlias type="edu.project.vo.SearchVo" alias="searchVo" />
+		<typeAlias type="edu.project.vo.Criteria" alias="cri" />
     </typeAliases>
     
     

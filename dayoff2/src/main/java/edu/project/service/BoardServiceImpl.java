@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import edu.project.dao.BoardDao;
 import edu.project.service.BoardService;
 import edu.project.vo.BoardVo;
+import edu.project.vo.SearchCriteria;
 
 
 @Service
@@ -23,9 +24,9 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public List<BoardVo> boardList(BoardVo vo) {
+	public List<BoardVo> boardList(SearchCriteria scri) {
 		// TODO Auto-generated method stub
-		List<BoardVo> list = boardDao.boardList(vo);
+		List<BoardVo> list = boardDao.boardList(scri);
 		System.out.println(list);
 		return list;
 	}
@@ -52,6 +53,12 @@ public class BoardServiceImpl implements BoardService{
 	public int deleteByBidx(int bidx) {
 		// TODO Auto-generated method stub
 		return boardDao.deleteByBidx(bidx);
+	}
+
+	@Override
+	public int listCount() {
+		// TODO Auto-generated method stub
+		return boardDao.listCount();
 	}
 
 }

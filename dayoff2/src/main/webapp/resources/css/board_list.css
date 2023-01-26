@@ -331,7 +331,6 @@ button {
   margin-left: 10px;
   font-weight: 350;
   font-size: 14px;
-  line-height: 21px;
   color: rgb(37, 37, 37);
   padding: 8px 33px 8px 10px;
   border: 1px solid black;
@@ -341,31 +340,52 @@ button {
 
 .board_header {
   display: flex;
-  height: 20px;
+  height: 80px;
   position: relative;
   display: flex;
   flex-direction: row-reverse;
   -webkit-box-align: center;
   align-items: center;
 }
+	
 
-.board_header button {
-  position: relative;
-  display: flex;
+.board_header button {	
   -webkit-box-align: center;
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
   width: auto;
   height: fit-content;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid rgb(37, 37, 37);
-  padding: 10px 19px;
-  color: rgb(37, 37, 37);
+  background-color: rgb(0, 206, 124);
+  padding: 10px 17px;
+  color: #ffffff;
   font-weight: 700;
-  font-size: 16px;
-  border-radius: 30px;
-  margin-left: 20px;
+  font-size: 15px;
+  border-radius: 10px;
+  margin-left: 12px;
+ 
+}
+
+.form_item input:focus {
+    border-color: rgb(0, 206, 124);
+    outline: none;
+    color : rgb(0, 206, 124);
+}
+
+input::placeholder {
+  color: black;
+  font-style: italic;
+}
+
+.board_header .search_input {
+	margin-left: 10px;
+  font-weight: 350;
+  font-size: 14px;
+  color: rgb(37, 37, 37);
+  padding: 8px 33px 8px 10px;
+  border: 1px solid black;
+  border-radius : 5px;
+  background-color: unset;
 }
 
 .board_contents {
@@ -633,3 +653,74 @@ footer button {
 #sns a:hover {
   color: sandybrown;
 }
+
+.page {
+	text-align : center;
+	width: 100%;
+}
+
+.pagination {
+	list-style : none;
+	display : inline-block;
+	padding-top : 40px;
+	margin : 0 auto;
+}
+
+.pagination li {
+	
+	display : inline;
+}
+
+.pagination a {
+	float : left;
+	display : block;
+	font-size : 17px;
+	text-decoration : none;
+	padding : 5px 12px;
+	color : #96a0ad;
+	line-height : 1.5;
+}
+
+.first {
+	margin-right : 15px;
+}
+
+.last {
+	margin-left: 15px;
+}
+
+.first:hover, .last:hover {
+	color: #2e9cdf;
+}
+
+.pagination a.active {
+	cursor : default;
+	color : #ffffff;
+}
+
+.pagination a:active {
+	outline : none;
+}
+
+.num {
+	margin-left : 1px;
+	padding : 0;
+	width : 15px;
+	height: 30px;
+	-moz-border-radius: 100%;
+	-webkit-border-radius : 100%;
+	border-radius : 100%;
+}
+
+.num:hover {
+	background-color : rgb(0, 206, 124);
+	color : #ffffff;
+	font-weight : bold;
+	transition : all 0.3s ease-in-out;
+}
+
+.num.active, .num:active {
+	background-color: #2e9cdf;
+	cursor : pointer;
+}
+

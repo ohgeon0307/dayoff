@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import edu.project.vo.BoardVo;
+import edu.project.vo.SearchCriteria;
 
 @Repository
 public class BoardDao {
@@ -20,9 +21,9 @@ public class BoardDao {
 		return sqlSession.insert("edu.project.mapper.boardMapper.boardInsert",vo);
 	}
 	
-	public List<BoardVo> boardList(BoardVo vo) {
+	public List<BoardVo> boardList(SearchCriteria scri) {
 		
-		return sqlSession.selectList("edu.project.mapper.boardMapper.boardList",vo);
+		return sqlSession.selectList("edu.project.mapper.boardMapper.boardList",scri);
 		
 	}
 	
@@ -44,5 +45,9 @@ public class BoardDao {
 	public int deleteByBidx(int bidx) {
 		
 		return sqlSession.delete("edu.project.mapper.boardMapper.deleteByBidx", bidx);
+	}
+	
+	public int listCount() {
+		return sqlSession.selectOne("edu.project.mapper.boardMapper.listCount");
 	}
 }

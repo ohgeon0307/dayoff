@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.project.service.BoardService;
 import edu.project.vo.BoardVo;
+import edu.project.vo.PageMaker;
+import edu.project.vo.SearchCriteria;
 
 
 @RequestMapping(value = "/board")
@@ -37,14 +39,22 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/list.do")
-	public String list(Model model, BoardVo vo) {
+	public String list(Model model, SearchCriteria scri) {
 		
-		List<BoardVo> list = boardService.boardList(vo);
+		List<BoardVo> list = boardService.boardList(scri);
 		
 		System.out.println("list는:"+ list);
 		
 		model.addAttribute("datalist", list);
 		
+		for(BoardVo item : list) {
+			System.out.println(item.getBidx());
+		}
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setScri(scri);
+		pageMaker.setTotalCount(boardService.listCount());
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "board/board_list";
 	}
