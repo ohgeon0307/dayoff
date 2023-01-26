@@ -38,6 +38,6 @@ public class PhotoController {
 		
 		int result = photoService.insert(vo);
 		
-		return "redirect:/list.do";
+		return "redirect:list.do";
 	}
 }
