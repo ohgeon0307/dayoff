@@ -113,7 +113,7 @@
           <option>남자</option>
           <option>여자</option>
         </select><br>
-        <input type="date" required>
+        <input type="text" placeholder ="생년월일을 입력해주세요(ex : 19970307)" required>
       </div>
       <div class="agreement"><label>
           <input id="all_check" type="checkbox">이용약관 전체 동의</label>

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.project.service.UserService;
+import edu.project.vo.UserVo;
 
 @RequestMapping("/user")
 @Controller
@@ -39,6 +40,17 @@ public class UserController {
 	public String join() {
 		
 		return "user/join";
+	}
+	
+	@RequestMapping(value = "/join.do", method = RequestMethod.POST)
+	public String join(UserVo vo) {
+		
+		int result = userService.insertUser(vo);
+		
+		if(result > 0) {
+			return "redirect:/";
+		}
+		return "redirect:/";
 	}
 
 	@ResponseBody

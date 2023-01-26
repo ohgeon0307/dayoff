@@ -9,4 +9,26 @@
 		FROM usertable
 		WHERE id = #{id}
 	</select>
+	
+	<insert id="insertUser" parameterType="userVo">
+		INSERT INTO usertable(
+			uidx
+		, id
+		, password
+		, name
+		, phone
+		, birth
+		, gender
+		, rdate
+		)VALUES(
+			puidx_seq.nextval
+			, #{id}
+			, #{password}
+			, #{name}
+			, #{phone}
+			, #{birth,jdbcType=VARCHAR}
+			, #{gender,jdbcType=VARCHAR}
+			, sysdate
+		)
+	</insert>
 </mapper>
