@@ -40,8 +40,8 @@ public class PhotoController {
 		return "photo/photo_write";
 	}
 	
-	@RequestMapping(value = "/write.do", method = RequestMethod.POST)
-	public String write(PhotoVo vo, HttpServletRequest req,MultipartFile pContent) throws IllegalStateException, IOException {
+	@RequestMapping(value = "/upload.do", method = RequestMethod.POST)
+	public String write(PhotoVo vo, HttpServletRequest req, MultipartFile pFile) throws IllegalStateException, IOException {
 		
 		String path= req.getSession().getServletContext().getRealPath("/resources/upload");
 		
@@ -50,17 +50,17 @@ public class PhotoController {
 			dir.mkdirs();
 		}
 		
-		if(!pContent.getOriginalFilename().isEmpty()) { //isEmpty = 비워져있다.
-			int pos = pContent.getOriginalFilename().lastIndexOf(".");
-			String ext = pContent.getOriginalFilename().substring(pos+1);
+		if(!pFile.getOriginalFilename().isEmpty()) { //isEmpty = 비워져있다.
+			int pos = pFile.getOriginalFilename().lastIndexOf(".");
+			String ext = pFile.getOriginalFilename().substring(pos+1);
 			Date now = new Date();
 			String today = new SimpleDateFormat("yyyyMMddHHmmSS").format(now);
 			
 			int random = (int) ((Math.random() * 100) + 1);
 			String result = today + random;
-			pContent.transferTo(new File(path,result+"."+ext));
+			pFile.transferTo(new File(path,result+"."+ext));
 		}
 		
-		return "";
+		return "list.do";
 	}
 }
