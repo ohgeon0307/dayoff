@@ -43,7 +43,7 @@ public class PhotoController {
 	@RequestMapping(value = "/upload.do", method = RequestMethod.POST)
 	public String write(PhotoVo vo, HttpServletRequest req, MultipartFile pFile) throws IllegalStateException, IOException {
 		
-		String path="D:\\springDev\\\\src\\main\\webapp\\resources\\upload";
+		String path="D:\\repository\\dayoff2\\src\\main\\webapp\\resources\\upload";
 		
 		//String path= req.getSession().getServletContext().getRealPath("/resources/upload");
 		
