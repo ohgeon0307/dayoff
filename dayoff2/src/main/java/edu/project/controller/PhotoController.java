@@ -43,7 +43,7 @@ public class PhotoController {
 	@RequestMapping(value = "/write.do", method = RequestMethod.POST)
 	public String write(PhotoVo vo, HttpServletRequest req, MultipartFile pFile) throws IllegalStateException, IOException {
 		
-		String path="C:\\Users\\15351\\Desktop\\upload";
+		String path="\\\\DESKTOP-3RHRVJD\\upload";
 		
 		//String path= req.getSession().getServletContext().getRealPath("/resources/upload");
 		
