@@ -35,13 +35,17 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/write.do", method = RequestMethod.POST)
-	public String write(BoardVo vo, HttpSession session) {
+	public String write(BoardVo vo, HttpSession session,Model model) {
 		
 		UserVo login = (UserVo)session.getAttribute("login");
 		
 		int uidx = login.getUidx();
+		String name = login.getName();
 		
 		vo.setUidx(uidx);
+		vo.setName(name);
+		
+		model.addAttribute("vo",vo);
 		
 		int result = boardService.boardInsert(vo);
 		
