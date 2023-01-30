@@ -2,6 +2,8 @@ package edu.project.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.project.service.BoardService;
+import edu.project.service.UserService;
 import edu.project.vo.BoardVo;
 import edu.project.vo.PageMaker;
 import edu.project.vo.SearchCriteria;
+import edu.project.vo.UserVo;
 
 
 @RequestMapping(value = "/board")
@@ -21,6 +25,9 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
+	@Autowired
+	private UserService userService;
+	
 	@RequestMapping(value = "/write.do", method = RequestMethod.GET)
 	public String write() {
 		
@@ -28,7 +35,14 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/write.do", method = RequestMethod.POST)
-	public String write(BoardVo vo) {
+	public String write(BoardVo vo, HttpSession session) {
+		
+		UserVo login = (UserVo)session.getAttribute("login");
+		
+		int uidx = login.getUidx();
+		
+		vo.setUidx(uidx);
+		
 		int result = boardService.boardInsert(vo);
 		
 		System.out.println(result);
@@ -43,9 +57,12 @@ public class BoardController {
 		
 		List<BoardVo> list = boardService.boardList(scri);
 		
+		List<UserVo> ulist = userService.list();
+		
 		System.out.println("list는:"+ list);
 		
 		model.addAttribute("datalist", list);
+		model.addAttribute("userlist", ulist);
 		
 		for(BoardVo item : list) {
 			System.out.println(item.getBidx());

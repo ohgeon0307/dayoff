@@ -40,4 +40,11 @@
 		WHERE id = #{id}
 		and password = #{password}
 	</select>
+	
+	<select id="list" resultType="userVo">
+		SELECT uidx
+		, id
+		, name
+		FROM usertable
+	</select>
 </mapper>

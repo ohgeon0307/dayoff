@@ -11,7 +11,14 @@ public class BoardVo {
 	private String filename;
 	private int likes;
 	private String bDelYn;
+	private String name;
 	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public int getBidx() {
 		return bidx;
 	}

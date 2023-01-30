@@ -25,7 +25,7 @@
 		, #{hashTag}
 		, 'hi'
 		, 0
-		, 1
+		, #{uidx}
 		, 'N'
 		)
 	</insert>

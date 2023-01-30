@@ -34,6 +34,7 @@ public class UserController {
 			session.setAttribute("login", loginVo);
 			return "redirect:/";
 		} else if (loginVo == null) {
+			
 			return "redirect:login.do";
 		}
 		return "";

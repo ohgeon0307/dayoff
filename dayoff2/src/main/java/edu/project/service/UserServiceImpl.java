@@ -1,5 +1,7 @@
 package edu.project.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +30,13 @@ public class UserServiceImpl implements UserService{
 	public UserVo login(UserVo vo) {
 		// TODO Auto-generated method stub
 		return userDao.login(vo);
+	}
+
+	@Override
+	public List<UserVo> list() {
+		// TODO Auto-generated method stub
+		List<UserVo> ulist = userDao.list();
+		return ulist;
 	}
 
 }

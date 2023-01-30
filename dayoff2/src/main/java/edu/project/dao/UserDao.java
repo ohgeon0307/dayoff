@@ -1,5 +1,7 @@
 package edu.project.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -24,5 +26,10 @@ public class UserDao {
 	
 	public UserVo login(UserVo vo) {
 		return sqlSession.selectOne("edu.project.mapper.userMapper.login", vo);
+	}
+	
+	public List<UserVo> list() {
+		
+		return sqlSession.selectList("edu.project.mapper.userMapper.list");
 	}
 }

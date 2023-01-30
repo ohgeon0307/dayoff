@@ -37,11 +37,20 @@
               <input type="text" placeholder="게시글을 검색해보세요!" />
      
             </div>
+            <c:if test="${login == null}">
             <a href="${path }/user/login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
             <a href="${path }/user/join.do" class="join_a"><div class="item">회원가입</div></a>
+            </c:if>
+            <c:if test="${login != null}">
+            <a class="login_a" href="<%= request.getContextPath() %>/user/logout.do"><div class="item">로그아웃</div></a>
+            <div class="bar">&#124;</div>
+            <a href="${path }/user/join.do" class="join_a"><div class="item">마이페이지</div></a>
             <a href="<%= request.getContextPath()%>/board/write.do"
               ><button class="header_write_btn">글쓰기</button></a> 
+            </c:if>
+            
+     
           </div>
         </div>
         <section class="second_section">
@@ -85,8 +94,7 @@
 
             <p class="hashtag"># ${vo.hashTag}</p>
             <div class="info_flex">
-              <div class="info">닉네임 : gunsi</div>
-
+              <div class="info">닉네임 : ${login.name }</div>
               <div class="view">조회수 : 26</div>
               <div class="comments">댓글 : 0</div>
             </div>
