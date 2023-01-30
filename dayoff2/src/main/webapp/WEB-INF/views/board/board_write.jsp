@@ -242,6 +242,7 @@
         <div class="title">
           <input type="text" name = "title" placeholder="제목을 입력해보세요!(100자 이내)" />
         </div>
+        
         <hr class="slide_hr" />
         <div>
           <textarea name = "content"

@@ -16,6 +16,7 @@
 		, likes
 		, uidx
 		, bDelYn
+		
 		)VALUES(
 		pbidx_seq.nextval
 		, #{title}
