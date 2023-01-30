@@ -24,7 +24,7 @@ public class PhotoServiceImpl implements PhotoService{
 	public PhotoVo selectByPidx(int pidx) {
 		return photoDAO.selectByPidx(pidx);
 	}
-
+ 
 	@Override
 	public int updateByPidx(PhotoVo vo) {
 		return photoDAO.updateByPidx(vo);

@@ -106,7 +106,7 @@
         </div>
         <hr class="slide_hr" />
         <div class="container">
-           <input type="file" name="pFile"/> 
+           <input type="file" name=""/> 
           인생샷을 올려주세요💫
         </div>
         <div class="hashtag">

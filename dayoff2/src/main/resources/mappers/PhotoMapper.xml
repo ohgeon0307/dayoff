@@ -7,7 +7,6 @@
 	<select id="list" resultType="photoVo" parameterType="photoVo">
 		select pidx
 			, pTitle
-			, pFile
 			, pDate
 			, uidx
 			, pLikes
@@ -20,7 +19,6 @@
 	<select id="selectByPidx" resultType="photoVo" parameterType="int">
 		select pidx
 			, pTitle
-			, pFile
 			, pDate
 			, uidx
 			, pLikes
@@ -49,7 +47,6 @@
 		INSERT INTO phototable(
 			pidx
 			, pTitle
-			, pFile
 			, pDate
 			, uidx
 			, pLikes
@@ -58,7 +55,6 @@
 		) VALUES(
 			PPIDX_SEQ.NEXTVAL
 			, #{pTitle}
-			, #{pFile}
 			, sysdate
 			, 1
 			, 0

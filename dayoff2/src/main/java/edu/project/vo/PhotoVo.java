@@ -10,7 +10,6 @@ public class PhotoVo {
 	private String pHashTag;
 	private int pHit;
 	
-	
 	public int getPidx() {
 		return pidx;
 	}
@@ -61,9 +60,12 @@ public class PhotoVo {
 	}
 	@Override
 	public String toString() {
-		return "PhotoVo [pidx=" + pidx + ", pTitle=" + pTitle + ", pContent=" + pContent + ", uidx=" + uidx
-				+ ", pLikes=" + pLikes + ", pDelYn=" + pDelYn + ", pHashTag=" + pHashTag + ", pHit=" + pHit + "]";
+		return "PhotoVo [pidx=" + pidx + ", pTitle=" + pTitle + ",  pContent=" + pContent
+				+ ", uidx=" + uidx + ", pLikes=" + pLikes + ", pDelYn=" + pDelYn + ", pHashTag=" + pHashTag + ", pHit="
+				+ pHit + "]";
 	}
 	
+	
+
 
 }

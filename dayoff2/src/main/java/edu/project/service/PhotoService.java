@@ -12,5 +12,5 @@ public interface PhotoService {
 	PhotoVo selectByPidx(int pidx);
 	int updateByPidx(PhotoVo vo);
 	int deleteByPidx(int pidx);
-	int insert(PhotoVo vo);
+	int insert(PhotoVo vo); 
 }

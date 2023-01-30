@@ -127,7 +127,7 @@
 		<c:forEach items="${datalist}" var="vo">
         <div class="imgList">
           <div class="imgC">
-            <img src="/upload/${vo.pFile}" alt="" class="img"/>
+            <img src="" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
@@ -143,89 +143,13 @@
             <a href="#">${vo.pHashTag}</a>
           </div>
         </div>
-
-</c:forEach>
+		</c:forEach>
       </section>
     
     <div class="modal">
       <span class="close">&times;</span>
       <img class="modal_content" id="img01">
     </div>
-
-      <section class="images">
-        <div class="imgList">
-          <div class="imgC">
-            <img src="${path}/resources/img/minku-kang-B9LU6tfetRQ-unsplash.jpg" alt="" class="img"/>
-          </div>
-          <div class="content">
-            <div class="writer">
-              <i class="xi-profile-o"></i><a href="#">sonny</a>
-            </div>
-            <div>
-              <i class="xi-eye-o">1500</i>
-              <a href="#"><i class="xi-heart"></i></a>34
-            </div>
-          </div>
-          <div class="title">아름다운 우리 한옥</div>
-          <div class="hashtag">
-            <a href="#">전라북도</a><a href="#">전주</a><a href="#">한옥마을</a>
-          </div>
-        </div>
-        <div class="imgList">
-          <div class="imgC">
-            <img src="${path}/resources/img/minku-kang-F9l4HKHzR88-unsplash.jpg" alt="" class="img"/>
-          </div>
-          <div class="content">
-            <div class="writer">
-              <i class="xi-profile-o"></i><a href="#">sonny</a>
-            </div>
-            <div>
-              <i class="xi-eye-o">1500</i>
-              <a href="#"><i class="xi-heart"></i></a>34
-            </div>
-          </div>
-          <div class="title">아름다운 우리 한옥</div>
-          <div class="hashtag">
-            <a href="#">전라북도</a><a href="#">전주</a><a href="#">한옥마을</a>
-          </div>
-        </div>
-        <div class="imgList">
-          <div class="imgC">
-            <img src="${path}/resources/img/rawkkim-02dluo990Vw-unsplash.jpg" alt="" class="img"/>
-          </div>
-          <div class="content">
-            <div class="writer">
-              <i class="xi-profile-o"></i><a href="#">sonny</a>
-            </div>
-            <div>
-              <i class="xi-eye-o">1500</i>
-              <a href="#"><i class="xi-heart"></i></a>34
-            </div>
-          </div>
-          <div class="title">아름다운 우리 한옥</div>
-          <div class="hashtag">
-            <a href="#">전라북도</a><a href="#">전주</a><a href="#">한옥마을</a>
-          </div>
-        </div>
-        <div class="imgList">
-          <div class="imgC">
-            <img src="${path}/resources/img/drew-bae-u5skafPrb7A-unsplash.jpg" alt="" class="img"/>
-          </div>
-          <div class="content">
-            <div class="writer">
-              <i class="xi-profile-o"></i><a href="#">sonny</a>
-            </div>
-            <div>
-              <i class="xi-eye-o">1500</i>
-              <a href="#"><i class="xi-heart"></i></a>34
-            </div>
-          </div>
-          <div class="title">아름다운 우리 한옥</div>
-          <div class="hashtag">
-            <a href="#">전라북도</a><a href="#">전주</a><a href="#">한옥마을</a>
-          </div>
-        </div>
-      </section>
 
       <section class="images">
         <div class="imgList">
