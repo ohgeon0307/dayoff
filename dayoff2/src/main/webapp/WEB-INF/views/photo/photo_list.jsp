@@ -127,7 +127,7 @@
 		<c:forEach items="${datalist}" var="vo">
         <div class="imgList">
           <div class="imgC">
-            <img src="${vo.pContent }" alt="" class="img"/>
+            <img src="/upload/${vo.pFile}" alt="" class="img"/>
           </div>
           <div class="content">
             <div class="writer">
