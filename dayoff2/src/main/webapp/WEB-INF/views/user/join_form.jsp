@@ -182,7 +182,7 @@
       <div class="layout">
         <div class="mandat">입력사항<span style="color: rgb(0, 206, 124);">(필수)</span></div>
       <div class="box">
-        <input type="text" placeholder="아이디" name="id" id ="id" onblur = "blurId(this)"/><button type= "button" onclick="validation()" class="validation_btn">중복확인</button><br>
+        <Label><input type="text" placeholder="아이디" name="id" id ="id" onblur = "blurId(this)"></input><button type= "button" onclick="validation()" class="validation_btn">중복확인</button></Label><br/>
         <input type="password" placeholder="비밀번호(8자~12자, 영문+숫자+특수문자 사용)" name = "password" id ="password" required><br>
         <input type="text" placeholder="이름" name = "name" id="name" required><br>
         <input type="tel" placeholder="휴대폰 번호(-없이 입력해주세요)" name ="phone" id="phone" required><br>
