@@ -58,6 +58,12 @@
   	function check() {
   		var frm = document.frm; //form name으로 폼 호출
   		
+  		if(frm.id.value == "") {
+  			alert("아이디는 필수 항목입니다.");
+  			frm.id.focus();
+  			return;
+  		}
+  		
   		if(frm.password.value == "") {
   			alert("비밀번호는 필수 항목입니다.");
   			frm.password.focus();
