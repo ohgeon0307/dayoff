@@ -246,6 +246,7 @@
 	          배경 사진을 선택해주세요💫
 	        </div>
 	        <div class="title">
+	          <input type="hidden" name="writer" value="${login.name }"/>
 	          <input
 	            type="text"
 	            placeholder="ex)높은 산 좋아하시는 분 1~2명 구해봐요!"

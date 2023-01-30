@@ -14,7 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.project.service.TogetherService;
+import edu.project.service.UserService;
 import edu.project.vo.TogetherVo;
+import edu.project.vo.UserVo;
+
 
 
 
@@ -26,6 +29,9 @@ public class HomeController {
 	
 	@Autowired
 	private TogetherService togetherService;
+	
+	@Autowired
+	private UserService userService;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -44,7 +50,11 @@ public class HomeController {
 		
 		List<TogetherVo> list = togetherService.list();
 		
+		List<UserVo> userlist = userService.list();
+		
 		model.addAttribute("togetherlist", list);
+		
+		model.addAttribute("userlist", userlist);
 		
 		return "together/together_home";
 	}

@@ -10,6 +10,7 @@ public class TogetherVo {
 	private String tFilename;
 	private String tDelYn;
 	private String tTitle;
+	private String writer;
 	
 	public String gettTitle() {
 		return tTitle;
@@ -69,9 +70,19 @@ public class TogetherVo {
 		this.tDelYn = tDelYn;
 	}
 	
+	public String getWriter() {
+		return writer;
+	}
+
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+	
 	@Override
 	public String toString() {
 		return "TogetherVo [tidx=" + tidx + ", tContent=" + tContent + ", tDate=" + tDate + ", uidx=" + uidx + ", tHit="
 				+ tHit + ", tHashTag=" + tHashTag + ", tFilename=" + tFilename + ", tDelYn=" + tDelYn + "]";
 	}
+
+	
 }

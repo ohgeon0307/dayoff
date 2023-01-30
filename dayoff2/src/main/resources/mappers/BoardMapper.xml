@@ -16,6 +16,7 @@
 		, likes
 		, uidx
 		, bDelYn
+		, writer
 		
 		)VALUES(
 		pbidx_seq.nextval
@@ -28,6 +29,7 @@
 		, 0
 		, #{uidx}
 		, 'N'
+		, #{writer}
 		)
 	</insert>
 	

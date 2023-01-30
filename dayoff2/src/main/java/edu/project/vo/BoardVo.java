@@ -12,6 +12,7 @@ public class BoardVo {
 	private int likes;
 	private String bDelYn;
 	private String name;
+	private String writer;
 	
 	public String getName() {
 		return name;
@@ -80,11 +81,19 @@ public class BoardVo {
 		this.bDelYn = bDelYn;
 	}
 	
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+	
 	@Override
 	public String toString() {
 		return "BoardVo [bidx=" + bidx + ", title=" + title + ", content=" + content + ", wdate=" + wdate + ", hit="
 				+ hit + ", uidx=" + uidx + ", hashTag=" + hashTag + ", filename=" + filename + ", likes=" + likes
 				+ ", bDelYn=" + bDelYn + "]";
 	}
+	
 	
 }

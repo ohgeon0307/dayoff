@@ -86,10 +86,17 @@
               </button>
               <input type="text" placeholder="여행지를 찾아보세요!" />
             </div>
+             <c:if test="${login == null}">
             <a href="login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
-            <a href="join.html" class="join_a"><div class="item">회원가입</div></a>
-            <a href="together_write.do"
+            <a href="${path }/user/join.do" class="join_a"><div class="item">회원가입</div></a>
+            </c:if>
+            <c:if test="${login != null}">
+            <a class="login_a" href="<%= request.getContextPath() %>/user/logout.do"><div class="item">로그아웃</div></a>
+            <div class="bar">&#124;</div>
+            <a href="${path }/user/join.do" class="join_a"><div class="item">마이페이지</div></a>
+            </c:if>
+            <a href="<%= request.getContextPath() %>/together_write.do"
               ><button class="header_write_btn">글쓰기</button></a
             >
           </div>
@@ -331,7 +338,7 @@
 	                      alt="프로필"
 	                    />
 	                    <div>
-	                      <p class="ProfileDragP">닉네임</p>
+	                      <p class="ProfileDragP"><%=vo.getWriter() %></p>
 	                    </div>
 	                  </div>
 	                  <div class="ViewAndMsgWrapper">

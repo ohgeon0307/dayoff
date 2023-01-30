@@ -239,6 +239,7 @@
       </div>
       <section class="file_upload_section">
       <form action= "write.do" method = "post">
+      	<input type="hidden" name="writer" value="${login.name }"/>
         <div class="title">
           <input type="text" name = "title" placeholder="제목을 입력해보세요!(100자 이내)" />
         </div>
