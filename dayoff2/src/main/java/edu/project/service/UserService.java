@@ -6,4 +6,6 @@ public interface UserService {
 	int validation(String id);
 	
 	int insertUser(UserVo vo);
+	
+	UserVo login(UserVo vo);
 }

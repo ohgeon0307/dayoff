@@ -1,5 +1,7 @@
 package edu.project.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +23,28 @@ public class UserController {
 		
 		
 		return "user/login";
+	}
+	
+	@RequestMapping(value = "/login.do", method=RequestMethod.POST)
+	public String login(UserVo vo, HttpSession session) {
+		
+		UserVo loginVo = userService.login(vo);
+		System.out.println(loginVo);
+		if(loginVo != null) {
+			session.setAttribute("login", loginVo);
+			return "redirect:/";
+		} else if (loginVo == null) {
+			return "redirect:login.do";
+		}
+		return "";
+	}
+	
+	@RequestMapping(value = "/logout.do", method=RequestMethod.GET)
+	public String logout(HttpSession session) {
+		
+		session.invalidate();
+		
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value="/login_action.do", method=RequestMethod.GET)

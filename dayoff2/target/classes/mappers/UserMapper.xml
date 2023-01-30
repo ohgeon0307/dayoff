@@ -31,4 +31,13 @@
 			, sysdate
 		)
 	</insert>
+	
+	<select id ="login" parameterType="userVo" resultType="userVo">
+		SELECT uidx
+		, id
+		, name
+		FROM usertable
+		WHERE id = #{id}
+		and password = #{password}
+	</select>
 </mapper>

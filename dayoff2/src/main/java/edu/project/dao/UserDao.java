@@ -21,4 +21,8 @@ public class UserDao {
 		
 		return sqlSession.insert("edu.project.mapper.userMapper.insertUser", vo);
 	}
+	
+	public UserVo login(UserVo vo) {
+		return sqlSession.selectOne("edu.project.mapper.userMapper.login", vo);
+	}
 }

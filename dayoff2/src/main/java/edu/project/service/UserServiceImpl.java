@@ -24,4 +24,10 @@ public class UserServiceImpl implements UserService{
 		return userDao.insertUser(vo);
 	}
 
+	@Override
+	public UserVo login(UserVo vo) {
+		// TODO Auto-generated method stub
+		return userDao.login(vo);
+	}
+
 }
