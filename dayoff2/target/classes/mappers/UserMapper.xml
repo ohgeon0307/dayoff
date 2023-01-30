@@ -26,8 +26,8 @@
 			, #{password}
 			, #{name}
 			, #{phone}
-			, #{birth,jdbcType=VARCHAR}
-			, #{gender,jdbcType=VARCHAR}
+			, #{birth}
+			, #{gender}
 			, sysdate
 		)
 	</insert>
