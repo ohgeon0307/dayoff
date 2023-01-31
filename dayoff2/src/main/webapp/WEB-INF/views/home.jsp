@@ -59,7 +59,7 @@
       ChannelIO("boot", {
         pluginKey: "440ad304-9963-448a-9d8e-8efd8dfa9576",
       });
-    </script>
+    </script>  
   </head>
   <body>
     <header>
