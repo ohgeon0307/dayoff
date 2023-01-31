@@ -40,12 +40,8 @@ public class BoardController {
 		UserVo login = (UserVo)session.getAttribute("login");
 		
 		int uidx = login.getUidx();
-		String name = login.getName();
 		
 		vo.setUidx(uidx);
-		vo.setName(name);
-		
-		model.addAttribute("vo",vo);
 		
 		int result = boardService.boardInsert(vo);
 		
@@ -117,7 +113,11 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/delete.do", method = RequestMethod.POST)
-	public String delete(int bidx) {
+	public String delete(int bidx, HttpSession session) {
+		
+		UserVo login = (UserVo)session.getAttribute("login");
+		
+		int uidx = login.getUidx();
 		
 		int result = boardService.deleteByBidx(bidx);
 		

@@ -12,4 +12,5 @@ public interface UserService {
 	UserVo login(UserVo vo);
 	
 	List<UserVo> list();
+
 }
