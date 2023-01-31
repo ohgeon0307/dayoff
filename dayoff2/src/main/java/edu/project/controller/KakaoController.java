@@ -1,5 +1,7 @@
 package edu.project.controller;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,8 +22,13 @@ public class KakaoController {
 		System.out.println("#########" + code);
 		
 		String access_Token = kakaoService.getAccessToken(code);
+		HashMap<String, Object> userInfo = kakaoService.getUserInfo(access_Token);
 		System.out.println("###access_Token### : " + access_Token);
+		System.out.println("###nickname### :" + userInfo.get("nickname"));
+		System.out.println("###email### :" + userInfo.get("email"));
 		
-		return "user/testPage";
+		return "redirect:/";
 	}
+	
+	
 }
