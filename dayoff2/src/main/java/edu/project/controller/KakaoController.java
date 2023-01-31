@@ -34,6 +34,7 @@ public class KakaoController {
 		
 		if(userInfo.get("email") != null) {
 			session.setAttribute("userId", userInfo.get("email"));
+			session.setAttribute("userNickName", userInfo.get("nickname"));
 			session.setAttribute("access_Token", access_Token);
 		}
 		
