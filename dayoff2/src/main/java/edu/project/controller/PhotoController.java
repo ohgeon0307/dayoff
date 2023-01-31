@@ -22,7 +22,7 @@ public class PhotoController {
 	private PhotoService photoService;
 	
 	@RequestMapping(value = "/list.do")
-	public String list(Model model, PhotoVo vo ) {
+	public String list(Model model, PhotoVo vo) {
 		List<PhotoVo> list = photoService.list(vo);
 		model.addAttribute("datalist",list);
 		return "photo/photo_list";
