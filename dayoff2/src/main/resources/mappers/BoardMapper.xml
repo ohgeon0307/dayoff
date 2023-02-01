@@ -6,7 +6,7 @@
 <mapper namespace="edu.project.mapper.boardMapper">
 	<insert id="boardInsert" parameterType="boardVo">
 		INSERT INTO boardtable(
-		  bidx
+		bidx
 		, title
 		, content
 		, wdate
@@ -15,9 +15,10 @@
 		, filename
 		, likes
 		, uidx
-		, bDelYn
+		,
+		bDelYn
 		, writer
-		
+
 		)VALUES(
 		pbidx_seq.nextval
 		, #{title}
@@ -32,34 +33,48 @@
 		, #{writer}
 		)
 	</insert>
-	
-	<select id="boardList" resultType="boardVo" parameterType = "scri">
+
+	<select id="boardList" resultType="boardVo" parameterType="scri">
 		SELECT * FROM (
-			SELECT ROWNUM AS rnum, A.* FROM (
-			SELECT * FROM boardtable
-			<include refid="search"></include>
-			ORDER BY bidx DESC
-			)A
+		SELECT ROWNUM AS rnum, A.* FROM (
+		SELECT * FROM boardtable
+		<include refid="search"></include>
+		ORDER BY bidx DESC
+		)A
 		) WHERE rnum BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
-	
-	<select id = "listCount" resultType = "int">
+
+	<select id="listCount" resultType="int">
 		SELECT count(bidx)
 		from boardtable
 		<include refid="search"></include>
 		WHERE bidx > 0
 	</select>
-	
-	<sql id = "search">
-		<if test = "searchType == 'title'">
-		WHERE title like '%'||#{keyword}||'%'
+
+	<sql id="search">
+		<if test="searchType == 'title'">
+			WHERE title like '%'||#{keyword}||'%'
 		</if>
-		<if test = "searchType == 'content'">
-		WHERE content like '%'||#{keyword}||'%'
+		<if test="searchType == 'content'">
+			WHERE content like '%'||#{keyword}||'%'
 		</if>
 	</sql>
-	
-	<select id = "selectByBidx" parameterType="int" resultType="boardVo">
+
+	<select id="selectByBidx" parameterType="int"
+		resultType="boardVo">
+		SELECT bidx
+		, title
+		, content
+		, hashTag
+		, uidx
+		, hit
+		FROM
+		boardtable
+		WHERE bidx = #{bidx}
+	</select>
+
+	<select id="updateByBidx" parameterType="int"
+		resultType="boardVo">
 		SELECT bidx
 		, title
 		, content
@@ -69,29 +84,55 @@
 		FROM boardtable
 		WHERE bidx = #{bidx}
 	</select>
-	
-	<select id ="updateByBidx" parameterType = "int" resultType = "boardVo">
-	SELECT bidx
-	, title
-	, content
-	, hashTag
-	, uidx
-	, hit
-	FROM boardtable
-	WHERE bidx = #{bidx}
-	</select>
-	
-	<update id = "modifyByBidx" parameterType = "boardVo">
+
+	<update id="modifyByBidx" parameterType="boardVo">
 		UPDATE boardtable
-		SET title
+		SET
+		title
 		= #{title}
 		, content = #{content}
 		, hashTag = #{hashTag}
-		WHERE bidx = #{bidx}
+		WHERE bidx
+		= #{bidx}
 	</update>
-	
+
 	<delete id="deleteByBidx" parameterType="int">
 		DELETE FROM boardtable
 		WHERE bidx = #{bidx}
 	</delete>
+
+	<select id="replyList" parameterType="int" resultType="replyVo">
+		SELECT *
+		FROM replytable WHERE bidx=#{bidx} and rDelYn = 'N';
+	</select>
+
+	<insert id="insertReply" parameterType="replyVo">
+		INSERT INTO replytable(
+		ridx
+		, rcontent
+		, redate
+		, uidx
+		, bidx
+		, rDelYn
+		)VALUES(
+		pridx_seq.NEXTVAL
+		, #{rcontent}
+		, SYSDATE
+		, #{uidx}
+		, #{bidx}
+		, 'N'
+		)
+	</insert>
+	
+	<update id="updateReply" parameterType="replyVo">
+		UPDATE replytable
+		SET 
+		rcontent = #{rcontent}
+		WHERE ridx = #{ridx}
+	</update>
+	
+	<delete id="deleteReply" parameterType="int">
+		DELETE FROM replytable WHERE ridx = #{ridx}
+	</delete>
+
 </mapper>

@@ -12,6 +12,7 @@
 		<typeAlias type="edu.project.vo.SearchCriteria" alias="scri"/>
 		<typeAlias type="edu.project.vo.SearchVo" alias="searchVo" />
 		<typeAlias type="edu.project.vo.Criteria" alias="cri" />
+		<typeAlias type="edu.project.vo.ReplyVo" alias="replyVo" />
     </typeAliases>
     
     
