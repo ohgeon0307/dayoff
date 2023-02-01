@@ -38,7 +38,7 @@ public class KakaoService {
 			sb.append("grant_type=authorization_code");
             
 			sb.append("&client_id=5b665dada62338c2ffc08d6bf5298ed4"); //본인이 발급받은 key
-			sb.append("&redirect_uri=http://192.168.0.137:8099/dayoff/kakao/kakao.do"); // 본인이 설정한 주소
+			sb.append("&redirect_uri=http://localhost:8099/dayoff/kakao/kakao.do"); // 본인이 설정한 주소
             
 			sb.append("&code=" + authorize_code);
 			bw.write(sb.toString());
