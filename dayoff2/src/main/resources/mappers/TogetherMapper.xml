@@ -53,6 +53,7 @@
     		 , tdate
     		 , thit
     		 , uidx
+    		 , writer
     		FROM togethertable
     		WHERE tidx = #{tidx}	<!-- DAO에서 파라미터로 넘긴 변수명 -->
     </select>

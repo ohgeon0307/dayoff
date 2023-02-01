@@ -79,10 +79,18 @@
               </button>
               <input type="text" placeholder="여행지를 찾아보세요!" />
             </div>
-            <a href="login.do" class="login_a"><div class="item">로그인</div></a>
+            <c:if test="${login == null}">
+            <a href="${path }/user/login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
-            <a href="join.html" class="join_a"><div class="item">회원가입</div></a>
-            <a href="together_write.do"><button class="header_write_btn">글쓰기</button></a>
+            <a href="${path }/user/join.do" class="join_a"><div class="item">회원가입</div></a>
+            </c:if>
+            <c:if test="${login != null}">
+            <a class="login_a" href="<%= request.getContextPath() %>/user/logout.do"><div class="item">로그아웃</div></a>
+            <div class="bar">&#124;</div>
+            <a href="${path }/user/join.do" class="join_a"><div class="item">마이페이지</div></a>
+            <a href="<%= request.getContextPath()%>/together_write.do"
+              ><button class="header_write_btn">글쓰기</button></a> 
+            </c:if>
           </div>
         </div>
         <section class="second_section">
@@ -105,7 +113,7 @@
         <div class="InnerSection_AreaLeft">
           <div class="AccompanyContainer">
             <div class="AccompanyContainer_TitleBox">
-              <p>${vo.tTitle}</p>
+              <p>${togethervo.tTitle}</p>
             </div>
             <div class="AccompanyContainer_TopInfoBox">
               <div class="AccompanyContainer_FlexBox">
@@ -192,7 +200,7 @@
               </div>
             </div>
             <p class="AccompanyContainer_ContentBox">
-             ${vo.tContent}
+             ${togethervo.tContent}
             </p>
             <div class="badge_HashTag">
               <div>
@@ -228,14 +236,16 @@
             </div>
             <div class="AccompanyContainer_BottomBox">
               <p class="AccompanyContainer_PreventDrag">
-                ${vo.tDate} 조회수 ${vo.tHit} 메시지 1
+                ${togethervo.tDate} 조회수 ${togethervo.tHit} 메시지 1
               </p>
               <button class="AccompanyContainer_ReportButton">신고하기</button>
             </div>
-            <a href="together_modify.do?tidx=${vo.tidx}"><button class="modify">수정하기</button></a>
+            <c:if test="${login.name == togethervo.writer}">
+            <a href="together_modify.do?tidx=${togethervo.tidx}"><button class="modify">수정하기</button></a>
             <button class="delete" onclick="document.delfrm.submit()">삭제하기</button>
+            </c:if>
             <form name="delfrm" action="delete.do" method="post">
-            	<input type="hidden" name="tidx" value="${vo.tidx }">
+            	<input type="hidden" name="tidx" value="${togethervo.tidx }">
             </form>
             <div class="AccompanyContainer_InputBox">
               <div class="CommentInputBox">
