@@ -241,8 +241,8 @@
               <button class="AccompanyContainer_ReportButton">신고하기</button>
             </div>
             <c:if test="${login.name == togethervo.writer}">
-            <a href="together_modify.do?tidx=${togethervo.tidx}"><button class="modify">수정하기</button></a>
-            <button class="delete" onclick="document.delfrm.submit()">삭제하기</button>
+	            <a href="together_modify.do?tidx=${togethervo.tidx}"><button class="modify">수정하기</button></a>
+	            <button class="delete" onclick="document.delfrm.submit()">삭제하기</button>
             </c:if>
             <form name="delfrm" action="delete.do" method="post">
             	<input type="hidden" name="tidx" value="${togethervo.tidx }">

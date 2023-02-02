@@ -22,7 +22,7 @@
 			, #{tContent}
 			, SYSDATE
 			, 0
-			, '먹방' 
+			, '먹방'
 			, 0
 			, #{uidx}
 			, #{writer}

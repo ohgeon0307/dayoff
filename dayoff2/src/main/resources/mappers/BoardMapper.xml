@@ -68,6 +68,7 @@
 		, hashTag
 		, uidx
 		, hit
+		, writer
 		FROM
 		boardtable
 		WHERE bidx = #{bidx}

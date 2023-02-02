@@ -134,8 +134,10 @@
               <button class="AccompanyContainer_ReportButton">신고하기</button>
               
             </div>
-            <button class="modify" onclick="location.href='modify.do?bidx=${vo.bidx}'">수정하기</button>
-            <button class="delete" onclick="document.delfrm.submit()">삭제하기</button>
+            <c:if test="${login.name == vo.writer}">
+	            <button class="modify" onclick="location.href='modify.do?bidx=${vo.bidx}'">수정하기</button>
+	            <button class="delete" onclick="document.delfrm.submit()">삭제하기</button>
+            </c:if>
             <form name="delfrm" action="delete.do" method="post">
             	<input type="hidden" name="bidx" value="${vo.bidx }">
             </form>
