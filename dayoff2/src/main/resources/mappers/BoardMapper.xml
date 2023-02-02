@@ -103,22 +103,22 @@
 
 	<select id="replyList" parameterType="int" resultType="replyVo">
 		SELECT *
-		FROM replytable WHERE bidx=#{bidx} and rDelYn = 'N';
+		FROM replytable WHERE bidx=#{bidx} and rdelyn = 'N'
 	</select>
 
 	<insert id="insertReply" parameterType="replyVo">
 		INSERT INTO replytable(
 		ridx
-		, rcontent
+		, rContent
 		, redate
 		, uidx
 		, bidx
-		, rDelYn
+		, rdelyn
 		)VALUES(
 		pridx_seq.NEXTVAL
-		, #{rcontent}
-		, SYSDATE
-		, #{uidx}
+		, #{rContent}
+		, sysdate
+		, 1
 		, #{bidx}
 		, 'N'
 		)

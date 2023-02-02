@@ -139,15 +139,27 @@
             <form name="delfrm" action="delete.do" method="post">
             	<input type="hidden" name="bidx" value="${vo.bidx }">
             </form>
-            <div class="AccompanyContainer_InputBox">
-              <div class="CommentInputBox">
-                <textarea placeholder="댓글을 입력해주세요."
-                  class="CommentInputBox_Input"
-                  style="height: 39px; resize: none"
-                ></textarea>
-                <button class="CommentInputBox_SubmitText">게시</button>
+            <!--  댓글  -->
+    <div class="container">
+        <label for="content">comment</label>
+        <form name="commentInsertForm">
+            <div class="input-group">
+               <input type="hidden" name="bidx" value="${vo.bidx}"/>
+               <input type="text" class="form-control" id="rContent" name="rContent" placeholder="내용을 입력하세요.">
+               <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" name="commentInsertBtn">등록</button>
+               </span>
               </div>
-            </div>
+        </form>
+    </div>
+    
+    <div class="container">
+        <div class="commentList"></div>
+    </div>
+</div>
+ 
+<%@ include file="reply.jsp" %>
+
             <!--  <div class="AccompanyContainer_CommentContainer">
               <div class="AccompanyContainer_CommentInnerContainer">
                 <div class="Comment_Wrapper">

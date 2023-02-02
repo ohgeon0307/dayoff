@@ -9,7 +9,7 @@ public class ReplyVo {
 	private String redate;
 	private int uidx;
 	private int bidx;
-	private String rDelYn;
+	private String rdelyn;
 	
 	public int getRidx() {
 		return ridx;
@@ -41,10 +41,11 @@ public class ReplyVo {
 	public void setBidx(int bidx) {
 		this.bidx = bidx;
 	}
-	public String getrDelYn() {
-		return rDelYn;
+	public String getRdelyn() {
+		return rdelyn;
 	}
-	public void setrDelYn(String rDelYn) {
-		this.rDelYn = rDelYn;
+	public void setRdelyn(String rdelyn) {
+		this.rdelyn = rdelyn;
 	}
+	
 }
