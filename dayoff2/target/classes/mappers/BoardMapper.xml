@@ -127,12 +127,15 @@
 	<update id="updateReply" parameterType="replyVo">
 		UPDATE replytable
 		SET 
-		rcontent = #{rcontent}
+		rContent = #{rContent}
 		WHERE ridx = #{ridx}
 	</update>
 	
-	<delete id="deleteReply" parameterType="int">
-		DELETE FROM replytable WHERE ridx = #{ridx}
-	</delete>
+	<update id="deleteReply" parameterType="int">
+		update replytable
+		SET
+		rdelyn = 'Y' WHERE ridx = #{ridx}
+	</update>
+	
 
 </mapper>

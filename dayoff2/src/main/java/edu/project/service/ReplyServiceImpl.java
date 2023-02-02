@@ -37,9 +37,9 @@ public class ReplyServiceImpl implements ReplyService{
 
 
 	@Override
-	public int deleteReply(int bidx) {
+	public int deleteReply(int ridx) {
 		// TODO Auto-generated method stub
-		return replyDao.deleteReply(bidx);
+		return replyDao.deleteReply(ridx);
 	}
 
 }

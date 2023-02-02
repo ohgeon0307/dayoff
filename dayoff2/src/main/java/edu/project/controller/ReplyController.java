@@ -45,7 +45,7 @@ public class ReplyController {
     
     @RequestMapping("/update") //댓글 수정  
     @ResponseBody
-    private int udpateReply(@RequestParam int ridx, @RequestParam String rContent) throws Exception{
+    private int updateReply(@RequestParam int ridx, @RequestParam String rContent) throws Exception{
         
         ReplyVo vo = new ReplyVo();
         vo.setRidx(ridx);
@@ -54,7 +54,7 @@ public class ReplyController {
         return replyService.updateReply(vo);
     }
     
-    @RequestMapping("/delete/{ridx}") //댓글 삭제  
+    @RequestMapping("/delete{ridx}") //댓글 삭제  
     @ResponseBody
     private int deleteReply(@PathVariable int ridx) throws Exception{
         

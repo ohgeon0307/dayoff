@@ -30,8 +30,8 @@ public class ReplyDao {
 		return sqlSession.update("edu.project.mapper.boardMapper.updateReply", vo);
 	}
 	
-	public int deleteReply(int bidx) {
+	public int deleteReply(int ridx) {
 		
-		return sqlSession.delete("edu.project.mapper.boardMapper.deleteReply", bidx);
+		return sqlSession.update("edu.project.mapper.boardMapper.deleteReply", ridx);
 	}
 }

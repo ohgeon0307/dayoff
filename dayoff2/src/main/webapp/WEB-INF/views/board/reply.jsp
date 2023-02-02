@@ -62,7 +62,7 @@
 		var a = '';
 
 		a += '<div class="input-group">';
-		a += '<input type="text" class="form-control" name="content_'+ridx+'" value="'+rContent+'"/>';
+		a += '<input type="text" class="form-control" name="rContent_'+ridx+'" value="'+rContent+'"/>';
 		a += '<span class="input-group-btn"><button class="btn btn-default" type="button" onclick="commentUpdateProc('
 				+ ridx + ');">수정</button> </span>';
 		a += '</div>';
@@ -76,7 +76,7 @@
 		var updateContent = $('[name=rContent_' + ridx + ']').val();
 
 		$.ajax({
-			url : '/reply/update',
+			url : '<%=request.getContextPath()%>/board/view/reply/update',
 			type : 'post',
 			data : {
 				'rContent' : updateContent,
@@ -92,11 +92,11 @@
 	//댓글 삭제 
 	function commentDelete(ridx) {
 		$.ajax({
-			url : '/reply/delete' + ridx,
+			url : '<%=request.getContextPath()%>/board/view/reply/delete' + ridx,
 			type : 'post',
 			success : function(data) {
 				if (data == 1)
-					commentList(ridx); //댓글 삭제후 목록 출력 
+					commentList(bidx); //댓글 삭제후 목록 출력 
 			}
 		});
 	}
