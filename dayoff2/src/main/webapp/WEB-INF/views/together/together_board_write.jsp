@@ -255,6 +255,7 @@
 	        </div>
 	        <div class="title">
 	          <input type="hidden" name="writer" value="${login.name }"/>
+	          <input type="hidden" name="uidx" value="${login.uidx }"/>
 	          <input
 	            type="text"
 	            placeholder="ex)높은 산 좋아하시는 분 1~2명 구해봐요!"

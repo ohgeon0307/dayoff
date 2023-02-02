@@ -24,24 +24,16 @@
 			, 0
 			, '먹방' 
 			, 0
-			, 1
+			, #{uidx}
 			, #{writer}
 		)
 	</insert>
 	
 	<select id="togetherlist" resultType="togetherVo">
 	
-    	SELECT tidx
-    		 , ttitle
-    		 , tcontent
-    		 , tdate
-    		 , thit
-    		 , uidx
-    		 , thit
-    		 , thashtag
-    		 , tdelyn
-    		 , writer
-    		FROM togethertable
+    	SELECT *
+    	FROM togethertable
+    	order by tidx desc
     		
     		
     </select>
