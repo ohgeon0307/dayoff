@@ -29,7 +29,7 @@ public class PhotoController {
 	}
 	
 	
-	@RequestMapping(value = "/write.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/write.do", method = RequestMethod.GET )
 	public String write() {
 		
 		return "photo/photo_write";
