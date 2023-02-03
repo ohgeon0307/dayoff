@@ -42,6 +42,12 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		
 		
+		return "index";
+	}
+	
+	@RequestMapping(value = "/community", method = RequestMethod.GET)
+	public String community() {
+		
 		return "home";
 	}
 	

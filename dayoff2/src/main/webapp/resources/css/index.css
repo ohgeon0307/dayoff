@@ -23,7 +23,7 @@ body {
 .main {
   width: 100vw;
   height: 1060px;
-  background-image: url("img/travel.jpg");
+  background-image: url("../img/travel.jpg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
