@@ -69,6 +69,7 @@
 		, uidx
 		, hit
 		, writer
+		, wdate
 		FROM
 		boardtable
 		WHERE bidx = #{bidx}

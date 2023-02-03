@@ -201,7 +201,7 @@
 						alt="이미지" style="width: 50px; height: 50px; padding: 4px" />
 					<div class="Profile_info">
 						<div class="Area_Flex" style="display: flex">
-							<p class="Profile_nickname">jisu4569</p>
+							<p class="Profile_nickname">${vo.writer}</p>
 						</div>
 						<div class="Profile_Taste">
 							<p class="ProfileCompanion">20대 . 남성 . 대한민국</p>
