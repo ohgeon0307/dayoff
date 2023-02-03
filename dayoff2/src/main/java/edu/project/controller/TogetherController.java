@@ -35,7 +35,7 @@ public class TogetherController {
 		
 		
 		
-		model.addAttribute("togethervo", togethervo);
+		model.addAttribute("togethervo", togethervo); 
 		
 		
 		
