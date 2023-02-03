@@ -20,6 +20,10 @@ html {
   --vh: 9.26px;
 }
 
+#sns a {
+	color : black;
+}
+
 html,
 body,
 div,

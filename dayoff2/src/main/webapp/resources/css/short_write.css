@@ -23,6 +23,10 @@ main {
   display: block;
 }
 
+#sns a {
+	color : black;
+}
+
 /*header 시작*/
 
 header {

@@ -105,10 +105,19 @@ select {
   color: #000;
 }
 
+
+li {
+	list-style : none;
+}
+
 img {
   border-style: none;
   vertical-align: top;
   object-fit: cover;
+}
+
+#sns a {
+	color : black;
 }
 
 img,

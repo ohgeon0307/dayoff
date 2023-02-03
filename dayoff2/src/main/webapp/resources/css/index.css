@@ -12,6 +12,10 @@
   font-family: "SF_HambakSnow";
 }
 
+#sns a {
+	color : black;
+}
+
 body {
   overflow: hidden;
 }

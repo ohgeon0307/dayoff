@@ -181,6 +181,14 @@ button {
   background: unset;
 }
 
+li {
+	list-style : none;
+}
+
+a {
+
+}
+
 .left_header {
   display: flex;
   width: 400px;

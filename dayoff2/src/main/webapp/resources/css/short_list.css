@@ -24,6 +24,10 @@ header {
   background-color: rgb(255, 255, 255);
 }
 
+#sns a {
+	color : black;
+}
+
 .item img {
   margin-top: 10px;
   width: 170px;

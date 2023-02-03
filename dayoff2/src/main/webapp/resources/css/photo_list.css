@@ -20,6 +20,10 @@ li {
   font-style: normal;
 }
 
+#sns a {
+	color : black;
+}
+
 header {
   width: 100vw;
   position: fixed;
