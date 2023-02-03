@@ -154,7 +154,7 @@
       <section class="photo_section">
         <div class="photo_header_section">
           <p>취향저격 포토갤러리</p>
-          <button class="photo_more">더보기</button>
+          <a href="<%= request.getContextPath()%>/photo/list.do"><button class="photo_more">더보기</button></a>
         </div>
         <div class="photo_zone">
           <div class="gallery">
@@ -194,7 +194,7 @@
       <section class="board_section">
         <div class="board_section_header">
           <p>여행정보 공유해요❕</p>
-          <button class="board_more">더보기</button>
+          <a href="<%= request.getContextPath()%>/board/list.do"><button class="board_more">더보기</button></a>
         </div>
         <div class="board_zone">
           <div class="board_contents">

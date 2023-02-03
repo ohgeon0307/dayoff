@@ -204,7 +204,7 @@
 							<p class="Profile_nickname">${vo.writer}</p>
 						</div>
 						<div class="Profile_Taste">
-							<p class="ProfileCompanion">20대 . 남성 . 대한민국</p>
+							<p class="ProfileCompanion">20대 . 남성 . 전주시</p>
 						</div>
 					</div>
 				</div>
