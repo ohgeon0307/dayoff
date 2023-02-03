@@ -37,7 +37,7 @@ public class TogetherController {
 		
 		model.addAttribute("togethervo", togethervo); 
 		
-		
+		 
 		
 		
 		return "together/together_view";
