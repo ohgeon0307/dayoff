@@ -10,6 +10,7 @@ public class ReplyVo {
 	private int uidx;
 	private int bidx;
 	private String rdelyn;
+	private String writer;
 	
 	public int getRidx() {
 		return ridx;
@@ -46,6 +47,12 @@ public class ReplyVo {
 	}
 	public void setRdelyn(String rdelyn) {
 		this.rdelyn = rdelyn;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
 	
 }

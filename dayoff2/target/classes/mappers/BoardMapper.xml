@@ -113,16 +113,18 @@
 		ridx
 		, rContent
 		, redate
-		, uidx
+		, writer
 		, bidx
 		, rdelyn
+		, uidx
 		)VALUES(
 		pridx_seq.NEXTVAL
 		, #{rContent}
 		, sysdate
-		, 1
+		, #{writer}
 		, #{bidx}
 		, 'N'
+		, #{uidx}
 		)
 	</insert>
 	

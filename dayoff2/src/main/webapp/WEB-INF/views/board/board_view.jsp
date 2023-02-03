@@ -235,7 +235,10 @@
 					<label for="content">comment</label>
 					<form name="commentInsertForm">
 						<div class="input-group">
-							<input type="hidden" name="bidx" value="${vo.bidx}" /> <input
+							<input type="hidden" name="bidx" value="${vo.bidx}" />
+							<input type="hidden" name="writer" value="${login.name }" />
+							<input type="hidden" name="uidx" value="${login.uidx }" />
+							 <input
 								type="text" class="form-control" id="rContent" name="rContent"
 								placeholder="내용을 입력하세요."> <span class="input-group-btn">
 								<button class="btn btn-default" type="button"

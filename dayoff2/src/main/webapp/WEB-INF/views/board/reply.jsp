@@ -26,7 +26,7 @@
 						+ '댓글번호 : '
 						+ value.ridx
 						+ ' / 작성자 : '
-						+ value.uidx;
+						+ value.writer;
 				a += '<a onclick="commentUpdate('
 						+ value.ridx + ',\''
 						+ value.rContent
