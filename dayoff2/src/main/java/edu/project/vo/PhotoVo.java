@@ -67,6 +67,7 @@ public class PhotoVo {
 	public void setpHit(int pHit) {
 		this.pHit = pHit;
 	}
+	
 	@Override
 	public String toString() {
 		return "PhotoVo [pidx=" + pidx + ", pTitle=" + pTitle + ", pContent=" + pContent + ", uidx=" + uidx

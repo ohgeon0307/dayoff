@@ -23,19 +23,18 @@
 			$.each(data,function(key, value) {
 				a += '<div class="commentArea" style="border-bottom:1px solid darkgray; margin-bottom: 15px;">';
 				a += '<div class="commentInfo'+value.ridx+'">'
-						+ '댓글번호 : '
-						+ value.ridx
-						+ ' / 작성자 : '
+						+ '  작성자 : '
 						+ value.writer;
-				a += '<a onclick="commentUpdate('
-						+ value.ridx + ',\''
-						+ value.rContent
-						+ '\');"> 수정 </a>';
-				a += '<a onclick="commentDelete('
-						+ value.ridx
-						+ ');"> 삭제 </a> </div>';
+				a += '</div>';
 				a += '<div class="commentContent'+value.ridx+'"> <p> 내용 : '
-						+ value.rContent + '</p>';
+						+ value.rContent + '</p>'
+				a += '<a onclick="commentUpdate('
+							+ value.ridx + ',\''
+							+ value.rContent
+							+ '\');"> 수정 </a>';
+				a += '<a onclick="commentDelete('
+							+ value.ridx
+							+ ');"> 삭제 </a>';
 				a += '</div></div>';
 			});
 		$(".commentList").html(a);

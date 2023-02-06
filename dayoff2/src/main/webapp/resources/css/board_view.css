@@ -810,6 +810,73 @@ select {
   text-transform: none;
 }
 
+/*reply 시작*/
+.commentInsertForm{
+	margin-bottom:15px;
+}
+
+.input-group{
+	display: flex;
+    position: relative;
+    width: 100%;
+    min-height: 48px;
+    line-height: 48px;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid rgb(220, 220, 220);
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    
+    
+}
+.form-control{
+	height: 39px;
+	display: block;
+    overflow: auto;
+    width: 85%;
+    font-weight: 400;
+    font-size: 13px;
+    padding: 12px;
+    outline: none;
+    border: none;
+}
+.input-group-btn{
+	margin-bottom:15px;
+}
+.btn-default{
+	display: block;
+    position: absolute;
+    overflow: hidden;
+    width: max-content;
+    align-self: center;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(0, 206, 124);
+    padding: 0px 12px;
+    right: 0px;
+    padding-bottom:10px;
+}
+
+.container{
+	margin-top:15px;
+}
+
+.commentArea > div{
+	margin-bottom:10px;
+}
+
+.commentArea p{
+	margin-bottom:10px;]
+}
+
+.commentArea a{
+	color: rgb(106, 106, 106);
+}
+
+ /*reply 종료*/
+
 /*footer 시작*/
 
 footer {
