@@ -47,7 +47,7 @@ public class AttachImageVo {
 
 	@Override
 	public String toString() {
-		return "AttachImageVO [uploadPath=" + uploadPath + ", uuid=" + uuid + ", fileName=" + fileName + ", pidx="
+		return "AttachImageVo [uploadPath=" + uploadPath + ", uuid=" + uuid + ", fileName=" + fileName + ", pidx="
 				+ pidx + "]";
 	}
 

@@ -61,7 +61,7 @@ public class PhotoController {
 	@RequestMapping(value = "/write.do", method = RequestMethod.POST , produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<AttachImageVo>> fileupload(MultipartFile uploadFile, AttachImageVo vo) {
 		
-		logger.info("fileupload.do");
+		logger.info("write.do");
 		
 		File checkfile = new File(uploadFile.getOriginalFilename());
 		String type = null;
