@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>포토갤러리 글쓰기</title>
+<script src="<%=request.getContextPath() %>/resources/js/jquery-3.6.1.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
@@ -17,6 +18,36 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
       rel="stylesheet"
     />
+    <style type="text/css">
+	#result_card img{
+		max-width: 100%;
+	    height: auto;
+	    display: block;
+	    padding: 5px;
+	    margin-top: 10px;
+	    margin: auto;	
+	}
+	#result_card {
+		position: relative;
+	}
+	.imgDeleteBtn{
+	    position: absolute;
+	    top: 0;
+	    right: 5%;
+	    background-color: #ef7d7d;
+	    color: wheat;
+	    font-weight: 900;
+	    width: 30px;
+	    height: 30px;
+	    border-radius: 50%;
+	    line-height: 26px;
+	    text-align: center;
+	    border: none;
+	    display: block;
+	    cursor: pointer;	
+	}
+	
+</style>
     <script>
       (function () {
         var w = window;
@@ -97,6 +128,7 @@
       </div>
 
       <section class="file_upload_section">
+      
       <form action="write.do" method="post" enctype="multipart/form-data">
         <div class="title">
           <input
@@ -105,8 +137,8 @@
           />
         </div>
         <hr class="slide_hr" />
-        <div class="container">
-           <input type="file" name=""/> 
+        <div class="container" id="uploadResult">
+           <input type="file" id ="fileItem" name='uploadFile' style="height: 30px;">
           인생샷을 올려주세요💫
         </div>
         <div class="hashtag">
@@ -118,8 +150,9 @@
         <div class="button_zone">
           <button type="reset" class="cancel">취소</button>
           <button class="submit">작성하기</button>
-        </div>
+		</div>
       </form>
+      
       </section>
     </main>
     <footer class="footer">
@@ -173,5 +206,129 @@
         </ul>
       </div>
     </footer>
+    
+    
+    
+ <script type="text/javascript">
+
+/* 이미지 업로드 */
+$("input[type='file']").on("change", function(e){
+	
+	/* 이미지 존재시 삭제 */
+	if($(".imgDeleteBtn").length > 0){
+		deleteFile();
+	}
+	
+	let formData = new FormData();
+	let fileInput = $('input[name="uploadFile"]');
+	let fileList = fileInput[0].files;
+	let fileObj = fileList[0];
+
+	
+	console.log("fileList : " + fileList);
+	console.log("fileObj : " + fileObj);
+	console.log("fileName : " + fileObj.name);
+	console.log("fileSize : " + fileObj.size);
+	console.log("fileType(MimeType) : " + fileObj.type);
+
+	if(!fileCheck(fileObj.name, fileObj.size)){
+		return false;
+	}
+	
+	formData.append("uploadFile", fileObj);
+
+	for(let i = 0; i < fileList.length; i++){
+		formData.append("uploadFile", fileList[i]);
+	}
+	
+	$.ajax({
+		url: 'write.do',
+    	processData : false,
+    	contentType : false,
+    	data : formData,
+    	type : 'POST',
+    	dataType : 'json',
+    	success : function(result){
+    		console.log(result);
+    		showUploadImage(result);
+    	},
+		error : function(result){
+		alert("이미지 파일이 아닙니다.");
+	}
+	});
+});
+/* var, method related with attachFile */
+let regex = new RegExp("(.*?)\.(jpg|png)$");
+let maxSize = 104857600;	
+
+function fileCheck(fileName, fileSize){
+
+	if(fileSize >= maxSize){
+		alert("파일 사이즈 초과");
+		return false;
+	}
+		  
+	if(!regex.test(fileName)){
+		alert("해당 종류의 파일은 업로드할 수 없습니다.");
+		return false;
+	}
+	
+	return true;		
+	
+}
+/* 이미지 출력 */
+function showUploadImage(uploadResultArr){
+	/* 전달받은 데이터 검증 */
+	if(!uploadResultArr || uploadResultArr.length == 0){return}
+	
+	let uploadResult = $("#uploadResult");
+	
+	let obj = uploadResultArr[0];
+	
+	let str = "";
+	
+	let fileCallPath = encodeURIComponent(obj.uploadPath + "/s_" + obj.uuid + "_" + obj.fileName);
+	
+	str += "<div id='result_card'>";
+	str += "<img src='/controller/display?fileName=" + fileCallPath +"'>";
+	str += "<div class='imgDeleteBtn' data-file='" + fileCallPath + "'>x</div>";
+	str += "</div>";		
+	
+		uploadResult.append(str);    
+}
+/* 이미지 삭제 버튼 동작 */
+$("#uploadResult").on("click", ".imgDeleteBtn", function(e){
+	
+	deleteFile();
+	
+});
+
+/* 파일 삭제 메서드 */
+function deleteFile(){
+	
+	let targetFile = $(".imgDeleteBtn").data("file");
+	
+	let targetDiv = $("#result_card");
+	
+	$.ajax({
+		url: '/controller/deleteFile',
+		data : {fileName : targetFile},
+		dataType : 'text',
+		type : 'POST',
+		success : function(result){
+			console.log(result);
+			
+			targetDiv.remove();
+			$("input[type='file']").val("");
+			
+		},
+		error : function(result){
+			console.log(result);
+			
+			alert("파일을 삭제하지 못하였습니다.")
+		}
+	});
+}
+</script>
 </body>
 </html>

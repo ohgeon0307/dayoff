@@ -1,5 +1,7 @@
 package edu.project.vo;
 
+import java.util.List;
+
 public class PhotoVo {
 	private int pidx;
 	private String pTitle;
@@ -9,7 +11,14 @@ public class PhotoVo {
 	private String pDelYn;
 	private String pHashTag;
 	private int pHit;
+	private List<AttachImageVo> imageList;
 	
+	public List<AttachImageVo> getImageList() {
+		return imageList;
+	}
+	public void setImageList(List<AttachImageVo> imageList) {
+		this.imageList = imageList;
+	}
 	public int getPidx() {
 		return pidx;
 	}
@@ -60,10 +69,11 @@ public class PhotoVo {
 	}
 	@Override
 	public String toString() {
-		return "PhotoVo [pidx=" + pidx + ", pTitle=" + pTitle + ",  pContent=" + pContent
-				+ ", uidx=" + uidx + ", pLikes=" + pLikes + ", pDelYn=" + pDelYn + ", pHashTag=" + pHashTag + ", pHit="
-				+ pHit + "]";
+		return "PhotoVo [pidx=" + pidx + ", pTitle=" + pTitle + ", pContent=" + pContent + ", uidx=" + uidx
+				+ ", pLikes=" + pLikes + ", pDelYn=" + pDelYn + ", pHashTag=" + pHashTag + ", pHit=" + pHit
+				+ ", imageList=" + imageList + "]";
 	}
+
 	
 	
 
