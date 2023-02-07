@@ -61,4 +61,10 @@ public class BoardServiceImpl implements BoardService{
 		return boardDao.listCount();
 	}
 
+	@Override
+	public int updatereviewcnt(int bidx) {
+
+		return boardDao.updatereviewcnt(bidx);
+	}
+
 }

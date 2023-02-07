@@ -141,5 +141,12 @@
 		rdelyn = 'Y' WHERE ridx = #{ridx}
 	</update>
 	
+	<update id="updatereviewcnt">
+		update boardtable 
+		set 
+		hit = hit + 1 
+		where bidx = #{bidx}
+	</update>
+	
 
 </mapper>

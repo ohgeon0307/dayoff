@@ -50,4 +50,10 @@ public class BoardDao {
 	public int listCount() {
 		return sqlSession.selectOne("edu.project.mapper.boardMapper.listCount");
 	}
+	
+	public int updatereviewcnt(int bidx) {
+		
+		return sqlSession.update("edu.project.mapper.boardMapper.updatereviewcnt", bidx);
+	}
+	
 }

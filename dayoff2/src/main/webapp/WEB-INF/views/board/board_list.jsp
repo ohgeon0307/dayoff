@@ -137,7 +137,7 @@
             <p class="hashtag"># ${vo.hashTag}</p>
             <div class="info_flex">
               <div class="info">닉네임 : ${vo.writer}</div>
-              <div class="view">조회수 : 26</div>
+              <div class="view">조회수 : ${vo.hit}</div>
               <div class="comments">댓글 : 0</div>
             </div>
           </div>
