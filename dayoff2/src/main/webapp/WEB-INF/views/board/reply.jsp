@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="edu.project.vo.UserVo" %>
+<%
+UserVo login = (UserVo)session.getAttribute("login");
+System.out.println(login.getName());
+%>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <script>
@@ -12,6 +18,8 @@
 
 	//댓글 목록 
 	function commentList() {
+ 		var login_name = '<%= login.getName() %>';
+		console.log("login_name : " + login_name);
 		$.ajax({
 			url : '<%=request.getContextPath()%>/board/view/reply/list',
 			type : 'get',
@@ -20,24 +28,33 @@
 			},
 			success : function(data) {
 			var a = '';
+			var list_form = "";
 			$.each(data,function(key, value) {
-				a += '<div class="commentArea" style="border-bottom:1px solid darkgray; margin-bottom: 15px;">';
-				a += '<div class="commentInfo'+value.ridx+'">'
-						+ '  작성자 : '
-						+ value.writer;
-				a += '</div>';
-				a += '<div class="commentContent'+value.ridx+'"> <p> 내용 : '
-						+ value.rContent + '</p>'
-				a += '<a onclick="commentUpdate('
-							+ value.ridx + ',\''
-							+ value.rContent
-							+ '\');"> 수정 </a>';
-				a += '<a onclick="commentDelete('
-							+ value.ridx
-							+ ');"> 삭제 </a>';
-				a += '</div></div>';
+				console.log('writer : ' + value.writer);
+				console.log('Content : ' + value.rContent);
+				console.log('ridx : ' + value.ridx);
+// 				list_form += `<div class="commentArea" style="border-bottom:1px solid darkgray; margin-bottom: 15px;">
+// 	<div class="commentInfo${value.ridx}">  작성자 : ${value.writer}
+// 	</div>
+// 	<div class="commentContent${value.ridx}"> <p> 내용 : ${value.rContent} </p>
+// 		<a onclick="commentUpdate(${value.ridx},'${value.rContent}');">수정 </a>
+// 		<a onclick="commentDelete(${value.ridx});">삭제</a>
+// 	</div>
+// </div>`;
+				console.log(list_form);
+				
+				list_form += '<div class="commentArea" style="border-bottom:1px solid darkgray; margin-bottom: 15px;">';
+				list_form += '<div class="commentInfo' + value.ridx + '">' + '  작성자 : ' + value.writer;
+				list_form += '</div>';
+				list_form += '<div class="commentContent' + value.ridx + '"> <p> 내용 : ' + value.rContent + '</p>'
+				if ( login_name == value.writer )
+				{
+					list_form += '<a onclick="commentUpdate(' + value.ridx + ',\'' + value.rContent + '\');"> 수정 </a>';
+					list_form += '<a onclick="commentDelete(' + value.ridx + ');"> 삭제 </a>';
+				}
+				list_form += '</div></div>';
 			});
-		$(".commentList").html(a);
+		$(".commentList").html(list_form);
 	}
 });
 	}
