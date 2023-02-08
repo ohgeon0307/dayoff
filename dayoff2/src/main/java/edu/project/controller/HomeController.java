@@ -72,6 +72,13 @@ public class HomeController {
 		return "board/board_list";
 	}
 	
+	@RequestMapping(value = "/myPage", method = RequestMethod.GET)
+	
+	public String myPage() {
+		
+		return "mypage_account";
+	}
+	
 
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)

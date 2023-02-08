@@ -153,4 +153,17 @@
 		set b.reply_count = (select count(reply_count) from replytable where bidx = #{bidx})
 		where b.bidx = #{bidx}
 	</update>
+	
+	<update id="like_check" parameterType="HashMap">
+		UPDATE liketable
+		set like_check = like_check + 1
+		where uidx=#{uidx} and replytable = #{replytable}
+	</update>
+	
+	<update id="like_check_cancel" parameterType="HashMap">
+		UPDATE liketable
+		SET like_check = 0
+		WHERE uidx=#{uidx}
+		AND ridx = #={ridx}
+	</update>
 </mapper>

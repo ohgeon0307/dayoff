@@ -231,8 +231,8 @@
 			</div>
 		</div>
 		</div>
-		<div class="container">
-					<label for="content">comment</label>
+				<div class="container">
+					<label for="content">댓글</label>
 					<form name="commentInsertForm">
 						<div class="input-group">
 							<input type="hidden" name="bidx" value="${vo.bidx}" />
