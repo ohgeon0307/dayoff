@@ -53,11 +53,12 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/list.do")
-	public String list(Model model, SearchCriteria scri) {
+	public String list(Model model, SearchCriteria scri, BoardVo vo) {
 		
 		List<BoardVo> list = boardService.boardList(scri);
 		
 		List<UserVo> ulist = userService.list();
+		boardService.updateReplyCount(vo.getBidx());
 		
 		System.out.println("list는:"+ list);
 		
