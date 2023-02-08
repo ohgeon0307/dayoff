@@ -54,7 +54,7 @@ public class TogetherController {
 		
 		int result = togetherService.insert(vo); 
 		
-		
+		System.out.println(vo.toString());
 		
 		return "redirect:together";
 	}

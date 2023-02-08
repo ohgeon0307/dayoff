@@ -1,16 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="edu.project.vo.UserVo" %>
+
+
 <%
-UserVo login = (UserVo)session.getAttribute("login");
-System.out.println(login.getName());
+ UserVo login = null;
+	if(session.getAttribute("login")!=null){
+		login = (UserVo)session.getAttribute("login");
+	}
+   
+
 %>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <script>
 	var bidx = '${vo.bidx}'; //게시글 번호
-
+	
 	$('[name=commentInsertBtn]').click(function() { //댓글 등록 버튼 클릭시 
 		var insertData = $('[name=commentInsertForm]').serialize(); //commentInsertForm의 내용을 가져옴
 		commentInsert(insertData); //Insert 함수호출(아래)
@@ -18,8 +24,17 @@ System.out.println(login.getName());
 
 	//댓글 목록 
 	function commentList() {
- 		var login_name = '<%= login.getName() %>';
-		console.log("login_name : " + login_name);
+		
+		var login = "<%= login %>";
+		
+		if(login==null){
+			
+			var login_name = ' ';
+		}else{
+			var login_name = '<%= login.getName() %>';
+		}
+ 		
+	
 		$.ajax({
 			url : '<%=request.getContextPath()%>/board/view/reply/list',
 			type : 'get',
