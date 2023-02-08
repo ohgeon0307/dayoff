@@ -56,4 +56,9 @@ public class BoardDao {
 		return sqlSession.update("edu.project.mapper.boardMapper.updatereviewcnt", bidx);
 	}
 	
+	public int updateReplyCount(int bidx) {
+		
+		return sqlSession.update("edu.project.mapper.boardMapper.updateReplyCount", bidx);
+	}
+	
 }

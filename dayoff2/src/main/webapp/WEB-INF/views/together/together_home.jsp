@@ -75,9 +75,9 @@
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-           <a href="home.html"><div class="item"><img src="${path}/resources/img/logo.png" alt="" /></div></a>
-           <a href="<%= request.getContextPath() %>/"><div class="item2">커뮤니티</div></a>
-            <a href="photo.do" class="a_tag_color"><div class="item3">포토갤러리</div></a>
+           <a href="${path }/community.do"><div class="item"><img src="${path}/resources/img/logo.png" alt="" /></div></a>
+           <a href="<%= request.getContextPath() %>/community.do"><div class="item2">커뮤니티</div></a>
+            <a href="<%= request.getContextPath()%>/photo/list.do" class="a_tag_color"><div class="item3">포토갤러리</div></a>
           </div>
           <div class="right_header">
             <div class="item">
@@ -103,7 +103,7 @@
         </div>
         <section class="second_section">
           <div class="second_header">
-            <a href="<%= request.getContextPath() %>/"><div class="home">홈</div></a>
+            <a href="<%= request.getContextPath() %>/community.do"><div class="home">홈</div></a>
             <a href="together.do"><div class="trip_info">동행</div></a>
             <a href="board/list.do"><div class="board">게시판</div></a>
           </div>

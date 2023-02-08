@@ -67,4 +67,10 @@ public class BoardServiceImpl implements BoardService{
 		return boardDao.updatereviewcnt(bidx);
 	}
 
+	@Override
+	public int updateReplyCount(int bidx) {
+		// TODO Auto-generated method stub
+		return boardDao.updateReplyCount(bidx);
+	}
+
 }

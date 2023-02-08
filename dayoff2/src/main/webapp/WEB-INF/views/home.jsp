@@ -66,7 +66,7 @@
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-            <a href="${path }/"><div class="item"><img src="${path }/resources/img/logo.png" alt="" /></div></a>
+            <a href="${path }/community.do"><div class="item"><img src="${path }/resources/img/logo.png" alt="" /></div></a>
             <div class="item">커뮤니티</div>
             <a href="<%= request.getContextPath()%>/photo/list.do" class="a_tag_color"><div class="item">포토갤러리</div></a>
           </div>

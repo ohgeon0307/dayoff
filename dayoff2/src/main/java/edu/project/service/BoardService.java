@@ -24,4 +24,5 @@ public interface BoardService {
 	
 	int updatereviewcnt(int bidx);
 	
+	int updateReplyCount(int bidx);
 }

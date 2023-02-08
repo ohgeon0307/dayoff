@@ -148,5 +148,9 @@
 		where bidx = #{bidx}
 	</update>
 	
-
+	<update id="updateReplyCount" parameterType = "int">
+		update boardtable b
+		set b.reply_count = (select count(reply_count) from replytable where bidx = #{bidx})
+		where b.bidx = #{bidx}
+	</update>
 </mapper>

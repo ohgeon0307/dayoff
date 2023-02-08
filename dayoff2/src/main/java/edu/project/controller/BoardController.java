@@ -85,6 +85,8 @@ public class BoardController {
 		
 		boardService.updatereviewcnt(bidx);
 		
+		boardService.updateReplyCount(bidx);
+		
 		model.addAttribute("vo", vo);
 		
 		return "board/board_view";

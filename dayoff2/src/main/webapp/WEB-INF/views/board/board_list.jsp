@@ -66,7 +66,7 @@
       <section class="first_section">
         <div class="header">
            <div class="left_header">
-            <a href="${path }/"><div class="item"><img src="${path }/resources/img/logo.png" alt="" /></div></a>
+            <a href="${path }/community.do"><div class="item"><img src="${path }/resources/img/logo.png" alt="" /></div></a>
             <div class="item">커뮤니티</div>
             <a href="<%= request.getContextPath()%>/photo/list.do" class="a_tag_color"><div class="item">포토갤러리</div></a>
           </div>
@@ -97,7 +97,7 @@
         </div>
         <section class="second_section">
           <div class="second_header">
-            <a href="/dayoff"><div class="home">홈</div></a>
+            <a href="${path }/community.do"><div class="home">홈</div></a>
             <a href="${path }/together.do"
               ><div class="trip_info">동행</div></a
             >
@@ -138,7 +138,7 @@
             <div class="info_flex">
               <div class="info">닉네임 : ${vo.writer}</div>
               <div class="view">조회수 : ${vo.hit}</div>
-              <div class="comments">댓글 : 0</div>
+              <div class="comments">댓글 : ${vo.reply_count}</div>
             </div>
           </div>
           </c:forEach>
