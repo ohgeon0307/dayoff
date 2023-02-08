@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import edu.project.vo.AttachImageVo;
 import edu.project.vo.PhotoVo;
 
 @Repository
@@ -32,6 +33,14 @@ public class PhotoDao {
 	
 	public int insert(PhotoVo vo) {
 		return sqlSession.insert("edu.project.mapper.photoMapper.insert", vo);
+	}
+	
+	public int imageEnroll(AttachImageVo vo) {
+		return sqlSession.insert("edu.project.mapper.photoMapper.imageEnroll", vo);
+	}
+	
+	public List<AttachImageVo> imageList(AttachImageVo vo) {
+		return sqlSession.selectList("edu.project.mapper.photoMapper.imageList", vo);
 	}
 	
 }

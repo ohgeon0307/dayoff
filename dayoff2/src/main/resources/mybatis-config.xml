@@ -13,6 +13,8 @@
 		<typeAlias type="edu.project.vo.SearchVo" alias="searchVo" />
 		<typeAlias type="edu.project.vo.Criteria" alias="cri" />
 		<typeAlias type="edu.project.vo.ReplyVo" alias="replyVo" />
+		<typeAlias type="edu.project.vo.AttachImageVo" alias="attachImageVo" />
+		
     </typeAliases>
     
     

@@ -4,7 +4,9 @@
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <%@ page import="java.util.*" %>
 <%@ page import="edu.project.vo.PhotoVo" %>
-<% List<PhotoVo> list = (List<PhotoVo>)request.getAttribute("datalist");%>
+<%@ page import="edu.project.vo.AttachImageVo" %>
+<% List<PhotoVo> list2 = (List<PhotoVo>)request.getAttribute("datalist");%>
+<% List<AttachImageVo> list = (List<AttachImageVo>)request.getAttribute("imagelist");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -126,9 +128,11 @@
       <section class="images">
 		<c:forEach items="${datalist}" var="vo">
         <div class="imgList">
+        <c:forEach items="${imagelist}" var="vo2">
           <div class="imgC">
-            <img src="" alt="" class="img"/>
+            <img src="\\\\DESKTOP-3RHRVJD\\upload\\ ${vo2.uploadPath}${vo2.uuid}_${vo2.fileName}" alt="" class="img"/>
           </div>
+          </c:forEach>
           <div class="content">
             <div class="writer">
               <i class="xi-profile-o"></i><a href="#">sonny</a>
