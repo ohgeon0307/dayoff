@@ -1,14 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="edu.project.vo.UserVo" %>
 
-
 <%
- UserVo login = null;
-	if(session.getAttribute("login")!=null){
-		login = (UserVo)session.getAttribute("login");
+//세션에서 로그인 정보를 받아오고
+	UserVo login = (UserVo)session.getAttribute("login");
+	String login_name = " ";
+// 세션에 로그인 정보가 있으면, login_name에 login.getName을 넣는다
+	if( login != null){
+		login_name = login.getName();
 	}
-   
 
 %>
 
@@ -16,6 +16,7 @@
 
 <script>
 	var bidx = '${vo.bidx}'; //게시글 번호
+	var login_name = '<%= login_name %>';
 	
 	$('[name=commentInsertBtn]').click(function() { //댓글 등록 버튼 클릭시 
 		var insertData = $('[name=commentInsertForm]').serialize(); //commentInsertForm의 내용을 가져옴
@@ -24,19 +25,8 @@
 
 	//댓글 목록 
 	function commentList() {
-		
-		var login = "<%= login %>";
-		
-		if(login==null){
-			
-			var login_name = ' ';
-		}else{
-			var login_name = '<%= login.getName() %>';
-		}
- 		
-	
 		$.ajax({
-			url : '<%=request.getContextPath()%>/board/view/reply/list',
+			url : '<%= request.getContextPath() %>/board/view/reply/list',
 			type : 'get',
 			data : {
 			'bidx' : bidx
