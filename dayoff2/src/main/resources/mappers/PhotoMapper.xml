@@ -2,7 +2,6 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
 <mapper namespace="edu.project.mapper.photoMapper">
 	<select id="list" resultType="photoVo" parameterType="photoVo">
 		select pidx
@@ -34,7 +33,7 @@
 			SET pTitle = #{pTtitle}
 			, pFile = #{pFile}
 			, pHashTag = #{pHashTag}
-			WHERE pidx = #{pidx} 
+			WHERE pidx = #{pidx}
 	</update>
 	
 	<delete id="deleteByPidx" parameterType="int">
@@ -43,7 +42,8 @@
 		WHERE pidx = #{pidx}
 	</delete>
 	
-	<insert id="insert" parameterType="photoVo">
+	<insert id="insert" parameterType="photoVo"> 	
+		
 		INSERT INTO phototable(
 			pidx
 			, pTitle
@@ -62,5 +62,30 @@
 			, 0
 		)
 	</insert>
+	 
+		<!-- 이미지 등록 -->
+	<insert id="imageEnroll" parameterType="AttachImageVo">
+		<selectKey resultType="int" keyProperty="pidx" order="BEFORE">
+			SELECT MAX(pidx)
+				FROM phototable
+		</selectKey>
+		
+		insert into imagetable(
+			pidx, fileName, uploadPath, uuid
+			) values (
+			#{pidx}, #{fileName}, #{uploadPath}, #{uuid}
+			)
+	</insert>
+	
+	<select id="imageList" resultType="AttachImageVo" parameterType="AttachImageVo">
+	
+		select
+			pidx,
+			fileName,
+			uploadPath,
+			uuid
+		FROM imagetable
+	</select>
+	
 	
 </mapper>

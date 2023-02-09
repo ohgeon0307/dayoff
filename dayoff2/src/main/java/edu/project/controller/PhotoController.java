@@ -43,14 +43,18 @@ public class PhotoController {
 	
 	@Autowired
 	private PhotoService photoService;
-	
+
 	@RequestMapping(value = "/list.do")
-	public String list(Model model, PhotoVo vo) {
-		List<PhotoVo> list = photoService.list(vo);
-		model.addAttribute("datalist",list);
+	public String list(Model model, PhotoVo vo2, AttachImageVo vo) {
+		List<PhotoVo> list2 = photoService.list(vo2);
+		model.addAttribute("datalist",list2);
+
+		List<AttachImageVo> list = photoService.imageList(vo);
+		model.addAttribute("imagelist",list);
+
 		return "photo/photo_list";
 	}
-	
+	 
 	
 	@RequestMapping(value = "/write.do", method = RequestMethod.GET )
 	public String write() {
@@ -59,9 +63,9 @@ public class PhotoController {
 	}
 	
 	@RequestMapping(value = "/write.do", method = RequestMethod.POST , produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<AttachImageVo>> fileupload(MultipartFile uploadFile, AttachImageVo vo) {
+	public String fileupload(MultipartFile uploadFile, AttachImageVo vo, PhotoVo vo2) {
 		
-		logger.info("write.do");
+/*		logger.info("write.do");
 		
 		File checkfile = new File(uploadFile.getOriginalFilename());
 		String type = null;
@@ -74,9 +78,10 @@ public class PhotoController {
 		}
 		if(!type.startsWith("image")) {
 			
-			List<AttachImageVo> list = null;
-			return new ResponseEntity<>(list, HttpStatus.BAD_REQUEST);
-		}
+//			AttachImageVo result = null;
+//			return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
+			return 0 ;
+		}*/
 		
 		
 		String uploadFolder = "\\\\DESKTOP-3RHRVJD\\upload";
@@ -100,7 +105,7 @@ public class PhotoController {
 		logger.info("파일 크기 : " + uploadFile.getSize());
 		
 		/* 이미저 정보 담는 객체 */
-		List<AttachImageVo> list = new ArrayList();
+//		AttachImageVo result = new AttachImageVo();
 		
 		/* 파일 이름 */
 		String uploadFileName = uploadFile.getOriginalFilename();			
@@ -120,12 +125,10 @@ public class PhotoController {
 		try {
 			uploadFile.transferTo(saveFile);
 			
-
 			File thumbnailFile = new File(uploadPath, "s_" + uploadFileName);	
 			
 			BufferedImage bo_image = ImageIO.read(saveFile);
-
-				//비율 
+				//비율
 				double ratio = 3;
 				//넓이 높이
 				int width = (int) (bo_image.getWidth() / ratio);
@@ -134,16 +137,26 @@ public class PhotoController {
 			
 			Thumbnails.of(saveFile)
 	        .size(width, height)
-	        .toFile(thumbnailFile); 
+	        .toFile(thumbnailFile);
 			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		list.add(vo);
-		ResponseEntity<List<AttachImageVo>> result = new ResponseEntity<List<AttachImageVo>>(list, HttpStatus.OK);
-		return result;
+		
+		
+		photoService.insert(vo2);
+		photoService.imageEnroll(vo);
+		System.out.println(vo.toString());
+		System.out.println(vo2.toString());
+//		int result = photoService.imageEnroll(vo);
+//		ResponseEntity<AttachImageVo> result = new ResponseEntity<>(result, HttpStatus.OK);
+//		return new ResponseEntity<>(result, HttpStatus.OK);
+		return "redirect:list.do";
 	}
+	
+	
+	
 	
 	@RequestMapping(value="/display",method=RequestMethod.GET)
 	public ResponseEntity<byte[]> getImage(String fileName) {

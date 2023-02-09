@@ -33,7 +33,7 @@
         }
         var ch = function () {
           ch.c(arguments);
-        };
+        }; 
         ch.q = [];
         ch.c = function (args) {
           ch.q.push(args);
@@ -42,7 +42,7 @@
         function l() {
           if (w.ChannelIOInitialized) {
             return;
-          }
+          } 
           w.ChannelIOInitialized = true;
           var s = document.createElement("script");
           s.type = "text/javascript";
@@ -63,7 +63,7 @@
       })();
       ChannelIO("boot", {
         pluginKey: "440ad304-9963-448a-9d8e-8efd8dfa9576",
-      });
+      }); 
     </script>
   </head>
   <body>
@@ -129,7 +129,7 @@
 	           	<img src='<spring:url value="/image/${vo2.uploadPath}/${vo2.uuid}_${vo2.fileName}"/>' alt="" class="img"/>
 			 <!-- 			<img src='<spring:url value="/image/2023/02/08/d893c56b-53d3-49e9-bbbf-b8aef15a5f12.jpg"/>' alt="" class="img"/>-->
 					</div>
-				</c:forEach>
+				</c:forEach> 
 				<div class="content">
 					<div class="writer">
 						<i class="xi-profile-o"></i><a href="#">sonny</a>
@@ -202,6 +202,13 @@
           </li>
         </ul>
       </div>
+      
+      
+      
+      
+      
+      
+      
       <script>
         const modal = document.querySelector(".modal");
         const modal_img = document.querySelector(".modal_content");
