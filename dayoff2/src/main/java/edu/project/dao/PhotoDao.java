@@ -1,13 +1,10 @@
 package edu.project.dao;
-
 import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
+import edu.project.vo.AttachImageVo;
 import edu.project.vo.PhotoVo;
-
 @Repository
 public class PhotoDao {
 	
@@ -16,7 +13,7 @@ public class PhotoDao {
 	
 	public List<PhotoVo> list(PhotoVo vo) {
 		return sqlSession.selectList("edu.project.mapper.photoMapper.list", vo);
-	} 
+	}
 	
 	public PhotoVo selectByPidx(int pidx) {
 		return sqlSession.selectOne("edu.project.mapper.photoMapper.selectByPidx", pidx);
@@ -32,6 +29,14 @@ public class PhotoDao {
 	
 	public int insert(PhotoVo vo) {
 		return sqlSession.insert("edu.project.mapper.photoMapper.insert", vo);
+	}
+	
+	public int imageEnroll(AttachImageVo vo) {
+		return sqlSession.insert("edu.project.mapper.photoMapper.imageEnroll", vo);
+	}
+	
+	public List<AttachImageVo> imageList(AttachImageVo vo) {
+		return sqlSession.selectList("edu.project.mapper.photoMapper.imageList", vo);
 	}
 	
 }
