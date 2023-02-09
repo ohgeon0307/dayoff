@@ -129,7 +129,7 @@
 	           	<img src='<spring:url value="/image/${vo2.uploadPath}/${vo2.uuid}_${vo2.fileName}"/>' alt="" class="img"/>
 			 <!-- 			<img src='<spring:url value="/image/2023/02/08/d893c56b-53d3-49e9-bbbf-b8aef15a5f12.jpg"/>' alt="" class="img"/>-->
 					</div>
-				</c:forEach>
+				</c:forEach> 
 				<div class="content">
 					<div class="writer">
 						<i class="xi-profile-o"></i><a href="#">sonny</a>

@@ -41,7 +41,7 @@ public class PhotoServiceImpl implements PhotoService{
 	}
 	@Override
 	public List<AttachImageVo> imageList(AttachImageVo attachImageVo) {
-		List<AttachImageVo> list = photoDAO.imageList(attachImageVo);
+		List<AttachImageVo> list = photoDAO.imageList(attachImageVo); 
 		return list;
 		
 	}

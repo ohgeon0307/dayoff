@@ -38,5 +38,5 @@ public class PhotoDao {
 	public List<AttachImageVo> imageList(AttachImageVo vo) {
 		return sqlSession.selectList("edu.project.mapper.photoMapper.imageList", vo);
 	}
-	
+	 
 }

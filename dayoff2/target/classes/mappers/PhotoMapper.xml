@@ -62,7 +62,7 @@
 			, 0
 		)
 	</insert>
-	
+	 
 		<!-- 이미지 등록 -->
 	<insert id="imageEnroll" parameterType="AttachImageVo">
 		<selectKey resultType="int" keyProperty="pidx" order="BEFORE">

@@ -11,5 +11,5 @@ public interface PhotoService {
 	int deleteByPidx(int pidx);
 	int insert(PhotoVo vo);
 	int imageEnroll(AttachImageVo vo);
-	List<AttachImageVo> imageList(AttachImageVo attachImageVo);
+	List<AttachImageVo> imageList(AttachImageVo attachImageVo); 
 }

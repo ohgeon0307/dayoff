@@ -54,7 +54,7 @@ public class PhotoController {
 
 		return "photo/photo_list";
 	}
-	
+	 
 	
 	@RequestMapping(value = "/write.do", method = RequestMethod.GET )
 	public String write() {
