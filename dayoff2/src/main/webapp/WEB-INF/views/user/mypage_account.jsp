@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="edu.project.vo.BoardVo" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
      <title>마이페이지_계정관리</title>
-    <link rel="stylesheet" href="css/mypage_account.css" />
+    <link rel="stylesheet" href="${path }/resources/css/mypage_account.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
@@ -62,7 +66,7 @@
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-            <div class="item"><img src="img/logo.png" alt="" /></div>
+            <a href="${path }/community.do"><div class="item"><img src="${path }/resources/img/logo.png" alt="" /></div></a>
             <div class="item">커뮤니티</div>
             <a href="#" class="a_tag_color"
               ><div class="item">포토갤러리</div></a
@@ -75,17 +79,25 @@
               </button>
               <input type="text" placeholder="여행지를 찾아보세요!" />
             </div>
-            <a href="#" class="login_a"><div class="item">로그인</div></a>
+            <c:if test="${login == null}">
+            <a href="${path }/user/login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
-            <a href="#" class="join_a"><div class="item">회원가입</div></a>
-            <a href="#"><button class="header_write_btn">글쓰기</button></a>
+            <a href="${path }/user/join.do" class="join_a"><div class="item">회원가입</div></a>
+            </c:if>
+            <c:if test="${login != null}">
+            <a class="login_a" href="<%= request.getContextPath() %>/user/logout.do"><div class="item">로그아웃</div></a>
+            <div class="bar">&#124;</div>
+            <a href="${path }/myPage" class="join_a"><div class="item">마이페이지</div></a>
+            <a href="<%= request.getContextPath()%>/board/write.do"
+              ><button class="header_write_btn">글쓰기</button></a> 
+            </c:if>
           </div>
         </div>
         <section class="second_section">
           <div class="second_header">
             <div class="home">홈</div>
-            <a href="#"><div class="trip_info">동행</div></a>
-            <a href="#"><div class="board">게시판</div></a>
+            <a href="${path }/together.do"><div class="trip_info">동행</div></a>
+            <a href="<%= request.getContextPath()%>/board/list.do"><div class="board">게시판</div></a>
           </div>
         </section>
       </section>
@@ -95,9 +107,9 @@
         <div class="MenuSection">
           <div class="ItemDiv">
             <div class="ImgDiv">
-              <img src="img/캡처.jpg" alt="" />
+              <img src="${path }/resources/img/test.PNG" alt="" />
             </div>
-            <p>아이디</p>
+            <p style="margin-left: 5px;">아이디 : ${login.id }</p>
           </div>
           <ul class="MenuBox">
             <li class="Menustyle a">
@@ -106,7 +118,7 @@
               </a>
             </li>
             <li class="Menustyle b">
-              <a href="" class="bb">
+              <a href="${path }/myBoard" class="bb">
                 <span class="Menustyle_name"> 내 게시글 </span>
               </a>
             </li>
@@ -118,21 +130,23 @@
           </h1>
           <div class="accountInner">
             <div class="Profile">
-              <div>
                 <div class="ProfileImg">
-                  <img src="img/캡처.jpg" alt="" />
-                </div>
-                <div class="abc"></div>
+                <label class="profile_label" for="profile_label">
+                <i class="xi-camera xi-2x"></i>
+                 <input type="file" id="profile_upload" name="profile_upload" />
+                </label>
+                 
               </div>
+              <!-- end: .profileImg -->
             </div>
+            <!-- end: .Profile -->
             <div class="InputBox NickName" style="width: 480px">
               <input
                 type="text"
                 class="EditInput"
-                readonly
                 placeholder="닉네임을 입력해주세요.(10자 이내)"
                 maxlength="10"
-                value="닉네임"
+                value= ${login.name }
                 style="border-radius: 27px"
               />
             </div>
@@ -141,7 +155,6 @@
               <div class="InputBox" style="width: 100%">
                 <textarea
                   class="EditInput"
-                  readonly
                   placeholder="소개글을 입력해주세요.(2000자 이내)"
                   maxlength="2000"
                   style="border-radius: 4px"

@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="java.util.*" %>
+<%@ page import="edu.project.vo.BoardVo" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
           <title>마이페이지_게시글보기</title>
-        <link rel="stylesheet" href="css/mypage_post.css">
+        <link rel="stylesheet" href="${path }/resources/css/mypage_post.css">
         <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
@@ -59,7 +63,7 @@
             <section class="first_section">
               <div class="header">
                 <div class="left_header">
-                  <div class="item"><img src="img/logo.png" alt="" /></div>
+                  <a href="${path }/community.do"><div class="item"><img src="${path }/resources/img/logo.png" alt="" /></div></a>
                   <div class="item">커뮤니티</div>
                   <a href="#" class="a_tag_color"><div class="item">포토갤러리</div></a>
                 </div>
@@ -70,17 +74,25 @@
                     </button>
                     <input type="text" placeholder="여행지를 찾아보세요!" />
                   </div>
-                  <a href="#" class="login_a"><div class="item">로그인</div></a>
-                  <div class="bar">&#124;</div>
-                  <a href="#" class="join_a"><div class="item">회원가입</div></a>
-                  <a href="#"><button class="header_write_btn">글쓰기</button></a>
+                  <c:if test="${login == null}">
+            <a href="${path }/user/login.do" class="login_a"><div class="item">로그인</div></a>
+            <div class="bar">&#124;</div>
+            <a href="${path }/user/join.do" class="join_a"><div class="item">회원가입</div></a>
+            </c:if>
+            <c:if test="${login != null}">
+            <a class="login_a" href="<%= request.getContextPath() %>/user/logout.do"><div class="item">로그아웃</div></a>
+            <div class="bar">&#124;</div>
+            <a href="${path }/myPage" class="join_a"><div class="item">마이페이지</div></a>
+            <a href="<%= request.getContextPath()%>/board/write.do"
+              ><button class="header_write_btn">글쓰기</button></a> 
+            </c:if>
                 </div>
               </div>
               <section class="second_section">
                 <div class="second_header">
                   <div class="home">홈</div>
-                  <a href="#"><div class="trip_info">동행</div></a>
-                  <a href="#"><div class="board">게시판</div></a>
+                  <a href="${path }/together.do"><div class="trip_info">동행</div></a>
+                  <a href="<%= request.getContextPath()%>/board/list.do"><div class="board">게시판</div></a>
                 </div>
               </section>
             </section>
@@ -97,7 +109,7 @@
                             </div>
                             <ul class="MenuBox">
                             <li class="Menustyle a">
-                                <a href="" class="aa">
+                                <a href="${path }/myPage" class="aa">
                                     <span class="Menustyle_name">
                                         계정관리
                                     </span>

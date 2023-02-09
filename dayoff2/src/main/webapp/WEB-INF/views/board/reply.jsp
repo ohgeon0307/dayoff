@@ -8,8 +8,6 @@
 	if(session.getAttribute("login")!=null){
 		login = (UserVo)session.getAttribute("login");
 	}
-   
-
 %>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

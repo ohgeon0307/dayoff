@@ -619,32 +619,42 @@ main {
 }
 
 .Profile {
-  position: relative;
   width: fit-content;
   margin: 0px auto;
 }
 
-.Profile > div:first-child {
+/* .Profile > div:first-child {
   position: relative;
   width: fit-content;
   margin: 0px auto;
 }
-
+ */
+ 	
 .ProfileImg {
   position: relative;
   display: inline-block;
-  width: 4rem;
-  height: 4rem;
+  background : url("../img/profile_base.png") center/100% auto no-repeat;
+  width : 100px;
+  height: 7rem;
   border-radius: 50%;
   vertical-align: top;
   overflow: hidden;
 }
 
-.ProfileImg > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+
+.profile_label {
+	display: inline-block;
+	position : absolute;
+	border : 5px solid while;
+	padding: 10px;
+	width: 30px;
+	height: 30px;
+	border-radius : 100%;
+	background-color : rgb(0, 206, 124);
+	bottom : 0px;
+	right: 0px;
 }
+
 
 .abc {
   height: 23px;
@@ -918,3 +928,5 @@ footer button {
 #sns a:hover {
   color: sandybrown;
 }
+
+

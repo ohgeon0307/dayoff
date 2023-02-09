@@ -87,7 +87,7 @@
             <c:if test="${login != null}">
             <a class="login_a" href="<%= request.getContextPath() %>/user/logout.do"><div class="item">로그아웃</div></a>
             <div class="bar">&#124;</div>
-            <a href="${path }/user/join.do" class="join_a"><div class="item">마이페이지</div></a>
+            <a href="${path }/myPage" class="join_a"><div class="item">마이페이지</div></a>
             <a href="<%= request.getContextPath()%>/board/write.do"
               ><button class="header_write_btn">글쓰기</button></a> 
             </c:if>
