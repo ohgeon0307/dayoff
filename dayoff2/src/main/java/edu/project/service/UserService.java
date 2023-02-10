@@ -2,6 +2,7 @@ package edu.project.service;
 
 import java.util.List;
 
+
 import edu.project.vo.UserVo;
 
 public interface UserService {
@@ -13,4 +14,5 @@ public interface UserService {
 	
 	List<UserVo> list();
 
+	UserVo selectByUidx(int uidx);
 }

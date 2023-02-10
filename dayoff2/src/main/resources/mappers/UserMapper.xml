@@ -47,4 +47,14 @@
 		, name
 		FROM usertable
 	</select>
+	
+	<select id="selectByUidx" parameterType="int"
+		resultType="userVo">
+		SELECT *
+		FROM
+		usertable
+		WHERE uidx = #{uidx}
+	</select>
+	
+	
 </mapper>

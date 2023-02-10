@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import edu.project.vo.BoardVo;
 import edu.project.vo.UserVo;
 
 @Repository
@@ -32,4 +33,11 @@ public class UserDao {
 		
 		return sqlSession.selectList("edu.project.mapper.userMapper.list");
 	}
+	
+	public UserVo selectByUidx(int uidx) {
+		
+		return sqlSession.selectOne("edu.project.mapper.boardMapper.selectByUidx",uidx);
+	}
+	
+	
 }
