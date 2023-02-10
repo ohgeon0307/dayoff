@@ -108,9 +108,9 @@
         </div>
         <hr class="slide_hr" />
         <div class="container">
-        <img id="uploadView" style="width:100%; height:90%; border:none;" />
+        <img id="uploadView" style="width:auto; height:350px; border:none;" />
           	인생샷을 올려주세요💫
-           <input type="file" id ="fileItem" name='uploadFile' style="height: 30px;">
+           <input type="file" id ="fileItem" name='uploadFile' style="height: 30px;  border:none;" />
         </div>
         <div class="hashtag">
           <input

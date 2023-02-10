@@ -4,13 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.project.mapper.photoMapper">
 	<select id="list" resultType="photoVo" parameterType="photoVo">
-		select pidx
-			, pTitle
-			, pDate
-			, uidx
-			, pDelYn
-			, pHashTag
-			, pHit
+		select *
 		FROM phototable
 	</select>
 	
@@ -39,33 +33,28 @@
 		WHERE pidx = #{pidx}
 	</delete>
 	
-	<insert id="insert" parameterType="photoVo"> 	
+	<insert id="insert" parameterType="photoVo" useGeneratedKeys="true" keyProperty="pidx"> 	
 		
 		INSERT INTO phototable(
-			pidx
-			, pTitle
+			 pTitle
 			, pDate
 			, uidx
 			, pHashTag
 			, pHit
 		) VALUES(
-			  1
-			, #{pTitle}
+			 #{pTitle}
 			, NOW()
 			, 1
 			, #{pHashTag}
 			, 0
 		)
-	</insert>
+<!--  		<selectKey keyProperty="pidx" resultType="Integer" order="AFTER">
+			SELECT LAST_INSERT_ID() as pidx
+		</selectKey>
+ -->	</insert>
 	
 		<!-- 이미지 등록 -->
 	<insert id="imageEnroll" parameterType="AttachImageVo">
-  		<selectKey resultType="int" keyProperty="pidx" order="AFTER">
-  		
-  			SELECT LAST_INSERT_ID()
-  		
-  		</selectKey>
-		
 		insert into imagetable(
 			pidx, fileName, uploadPath, uuid
 			) values (

@@ -62,7 +62,7 @@ public class PhotoController {
 		return "photo/photo_write";
 	}
 	
-	@RequestMapping(value = "/write.do", method = RequestMethod.POST , produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/write.do", method = RequestMethod.POST )
 	public String fileupload(MultipartFile uploadFile, AttachImageVo vo, PhotoVo vo2) {
 		
 /*		logger.info("write.do");
@@ -123,32 +123,20 @@ public class PhotoController {
 		
 		/* 파일 저장 */
 		try {
-			uploadFile.transferTo(saveFile);
-			
-			File thumbnailFile = new File(uploadPath, "s_" + uploadFileName);	
-			
-			BufferedImage bo_image = ImageIO.read(saveFile);
-				//비율
-				double ratio = 3;
-				//넓이 높이
-				int width = (int) (bo_image.getWidth() / ratio);
-				int height = (int) (bo_image.getHeight() / ratio);					
-			
-			
-			Thumbnails.of(saveFile)
-	        .size(width, height)
-	        .toFile(thumbnailFile);
-			
+			uploadFile.transferTo(saveFile);		
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		
-		photoService.insert(vo2);
-		photoService.imageEnroll(vo);
-		System.out.println(vo.toString());
 		System.out.println(vo2.toString());
+		photoService.insert(vo2);
+		System.out.println("pidx : " + vo2.getPidx());
+
+		vo.setPidx(vo2.getPidx());
+		System.out.println(vo.toString());
+		photoService.imageEnroll(vo);
 //		int result = photoService.imageEnroll(vo);
 //		ResponseEntity<AttachImageVo> result = new ResponseEntity<>(result, HttpStatus.OK);
 //		return new ResponseEntity<>(result, HttpStatus.OK);
