@@ -7,8 +7,7 @@
 
 	<insert id="togetherInsert" parameterType="togetherVo">
 		INSERT INTO togethertable(
-			  tidx
-			, ttitle
+			 ttitle
 			, tcontent
 			, tdate
 			, thit
@@ -17,10 +16,9 @@
 			, uidx
 			, writer
 		)VALUES(
-			  PTIDX_SEQ.NEXTVAL
-			, #{tTitle}
+			 #{tTitle}
 			, #{tContent}
-			, SYSDATE
+			, now()
 			, 0
 			, '먹방'
 			, 0
@@ -34,7 +32,6 @@
     	SELECT *
     	FROM togethertable
     	order by tidx desc
-    		
     		
     </select>
 	
