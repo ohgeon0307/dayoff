@@ -54,6 +54,32 @@
       ChannelIO("boot", {
         pluginKey: "440ad304-9963-448a-9d8e-8efd8dfa9576",
       });
+      
+      
+      
+    </script>
+    
+    
+    <!-- 유저정보보기 스크립트  -->
+    <script>
+    
+    window.onload = function() {
+    	 
+        function onClick() {
+            document.querySelector('.modalWrap').style.display ='block';
+            document.querySelector('.modalout').style.display ='none';
+            
+        }   
+        function offClick() {
+            document.querySelector('.modalWrap').style.display ='none';
+            document.querySelector('.modalout').style.display ='block';
+        }
+     
+        document.getElementById('modal_btn').addEventListener('click', onClick);
+        document.querySelector('.modalClose').addEventListener('click', offClick);
+     
+    };
+    
     </script>
 </head>
 <body>
@@ -194,21 +220,18 @@
             </div> -->
 			</div>
 			<div class="InnerSection_AreaRight">
-			<div class="Layout">
+			<div class="Layout modalout">
 				<div class="Area_Top">
 					<img
 						src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEyMDNfMjI5%2FMDAxNjY5OTk5MzU2NDM2.Pn6PCF4ak7oEr_uWbdfQiab6OsWgARoJzMQuVjXDScsg.TQMAuKnkPjnKs66iETDz6rqu7ESZp7_W_Dpg8r1_rdgg.JPEG.lavendar02%2F%25B0%25F5%25B5%25B9%25C0%25CC%25C4%25B3%25B8%25AF%25C5%25CD%25B1%25E2%25BA%25BB%25C7%25FC%25C5%25C2_%25B4%25EB%25C1%25F6_1.jpg&type=sc960_832"
 						alt="이미지" style="width: 50px; height: 50px; padding: 4px" />
 					<div class="Profile_info">
-						<div class="Area_Flex" style="display: flex">
+						<div class="Area_Flex" style="display: flex; margin-top:10px;">
 							<p class="Profile_nickname">${vo.writer}</p>
-						</div>
-						<div class="Profile_Taste">
-							<p class="ProfileCompanion">20대 . 남성 . 전주시</p>
 						</div>
 					</div>
 				</div>
-				<div class="Area_Middle">
+				<div class="Area_Middle" style="padding-top:15px;">
 					<div class="Profile_click">
 						<svg width="18" height="18" viewBox="0 0 18 18" fill="none"
 							xmlns="http://www.w3.org/2000/svg">
@@ -222,9 +245,41 @@
 						<p class="ProfileCompanion">프로필 사진을 클릭해보세요!</p>
 					</div>
 					<div class="ButtonWrapper">
-						<button class="ButtonStyle" width="268px" height="55px"
+						<button id="modal_btn" class="ButtonStyle" width="268px" height="55px"
 							font-style="button">
-							<a>동행 신청하기</a>
+							<a>유저정보확인</a>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div id="modalWrap" class="Layout modalWrap">
+				<div class="Area_Top">
+					<img
+						src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEyMDNfMjI5%2FMDAxNjY5OTk5MzU2NDM2.Pn6PCF4ak7oEr_uWbdfQiab6OsWgARoJzMQuVjXDScsg.TQMAuKnkPjnKs66iETDz6rqu7ESZp7_W_Dpg8r1_rdgg.JPEG.lavendar02%2F%25B0%25F5%25B5%25B9%25C0%25CC%25C4%25B3%25B8%25AF%25C5%25CD%25B1%25E2%25BA%25BB%25C7%25FC%25C5%25C2_%25B4%25EB%25C1%25F6_1.jpg&type=sc960_832"
+						alt="이미지" style="width: 50px; height: 50px; padding: 4px" />
+					<div class="Profile_info">
+						<div class="Area_Flex" style="display: flex; margin-top:10px;">
+							<p class="Profile_nickname">${vo.writer}</p>
+						</div>
+						<div class="Profile_Taste" style="margin-top:15px;">
+							<p class="ProfileCompanion">연령 : 20대 </p>
+						</div>
+						<div class="Profile_Taste">
+							<p class="ProfileCompanion">성별 : 남성 </p>
+						</div>
+						<div class="Profile_Taste">
+							<p class="ProfileCompanion">이메일 : cnddjss@naver.com</p>							
+						</div>
+						<div class="Profile_Taste">
+							<p class="ProfileCompanion">소개 : 같이 맛있는거 먹고 사진 찍는거 좋아해요~</p>							
+						</div>
+					</div>
+				</div>
+				<div class="Area_Middle" style="padding-top:0;">
+					<div class="ButtonWrapper">
+						<button class="ButtonStyle modalClose" width="268px" height="55px"
+							font-style="button">
+							<a>나가기</a>
 						</button>
 					</div>
 				</div>

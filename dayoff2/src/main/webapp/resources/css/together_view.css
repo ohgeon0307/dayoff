@@ -895,6 +895,12 @@ select {
     transition: all 0.1s ease-out 0s;
 }
 
+#modalWrap{
+	display:none;
+	position:absolute;
+	
+}
+
 /*footer 시작*/
 
 footer {

@@ -810,6 +810,13 @@ select {
   text-transform: none;
 }
 
+#modalWrap{
+	display:none;
+	position:absolute;
+	
+}
+
+
 /*reply 시작*/
 .commentInsertForm{
 	margin-bottom:15px;
@@ -876,6 +883,9 @@ select {
 }
 
  /*reply 종료*/
+ 
+ 
+ 
 
 /*footer 시작*/
 

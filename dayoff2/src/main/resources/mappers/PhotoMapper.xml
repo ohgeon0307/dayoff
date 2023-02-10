@@ -8,11 +8,10 @@
 			, pTitle
 			, pDate
 			, uidx
-			, pLikes
 			, pDelYn
 			, pHashTag
 			, pHit
-		FROM PHOTOTABLE
+		FROM phototable
 	</select>
 	
 	<select id="selectByPidx" resultType="photoVo" parameterType="int">
@@ -20,25 +19,23 @@
 			, pTitle
 			, pDate
 			, uidx
-			, pLikes
 			, pDelYn
 			, pHashTag
 			, pHit
-		FROM PHOTOTABLE
+		FROM phototable
 		WHERE pidx = #{pidx}
 	</select>
 	
 	<update id="updateByPidx" parameterType="photoVo">
-		UPDATE PHOTOTABLE
+		UPDATE phototable
 			SET pTitle = #{pTtitle}
-			, pFile = #{pFile}
 			, pHashTag = #{pHashTag}
 			WHERE pidx = #{pidx}
 	</update>
 	
 	<delete id="deleteByPidx" parameterType="int">
 		DELETE
-			FROM PHOTOTABLE
+			FROM phototable
 		WHERE pidx = #{pidx}
 	</delete>
 	
@@ -49,26 +46,25 @@
 			, pTitle
 			, pDate
 			, uidx
-			, pLikes
 			, pHashTag
 			, pHit
 		) VALUES(
-			PPIDX_SEQ.NEXTVAL
+			  1
 			, #{pTitle}
-			, sysdate
+			, NOW()
 			, 1
-			, 0
 			, #{pHashTag}
 			, 0
 		)
 	</insert>
-	 
+	
 		<!-- 이미지 등록 -->
 	<insert id="imageEnroll" parameterType="AttachImageVo">
-		<selectKey resultType="int" keyProperty="pidx" order="BEFORE">
-			SELECT MAX(pidx)
-				FROM phototable
-		</selectKey>
+  		<selectKey resultType="int" keyProperty="pidx" order="AFTER">
+  		
+  			SELECT LAST_INSERT_ID()
+  		
+  		</selectKey>
 		
 		insert into imagetable(
 			pidx, fileName, uploadPath, uuid

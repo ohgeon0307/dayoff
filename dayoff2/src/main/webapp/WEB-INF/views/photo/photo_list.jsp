@@ -121,32 +121,32 @@
           <option value="like" class="">좋아요순</option>
         </select>
       </section>
-      <section class="images">
-		<c:forEach items="${datalist}" var="vo">
-			<div class="imgList">
-				<c:forEach items="${imagelist}" var="vo2">
-					<div class="imgC">
-	           	<img src='<spring:url value="/image/${vo2.uploadPath}/${vo2.uuid}_${vo2.fileName}"/>' alt="" class="img"/>
-			 <!-- 			<img src='<spring:url value="/image/2023/02/08/d893c56b-53d3-49e9-bbbf-b8aef15a5f12.jpg"/>' alt="" class="img"/>-->
+		<section class="images">
+				<c:forEach items="${datalist}" var="vo">
+					<div class="imgList">
+					 	<c:forEach items="${imagelist}" var="vo2">
+							<div class="imgC">
+			           			<img src='<spring:url value="/image/${vo2.uploadPath}/${vo2.uuid}_${vo2.fileName}"/>' alt="" class="img"/>
+					 <!-- 			<img src='<spring:url value="/image/2023/02/08/d893c56b-53d3-49e9-bbbf-b8aef15a5f12.jpg"/>' alt="" class="img"/>-->
+							</div>
+		 				</c:forEach>
+						<div class="content">
+							<div class="writer">
+								<i class="xi-profile-o"></i><a href="#">sonny</a>
+							</div>
+							<div>
+								<i class="xi-eye-o">${vo.pHit}</i>
+								<a href="#"><i class="xi-heart"></i></a>${vo.pLikes}
+							</div>
+						</div>
+						<div class="title">${vo.pTitle}
+						</div>
+						<div class="hashtag">
+							<a href="#">${vo.pHashTag}</a>
+						</div>
 					</div>
-				</c:forEach> 
-				<div class="content">
-					<div class="writer">
-						<i class="xi-profile-o"></i><a href="#">sonny</a>
-					</div>
-					<div>
-						<i class="xi-eye-o">${vo.pHit}</i>
-						<a href="#"><i class="xi-heart"></i></a>${vo.pLikes}
-					</div>
-				</div>
-				<div class="title">${vo.pTitle}
-				</div>
-				<div class="hashtag">
-					<a href="#">${vo.pHashTag}</a>
-				</div>
-			</div>
-		</c:forEach>
-      </section>
+				</c:forEach>
+		      </section>
     <div class="modal">
       <span class="close">&times;</span>
       <img class="modal_content" id="img01">

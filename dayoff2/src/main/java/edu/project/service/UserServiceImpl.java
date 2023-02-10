@@ -41,4 +41,10 @@ public class UserServiceImpl implements UserService{
 		return ulist;
 	}
 
+	@Override
+	public UserVo selectByUidx(int uidx) {
+		
+		return userDao.selectByUidx(uidx);
+	}
+
 }

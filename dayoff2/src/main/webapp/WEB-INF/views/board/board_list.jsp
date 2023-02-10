@@ -129,7 +129,7 @@
           <div class="board_contents_one">
             <div class="flex_title">
               <p>서울</p>
-              <a href="view.do?bidx=${vo.bidx}"><p class="view_board">게시글 보기</p></a>
+              <a href="view.do?bidx=${vo.bidx}&uidx=${vo.uidx}"><p class="view_board">게시글 보기</p></a>
             </div>
             <p class="title">${vo.title }</p>
             <p class="contents">${vo.content }</p>
