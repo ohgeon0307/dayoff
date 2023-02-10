@@ -58,6 +58,9 @@
       
       
     </script>
+    
+    
+    <!-- 유저정보보기 스크립트  -->
     <script>
     
     window.onload = function() {
