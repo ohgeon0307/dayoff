@@ -19,7 +19,7 @@
 		)VALUES(
 		 #{title}
 		, #{content}
-		, sysdate
+		, now()
 		, 0
 		, #{hashTag}
 		, 'hi'
@@ -33,7 +33,7 @@
 	<select id="boardList" resultType="boardVo" parameterType="scri">
 		SELECT * FROM boardtable 
 		<include refid="search"></include>
-		ORDER BY bidx DESC LIMIT #{rowStart},#{rowEnd}
+		ORDER BY bidx DESC LIMIT 0,10
 	</select>
 
 	<select id="listCount" resultType="int">
