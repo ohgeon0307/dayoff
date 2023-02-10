@@ -331,7 +331,7 @@
           </div>
         </div>
         <div class="InnerSection_AreaRight">
-          <div class="Layout">
+          <div class="Layout modalout" >
             <div class="Area_Top">
               <img
                 src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEyMDNfMjI5%2FMDAxNjY5OTk5MzU2NDM2.Pn6PCF4ak7oEr_uWbdfQiab6OsWgARoJzMQuVjXDScsg.TQMAuKnkPjnKs66iETDz6rqu7ESZp7_W_Dpg8r1_rdgg.JPEG.lavendar02%2F%25B0%25F5%25B5%25B9%25C0%25CC%25C4%25B3%25B8%25AF%25C5%25CD%25B1%25E2%25BA%25BB%25C7%25FC%25C5%25C2_%25B4%25EB%25C1%25F6_1.jpg&type=sc960_832"
