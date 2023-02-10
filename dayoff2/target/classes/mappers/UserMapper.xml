@@ -33,7 +33,7 @@
 	<select id ="login" parameterType="userVo" resultType="userVo">
 		SELECT uidx
 		, id
-		, name
+		, name 
 		FROM usertable
 		WHERE id = #{id}
 		and password = #{password}
