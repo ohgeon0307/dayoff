@@ -107,9 +107,10 @@
           />
         </div>
         <hr class="slide_hr" />
-        <div class="container" id="uploadResult">
+        <div class="container">
+        <img id="uploadView" style="width:100%; height:90%; border:none;" />
+          	인생샷을 올려주세요💫
            <input type="file" id ="fileItem" name='uploadFile' style="height: 30px;">
-          인생샷을 올려주세요💫
         </div>
         <div class="hashtag">
           <input
@@ -177,6 +178,36 @@
       </div>
     </footer>
     
+    <script type="text/javascript">
+    //이미지 미리보기
+    var sel_file;
+ 
+    $(document).ready(function() {
+        $("#fileItem").on("change", handleImgFileSelect);
+    });
+ 
+    function handleImgFileSelect(e) {
+        var files = e.target.files;
+        var filesArr = Array.prototype.slice.call(files);
+ 
+        var reg = /(.*?)\/(jpg|jpeg|png|bmp)$/;
+ 
+        filesArr.forEach(function(f) {
+            if (!f.type.match(reg)) {
+                alert("확장자는 이미지 확장자만 가능합니다.");
+                return;
+            }
+ 
+            sel_file = f;
+ 
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $("#uploadView").attr("src", e.target.result);
+            }
+            reader.readAsDataURL(f);
+        });
+    }
+</script>
     
  
 </body>
