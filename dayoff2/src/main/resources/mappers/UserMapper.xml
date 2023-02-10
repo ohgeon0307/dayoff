@@ -12,8 +12,7 @@
 	
 	<insert id="insertUser" parameterType="userVo">
 		INSERT INTO usertable(
-			uidx
-		, id
+		 id
 		, password
 		, name
 		, phone
@@ -21,14 +20,13 @@
 		, gender
 		, rdate
 		)VALUES(
-			puidx_seq.nextval
-			, #{id}
+			 #{id}
 			, #{password}
 			, #{name}
 			, #{phone}
 			, #{birth}
 			, #{gender}
-			, sysdate
+			, now()
 		)
 	</insert>
 	
