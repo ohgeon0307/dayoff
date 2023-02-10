@@ -6,8 +6,7 @@
 <mapper namespace="edu.project.mapper.boardMapper">
 	<insert id="boardInsert" parameterType="boardVo">
 		INSERT INTO boardtable(
-		bidx
-		, title
+		 title
 		, content
 		, wdate
 		, hit
@@ -15,13 +14,10 @@
 		, filename
 		, likes
 		, uidx
-		,
-		bDelYn
+		, bDelYn
 		, writer
-
 		)VALUES(
-		pbidx_seq.nextval
-		, #{title}
+		 #{title}
 		, #{content}
 		, sysdate
 		, 0
@@ -35,13 +31,9 @@
 	</insert>
 
 	<select id="boardList" resultType="boardVo" parameterType="scri">
-		SELECT * FROM (
-		SELECT ROWNUM AS rnum, A.* FROM (
-		SELECT * FROM boardtable
+		SELECT * FROM boardtable 
 		<include refid="search"></include>
-		ORDER BY bidx DESC
-		)A
-		) WHERE rnum BETWEEN #{rowStart} AND #{rowEnd}
+		ORDER BY bidx DESC LIMIT #{rowStart},#{rowEnd}
 	</select>
 
 	<select id="listCount" resultType="int">
@@ -53,10 +45,10 @@
 
 	<sql id="search">
 		<if test="searchType == 'title'">
-			WHERE title like '%'||#{keyword}||'%'
+			WHERE title concat('%'||#{keyword}||'%')
 		</if>
 		<if test="searchType == 'content'">
-			WHERE content like '%'||#{keyword}||'%'
+			WHERE content concat('%'||#{keyword}||'%')
 		</if>
 	</sql>
 
@@ -110,16 +102,14 @@
 
 	<insert id="insertReply" parameterType="replyVo">
 		INSERT INTO replytable(
-		ridx
-		, rContent
+		 rContent
 		, redate
 		, writer
 		, bidx
 		, rdelyn
 		, uidx
 		)VALUES(
-		pridx_seq.NEXTVAL
-		, #{rContent}
+	    #{rContent}
 		, sysdate
 		, #{writer}
 		, #{bidx}
@@ -163,7 +153,7 @@
 	<update id="like_check_cancel" parameterType="HashMap">
 		UPDATE liketable
 		SET like_check = 0
-		WHERE uidx=#{uidx}
-		AND ridx = #={ridx}
+		WHERE uidx= #{uidx}
+		AND ridx = #{ridx}
 	</update>
 </mapper>
