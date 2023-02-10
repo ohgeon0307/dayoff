@@ -45,10 +45,10 @@
 
 	<sql id="search">
 		<if test="searchType == 'title'">
-			WHERE title concat('%'||#{keyword}||'%')
+			where title LIKE CONCAT ('%', #{keyword},'%')
 		</if>
 		<if test="searchType == 'content'">
-			WHERE content concat('%'||#{keyword}||'%')
+			where content LIKE CONCAT ('%', #{keyword} ,'%')
 		</if>
 	</sql>
 
@@ -110,7 +110,7 @@
 		, uidx
 		)VALUES(
 	    #{rContent}
-		, sysdate
+		, now()
 		, #{writer}
 		, #{bidx}
 		, 'N'
