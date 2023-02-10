@@ -33,7 +33,7 @@ public class UserController {
 		System.out.println(loginVo);
 		if(loginVo != null) {
 			session.setAttribute("login", loginVo);
-			return "redirect:/";
+			return "redirect:/community.do";
 		} else if (loginVo == null) {
 			
 			return "redirect:login.do";
@@ -46,7 +46,7 @@ public class UserController {
 		
 		session.invalidate();
 		
-		return "redirect:/";
+		return "redirect:/community.do";
 	}
 	
 	@RequestMapping(value="/login_action.do", method=RequestMethod.GET)
@@ -74,9 +74,9 @@ public class UserController {
 		int result = userService.insertUser(vo);
 		
 		if(result > 0) {
-			return "redirect:/";
+			return "redirect:/community.do";
 		}
-		return "redirect:/";
+		return "redirect:/community.do";
 	}
 
 	@ResponseBody

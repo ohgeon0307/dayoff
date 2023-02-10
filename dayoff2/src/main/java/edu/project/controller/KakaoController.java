@@ -38,7 +38,7 @@ public class KakaoController {
 			session.setAttribute("access_Token", access_Token);
 		}
 		
-		return "redirect:/";
+		return "redirect:/community.do";
 	}
 	
 	 @RequestMapping(value="/logout.do")
@@ -55,7 +55,7 @@ public class KakaoController {
 	            //return "redirect:/";
 	        }
 	        //return "index";
-	        return "redirect:/";
+	        return "redirect:/community.do";
 	    }
 	
 	
