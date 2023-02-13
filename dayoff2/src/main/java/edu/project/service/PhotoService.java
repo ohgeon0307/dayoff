@@ -20,4 +20,5 @@ public interface PhotoService {
 	AttachImageVo imageList(int pidx); 
 	
 	int modifyByPidx(PhotoVo vo);
+	
 }

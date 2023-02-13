@@ -12,6 +12,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <meta charset="UTF-8">
     <title>포토갤러리</title>
     <link
@@ -140,7 +141,11 @@
 						<div class="content">
 							<div class="writer">
 								<i class="xi-profile-o"></i><a href="#">${login.name }</a>
-								<button onclick="location.href='modify.do?pidx=${vo.pidx}'">수정</button><button>삭제</button>
+								<button onclick="location.href='modify.do?pidx=${vo.pidx}'">수정</button>
+								<button class="delete" onclick= "$('#deletef').submit()">삭제</button>
+								<form name= "deletef" id = "deletef" action="delete.do" method="post">
+									<input type="hidden" name = "pidx" value = "${vo.pidx }">
+								</form>
 							</div>
 							<div>
 								<i class="xi-eye-o">${vo.pHit}</i>

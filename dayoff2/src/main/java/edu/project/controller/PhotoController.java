@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +26,7 @@ import org.springframework.web.multipart.MultipartFile;
 import edu.project.service.PhotoService;
 import edu.project.vo.PhotoVo;
 import edu.project.vo.TogetherVo;
+import edu.project.vo.UserVo;
 import edu.project.controller.PhotoController;
 import edu.project.vo.AttachImageVo;
 
@@ -154,6 +155,21 @@ public class PhotoController {
 		} else {
 			
 			return "redirect:/list.do";
+		}
+	}
+	
+	@RequestMapping(value = "/delete.do", method = RequestMethod.POST)
+	public String delete(int pidx) {
+		
+		
+		int result = photoService.deleteByPidx(pidx);
+		
+		if(result > 0) {
+			
+			return "redirect:photo/list.do";
+		} else {
+			
+			return "redirect:photo/list.do";
 		}
 	}
 	
