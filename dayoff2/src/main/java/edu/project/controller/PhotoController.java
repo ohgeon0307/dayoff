@@ -71,25 +71,7 @@ public class PhotoController {
 	@RequestMapping(value = "/write.do", method = RequestMethod.POST )
 	public String fileupload(MultipartFile uploadFile, AttachImageVo vo, PhotoVo vo2) {
 		
-/*		logger.info("write.do");
-		
-		File checkfile = new File(uploadFile.getOriginalFilename());
-		String type = null;
-		
-		try {
-			type = Files.probeContentType(checkfile.toPath());
-			logger.info("MIME TYPE : " + type);
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-		if(!type.startsWith("image")) {
-			
-//			AttachImageVo result = null;
-//			return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
-			return 0 ;
-		}*/
-		
-		
+
 		String uploadFolder = "\\\\DESKTOP-3RHRVJD\\upload";
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -110,8 +92,6 @@ public class PhotoController {
 		logger.info("파일 타입 : " + uploadFile.getContentType());
 		logger.info("파일 크기 : " + uploadFile.getSize());
 		
-		/* 이미저 정보 담는 객체 */
-//		AttachImageVo result = new AttachImageVo();
 		
 		/* 파일 이름 */
 		String uploadFileName = uploadFile.getOriginalFilename();			
@@ -143,12 +123,10 @@ public class PhotoController {
 		vo.setPidx(vo2.getPidx());
 		System.out.println(vo.toString());
 		photoService.imageEnroll(vo);
-//		int result = photoService.imageEnroll(vo);
-//		ResponseEntity<AttachImageVo> result = new ResponseEntity<>(result, HttpStatus.OK);
-//		return new ResponseEntity<>(result, HttpStatus.OK);
+
 		return "redirect:list.do";
 	}
 	
-	
-	
 }
+
+
