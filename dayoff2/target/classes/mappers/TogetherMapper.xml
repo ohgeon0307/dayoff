@@ -5,7 +5,7 @@
 
 <mapper namespace="edu.project.mapper.togetherMapper">
 
-	<insert id="togetherInsert" parameterType="togetherVo">
+	<insert id="togetherInsert" parameterType="togetherVo" useGeneratedKeys="true" keyProperty="tidx">
 		INSERT INTO togethertable(
 			 ttitle
 			, tcontent
@@ -26,6 +26,27 @@
 			, #{writer}
 		)
 	</insert>
+	
+	<insert id="imageEnroll" parameterType="AttachImage2Vo">
+		insert into image2table(
+			tidx, fileName, uploadPath, uuid
+			) values (
+			#{tidx}, #{fileName}, #{uploadPath}, #{uuid}
+			)
+	</insert>
+	
+	<select id="image" resultType="AttachImage2Vo" parameterType="int">
+	
+		select
+			tidx,
+			fileName,
+			uploadPath,
+			uuid
+		FROM image2table
+		where tidx = #{tidx}
+	</select>
+	
+	
 	
 	<select id="togetherlist" resultType="togetherVo">
 	

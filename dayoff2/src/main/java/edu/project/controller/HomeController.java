@@ -51,19 +51,6 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping(value = "/together", method = RequestMethod.GET)
-	public String together(Model model) {
-		
-		List<TogetherVo> list = togetherService.list();
-		
-		List<UserVo> userlist = userService.list();
-		
-		model.addAttribute("togetherlist", list);
-		
-		model.addAttribute("userlist", userlist);
-		
-		return "together/together_home";
-	}
 	
 	@RequestMapping(value = "/board", method = RequestMethod.GET)
 	

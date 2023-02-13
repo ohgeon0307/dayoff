@@ -287,8 +287,13 @@
           			%>
 	            <div type="portrait" class="AccompanyItem">
 	              <div>
-	                <a href="together_view.do?tidx=<%=vo.getTidx() %>"><img
-	                  src=""
+	                <a href="together_view.do?tidx=<%=vo.getTidx() %>">
+	               <%
+          		}
+            %>
+            <c:forEach var="vo" items="${togetherlist}" varStatus="status">
+	                <img
+	                  src="'<spring:url value="/image/${image[status.index].uploadPath}/${image[status.index].uuid}_${image[status.index].fileName}"/>'"
 	                  alt=""
 	                /></a>
 	                <div type="portrait" class="DateWrapper">
@@ -326,10 +331,10 @@
 	              <div class="ContentWrapper" type="portrait">
 	                <div class="TitleWrapper">
 	                  <b class="PreVentDragB">모집중</b>
-	                  <%=vo.gettTitle() %>
+	                  ${vo.tTitle}
 	                </div>
 	                <p type="portrait" class="DescWrapper">
-	                  <%=vo.gettContent() %>
+	                  ${vo.tContent }
 	                </p>
 	                <div class="ViewWrapper">
 	                  <div font-size="16px;" class="ProfileWrapper">
@@ -338,7 +343,7 @@
 	                      alt="프로필"
 	                    />
 	                    <div>
-	                      <p class="ProfileDragP"><%=vo.getWriter() %></p>
+	                      <p class="ProfileDragP">${ vo.Writer}</p>
 	                    </div>
 	                  </div>
 	                  <div class="ViewAndMsgWrapper">
@@ -361,7 +366,7 @@
 	                          stroke="#9A9A9A"
 	                        ></circle>
 	                      </svg>
-	                      <p class="PreventDragP2"><%=vo.gettHit() %></p>
+	                      <p class="PreventDragP2">${ tHit}</p>
 	                    </div>
 	                    <div>
 	                      <svg
@@ -384,9 +389,7 @@
 	                </div>
 	              </div>
 	            </div>
-	            <%
-          		}
-            %>
+			</c:forEach>
           </ul>
         </section>
       </div>

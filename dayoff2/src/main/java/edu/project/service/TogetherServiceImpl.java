@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.project.dao.TogetherDao;
+import edu.project.vo.AttachImage2Vo;
+import edu.project.vo.AttachImageVo;
 import edu.project.vo.TogetherVo;
 
 
@@ -17,15 +19,15 @@ public class TogetherServiceImpl implements TogetherService{
 	private TogetherDao togetherDAO;
 	
 	@Override
-	public int insert(TogetherVo vo) {
+	public int togetherInsert(TogetherVo vo) {
 		
-		return togetherDAO.insert(vo);
+		return togetherDAO.togetherInsert(vo);
 	}
 
 	@Override
-	public List<TogetherVo> list() {
+	public List<TogetherVo> list(TogetherVo togetherVo) {
 		
-		List<TogetherVo> list = togetherDAO.list();
+		List<TogetherVo> list = togetherDAO.list(togetherVo);
 		
 		return list;
 	}
@@ -48,5 +50,13 @@ public class TogetherServiceImpl implements TogetherService{
 	
 		return togetherDAO.deleteByTidx(tidx);
 	}
-
+	
+	@Override
+	public int imageEnroll(AttachImage2Vo vo) {
+		return togetherDAO.imageEnroll(vo);
+	}
+	@Override
+	public AttachImage2Vo image(int tidx) {
+		return togetherDAO.image(tidx);
+	}
 }

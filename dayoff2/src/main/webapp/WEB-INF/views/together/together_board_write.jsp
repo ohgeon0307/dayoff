@@ -248,11 +248,12 @@
         </section>
       </div>
       <section class="file_upload_section">
-      	<form action="write.do" method="post">
+      	<form action="write.do"  method="post" enctype="multipart/form-data">
 	        <div class="container">
-	          <img src="${path}/resources/img/picture.png" alt="" />
-	          배경 사진을 선택해주세요💫
-	        </div>
+        <img id="uploadView" style="width:auto; height:350px; border:none;" />
+          	배경 사진을 선택해주세요💫
+           <input type="file" id ="fileItem" name='uploadFile' style="height: 30px;  border:none;" />
+        </div>
 	        <div class="title">
 	          <input type="hidden" name="writer" value="${login.name }"/>
 	          <input type="hidden" name="uidx" value="${login.uidx }"/>

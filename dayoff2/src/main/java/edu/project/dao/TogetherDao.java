@@ -6,6 +6,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import edu.project.vo.AttachImage2Vo;
+import edu.project.vo.AttachImageVo;
+import edu.project.vo.PhotoVo;
 import edu.project.vo.TogetherVo;
 
 
@@ -17,19 +20,24 @@ public class TogetherDao {
 	@Autowired
 	private SqlSession sqlSession;
 
-	public List<TogetherVo> list(){
-		
-		
-	
-		
+	public List<TogetherVo> list(TogetherVo vo){
+
 		return sqlSession.selectList("edu.project.mapper.togetherMapper.togetherlist");
 	}
 	
-	public int insert(TogetherVo vo) {
+	public int togetherInsert(TogetherVo vo) {
 			
 			
 			return sqlSession.insert("edu.project.mapper.togetherMapper.togetherInsert", vo);
 		}	
+	
+	public int imageEnroll(AttachImage2Vo vo) {
+		return sqlSession.insert("edu.project.mapper.togetherMapper.imageEnroll", vo);
+	}
+	
+	public AttachImage2Vo image(int tidx) {
+		return sqlSession.selectOne("edu.project.mapper.togetherMapper.image", tidx);
+	}
 	
 	
 	public TogetherVo selectByTidx(int tidx) {
