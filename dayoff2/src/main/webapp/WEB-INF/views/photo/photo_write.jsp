@@ -66,8 +66,8 @@
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-            <div class="item"><img src="${path}/resources/img/logo.png" alt="" /></div>
-            <a href="<%= request.getContextPath()%>/" class="a_tag_color"><div class="item2">커뮤니티</div></a>
+            <a href="${path }/community.do"><div class="item"><img src="${path}/resources/img/logo.png" alt="" /></div></a>
+            <a href="<%= request.getContextPath()%>/community.do" class="a_tag_color"><div class="item2">커뮤니티</div></a>
             <a href="<%= request.getContextPath()%>/photo/list.do"><div class="item3">포토갤러리</div></a>
           </div>
           <div class="right_header">
