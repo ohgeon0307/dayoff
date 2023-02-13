@@ -35,8 +35,8 @@ public class PhotoDao {
 		return sqlSession.insert("edu.project.mapper.photoMapper.imageEnroll", vo);
 	}
 	
-	public List<AttachImageVo> imageList(AttachImageVo vo) {
-		return sqlSession.selectList("edu.project.mapper.photoMapper.imageList", vo);
+	public AttachImageVo imageList(int pidx) {
+		return sqlSession.selectOne("edu.project.mapper.photoMapper.imageList", pidx);
 	}
 	 
 }

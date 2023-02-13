@@ -40,9 +40,8 @@ public class PhotoServiceImpl implements PhotoService{
 		return photoDAO.imageEnroll(vo);
 	}
 	@Override
-	public List<AttachImageVo> imageList(AttachImageVo attachImageVo) {
-		List<AttachImageVo> list = photoDAO.imageList(attachImageVo); 
-		return list;
+	public AttachImageVo imageList(int pidx) {
+		return photoDAO.imageList(pidx);
 		
 	}
 }

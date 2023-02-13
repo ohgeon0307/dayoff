@@ -62,7 +62,7 @@
 			)
 	</insert>
 	
-	<select id="imageList" resultType="AttachImageVo" parameterType="AttachImageVo">
+	<select id="imageList" resultType="AttachImageVo" parameterType="int">
 	
 		select
 			pidx,
@@ -70,6 +70,7 @@
 			uploadPath,
 			uuid
 		FROM imagetable
+		where pidx = #{pidx}
 	</select>
 	
 	

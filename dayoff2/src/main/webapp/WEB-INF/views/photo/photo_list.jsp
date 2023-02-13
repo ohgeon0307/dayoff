@@ -8,6 +8,7 @@
 <%@ page import="edu.project.vo.AttachImageVo" %>
 <% List<PhotoVo> list2 = (List<PhotoVo>)request.getAttribute("datalist");%>
 <% List<AttachImageVo> list = (List<AttachImageVo>)request.getAttribute("imagelist");%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -122,14 +123,12 @@
         </select>
       </section>
 		<section class="images">
-				<c:forEach items="${datalist}" var="vo">
+				<c:forEach var="vo" items="${datalist}" varStatus="status">
 					<div class="imgList">
-					 	<c:forEach items="${imagelist}" var="vo2">
 							<div class="imgC">
-			           			<img src='<spring:url value="/image/${vo2.uploadPath}/${vo2.uuid}_${vo2.fileName}"/>' alt="" class="img"/>
+			           			<img src='<spring:url value="/image/${imagelist[status.index].uploadPath}/${imagelist[status.index].uuid}_${imagelist[status.index].fileName}"/>' alt="" class="img"/>
 					 <!-- 		<img src='<spring:url value="/image/2023/02/08/d893c56b-53d3-49e9-bbbf-b8aef15a5f12.jpg"/>' alt="" class="img"/>-->
 							</div>
-		 				</c:forEach>
 						<div class="content">
 							<div class="writer">
 								<i class="xi-profile-o"></i><a href="#">sonny</a>
