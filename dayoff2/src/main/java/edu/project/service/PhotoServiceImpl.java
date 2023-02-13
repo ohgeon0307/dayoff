@@ -23,10 +23,12 @@ public class PhotoServiceImpl implements PhotoService{
 	public PhotoVo selectByPidx(int pidx) {
 		return photoDAO.selectByPidx(pidx);
 	}
+	
 	@Override
-	public int updateByPidx(PhotoVo vo) {
-		return photoDAO.updateByPidx(vo);
+	public PhotoVo updateByPidx(int pidx) {
+		return photoDAO.updateByPidx(pidx);
 	}
+	
 	@Override
 	public int deleteByPidx(int pidx) {
 		return photoDAO.deleteByPidx(pidx);
@@ -43,5 +45,10 @@ public class PhotoServiceImpl implements PhotoService{
 	public AttachImageVo imageList(int pidx) {
 		return photoDAO.imageList(pidx);
 		
+	}
+	@Override
+	public int modifyByPidx(PhotoVo vo) {
+		// TODO Auto-generated method stub
+		return photoDAO.modifyByBidx(vo);
 	}
 }

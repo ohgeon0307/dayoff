@@ -132,6 +132,31 @@ public class PhotoController {
 		return "redirect:list.do";
 	}
 	
+	@RequestMapping(value = "/modify.do", method = RequestMethod.GET)
+	public String modify(int pidx, Model model) {
+		
+		PhotoVo vo = photoService.updateByPidx(pidx);
+		
+		model.addAttribute("vo", vo);
+		
+		return "photo/photo_modify";
+	}
+	
+	@RequestMapping(value = "modify.do", method = RequestMethod.POST)
+	public String modify(PhotoVo vo) {
+		
+		int result = photoService.modifyByPidx(vo);
+		System.out.println(result + " < --- result 값!");
+		
+		if (result > 0) {
+			
+			return "redirect:/photo/list.do";
+		} else {
+			
+			return "redirect:/list.do";
+		}
+	}
+	
 }
 
 

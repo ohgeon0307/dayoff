@@ -99,11 +99,13 @@
 
       <section class="file_upload_section">
       
-      <form action="write.do" method="post" enctype="multipart/form-data"> 
+      <form action="modify.do" method="post" enctype="multipart/form-data"> 
+      <input type="hidden" name="pidx" value = "${vo.pidx }">
         <div class="title">
           <input
             type="text" name="pTitle"
             placeholder="&nbsp&nbsp제목을 입력해보세요!(100자 이내)"
+            value = "${vo.pTitle }"
           />
         </div>
         <hr class="slide_hr" />
@@ -116,6 +118,7 @@
           <input
             type="text" name="pHashTag"
             placeholder="&nbsp&nbsp태그입력 (띄어쓰기로 구분) (100자 이내)"
+            value = ${vo.pHashTag }
           />
         </div>
         <div class="button_zone">

@@ -140,7 +140,7 @@
 						<div class="content">
 							<div class="writer">
 								<i class="xi-profile-o"></i><a href="#">${login.name }</a>
-								<button>수정</button><button>삭제</button>
+								<button onclick="location.href='modify.do?pidx=${vo.pidx}'">수정</button><button>삭제</button>
 							</div>
 							<div>
 								<i class="xi-eye-o">${vo.pHit}</i>

@@ -20,12 +20,18 @@
 		WHERE pidx = #{pidx}
 	</select>
 	
-	<update id="updateByPidx" parameterType="photoVo">
-		UPDATE phototable
-			SET pTitle = #{pTtitle}
-			, pHashTag = #{pHashTag}
-			WHERE pidx = #{pidx}
-	</update>
+	<select id="updateByPidx" parameterType="int" resultType="photoVo">
+		SELECT pidx
+		, pTitle
+		, pHashTag
+		, uidx
+		, pDelYn
+		, pHashTag
+		, pHit
+		, pWriter
+		FROM phototable
+		WHERE pidx = #{pidx}
+	</select>
 	
 	<delete id="deleteByPidx" parameterType="int">
 		DELETE
@@ -72,6 +78,17 @@
 		FROM imagetable
 		where pidx = #{pidx}
 	</select>
+	
+	<update id="modifyByBidx" parameterType="photoVo">
+		UPDATE phototable
+		SET
+		pTitle
+		= #{pTitle}
+		, pHashTag = #{pHashTag}
+		WHERE pidx
+		= #{pidx}
+		
+	</update>
 	
 	
 </mapper>

@@ -19,8 +19,8 @@ public class PhotoDao {
 		return sqlSession.selectOne("edu.project.mapper.photoMapper.selectByPidx", pidx);
 	}
 	
-	public int updateByPidx(PhotoVo vo) {
-		return sqlSession.update("edu.project.mapper.photoMapper.updateByPidx", vo);
+	public PhotoVo updateByPidx(int pidx) {
+		return sqlSession.selectOne("edu.project.mapper.photoMapper.updateByPidx", pidx);
 	}
 	
 	public int deleteByPidx(int pidx) {
@@ -38,5 +38,12 @@ public class PhotoDao {
 	public AttachImageVo imageList(int pidx) {
 		return sqlSession.selectOne("edu.project.mapper.photoMapper.imageList", pidx);
 	}
+	
+	public int modifyByBidx(PhotoVo vo) {
+		
+		return sqlSession.update("edu.project.mapper.photoMapper.modifyByBidx", vo);
+	}
+	
+	
 	 
 }
