@@ -9,13 +9,14 @@ public class PhotoVo {
 	private String pDelYn;
 	private String pHashTag;
 	private int pHit;
-	private List<AttachImageVo> imageList;
+	private String pWriter;
 	
-	public List<AttachImageVo> getImageList() {
-		return imageList;
+	
+	public String getpWriter() {
+		return pWriter;
 	}
-	public void setImageList(List<AttachImageVo> imageList) {
-		this.imageList = imageList;
+	public void setpWriter(String pWriter) {
+		this.pWriter = pWriter;
 	}
 	public int getPidx() {
 		return pidx;
@@ -53,16 +54,13 @@ public class PhotoVo {
 	public void setpHit(int pHit) {
 		this.pHit = pHit;
 	}
-	
 	@Override
 	public String toString() {
 		return "PhotoVo [pidx=" + pidx + ", pTitle=" + pTitle + ", uidx=" + uidx + ", pDelYn=" + pDelYn + ", pHashTag="
-				+ pHashTag + ", pHit=" + pHit + ", imageList=" + imageList + "]";
+				+ pHashTag + ", pHit=" + pHit + ", pWriter=" + pWriter + "]";
 	}
 	
 
-	
-	
 
 
 }

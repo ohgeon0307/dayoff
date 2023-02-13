@@ -25,6 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import edu.project.service.PhotoService;
 import edu.project.vo.PhotoVo;
+import edu.project.vo.TogetherVo;
 import edu.project.controller.PhotoController;
 import edu.project.vo.AttachImageVo;
 
@@ -41,6 +42,7 @@ public class PhotoController {
 
 	@RequestMapping(value = "/list.do")
 	public String list(Model model, PhotoVo vo2, AttachImageVo vo, ArrayList<AttachImageVo> list) {
+		
 		List<PhotoVo> list2 = photoService.list(vo2);
 		model.addAttribute("datalist",list2);
 		for( PhotoVo item : list2 )
@@ -57,6 +59,9 @@ public class PhotoController {
 		}
 		
 		model.addAttribute("imagelist",list);
+		
+		
+		
 
 		return "photo/photo_list";
 	}

@@ -1,25 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
-<%@ page import="java.util.*" %>
-<%@ page import="edu.project.vo.PhotoVo" %>
-<%@ page import="edu.project.vo.AttachImageVo" %>
-<% List<PhotoVo> list2 = (List<PhotoVo>)request.getAttribute("datalist");%>
-<% List<AttachImageVo> list = (List<AttachImageVo>)request.getAttribute("imagelist");%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-    <title>포토갤러리</title>
+<title>포토갤러리 글쓰기</title>
+<script src="<%=request.getContextPath() %>/resources/js/jquery-3.6.1.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
-    <link href="${path}/resources/css/photo_list.css" rel="stylesheet"/>
-    <link rel="shortcut icon" href="${path}/resources/img/favicon.png"/>
+    <link href="${path}/resources/css/photo_write.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="${path}/resources/img/favicon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
       rel="stylesheet"
@@ -34,7 +28,7 @@
         }
         var ch = function () {
           ch.c(arguments);
-        }; 
+        };
         ch.q = [];
         ch.c = function (args) {
           ch.q.push(args);
@@ -43,7 +37,7 @@
         function l() {
           if (w.ChannelIOInitialized) {
             return;
-          } 
+          }
           w.ChannelIOInitialized = true;
           var s = document.createElement("script");
           s.type = "text/javascript";
@@ -64,7 +58,7 @@
       })();
       ChannelIO("boot", {
         pluginKey: "440ad304-9963-448a-9d8e-8efd8dfa9576",
-      }); 
+      });
     </script>
   </head>
   <body>
@@ -72,8 +66,8 @@
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-            <a href="${path }/community.do"><div class="item"><img src="${path}/resources/img/logo.png" alt="" /></div></a>
-            <a href="<%= request.getContextPath()%>/community.do" class="a_tag_color"><div class="item2">커뮤니티</div></a>
+            <div class="item"><img src="${path}/resources/img/logo.png" alt="" /></div>
+            <a href="<%= request.getContextPath()%>/" class="a_tag_color"><div class="item2">커뮤니티</div></a>
             <a href="<%= request.getContextPath()%>/photo/list.do"><div class="item3">포토갤러리</div></a>
           </div>
           <div class="right_header">
@@ -83,18 +77,10 @@
               </button>
               <input type="text" placeholder="해시태그로 검색해보세요!" />
             </div>
-             <c:if test="${login == null}">
-            <a href="${path }/user/login.do" class="login_a"><div class="item">로그인</div></a>
+            <a href="<%= request.getContextPath()%>/login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
-            <a href="${path }/user/join.do" class="join_a"><div class="item">회원가입</div></a>
-            </c:if>
-            <c:if test="${login != null}">
-            <a class="login_a" href="<%= request.getContextPath() %>/user/logout.do"><div class="item">로그아웃</div></a>
-            <div class="bar">&#124;</div>
-            <a href="${path }/user/join.do" class="join_a"><div class="item">마이페이지</div></a>
-            <a href="<%= request.getContextPath()%>/photo/write.do"
-              ><button class="header_write_btn">글쓰기</button></a> 
-            </c:if>
+            <a href="<%= request.getContextPath()%>/join.do" class="join_a"><div class="item">회원가입</div></a>
+            <a href="<%= request.getContextPath()%>/photo/write.do"><button class="header_write_btn">글쓰기</button></a>
           </div>
         </div>
         <section class="second_section">
@@ -106,58 +92,39 @@
       </section>
     </header>
     <main>
-      <section>
-        <div class="pic">
-          <img src="${path}/resources/img/Menu_Shop_Backpacks_2000x.progressive.jpg" alt="" />
-          <a>여행사진을 공유해봐요!</a>
+      <div class="pic">
+        <img src="${path}/resources/img/Menu_Shop_Backpacks_2000x.progressive.jpg" alt="" />
+        <a>여행사진을 공유해봐요!</a>
+      </div>
+
+      <section class="file_upload_section">
+      
+      <form action="write.do" method="post" enctype="multipart/form-data"> 
+        <div class="title">
+          <input
+            type="text" name="pTitle"
+            placeholder="&nbsp&nbsp제목을 입력해보세요!(100자 이내)"
+          />
         </div>
-      </section>
-      <section>
-        <div class="asdf">
-          <p>포토갤러리</p>
+        <hr class="slide_hr" />
+        <div class="container">
+        <img id="uploadView" style="width:auto; height:350px; border:none;" />
+          	인생샷을 올려주세요💫
+           <input type="file" id ="fileItem" name='uploadFile' style="height: 30px;  border:none;" />
         </div>
-        <div class="subject">
-          <h2>전라북도</h2>
-          <h2>전주</h2>
-          <h2>한옥마을</h2>
+        <div class="hashtag">
+          <input
+            type="text" name="pHashTag"
+            placeholder="&nbsp&nbsp태그입력 (띄어쓰기로 구분) (100자 이내)"
+          />
         </div>
+        <div class="button_zone">
+          <button type="reset" class="cancel">취소</button>
+          <button class="submit">작성하기</button>
+		</div>
+      </form>
+      
       </section>
-      <section class="filter">
-        <p>정렬</p>
-        <select class="">
-          <option value="time" class="">최신순</option>
-          <option value="view" class="">조회순</option>
-          <option value="like" class="">좋아요순</option>
-        </select>
-      </section>
-		<section class="images">
-				<c:forEach var="vo" items="${datalist}" varStatus="status">
-					<div class="imgList">
-							<div class="imgC">
-			           			<img src='<spring:url value="/image/${imagelist[status.index].uploadPath}/${imagelist[status.index].uuid}_${imagelist[status.index].fileName}"/>' alt="" class="img"/>
-					 <!-- 		<img src='<spring:url value="/image/2023/02/08/d893c56b-53d3-49e9-bbbf-b8aef15a5f12.jpg"/>' alt="" class="img"/>-->
-							</div>
-						<div class="content">
-							<div class="writer">
-								<i class="xi-profile-o"></i><a href="#">${login.name }</a>
-								<button>수정</button><button>삭제</button>
-							</div>
-							<div>
-								<i class="xi-eye-o">${vo.pHit}</i>
-							</div>
-						</div>
-						<div class="title">${vo.pTitle}
-						</div>
-						<div class="hashtag">
-							<a href="#">${vo.pHashTag}</a>
-						</div>
-					</div>
-				</c:forEach>
-		      </section>
-    <div class="modal">
-      <span class="close">&times;</span>
-      <img class="modal_content" id="img01">
-    </div>
     </main>
     <footer class="footer">
       <h3>데이오프</h3>
@@ -209,35 +176,39 @@
           </li>
         </ul>
       </div>
-      
-      
-      
-      
-      
-      
-      
-      <script>
-        const modal = document.querySelector(".modal");
-        const modal_img = document.querySelector(".modal_content");
-        const span = document.querySelector(".close");
-        var img = document.getElementsByClassName('img');
-        var images = Array.prototype.filter.call(img, function(img) {
-          img.addEventListener('click', ()=>{
-            modalDisplay("block");
-            modal_img.src = img.src;
-          });
-          span.addEventListener('click', ()=>{
-            modalDisplay("none");
-          });
-          modal.addEventListener('click', ()=>{
-            modalDisplay("none");
-          });
-          function modalDisplay(text){
-            modal.style.display = text;
-          }
-          return img.nodeName === 'img';
-        });
-            </script>
     </footer>
+    
+    <script type="text/javascript">
+    //이미지 미리보기
+    var sel_file;
+ 
+    $(document).ready(function() {
+        $("#fileItem").on("change", handleImgFileSelect);
+    });
+ 
+    function handleImgFileSelect(e) {
+        var files = e.target.files;
+        var filesArr = Array.prototype.slice.call(files);
+ 
+        var reg = /(.*?)\/(jpg|jpeg|png|bmp)$/;
+ 
+        filesArr.forEach(function(f) {
+            if (!f.type.match(reg)) {
+                alert("확장자는 이미지 확장자만 가능합니다.");
+                return;
+            }
+ 
+            sel_file = f;
+ 
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $("#uploadView").attr("src", e.target.result);
+            }
+            reader.readAsDataURL(f);
+        });
+    }
+</script>
+    
+ 
 </body>
 </html>
