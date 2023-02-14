@@ -48,7 +48,7 @@
 	
 	
 	
-	<select id="togetherlist" resultType="togetherVo">
+	<select id="togetherlist" resultType="togetherVo" parameterType ="togetherVo">
 	
     	SELECT *
     	FROM togethertable

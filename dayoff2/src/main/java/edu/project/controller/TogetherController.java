@@ -40,7 +40,11 @@ public class TogetherController {
 		
 		List<TogetherVo> list2 = togetherService.togetherlist(vo2);
 		
+		System.out.println("!@#$!@#$" + list2);
+		
 		List<UserVo> userlist = userService.list();
+		
+		System.out.println("%%%@@@$#@$" + userlist);
 		
 		model.addAttribute("togetherlist", list2);
 		

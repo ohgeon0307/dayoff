@@ -285,7 +285,7 @@
           <ul class="Accompany" type="portrait">
           	<% 
           		for(TogetherVo vo : list2){
-          			%>
+          	%>
 	            <div type="portrait" class="AccompanyItem">
 	              <div>
 	                <a href="together_view.do?tidx=<%=vo.getTidx() %>">
@@ -328,6 +328,7 @@
 	                    </div>
 	                  </div>
 	                </div>
+	              </div>
 	              </div>
 	              <div class="ContentWrapper" type="portrait">
 	                <div class="TitleWrapper">
@@ -389,7 +390,6 @@
 	                  </div>
 	                </div>
 	              </div>
-	            </div>
 				</c:forEach>
 
           </ul>

@@ -10,6 +10,7 @@ import edu.project.vo.TogetherVo;
 public interface TogetherService {
 	
 	int togetherInsert(TogetherVo vo);
+	
 	List<TogetherVo> togetherlist(TogetherVo togetherVo);
 	
 	TogetherVo selectByTidx(int Tidx);

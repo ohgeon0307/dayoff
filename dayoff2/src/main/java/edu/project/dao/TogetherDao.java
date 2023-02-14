@@ -22,7 +22,7 @@ public class TogetherDao {
 
 	public List<TogetherVo> togetherlist(TogetherVo vo){
 
-		return sqlSession.selectList("edu.project.mapper.togetherMapper.togetherlist");
+		return sqlSession.selectList("edu.project.mapper.togetherMapper.togetherlist", vo);
 	}
 	
 	public int togetherInsert(TogetherVo vo) {
