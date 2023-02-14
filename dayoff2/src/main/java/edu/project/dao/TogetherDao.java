@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import edu.project.vo.AttachImage2Vo;
-import edu.project.vo.AttachImageVo;
-import edu.project.vo.PhotoVo;
 import edu.project.vo.TogetherVo;
 
 

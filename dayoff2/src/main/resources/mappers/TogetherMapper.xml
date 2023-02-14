@@ -5,6 +5,12 @@
 
 <mapper namespace="edu.project.mapper.togetherMapper">
 
+	<select id="togetherlist" resultType="togetherVo" parameterType ="togetherVo">
+	
+    	SELECT *
+    	FROM togethertable
+    		
+    </select>
 	<insert id="togetherInsert" parameterType="togetherVo" useGeneratedKeys="true" keyProperty="tidx">
 		INSERT INTO togethertable(
 			 ttitle
@@ -48,12 +54,6 @@
 	
 	
 	
-	<select id="togetherlist" resultType="togetherVo" parameterType ="togetherVo">
-	
-    	SELECT *
-    	FROM togethertable
-    		
-    </select>
 	
 	<select id="selectByTidx" parameterType="int" resultType="togetherVo">
     	SELECT tidx

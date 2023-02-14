@@ -58,9 +58,15 @@ public class TogetherController {
 			list.add(vo);
 		}
 		
-		for ( AttachImage2Vo itm : list )
+		if(list != null)
 		{
-			System.out.println(itm.toString());
+			for ( AttachImage2Vo itm : list )
+			{
+				if( itm != null)
+				{
+					System.out.println(itm.toString());
+				}
+			}
 		}
 		 
 		model.addAttribute("image",list);
@@ -93,7 +99,7 @@ public class TogetherController {
 	@RequestMapping(value= "/write.do", method = RequestMethod.POST)
 	public String write(TogetherVo vo, HttpSession session, AttachImage2Vo vo2, MultipartFile uploadFile) {
 		
-		String uploadFolder = "\\\\DESKTOP-3RHRVJD\\upload";
+		String uploadFolder = "\\\\502-1\\upload";
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		
@@ -134,13 +140,13 @@ public class TogetherController {
 		
 		System.out.println(vo.toString());
 		togetherService.togetherInsert(vo);
-		System.out.println("pidx : " + vo.getTidx());
+		System.out.println("tidx : " + vo.getTidx());
 
-		vo.setTidx(vo.getTidx());
+		vo2.setTidx(vo.getTidx());
 		System.out.println(vo2.toString());
 		togetherService.imageEnroll(vo2);
 		
-		return "redirect:together";
+		return "redirect:together.do";
 	}
 	
 	

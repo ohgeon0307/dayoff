@@ -19,7 +19,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
-    <link href="${path}/resources/css/photo_list.css" rel="stylesheet"/>
+    <link href="${path}/resources/css/photo_list.css?after" rel="stylesheet"/>
     <link rel="shortcut icon" href="${path}/resources/img/favicon.png"/>
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"

@@ -78,7 +78,7 @@ public class PhotoController {
 	public String fileupload(MultipartFile uploadFile, AttachImageVo vo, PhotoVo vo2) {
 		
 
-		String uploadFolder = "\\\\DESKTOP-3RHRVJD\\upload";
+		String uploadFolder = "\\\\502-1\\upload";
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		
