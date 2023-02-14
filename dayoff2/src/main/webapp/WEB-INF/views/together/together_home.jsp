@@ -264,7 +264,7 @@
               class="ButtonWrapper"
               style="border-radius: 30px"
             >
-              모집중인 글만 보기
+              모집중인 글만 보기 
             </button>
             <div
               class="SelectItem"
