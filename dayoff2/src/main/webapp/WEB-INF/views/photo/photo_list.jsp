@@ -136,7 +136,6 @@
 					<div class="imgList">
 							<div class="imgC">
 			           			<img src='<spring:url value="/image/${imagelist[status.index].uploadPath}/${imagelist[status.index].uuid}_${imagelist[status.index].fileName}"/>' alt="" class="img"/>
-					 <!-- 		<img src='<spring:url value="/image/2023/02/08/d893c56b-53d3-49e9-bbbf-b8aef15a5f12.jpg"/>' alt="" class="img"/>-->
 							</div>
 						<div class="content">
 							<div class="writer">

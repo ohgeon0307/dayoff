@@ -25,9 +25,9 @@ public class TogetherServiceImpl implements TogetherService{
 	}
 
 	@Override
-	public List<TogetherVo> list(TogetherVo togetherVo) {
+	public List<TogetherVo> togetherlist(TogetherVo togetherVo) {
 		
-		List<TogetherVo> list = togetherDAO.list(togetherVo);
+		List<TogetherVo> list = togetherDAO.togetherlist(togetherVo);
 		
 		return list;
 	}

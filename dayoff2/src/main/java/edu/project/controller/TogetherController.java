@@ -35,10 +35,10 @@ public class TogetherController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value = "/together", method = RequestMethod.GET)
-	public String together(Model model, TogetherVo vo2, AttachImage2Vo vo, ArrayList<AttachImage2Vo> list) {
+	@RequestMapping(value = "/together.do")
+	public String togetherlist(Model model, TogetherVo vo2, AttachImage2Vo vo, ArrayList<AttachImage2Vo> list) {
 		
-		List<TogetherVo> list2 = togetherService.list(vo2);
+		List<TogetherVo> list2 = togetherService.togetherlist(vo2);
 		
 		List<UserVo> userlist = userService.list();
 		

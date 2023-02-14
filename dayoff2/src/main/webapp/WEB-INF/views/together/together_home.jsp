@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page import="java.util.*" %>
 <%@ page import="edu.project.vo.TogetherVo" %>
 <%
 
-	List<TogetherVo> list = (List<TogetherVo>)request.getAttribute("togetherlist");
+	List<TogetherVo> list2 = (List<TogetherVo>)request.getAttribute("togetherlist");
 
 %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
@@ -283,7 +284,7 @@
           </div>
           <ul class="Accompany" type="portrait">
           	<% 
-          		for(TogetherVo vo : list){
+          		for(TogetherVo vo : list2){
           			%>
 	            <div type="portrait" class="AccompanyItem">
 	              <div>
@@ -291,7 +292,7 @@
 	               <%
           		}
             %>
-            <c:forEach var="vo" items="${togetherlist}" varStatus="status">
+				<c:forEach var="vo" items="${togetherlist}" varStatus="status">
 	                <img
 	                  src="'<spring:url value="/image/${image[status.index].uploadPath}/${image[status.index].uuid}_${image[status.index].fileName}"/>'"
 	                  alt=""
@@ -389,7 +390,8 @@
 	                </div>
 	              </div>
 	            </div>
-			</c:forEach>
+				</c:forEach>
+
           </ul>
         </section>
       </div>

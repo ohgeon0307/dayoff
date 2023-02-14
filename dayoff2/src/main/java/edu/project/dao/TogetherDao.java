@@ -20,7 +20,7 @@ public class TogetherDao {
 	@Autowired
 	private SqlSession sqlSession;
 
-	public List<TogetherVo> list(TogetherVo vo){
+	public List<TogetherVo> togetherlist(TogetherVo vo){
 
 		return sqlSession.selectList("edu.project.mapper.togetherMapper.togetherlist");
 	}

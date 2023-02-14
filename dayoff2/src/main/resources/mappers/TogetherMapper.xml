@@ -52,7 +52,6 @@
 	
     	SELECT *
     	FROM togethertable
-    	order by tidx desc
     		
     </select>
 	

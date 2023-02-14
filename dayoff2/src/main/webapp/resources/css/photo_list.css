@@ -477,6 +477,7 @@ footer button {
   cursor: pointer; /* 마우스 손가락모양 */
   background-color: rgba(0, 0, 0, 0.8);
 }
+
 /* 모달창 이미지 */
 .modal_content {
   margin: auto;
@@ -507,6 +508,7 @@ footer button {
   text-decoration: none;
   cursor: pointer;
 }
+
 
 .images {
   width : 100%;
