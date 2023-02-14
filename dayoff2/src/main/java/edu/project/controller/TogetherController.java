@@ -62,7 +62,7 @@ public class TogetherController {
 		{
 			System.out.println(itm.toString());
 		}
-		
+		 
 		model.addAttribute("image",list);
 		
 		
