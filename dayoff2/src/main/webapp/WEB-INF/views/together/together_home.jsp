@@ -328,8 +328,7 @@
 	                    </div>
 	                  </div>
 	                </div>
-	              </div>
-	              </div>
+	              
 	              <div class="ContentWrapper" type="portrait">
 	                <div class="TitleWrapper">
 	                  <b class="PreVentDragB">모집중</b>
@@ -391,7 +390,8 @@
 	                </div>
 	              </div>
 				</c:forEach>
-
+			  </div>
+			</div>
           </ul>
         </section>
       </div>
