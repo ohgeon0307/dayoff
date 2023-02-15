@@ -294,7 +294,7 @@
             %>
 				<c:forEach var="vo" items="${togetherlist}" varStatus="status">
 	                <img
-	                  src="'<spring:url value="/image/${image[status.index].uploadPath}/${image[status.index].uuid}_${image[status.index].fileName}"/>'"
+	                  src='<spring:url value="/image/${image[status.index].uploadPath}/${image[status.index].uuid}_${image[status.index].fileName}"/>'
 	                  alt=""
 	                /></a>
 	                <div type="portrait" class="DateWrapper">
