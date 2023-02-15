@@ -97,6 +97,11 @@
 		
 	</update>
 	
+	<delete id="deleteImgByPidx" parameterType="int">
+		DELETE
+			FROM imagetable
+		WHERE pidx = #{pidx}
+	</delete>
 	
 	<delete id="deleteByPidx" parameterType="int">
 		DELETE

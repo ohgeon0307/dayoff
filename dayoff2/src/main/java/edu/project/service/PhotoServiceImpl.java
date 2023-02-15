@@ -49,6 +49,11 @@ public class PhotoServiceImpl implements PhotoService{
 	}
 	
 	@Override
+	public int deleteImgByPidx(int pidx) {
+		return photoDAO.deleteImgByPidx(pidx);
+	}
+	
+	@Override
 	public int deleteByPidx(int pidx) {
 		return photoDAO.deleteByPidx(pidx);
 	}

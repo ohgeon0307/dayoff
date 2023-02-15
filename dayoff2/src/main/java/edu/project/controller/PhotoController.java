@@ -201,11 +201,11 @@ public class PhotoController {
 		if (result > 0 && result2 > 0) {
 			return "redirect:/photo/list.do";
 			
-		} else if(result > 0 && result2 < 0){	
+		} else if(result > 0 && result2 == 0){	
 			result2 = 0;
 			return "redirect:/photo/list.do";
 			
-		}else if(result < 0 && result2 > 0){		
+		}else if(result == 0 && result2 > 0){		
 			result = 0;	
 			return "redirect:/photo/list.do";
 			
@@ -217,10 +217,11 @@ public class PhotoController {
 	@RequestMapping(value = "/delete.do", method = RequestMethod.POST)
 	public String delete(int pidx) {
 		
+		int result2 = photoService.deleteImgByPidx(pidx);
 		
 		int result = photoService.deleteByPidx(pidx);
 		
-		if(result > 0) {
+		if(result2 > 0 && result > 0) {
 			
 			return "redirect:photo/list.do";
 		} else {

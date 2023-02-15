@@ -241,7 +241,7 @@
           }
           return img.nodeName === 'img';
         });
-            </script>
+       </script>
     </footer>
 </body>
 </html>

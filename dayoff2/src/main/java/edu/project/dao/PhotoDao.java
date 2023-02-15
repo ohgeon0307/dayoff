@@ -39,6 +39,9 @@ public class PhotoDao {
 		return sqlSession.update("edu.project.mapper.photoMapper.modifyImgByPidx", vo);
 	}
 	
+	public int deleteImgByPidx(int pidx) {
+		return sqlSession.delete("edu.project.mapper.photoMapper.deleteImgByPidx", pidx);
+	}
 	
 	public int deleteByPidx(int pidx) {
 		return sqlSession.delete("edu.project.mapper.photoMapper.deleteByPidx", pidx);

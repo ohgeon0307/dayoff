@@ -15,10 +15,11 @@ public interface PhotoService {
 	
 	AttachImageVo image(int pidx); 
 	
-	
-	int deleteByPidx(int pidx);
-	
 	int modifyByPidx(PhotoVo vo);
 	
 	int modifyImgByPidx(AttachImageVo vo);
+	
+	int deleteImgByPidx(int pidx);
+	
+	int deleteByPidx(int pidx);
 }
