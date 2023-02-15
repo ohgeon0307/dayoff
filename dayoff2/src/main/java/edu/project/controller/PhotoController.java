@@ -42,7 +42,7 @@ public class PhotoController {
 	private PhotoService photoService;
 
 	@RequestMapping(value = "/list.do")
-	public String list(Model model, PhotoVo vo2, AttachImageVo vo, ArrayList<AttachImageVo> list) {
+	public String list(Model model, PhotoVo vo2, AttachImageVo vo, ArrayList<AttachImageVo> img) {
 		
 		List<PhotoVo> list2 = photoService.list(vo2);
 		model.addAttribute("datalist",list2);
@@ -50,20 +50,16 @@ public class PhotoController {
 		{
 			int pidx = item.getPidx();
 			System.out.println(pidx);
-			vo = photoService.imageList(pidx);
-			list.add(vo);
+			vo = photoService.image(pidx);
+			img.add(vo);
+			
 		}
-		
-		for ( AttachImageVo itm : list )
+		for ( AttachImageVo itm : img )
 		{
 			System.out.println(itm.toString());
 		}
-		
-		model.addAttribute("imagelist",list);
-		
-		
-		
-
+		model.addAttribute("image",img);
+	
 		return "photo/photo_list";
 	}
 	 
@@ -134,11 +130,16 @@ public class PhotoController {
 	}
 	
 	@RequestMapping(value = "/modify.do", method = RequestMethod.GET)
-	public String modify(int pidx, Model model) {
+	public String modify(int pidx, Model model, ArrayList<AttachImageVo> img) {
+		System.out.println("modify.do / pidx : " + pidx);
 		
-		PhotoVo vo = photoService.updateByPidx(pidx);
+		PhotoVo vo2 = photoService.selectByPidx(pidx);
+		System.out.println("modify.do / vo2 : " + vo2.toString());
+		model.addAttribute("vo2", vo2);
 		
-		model.addAttribute("vo", vo);
+		
+		model.addAttribute("image",img);
+
 		
 		return "photo/photo_modify";
 	}

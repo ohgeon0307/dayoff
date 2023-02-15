@@ -9,15 +9,15 @@ public interface PhotoService {
 	
 	PhotoVo selectByPidx(int pidx);
 	
-	PhotoVo updateByPidx(int pidx);
-	
-	int deleteByPidx(int pidx);
-	
 	int insert(PhotoVo vo);
 	
 	int imageEnroll(AttachImageVo vo);
 	
-	AttachImageVo imageList(int pidx); 
+	AttachImageVo image(int pidx); 
+	
+	PhotoVo updateByPidx(int pidx);
+	
+	int deleteByPidx(int pidx);
 	
 	int modifyByPidx(PhotoVo vo);
 	

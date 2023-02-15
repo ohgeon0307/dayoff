@@ -19,14 +19,6 @@ public class PhotoDao {
 		return sqlSession.selectOne("edu.project.mapper.photoMapper.selectByPidx", pidx);
 	}
 	
-	public PhotoVo updateByPidx(int pidx) {
-		return sqlSession.selectOne("edu.project.mapper.photoMapper.updateByPidx", pidx);
-	}
-	
-	public int deleteByPidx(int pidx) {
-		return sqlSession.delete("edu.project.mapper.photoMapper.deleteByPidx", pidx);
-	}
-	
 	public int insert(PhotoVo vo) {
 		return sqlSession.insert("edu.project.mapper.photoMapper.insert", vo);
 	}
@@ -35,15 +27,22 @@ public class PhotoDao {
 		return sqlSession.insert("edu.project.mapper.photoMapper.imageEnroll", vo);
 	}
 	
-	public AttachImageVo imageList(int pidx) {
-		return sqlSession.selectOne("edu.project.mapper.photoMapper.imageList", pidx);
+	public AttachImageVo image(int pidx) {
+		return sqlSession.selectOne("edu.project.mapper.photoMapper.image", pidx);
 	}
 	
-	public int modifyByBidx(PhotoVo vo) {
-		
-		return sqlSession.update("edu.project.mapper.photoMapper.modifyByBidx", vo);
+	public PhotoVo updateByPidx(int pidx) {
+		return sqlSession.selectOne("edu.project.mapper.photoMapper.updateByPidx", pidx);
 	}
 	
+	
+	public int modifyByPidx(PhotoVo vo) {
+		return sqlSession.update("edu.project.mapper.photoMapper.modifyByPidx", vo);
+	}
+	
+	public int deleteByPidx(int pidx) {
+		return sqlSession.delete("edu.project.mapper.photoMapper.deleteByPidx", pidx);
+	}
 	
 	 
 }

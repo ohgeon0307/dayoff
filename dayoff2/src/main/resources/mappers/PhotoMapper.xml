@@ -6,7 +6,7 @@
 	<select id="list" resultType="photoVo" parameterType="photoVo">
 		select *
 		FROM phototable
-		order by pidx asc
+		order by pidx desc
 	</select>
 	
 	<select id="selectByPidx" resultType="photoVo" parameterType="int">
@@ -20,25 +20,6 @@
 		FROM phototable
 		WHERE pidx = #{pidx}
 	</select>
-	
-	<select id="updateByPidx" parameterType="int" resultType="photoVo">
-		SELECT pidx
-		, pTitle
-		, pHashTag
-		, uidx
-		, pDelYn
-		, pHashTag
-		, pHit
-		, pWriter
-		FROM phototable
-		WHERE pidx = #{pidx}
-	</select>
-	
-	<delete id="deleteByPidx" parameterType="int">
-		DELETE
-			FROM phototable
-		WHERE pidx = #{pidx}
-	</delete>
 	
 	<insert id="insert" parameterType="photoVo" useGeneratedKeys="true" keyProperty="pidx"> 	
 		
@@ -59,7 +40,6 @@
 			SELECT LAST_INSERT_ID() as pidx
 		</selectKey>
  -->	</insert>
-	
 		<!-- 이미지 등록 -->
 	<insert id="imageEnroll" parameterType="AttachImageVo">
 		insert into imagetable(
@@ -69,7 +49,7 @@
 			)
 	</insert>
 	
-	<select id="imageList" resultType="AttachImageVo" parameterType="int">
+	<select id="image" resultType="AttachImageVo" parameterType="int">
 	
 		select
 			pidx,
@@ -80,7 +60,22 @@
 		where pidx = #{pidx}
 	</select>
 	
-	<update id="modifyByBidx" parameterType="photoVo">
+	
+	<select id="updateByPidx" parameterType="int" resultType="photoVo">
+		SELECT pidx
+		, pTitle
+		, pHashTag
+		, uidx
+		, pDelYn
+		, pHashTag
+		, pHit
+		, pWriter
+		FROM phototable
+		WHERE pidx = #{pidx}
+	</select>
+	
+	
+	<update id="modifyByPidx" parameterType="photoVo">
 		UPDATE phototable
 		SET
 		pTitle
@@ -91,5 +86,10 @@
 		
 	</update>
 	
+	<delete id="deleteByPidx" parameterType="int">
+		DELETE
+			FROM phototable
+		WHERE pidx = #{pidx}
+	</delete>
 	
 </mapper>

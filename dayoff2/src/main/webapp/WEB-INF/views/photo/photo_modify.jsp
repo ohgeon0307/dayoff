@@ -100,17 +100,17 @@
       <section class="file_upload_section">
       
       <form action="modify.do" method="post" enctype="multipart/form-data"> 
-      <input type="hidden" name="pidx" value = "${vo.pidx }">
+      <input type="hidden" name="pidx" value = "${vo2.pidx }">
         <div class="title">
           <input
             type="text" name="pTitle"
             placeholder="&nbsp&nbsp제목을 입력해보세요!(100자 이내)"
-            value = "${vo.pTitle }"
+            value = "${vo2.pTitle }"
           />
         </div>
         <hr class="slide_hr" />
         <div class="container">
-        <img id="uploadView" style="width:auto; height:350px; border:none;" />
+        <img src='<spring:url value="/image/${image[status.index].uploadPath}/${image[status.index].uuid}_${image[status.index].fileName}"/>' id="uploadView" style="width:auto; height:350px; border:none;" />
           	인생샷을 올려주세요💫
            <input type="file" id ="fileItem" name='uploadFile' style="height: 30px;  border:none;" />
         </div>
@@ -118,7 +118,7 @@
           <input
             type="text" name="pHashTag"
             placeholder="&nbsp&nbsp태그입력 (띄어쓰기로 구분) (100자 이내)"
-            value = ${vo.pHashTag }
+            value = ${vo2.pHashTag }
           />
         </div>
         <div class="button_zone">
