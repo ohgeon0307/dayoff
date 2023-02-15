@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page import="java.util.*" %>
 <%@ page import="edu.project.vo.TogetherVo" %>
 <%
 
-	List<TogetherVo> list2 = (List<TogetherVo>)request.getAttribute("togetherlist");
+	List<TogetherVo> list = (List<TogetherVo>)request.getAttribute("togetherlist");
 
 %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
@@ -264,7 +263,7 @@
               class="ButtonWrapper"
               style="border-radius: 30px"
             >
-              모집중인 글만 보기 
+              모집중인 글만 보기
             </button>
             <div
               class="SelectItem"
@@ -283,18 +282,13 @@
             <p class="SearchFilter">정렬</p>
           </div>
           <ul class="Accompany" type="portrait">
-          	<% 
-          		for(TogetherVo vo : list2){
-          	%>
+          	<%
+          		for(TogetherVo vo : list){
+          			%>
 	            <div type="portrait" class="AccompanyItem">
 	              <div>
-	                <a href="together_view.do?tidx=<%=vo.getTidx() %>">
-	               <%
-          		}
-            %>
-				<c:forEach var="vo" items="${togetherlist}" varStatus="status">
-	                <img
-	                  src='<spring:url value="/image/${image[status.index].uploadPath}/${image[status.index].uuid}_${image[status.index].fileName}"/>'
+	                <a href="together_view.do?tidx=<%=vo.getTidx() %>"><img
+	                  src=""
 	                  alt=""
 	                /></a>
 	                <div type="portrait" class="DateWrapper">
@@ -328,14 +322,14 @@
 	                    </div>
 	                  </div>
 	                </div>
-	              
+	              </div>
 	              <div class="ContentWrapper" type="portrait">
 	                <div class="TitleWrapper">
 	                  <b class="PreVentDragB">모집중</b>
-	                  ${vo.tTitle}
+	                  <%=vo.gettTitle() %>
 	                </div>
 	                <p type="portrait" class="DescWrapper">
-	                  ${vo.tContent }
+	                  <%=vo.gettContent() %>
 	                </p>
 	                <div class="ViewWrapper">
 	                  <div font-size="16px;" class="ProfileWrapper">
@@ -344,7 +338,7 @@
 	                      alt="프로필"
 	                    />
 	                    <div>
-	                      <p class="ProfileDragP">${ vo.writer}</p>
+	                      <p class="ProfileDragP"><%=vo.getWriter() %></p>
 	                    </div>
 	                  </div>
 	                  <div class="ViewAndMsgWrapper">
@@ -367,7 +361,7 @@
 	                          stroke="#9A9A9A"
 	                        ></circle>
 	                      </svg>
-	                      <p class="PreventDragP2">${ tHit}</p>
+	                      <p class="PreventDragP2"><%=vo.gettHit() %></p>
 	                    </div>
 	                    <div>
 	                      <svg
@@ -389,9 +383,10 @@
 	                  </div>
 	                </div>
 	              </div>
-				</c:forEach>
-			  </div>
-			</div>
+	            </div>
+	            <%
+          		}
+            %>
           </ul>
         </section>
       </div>

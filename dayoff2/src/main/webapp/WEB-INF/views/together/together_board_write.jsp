@@ -7,7 +7,6 @@
 <head>
 <meta charset="UTF-8">
 <title>동행글쓰기</title>
-<script src="<%=request.getContextPath() %>/resources/js/jquery-3.6.1.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
@@ -94,7 +93,7 @@
             <div class="bar">&#124;</div>
             <a href="${path }/user/join.do" class="join_a"><div class="item">마이페이지</div></a>
             <a href="<%= request.getContextPath()%>/together_write.do"
-              ><button class="header_write_btn">글쓰기</button></a> 
+              ><button class="header_write_btn">글쓰기</button></a>
             </c:if>
           </div>
         </div>
@@ -249,12 +248,11 @@
         </section>
       </div>
       <section class="file_upload_section">
-      	<form action="write.do"  method="post" enctype="multipart/form-data">
+      	<form action="write.do" method="post">
 	        <div class="container">
-        <img id="uploadView" style="width:auto; height:350px; border:none;" />
-          	배경 사진을 선택해주세요💫
-           <input type="file" id ="fileItem" name='uploadFile' style="height: 30px;  border:none;" />
-        </div>
+	          <img src="${path}/resources/img/picture.png" alt="" />
+	          배경 사진을 선택해주세요:어지러운:
+	        </div>
 	        <div class="title">
 	          <input type="hidden" name="writer" value="${login.name }"/>
 	          <input type="hidden" name="uidx" value="${login.uidx }"/>
@@ -267,7 +265,7 @@
 	        <hr class="slide_hr" />
 	        <div>
 	          <textarea
-	            placeholder="동행을 구할 내용을 작성해주세요! (1000자 이내🤩)"
+	            placeholder="동행을 구할 내용을 작성해주세요! (1000자 이내:완전히_반한:)"
 	            name="tContent"
 	          ></textarea>
 	        </div>
@@ -329,36 +327,5 @@
         </ul>
       </div>
     </footer>
-    
-        <script type="text/javascript">
-    //이미지 미리보기
-    var sel_file;
- 
-    $(document).ready(function() {
-        $("#fileItem").on("change", handleImgFileSelect);
-    });
- 
-    function handleImgFileSelect(e) {
-        var files = e.target.files;
-        var filesArr = Array.prototype.slice.call(files);
- 
-        var reg = /(.*?)\/(jpg|jpeg|png|bmp)$/;
- 
-        filesArr.forEach(function(f) {
-            if (!f.type.match(reg)) {
-                alert("확장자는 이미지 확장자만 가능합니다.");
-                return;
-            }
- 
-            sel_file = f;
- 
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                $("#uploadView").attr("src", e.target.result);
-            }
-            reader.readAsDataURL(f);
-        });
-    }
-</script>
 </body>
 </html>

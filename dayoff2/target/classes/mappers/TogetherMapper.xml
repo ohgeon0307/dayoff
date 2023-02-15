@@ -2,16 +2,8 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
 <mapper namespace="edu.project.mapper.togetherMapper">
-
-	<select id="togetherlist" resultType="togetherVo" parameterType ="togetherVo">
-	
-    	SELECT *
-    	FROM togethertable
-    		
-    </select>
-	<insert id="togetherInsert" parameterType="togetherVo" useGeneratedKeys="true" keyProperty="tidx">
+	<insert id="togetherInsert" parameterType="togetherVo">
 		INSERT INTO togethertable(
 			 ttitle
 			, tcontent
@@ -33,27 +25,13 @@
 		)
 	</insert>
 	
-	<insert id="imageEnroll" parameterType="AttachImage2Vo">
-		insert into image2table(
-			tidx, fileName, uploadPath, uuid
-			) values (
-			#{tidx}, #{fileName}, #{uploadPath}, #{uuid}
-			)
-	</insert>
+	<select id="togetherlist" resultType="togetherVo">
 	
-	<select id="image" resultType="AttachImage2Vo" parameterType="int">
-	
-		select
-			tidx,
-			fileName,
-			uploadPath,
-			uuid
-		FROM image2table
-		where tidx = #{tidx}
-	</select>
-	
-	
-	
+    	SELECT *
+    	FROM togethertable
+    	order by tidx desc
+    		
+    </select>
 	
 	<select id="selectByTidx" parameterType="int" resultType="togetherVo">
     	SELECT tidx
@@ -66,20 +44,16 @@
     		FROM togethertable
     		WHERE tidx = #{tidx}	<!-- DAO에서 파라미터로 넘긴 변수명 -->
     </select>
-    
     <update id="updateByTidx" parameterType="togetherVo" >
     	UPDATE togethertable
     	   SET ttitle = #{tTitle}
     		 , tcontent= #{tContent}
-    	WHERE tidx = #{tidx} 
+    	WHERE tidx = #{tidx}
     </update>
-    
     <delete id="deleteByTidx" parameterType="int">
-    	DELETE 
+    	DELETE
     	FROM  togethertable
-    	WHERE tidx = #{tidx} 
+    	WHERE tidx = #{tidx}
     </delete>
-    
-    
 	
 </mapper>
