@@ -76,15 +76,27 @@
 	
 	
 	<update id="modifyByPidx" parameterType="photoVo">
-		UPDATE phototable
-		SET
-		pTitle
-		= #{pTitle}
-		, pHashTag = #{pHashTag}
-		WHERE pidx
-		= #{pidx}
+		UPDATE phototable SET
+		
+			pTitle = #{pTitle}
+		,	pHashTag = #{pHashTag}
+		,	pDate = NOW()
+		
+		WHERE pidx = #{pidx}
 		
 	</update>
+	
+	<update id="modifyImgByPidx" parameterType="AttachImageVo">
+		UPDATE imagetable SET
+		
+			fileName = #{fileName}
+		,	uploadPath = #{uploadPath}
+		,	uuid = #{uuid}
+
+		WHERE pidx = #{pidx}
+		
+	</update>
+	
 	
 	<delete id="deleteByPidx" parameterType="int">
 		DELETE

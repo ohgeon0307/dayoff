@@ -39,13 +39,13 @@ public class PhotoServiceImpl implements PhotoService{
 	}
 	
 	@Override
-	public PhotoVo updateByPidx(int pidx) {
-		return photoDAO.updateByPidx(pidx);
+	public int modifyByPidx(PhotoVo vo) {
+		return photoDAO.modifyByPidx(vo);
 	}
 	
 	@Override
-	public int modifyByPidx(PhotoVo vo) {
-		return photoDAO.modifyByPidx(vo);
+	public int modifyImgByPidx(AttachImageVo vo) {
+		return photoDAO.modifyImgByPidx(vo);
 	}
 	
 	@Override

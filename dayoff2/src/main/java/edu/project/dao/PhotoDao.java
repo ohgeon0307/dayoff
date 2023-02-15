@@ -31,14 +31,14 @@ public class PhotoDao {
 		return sqlSession.selectOne("edu.project.mapper.photoMapper.image", pidx);
 	}
 	
-	public PhotoVo updateByPidx(int pidx) {
-		return sqlSession.selectOne("edu.project.mapper.photoMapper.updateByPidx", pidx);
-	}
-	
-	
 	public int modifyByPidx(PhotoVo vo) {
 		return sqlSession.update("edu.project.mapper.photoMapper.modifyByPidx", vo);
 	}
+	
+	public int modifyImgByPidx(AttachImageVo vo) {
+		return sqlSession.update("edu.project.mapper.photoMapper.modifyImgByPidx", vo);
+	}
+	
 	
 	public int deleteByPidx(int pidx) {
 		return sqlSession.delete("edu.project.mapper.photoMapper.deleteByPidx", pidx);

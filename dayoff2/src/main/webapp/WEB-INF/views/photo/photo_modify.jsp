@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
@@ -110,9 +111,9 @@
         </div>
         <hr class="slide_hr" />
         <div class="container">
-        <img src='<spring:url value="/image/${image[status.index].uploadPath}/${image[status.index].uuid}_${image[status.index].fileName}"/>' id="uploadView" style="width:auto; height:350px; border:none;" />
+        <img src='<spring:url value="/image/${image.uploadPath}/${image.uuid}_${image.fileName}"/>' id="uploadView" style="width:auto; height:350px; border:none;"/>
           	인생샷을 올려주세요💫
-           <input type="file" id ="fileItem" name='uploadFile' style="height: 30px;  border:none;" />
+           <input type="file" id ="fileItem" name='uploadFile'  style="height: 30px;  border:none;" />
         </div>
         <div class="hashtag">
           <input

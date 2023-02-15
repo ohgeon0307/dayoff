@@ -130,31 +130,86 @@ public class PhotoController {
 	}
 	
 	@RequestMapping(value = "/modify.do", method = RequestMethod.GET)
-	public String modify(int pidx, Model model, ArrayList<AttachImageVo> img) {
+	public String modify(int pidx, Model model) {
 		System.out.println("modify.do / pidx : " + pidx);
 		
 		PhotoVo vo2 = photoService.selectByPidx(pidx);
 		System.out.println("modify.do / vo2 : " + vo2.toString());
 		model.addAttribute("vo2", vo2);
 		
-		
-		model.addAttribute("image",img);
-
+		AttachImageVo image = photoService.image(pidx);
+		System.out.println("modify.do / image : " + image.toString());
+		model.addAttribute("image", image);
 		
 		return "photo/photo_modify";
 	}
 	
 	@RequestMapping(value = "modify.do", method = RequestMethod.POST)
-	public String modify(PhotoVo vo) {
+	public String modify(MultipartFile uploadFile, AttachImageVo vo, PhotoVo vo2) {
 		
-		int result = photoService.modifyByPidx(vo);
+		String uploadFolder = "\\\\502-1\\upload";
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		
+		Date date = new Date();
+		
+		String str = sdf.format(date);
+		
+		String datePath = str.replace("-", File.separator);
+		
+		File uploadPath = new File(uploadFolder, datePath);
+		
+		if(uploadPath.exists() == false) {
+			uploadPath.mkdirs();
+		}
+		
+		logger.info("파일 이름 : " + uploadFile.getOriginalFilename());
+		logger.info("파일 타입 : " + uploadFile.getContentType());
+		logger.info("파일 크기 : " + uploadFile.getSize());
+		
+		
+		/* 파일 이름 */
+		String uploadFileName = uploadFile.getOriginalFilename();			
+		vo.setFileName(uploadFileName);
+		vo.setUploadPath(datePath);
+		
+		/* uuid 적용 파일 이름 */
+		String uuid = UUID.randomUUID().toString();
+		vo.setUuid(uuid);
+		
+		uploadFileName = uuid + "_" + uploadFileName;
+		
+		/* 파일 위치, 파일 이름을 합친 File 객체 */
+		File saveFile = new File(uploadPath, uploadFileName);
+		
+		/* 파일 저장 */
+		try {
+			uploadFile.transferTo(saveFile);		
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		int result = photoService.modifyByPidx(vo2);
+		int result2 = photoService.modifyImgByPidx(vo);
+		
 		System.out.println(result + " < --- result 값!");
+		System.out.println(result2 + " < --- result2 값!");
 		
-		if (result > 0) {
-			
+		
+		if (result > 0 && result2 > 0) {
 			return "redirect:/photo/list.do";
-		} else {
 			
+		} else if(result > 0 && result2 < 0){	
+			result2 = 0;
+			return "redirect:/photo/list.do";
+			
+		}else if(result < 0 && result2 > 0){		
+			result = 0;	
+			return "redirect:/photo/list.do";
+			
+		}else{
 			return "redirect:/list.do";
 		}
 	}
