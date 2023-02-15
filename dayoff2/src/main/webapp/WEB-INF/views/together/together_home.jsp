@@ -345,7 +345,7 @@
 	                      alt="프로필"
 	                    />
 	                    <div>
-	                      <p class="ProfileDragP">${ vo.Writer}</p>
+	                      <p class="ProfileDragP">${ vo.writer}</p>
 	                    </div>
 	                  </div>
 	                  <div class="ViewAndMsgWrapper">

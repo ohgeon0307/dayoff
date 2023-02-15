@@ -72,7 +72,6 @@ public class TogetherController {
 		model.addAttribute("image",list);
 		
 		
-		
 		return "together/together_home";
 	}
 	

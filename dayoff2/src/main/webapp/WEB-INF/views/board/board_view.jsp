@@ -119,7 +119,7 @@
 			</div>
 			<section class="second_section">
 				<div class="second_header">
-					<a href="/dayoff"><div class="home">홈</div></a> <a
+					<a href="<%= request.getContextPath()%>/community.do"><div class="home">홈</div></a> <a
 						href="<%= request.getContextPath() %>/together.do"><div
 							class="trip_info">동행</div></a> <a
 						href="<%= request.getContextPath()%>/board/list.do"><div

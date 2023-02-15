@@ -59,7 +59,12 @@
       ChannelIO("boot", {
         pluginKey: "440ad304-9963-448a-9d8e-8efd8dfa9576",
       });
-    </script>  
+    </script>
+    <script>
+    	function mainevent() {
+    		alert("현재 준비중입니다!");
+    	}
+    </script>
   </head>
   <body>
     <header>
@@ -116,7 +121,7 @@
                 <p>1일 1만원대 렌트카 확인해보세요!</p>
               </div>
               <img src="${path }/resources/img/slideImg01.webp" alt="" />
-              <button>데이오프 렌터카 보러가기</button>
+              <button onclick="mainevent()">데이오프 렌터카 보러가기</button>
             </div>
             <div class="swiper-slide">
               <div class="second_slide">
@@ -125,7 +130,7 @@
                 <p>새해복 많이 받으세요 !!</p>
               </div>
               <img src="${path }/resources/img/slideImg02.webp" alt="" />
-              <button>이벤트 참여하기</button>
+              <button onclick="mainevent()">이벤트 참여하기</button>
             </div>
             <div class="swiper-slide">
               <div class="third_slide">
@@ -134,16 +139,16 @@
                 <p>맛집투어를 떠나봐요!</p>
               </div>
               <img src="${path }/resources/img/slideImg03.webp" alt="" />
-              <button>일본투어 보러가기</button>
+              <button onclick="mainevent()">국내투어 보러가기</button>
             </div>
             <div class="swiper-slide">
               <div class="fourth_slide">
                 <p>비행기를 타고 훨훨훨</p>
                 <p>같이 날아가볼까요?</p>
-                <p>test by Controller team.</p>
+                <p>Dayoff, trip service.</p>
               </div>
               <img src="${path }/resources/img/slideImg04.png" alt="" />
-              <button class="slide04_btn">질문 보러가기</button>
+              <button class="slide04_btn" onclick="mainevent()">질문 보러가기</button>
             </div>
           </div>
           <div class="swiper-button-next"></div>
@@ -328,7 +333,7 @@
               </div>
             </li>
             <li class="item">
-              <a href="#" class="more"
+              <a href="<%=request.getContextPath() %>/photo/list.do" class="more"
                 >더 보기 🛴
                 <i class="xi-long-arrow-right"></i>
               </a>
