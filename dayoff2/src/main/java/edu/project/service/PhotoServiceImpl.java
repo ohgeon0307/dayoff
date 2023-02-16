@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import edu.project.dao.PhotoDao;
 import edu.project.vo.AttachImageVo;
 import edu.project.vo.PhotoVo;
+import edu.project.vo.SearchCriteria;
 
 @Service
 public class PhotoServiceImpl implements PhotoService{
@@ -17,6 +18,11 @@ public class PhotoServiceImpl implements PhotoService{
 	@Override
 	public List<PhotoVo> list(PhotoVo photoVo) {
 		List<PhotoVo> list = photoDAO.list(photoVo);
+		return list;
+	}
+	@Override
+	public List<PhotoVo> list(SearchCriteria scri) {
+		List<PhotoVo> list = photoDAO.list(scri);
 		return list;
 	}
 	@Override
@@ -56,5 +62,10 @@ public class PhotoServiceImpl implements PhotoService{
 	@Override
 	public int deleteByPidx(int pidx) {
 		return photoDAO.deleteByPidx(pidx);
+	}
+	
+	@Override
+	public int updatereviewcnt(int pidx) {
+		return photoDAO.updatereviewcnt(pidx);
 	}
 }

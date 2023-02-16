@@ -2,10 +2,13 @@ package edu.project.service;
 import java.util.List;
 import edu.project.vo.AttachImageVo;
 import edu.project.vo.PhotoVo;
+import edu.project.vo.SearchCriteria;
 
 public interface PhotoService {
 	
 	List<PhotoVo> list(PhotoVo photoVo);
+	
+	List<PhotoVo> list(SearchCriteria scri);
 	
 	PhotoVo selectByPidx(int pidx);
 	
@@ -22,4 +25,6 @@ public interface PhotoService {
 	int deleteImgByPidx(int pidx);
 	
 	int deleteByPidx(int pidx);
+	
+	int updatereviewcnt(int pidx);
 }

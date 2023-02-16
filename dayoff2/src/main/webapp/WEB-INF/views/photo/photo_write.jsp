@@ -107,7 +107,8 @@
 
       <section class="file_upload_section">
       
-      <form action="write.do" method="post" enctype="multipart/form-data"> 
+      <form action="write.do" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="pWriter" value="${login.name }"/> 
         <div class="title">
           <input
             type="text" name="pTitle"

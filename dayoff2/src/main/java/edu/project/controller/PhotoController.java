@@ -24,11 +24,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
 import edu.project.service.PhotoService;
+import edu.project.service.UserService;
 import edu.project.vo.PhotoVo;
-import edu.project.vo.TogetherVo;
+import edu.project.vo.SearchCriteria;
 import edu.project.vo.UserVo;
 import edu.project.controller.PhotoController;
 import edu.project.vo.AttachImageVo;
+import edu.project.vo.PageMaker;
 
 
 
@@ -40,9 +42,15 @@ public class PhotoController {
 	
 	@Autowired
 	private PhotoService photoService;
+	
+	@Autowired
+	private UserService userService;
 
 	@RequestMapping(value = "/list.do")
-	public String list(Model model, PhotoVo vo2, AttachImageVo vo, ArrayList<AttachImageVo> img) {
+	public String list(Model model, PhotoVo vo2, AttachImageVo vo, ArrayList<AttachImageVo> img, SearchCriteria scri) {
+			
+		List<UserVo> ulist = userService.list();
+		model.addAttribute("userlist", ulist);
 		
 		List<PhotoVo> list2 = photoService.list(vo2);
 		model.addAttribute("datalist",list2);
@@ -59,7 +67,8 @@ public class PhotoController {
 			System.out.println(itm.toString());
 		}
 		model.addAttribute("image",img);
-	
+		
+
 		return "photo/photo_list";
 	}
 	 
@@ -71,7 +80,12 @@ public class PhotoController {
 	}
 	
 	@RequestMapping(value = "/write.do", method = RequestMethod.POST )
-	public String fileupload(MultipartFile uploadFile, AttachImageVo vo, PhotoVo vo2) {
+	public String fileupload(MultipartFile uploadFile, AttachImageVo vo, PhotoVo vo2, HttpSession session) {
+		
+		UserVo login = (UserVo)session.getAttribute("login");
+		int uidx = login.getUidx();
+		vo2.setUidx(uidx);
+		
 		
 		String uploadFolder = "\\\\502-1\\upload";
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

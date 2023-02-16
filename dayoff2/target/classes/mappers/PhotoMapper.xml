@@ -17,6 +17,7 @@
 			, pDelYn
 			, pHashTag
 			, pHit
+			, pWriter
 		FROM phototable
 		WHERE pidx = #{pidx}
 	</select>
@@ -29,12 +30,14 @@
 			, uidx
 			, pHashTag
 			, pHit
+			, pWriter
 		) VALUES(
 			 #{pTitle}
 			, NOW()
-			, 1
+			, #{uidx}
 			, #{pHashTag}
-			, 0
+			, 75
+			, #{pWriter}
 		)
 <!--  		<selectKey keyProperty="pidx" resultType="Integer" order="AFTER">
 			SELECT LAST_INSERT_ID() as pidx
@@ -108,5 +111,21 @@
 			FROM phototable
 		WHERE pidx = #{pidx}
 	</delete>
+	
+	<update id="updatereviewcnt">
+		update boardtable 
+		set 
+		phit = phit + 1 
+		where bidx = #{bidx}
+	</update>
+	
+	<sql id="search">
+		<if test="searchType == 'pTitle'">
+			where pTitle LIKE CONCAT ('%', #{keyword},'%')
+		</if>
+		<if test="searchType == 'pHashTag'">
+			where pHashTag LIKE CONCAT ('%', #{keyword} ,'%')
+		</if>
+	</sql>
 	
 </mapper>

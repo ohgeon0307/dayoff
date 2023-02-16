@@ -147,12 +147,14 @@
         </div>
       </section>
       <section class="filter">
-        <p>정렬</p>
-        <select class="">
-          <option value="time" class="">최신순</option>
-          <option value="view" class="">조회순</option>
-          <option value="like" class="">좋아요순</option>
-        </select>
+          <form action="list.do" method="GET" class="form_item">
+          <select name="searchType">
+            <option value="pTitle" <c:if test="${param.searchType == 'pTitle' }">selected</c:if>>제목</option>
+            <option value="pHashTag" <c:if test="${patam.searchType == 'pHashTag' }">selected</c:if>>해시태그</option>
+          </select>
+          <input type="text" class ="search_input" name="keyword" placeholder ="검색어를 입력하세요.." value="${param.keyword }">
+          <button class="search_btn">게시글 검색</button>
+          </form>
       </section>
 		<section class="images">
 				<c:forEach var="vo" items="${datalist}" varStatus="status">
@@ -162,19 +164,18 @@
 							</div>
 						<div class="content">
 							<div class="writer">
-								<a href="#">${login.name }</a>
+								<a href="#">${vo.pWriter}</a>
 							</div>
 							<div>
 								<i class="xi-eye-o">${vo.pHit}</i>
 							</div>
 						</div>
 						<div class="title">${vo.pTitle}
+							<c:if test="${login.name == vo.pWriter}">
 								<button onclick="location.href='modify.do?pidx=${vo.pidx}'">수정</button>
 <!-- 								<button class="delete" onclick= "$('#deletef').submit()">삭제</button> -->
 								<button class="delete" onclick="DoDelete(${vo.pidx});">삭제</button>
-<%-- 								<form name= "deletef" id = "deletef" action="delete.do" method="post">
-									<input type="hidden" name = "pidx" value = "${vo.pidx }">
-								</form> --%>
+							</c:if>
 						</div>
 						<div class="hashtag">
 							<a href="#">${vo.pHashTag}</a>
@@ -245,6 +246,7 @@
       
       
       <script>
+      /*모달창*/
         const modal = document.querySelector(".modal");
         const modal_img = document.querySelector(".modal_content");
         const span = document.querySelector(".close");

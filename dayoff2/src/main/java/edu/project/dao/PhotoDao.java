@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import edu.project.vo.AttachImageVo;
 import edu.project.vo.PhotoVo;
+import edu.project.vo.SearchCriteria;
 @Repository
 public class PhotoDao {
 	
@@ -12,7 +13,10 @@ public class PhotoDao {
 	private SqlSession sqlSession;
 	
 	public List<PhotoVo> list(PhotoVo vo) {
-		return sqlSession.selectList("edu.project.mapper.photoMapper.list", vo);
+		return sqlSession.selectList("edu.project.mapper.photoMapper.list", vo);	
+	}
+	public List<PhotoVo> list(SearchCriteria scri) {
+		return sqlSession.selectList("edu.project.mapper.photoMapper.list", scri);	
 	}
 	
 	public PhotoVo selectByPidx(int pidx) {
@@ -45,6 +49,11 @@ public class PhotoDao {
 	
 	public int deleteByPidx(int pidx) {
 		return sqlSession.delete("edu.project.mapper.photoMapper.deleteByPidx", pidx);
+	}
+	
+	public int updatereviewcnt(int pidx) {
+		
+		return sqlSession.update("edu.project.mapper.photoMapper.updatereviewcnt", pidx);
 	}
 	
 	 
