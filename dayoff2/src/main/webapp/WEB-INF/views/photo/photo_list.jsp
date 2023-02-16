@@ -66,6 +66,29 @@
       ChannelIO("boot", {
         pluginKey: "440ad304-9963-448a-9d8e-8efd8dfa9576",
       }); 
+      
+      
+      /* 게시글 삭제*/
+      function DoDelete(idx)
+      {  
+    	  var form = document.createElement("form");
+    	  form.setAttribute("id", "form");
+    	  form.setAttribute("method", "post");
+    	  form.setAttribute("action", "delete.do");
+    	  
+    	  var hiddenField = document.createElement("input");
+    	  hiddenField.setAttribute("type", "hidden");
+    	  hiddenField.setAttribute("name", "pidx");
+    	  hiddenField.setAttribute("value", idx);
+    	  
+    	  form.appendChild(hiddenField);
+    	  
+    	  document.body.appendChild(form);
+
+    	  form.submit();
+    	  
+    	  document.getElementById("form").remove();
+      }
     </script>
   </head>
   <body>
@@ -147,10 +170,11 @@
 						</div>
 						<div class="title">${vo.pTitle}
 								<button onclick="location.href='modify.do?pidx=${vo.pidx}'">수정</button>
-								<button class="delete" onclick= "$('#deletef').submit()">삭제</button>
-								<form name= "deletef" id = "deletef" action="delete.do" method="post">
+<!-- 								<button class="delete" onclick= "$('#deletef').submit()">삭제</button> -->
+								<button class="delete" onclick="DoDelete(${vo.pidx});">삭제</button>
+<%-- 								<form name= "deletef" id = "deletef" action="delete.do" method="post">
 									<input type="hidden" name = "pidx" value = "${vo.pidx }">
-								</form>
+								</form> --%>
 						</div>
 						<div class="hashtag">
 							<a href="#">${vo.pHashTag}</a>
