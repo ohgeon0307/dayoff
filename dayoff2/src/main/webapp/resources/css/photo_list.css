@@ -540,6 +540,8 @@ footer button {
   text-decoration-line: none;
   color: inherit;
 }
+
+}
 .writer {
   font-size: 16px;
 }
@@ -548,6 +550,11 @@ footer button {
   font-size: 16px;
   font-weight: bold;
   overflow: hidden;
+}
+
+.title button{
+	float:right;
+	font-size: 14px;
 }
 
 .hashtag {

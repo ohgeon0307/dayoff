@@ -139,18 +139,18 @@
 							</div>
 						<div class="content">
 							<div class="writer">
-								<i class="xi-profile-o"></i><a href="#">${login.name }</a>
-								<button onclick="location.href='modify.do?pidx=${vo.pidx}'">수정</button>
-								<button class="delete" onclick= "$('#deletef').submit()">삭제</button>
-								<form name= "deletef" id = "deletef" action="delete.do" method="post">
-									<input type="hidden" name = "pidx" value = "${vo.pidx }">
-								</form>
+								<a href="#">${login.name }</a>
 							</div>
 							<div>
 								<i class="xi-eye-o">${vo.pHit}</i>
 							</div>
 						</div>
 						<div class="title">${vo.pTitle}
+								<button onclick="location.href='modify.do?pidx=${vo.pidx}'">수정</button>
+								<button class="delete" onclick= "$('#deletef').submit()">삭제</button>
+								<form name= "deletef" id = "deletef" action="delete.do" method="post">
+									<input type="hidden" name = "pidx" value = "${vo.pidx }">
+								</form>
 						</div>
 						<div class="hashtag">
 							<a href="#">${vo.pHashTag}</a>
