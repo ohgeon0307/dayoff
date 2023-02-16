@@ -52,6 +52,11 @@ public class PhotoController {
 		List<UserVo> ulist = userService.list();
 		model.addAttribute("userlist", ulist);
 		
+		List<PhotoVo> list = photoService.list(scri);
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setScri(scri);
+		model.addAttribute("pageMaker", pageMaker);
+		
 		List<PhotoVo> list2 = photoService.list(vo2);
 		model.addAttribute("datalist",list2);
 		for( PhotoVo item : list2 )

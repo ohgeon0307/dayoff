@@ -36,7 +36,7 @@
 			, NOW()
 			, #{uidx}
 			, #{pHashTag}
-			, 75
+			, #{pHit}
 			, #{pWriter}
 		)
 <!--  		<selectKey keyProperty="pidx" resultType="Integer" order="AFTER">
