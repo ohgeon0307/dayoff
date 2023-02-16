@@ -191,10 +191,10 @@ public class PhotoController {
 		
 		if(result2 > 0 && result > 0) {
 			
-			return "redirect:photo/list.do";
+			return "redirect:list.do";
 		} else {
 			
-			return "redirect:photo/list.do";
+			return "redirect:/list.do";
 		}
 	}
 	

@@ -251,7 +251,7 @@
       	<form action="write.do" method="post">
 	        <div class="container">
 	          <img src="${path}/resources/img/picture.png" alt="" />
-	          배경 사진을 선택해주세요:어지러운:
+	          배경 사진을 선택해주세요:
 	        </div>
 	        <div class="title">
 	          <input type="hidden" name="writer" value="${login.name }"/>
@@ -265,7 +265,7 @@
 	        <hr class="slide_hr" />
 	        <div>
 	          <textarea
-	            placeholder="동행을 구할 내용을 작성해주세요! (1000자 이내:완전히_반한:)"
+	            placeholder="동행을 구할 내용을 작성해주세요! (1000자 이내)"
 	            name="tContent"
 	          ></textarea>
 	        </div>

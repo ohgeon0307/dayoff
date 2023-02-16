@@ -100,7 +100,7 @@
 	<delete id="deleteImgByPidx" parameterType="int">
 		DELETE
 			FROM imagetable
-		WHERE pidx = #{pidx}
+		WHERE pidx = #{pidx} and 1=1
 	</delete>
 	
 	<delete id="deleteByPidx" parameterType="int">
