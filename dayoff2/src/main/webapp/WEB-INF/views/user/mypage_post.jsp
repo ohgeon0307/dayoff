@@ -53,6 +53,13 @@
             pluginKey: "440ad304-9963-448a-9d8e-8efd8dfa9576",
             });
         </script>
+        <script>
+    	
+    	function searchBtn() {
+    		alert("통합 검색은 현재 준비중입니다🤗");
+    	}
+    	
+    </script>
     </head>
     <body>
         <header>
@@ -65,7 +72,7 @@
                 </div>
                 <div class="right_header">
                   <div class="item">
-                    <button class="searchBtn">
+                    <button class="searchBtn" onclick="searchBtn()">
                       <i class="xi-search xi-1x"></i>
                     </button>
                     <input type="text" placeholder="여행지를 찾아보세요!" />
