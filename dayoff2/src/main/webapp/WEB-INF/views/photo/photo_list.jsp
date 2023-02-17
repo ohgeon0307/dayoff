@@ -146,7 +146,8 @@
           <h2>한옥마을</h2>
         </div>
       </section>
-      <section class="filter">
+      <section class="board_list">
+        <div class="board_header">
           <form action="list.do" method="GET" class="form_item">
           <select name="searchType">
             <option value="pTitle" <c:if test="${param.searchType == 'pTitle' }">selected</c:if>>제목</option>
@@ -155,6 +156,7 @@
           <input type="text" class ="search_input" name="keyword" placeholder ="검색어를 입력하세요.." value="${param.keyword }">
           <button class="search_btn">게시글 검색</button>
           </form>
+        </div>
       </section>
 		<section class="images">
 				<c:forEach var="vo" items="${datalist}" varStatus="status">
@@ -189,7 +191,7 @@
     </div>
     </main>
      <div class ="page">
-    <ul class="pagination modal">
+    <ul class="pagination">
     	<c:if test="${pageMaker.prev }">
     	<li class="first"><a href="list.do?page=${pageMaker.startPage -1 }">이전</a></li>
     	</c:if>
