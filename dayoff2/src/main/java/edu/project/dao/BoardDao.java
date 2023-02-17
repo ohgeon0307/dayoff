@@ -47,8 +47,8 @@ public class BoardDao {
 		return sqlSession.delete("edu.project.mapper.boardMapper.deleteByBidx", bidx);
 	}
 	
-	public int listCount() {
-		return sqlSession.selectOne("edu.project.mapper.boardMapper.listCount");
+	public int listCount(SearchCriteria scri) {
+		return sqlSession.selectOne("edu.project.mapper.boardMapper.listCount",scri);
 	}
 	
 	public int updatereviewcnt(int bidx) {
