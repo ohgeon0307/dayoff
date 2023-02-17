@@ -67,7 +67,11 @@
     	
     	function searchBtn() {
     		alert("통합 검색은 현재 준비중입니다🤗");
+    	}	
+    	function myPage() {
+    		alert("마이페이지는 현재 준비중입니다!");
     	}
+    	
     </script>
   </head>
   <body>
@@ -94,7 +98,7 @@
             <c:if test="${login != null}">
             <a class="login_a" href="<%= request.getContextPath() %>/user/logout.do"><div class="item">로그아웃</div></a>
             <div class="bar">&#124;</div>
-            <a href="${path }/user/join.do" class="join_a"><div class="item">마이페이지</div></a>
+            <button class="join_a" onclick="myPage()"><div class="item">마이페이지</div></button>
             </c:if>
             <c:if test="${login == null && userId != null }">
             <a class="login_a" href="<%= request.getContextPath() %>/kakao/logout.do"><div class="item"> 로그아웃</div></a>

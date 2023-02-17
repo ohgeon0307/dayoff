@@ -63,7 +63,7 @@ public class HomeController {
 	
 	public String myPage() {
 		
-		return "mypage_account";
+		return "user/mypage_account";
 	}
 	
 
