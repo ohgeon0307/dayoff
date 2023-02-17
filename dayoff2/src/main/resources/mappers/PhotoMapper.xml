@@ -6,7 +6,13 @@
 	<select id="list" resultType="photoVo" parameterType="photoVo">
 		select *
 		FROM phototable
-		order by pidx desc
+		order by pidx desc LIMIT 0,8
+	</select>
+	
+	<select id="photolist" resultType="photoVo" parameterType="scri">
+		select *
+		FROM phototable
+		order by pidx desc LIMIT 0,8
 	</select>
 	
 	<select id="selectByPidx" resultType="photoVo" parameterType="int">

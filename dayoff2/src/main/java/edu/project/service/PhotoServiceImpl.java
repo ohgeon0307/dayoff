@@ -21,8 +21,8 @@ public class PhotoServiceImpl implements PhotoService{
 		return list;
 	}
 	@Override
-	public List<PhotoVo> list(SearchCriteria scri) {
-		List<PhotoVo> list = photoDAO.list(scri);
+	public List<PhotoVo> photolist(SearchCriteria scri) {
+		List<PhotoVo> list = photoDAO.photolist(scri);
 		return list;
 	}
 	@Override

@@ -8,7 +8,7 @@ public interface PhotoService {
 	
 	List<PhotoVo> list(PhotoVo photoVo);
 	
-	List<PhotoVo> list(SearchCriteria scri);
+	List<PhotoVo> photolist(SearchCriteria scri);
 	
 	PhotoVo selectByPidx(int pidx);
 	

@@ -70,7 +70,7 @@ public class PhotoController {
 		}
 		model.addAttribute("image",img);
 		
-		List<PhotoVo> list = photoService.list(scri);
+		List<PhotoVo> list = photoService.photolist(scri);
 		for(PhotoVo ittm : list) {
 			System.out.println(ittm.getPidx());
 		}
