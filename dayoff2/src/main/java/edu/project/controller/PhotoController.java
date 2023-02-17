@@ -30,6 +30,7 @@ import edu.project.vo.SearchCriteria;
 import edu.project.vo.UserVo;
 import edu.project.controller.PhotoController;
 import edu.project.vo.AttachImageVo;
+import edu.project.vo.BoardVo;
 import edu.project.vo.PageMaker;
 
 
@@ -52,10 +53,6 @@ public class PhotoController {
 		List<UserVo> ulist = userService.list();
 		model.addAttribute("userlist", ulist);
 		
-		List<PhotoVo> list = photoService.list(scri);
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setScri(scri);
-		model.addAttribute("pageMaker", pageMaker);
 		
 		List<PhotoVo> list2 = photoService.list(vo2);
 		model.addAttribute("datalist",list2);
@@ -73,6 +70,14 @@ public class PhotoController {
 		}
 		model.addAttribute("image",img);
 		
+		List<PhotoVo> list = photoService.list(scri);
+		for(PhotoVo ittm : list) {
+			System.out.println(ittm.getPidx());
+		}
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setScri(scri);
+		pageMaker.setTotalCount(photoService.listCount());
+		model.addAttribute("pageMaker", pageMaker);
 
 		return "photo/photo_list";
 	}

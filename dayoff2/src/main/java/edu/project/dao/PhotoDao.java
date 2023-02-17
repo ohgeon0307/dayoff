@@ -51,6 +51,9 @@ public class PhotoDao {
 		return sqlSession.delete("edu.project.mapper.photoMapper.deleteByPidx", pidx);
 	}
 	
+	public int listCount() {
+		return sqlSession.selectOne("edu.project.mapper.photoMapper.listCount");
+	}
 	public int updatereviewcnt(int pidx) {
 		
 		return sqlSession.update("edu.project.mapper.photoMapper.updatereviewcnt", pidx);

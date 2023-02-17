@@ -26,5 +26,7 @@ public interface PhotoService {
 	
 	int deleteByPidx(int pidx);
 	
+	int listCount();
+	
 	int updatereviewcnt(int pidx);
 }

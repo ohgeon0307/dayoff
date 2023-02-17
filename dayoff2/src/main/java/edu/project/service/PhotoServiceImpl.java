@@ -65,6 +65,11 @@ public class PhotoServiceImpl implements PhotoService{
 	}
 	
 	@Override
+	public int listCount() {
+		return photoDAO.listCount();
+	}
+	
+	@Override
 	public int updatereviewcnt(int pidx) {
 		return photoDAO.updatereviewcnt(pidx);
 	}
