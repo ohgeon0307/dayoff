@@ -6,13 +6,8 @@
 	<select id="list" resultType="photoVo" parameterType="photoVo">
 		select *
 		FROM phototable
-		order by pidx desc
-	</select>
-	
-	<select id="photolist" resultType="photoVo" parameterType="scri">
-		select *
-		FROM phototable
-		order by pidx desc LIMIT 0,8
+		<include refid="search"></include>
+		order by pidx desc LIMIT #{rowStart}, #{rowEnd}
 	</select>
 	
 	<select id="selectByPidx" resultType="photoVo" parameterType="int">
@@ -125,10 +120,9 @@
 		where pidx = #{pidx}
 	</update>
 	
-	<select id="listCount" resultType="int">
+	<select id="listCount" resultType="int" parameterType = "scri">
 		SELECT count(pidx)
 		from phototable
-		<include refid="search"></include>
 		WHERE pidx > 0
 	</select>
 	

@@ -16,15 +16,11 @@ public class PhotoServiceImpl implements PhotoService{
 	private PhotoDao photoDAO;
 	
 	@Override
-	public List<PhotoVo> list(PhotoVo photoVo) {
-		List<PhotoVo> list = photoDAO.list(photoVo);
+	public List<PhotoVo> list(SearchCriteria scri) {
+		List<PhotoVo> list = photoDAO.list(scri);
 		return list;
 	}
-	@Override
-	public List<PhotoVo> photolist(SearchCriteria scri) {
-		List<PhotoVo> list = photoDAO.photolist(scri);
-		return list;
-	}
+
 	@Override
 	public PhotoVo selectByPidx(int pidx) {
 		return photoDAO.selectByPidx(pidx);
@@ -65,8 +61,8 @@ public class PhotoServiceImpl implements PhotoService{
 	}
 	
 	@Override
-	public int listCount() {
-		return photoDAO.listCount();
+	public int listCount(SearchCriteria scri) {
+		return photoDAO.listCount(scri);
 	}
 	
 	@Override

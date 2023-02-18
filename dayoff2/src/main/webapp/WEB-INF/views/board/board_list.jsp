@@ -125,7 +125,7 @@
           <form action="list.do" method="GET" class="form_item">
           <select name="searchType">
             <option value="title" <c:if test="${param.searchType == 'title' }">selected</c:if>>제목</option>
-            <option value="content" <c:if test="${patam.searchType == 'content' }">selected</c:if>>내용</option>
+            <option value="content" <c:if test="${param.searchType == 'content' }">selected</c:if>>내용</option>
           </select>
           <input type="text" class ="search_input" name="keyword" placeholder ="검색어를 입력하세요.." value="${param.keyword }">
           <button class="search_btn">게시글 검색</button>

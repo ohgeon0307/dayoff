@@ -6,9 +6,7 @@ import edu.project.vo.SearchCriteria;
 
 public interface PhotoService {
 	
-	List<PhotoVo> list(PhotoVo photoVo);
-	
-	List<PhotoVo> photolist(SearchCriteria scri);
+	List<PhotoVo> list(SearchCriteria scri);
 	
 	PhotoVo selectByPidx(int pidx);
 	
@@ -26,7 +24,7 @@ public interface PhotoService {
 	
 	int deleteByPidx(int pidx);
 	
-	int listCount();
+	int listCount(SearchCriteria scri);
 	
 	int updatereviewcnt(int pidx);
 }

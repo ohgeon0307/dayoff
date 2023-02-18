@@ -12,11 +12,8 @@ public class PhotoDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public List<PhotoVo> list(PhotoVo vo) {
-		return sqlSession.selectList("edu.project.mapper.photoMapper.list", vo);	
-	}
-	public List<PhotoVo> photolist(SearchCriteria scri) {
-		return sqlSession.selectList("edu.project.mapper.photoMapper.photolist", scri);	
+	public List<PhotoVo> list(SearchCriteria scri) {
+		return sqlSession.selectList("edu.project.mapper.photoMapper.list", scri);	
 	}
 	
 	public PhotoVo selectByPidx(int pidx) {
@@ -51,8 +48,8 @@ public class PhotoDao {
 		return sqlSession.delete("edu.project.mapper.photoMapper.deleteByPidx", pidx);
 	}
 	
-	public int listCount() {
-		return sqlSession.selectOne("edu.project.mapper.photoMapper.listCount");
+	public int listCount(SearchCriteria scri) {
+		return sqlSession.selectOne("edu.project.mapper.photoMapper.listCount",scri);
 	}
 	public int updatereviewcnt(int pidx) {
 		

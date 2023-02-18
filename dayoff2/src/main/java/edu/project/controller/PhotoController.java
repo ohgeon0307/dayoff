@@ -48,13 +48,13 @@ public class PhotoController {
 	private UserService userService;
 
 	@RequestMapping(value = "/list.do")
-	public String list(Model model, PhotoVo vo2, AttachImageVo vo, ArrayList<AttachImageVo> img, SearchCriteria scri) {
+	public String list(Model model,AttachImageVo vo, ArrayList<AttachImageVo> img, SearchCriteria scri) {
 			
 		List<UserVo> ulist = userService.list();
 		model.addAttribute("userlist", ulist);
 		
 		
-		List<PhotoVo> list2 = photoService.list(vo2);
+		List<PhotoVo> list2 = photoService.list(scri);
 		model.addAttribute("datalist",list2);
 		for( PhotoVo item : list2 )
 		{
@@ -70,13 +70,9 @@ public class PhotoController {
 		}
 		model.addAttribute("image",img);
 		
-		List<PhotoVo> list = photoService.photolist(scri);
-		for(PhotoVo ittm : list) {
-			System.out.println(ittm.getPidx());
-		}
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setScri(scri);
-		pageMaker.setTotalCount(photoService.listCount());
+		pageMaker.setTotalCount(photoService.listCount(scri));
 		model.addAttribute("pageMaker", pageMaker);
 
 		return "photo/photo_list";
