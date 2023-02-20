@@ -88,10 +88,18 @@
                 class="header_input"
               />
             </div>
-            <a href="<%=request.getContextPath()%>/login.do" class="login_a"><div class="item">로그인</div></a>
+            <c:if test="${login == null}">
+            <a href="${path }/user/login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
-            <a href="<%=request.getContextPath()%>/join.do" class="join_a"><div class="item">회원가입</div></a>
-            <a href="<%=request.getContextPath()%>/board/write.do"><button class="header_write_btn">글쓰기</button></a>
+            <a href="${path }/user/join.do" class="join_a"><div class="item">회원가입</div></a>
+            </c:if>
+            <c:if test="${login != null}">
+            <a class="login_a" href="<%= request.getContextPath() %>/user/logout.do"><div class="item">로그아웃</div></a>
+            <div class="bar">&#124;</div>
+            <a href="${path }/user/join.do" class="join_a"><div class="item">마이페이지</div></a>
+            <a href="<%= request.getContextPath()%>/board/write.do"
+              ><button class="header_write_btn">글쓰기</button></a> 
+            </c:if>
           </div>
         </div>
         <section class="second_section">
@@ -115,134 +123,7 @@
         </div>
       </section>
       <div class="LayoutContentWrap">
-        <section
-          direction="vertical"
-          class="WebSection"
-          style="margin-top: 65px"
-        >
-          <section direction="vertical" class="WebSection">
-            <div>
-              <div class="WebSetionArea">
-                <div class="FilterItem">
-                  <div class="filterCountry">
-                    <div>
-                      <div>
-                        <button
-                          width="auto"
-                          font-size="15px"
-                          font-weight="400"
-                          class="ButtonToggle"
-                          style="
-                            width: fit-content;
-                            justify-content: flex-start;
-                          "
-                        >
-                          서울
-                        </button>
-                        <button
-                          width="auto"
-                          font-size="15px"
-                          font-weight="400"
-                          class="ButtonToggle"
-                          style="
-                            width: fit-content;
-                            justify-content: flex-start;
-                          "
-                        >
-                          강원도
-                        </button>
-                        <button
-                          width="auto"
-                          font-size="15px"
-                          font-weight="400"
-                          class="ButtonToggle"
-                          style="
-                            width: fit-content;
-                            justify-content: flex-start;
-                          "
-                        >
-                          제주도
-                        </button>
-                        <button
-                          width="auto"
-                          font-size="15px"
-                          font-weight="400"
-                          class="ButtonToggle"
-                          style="
-                            width: fit-content;
-                            justify-content: flex-start;
-                          "
-                        >
-                          부산
-                        </button>
-                        <button
-                          width="auto"
-                          font-size="15px"
-                          font-weight="400"
-                          class="ButtonToggle"
-                          style="
-                            width: fit-content;
-                            justify-content: flex-start;
-                          "
-                        >
-                          경기도
-                        </button>
-                        <button
-                          width="auto"
-                          font-size="15px"
-                          font-weight="400"
-                          class="ButtonToggle"
-                          style="
-                            width: fit-content;
-                            justify-content: flex-start;
-                          "
-                        >
-                          인천
-                        </button>
-                        <button
-                          width="auto"
-                          font-size="15px"
-                          font-weight="400"
-                          class="ButtonToggle"
-                          style="
-                            width: fit-content;
-                            justify-content: flex-start;
-                          "
-                        >
-                          충청도
-                        </button>
-                        <button
-                          width="auto"
-                          font-size="15px"
-                          font-weight="400"
-                          class="ButtonToggle"
-                          style="
-                            width: fit-content;
-                            justify-content: flex-start;
-                          "
-                        >
-                          경상도
-                        </button>
-                        <button
-                          width="auto"
-                          font-size="15px"
-                          font-weight="400"
-                          class="ButtonToggle"
-                          style="
-                            width: fit-content;
-                            justify-content: flex-start;
-                          "
-                        >
-                          전라도
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </section>
+       
       </div>
       <section class="file_upload_section">
       <form action= "write.do" method = "post">
