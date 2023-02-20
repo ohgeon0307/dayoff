@@ -100,6 +100,8 @@
   			}
   		}
   		
+  		alert("회원가입이 완료 되었습니다. 로그인 해주세요!");
+  		
   		frm.action = "<%=request.getContextPath()%>/user/join.do";
   		frm.method = "POST";
   		frm.submit();

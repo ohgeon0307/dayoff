@@ -255,8 +255,10 @@
       <section class="ad_slide">
         <div class="swiper ad_slider">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">slide banner 01</div>
-            <div class="swiper-slide">slide banner 02</div>
+            <div class="swiper-slide banner">
+             
+             </div>
+            <div class="swiper-slide banner2"></div>
           </div>
           <div class="swiper-pagination"></div>
         </div>

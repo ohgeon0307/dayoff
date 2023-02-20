@@ -931,3 +931,11 @@ footer button {
 #sns a:hover {
   color: sandybrown;
 }
+
+.swiper-slide.banner {
+	background: url(../img/slider_banner02.jpg) center/100% auto no-repeat;
+}
+
+.swiper-slide.banner2 {
+	background: url(../img/slider_banner03.jpg) center/100% auto no-repeat;
+}
