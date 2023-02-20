@@ -14,7 +14,6 @@
 		<typeAlias type="edu.project.vo.Criteria" alias="cri" />
 		<typeAlias type="edu.project.vo.ReplyVo" alias="replyVo" />
 		<typeAlias type="edu.project.vo.AttachImageVo" alias="attachImageVo"/>
-		<typeAlias type="edu.project.vo.AttachImage2Vo" alias="attachImage2Vo"/>
     </typeAliases>
     
     

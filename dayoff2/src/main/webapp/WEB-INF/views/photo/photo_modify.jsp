@@ -118,7 +118,7 @@
         <div class="hashtag">
           <input
             type="text" name="pHashTag"
-            placeholder="&nbsp&nbsp태그입력 (띄어쓰기로 구분) (100자 이내)"
+            placeholder="&nbsp&nbsp태그입력 (100자 이내)"
             value = ${vo2.pHashTag }
           />
         </div>

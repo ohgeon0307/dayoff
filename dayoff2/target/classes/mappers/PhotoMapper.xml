@@ -17,7 +17,7 @@
 			, uidx
 			, pDelYn
 			, pHashTag
-			, pHit
+			, pLike
 			, pWriter
 		FROM phototable
 		WHERE pidx = #{pidx}
@@ -30,14 +30,14 @@
 			, pDate
 			, uidx
 			, pHashTag
-			, pHit
+			, pLike
 			, pWriter
 		) VALUES(
 			 #{pTitle}
 			, NOW()
 			, #{uidx}
 			, #{pHashTag}
-			, #{pHit}
+			, #{pLike}
 			, #{pWriter}
 		)
 <!--  		<selectKey keyProperty="pidx" resultType="Integer" order="AFTER">
@@ -72,7 +72,7 @@
 		, uidx
 		, pDelYn
 		, pHashTag
-		, pHit
+		, pLike
 		, pWriter
 		FROM phototable
 		WHERE pidx = #{pidx}
@@ -112,13 +112,6 @@
 			FROM phototable
 		WHERE pidx = #{pidx}
 	</delete>
-	
-	<update id="updatereviewcnt">
-		update phototable 
-		set 
-		phit = phit + 1 
-		where pidx = #{pidx}
-	</update>
 	
 	<select id="listCount" resultType="int" parameterType = "scri">
 		SELECT count(pidx)

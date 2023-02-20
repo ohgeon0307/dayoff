@@ -19,7 +19,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
-    <link href="${path}/resources/css/photo_list.css?after" rel="stylesheet"/>
+    <link href="${path}/resources/css/photo_list.css" rel="stylesheet"/>
     <link rel="shortcut icon" href="${path}/resources/img/favicon.png"/>
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
@@ -69,8 +69,9 @@
       
       
       /* 게시글 삭제*/
-      function DoDelete(idx)
-      {  
+      function DoDelete(idx){  
+    	  alert("정말 삭제하시겠습니까?");
+    	  
     	  var form = document.createElement("form");
     	  form.setAttribute("id", "form");
     	  form.setAttribute("method", "post");
@@ -165,18 +166,17 @@
 								<a href="#">${vo.pWriter}</a>
 							</div>
 							<div>
-								<i class="xi-eye-o">${vo.pHit}</i>
+								<i class="xi-heart-o"></i>&nbsp;${vo.pLike}
 							</div>
 						</div>
 						<div class="title">${vo.pTitle}
 							<c:if test="${login.name == vo.pWriter}">
-								<button onclick="location.href='modify.do?pidx=${vo.pidx}'">수정</button>
-<!-- 								<button class="delete" onclick= "$('#deletef').submit()">삭제</button> -->
 								<button class="delete" onclick="DoDelete(${vo.pidx});">삭제</button>
+								<button class="modify" onclick="location.href='modify.do?pidx=${vo.pidx}'">수정</button>
 							</c:if>
 						</div>
 						<div class="hashtag">
-							<a href="#">${vo.pHashTag}</a>
+						<a href="#">${vo.pHashTag}</a>
 						</div>
 					</div>
 				</c:forEach>
