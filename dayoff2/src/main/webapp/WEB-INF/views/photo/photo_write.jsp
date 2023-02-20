@@ -59,6 +59,11 @@
       ChannelIO("boot", {
         pluginKey: "440ad304-9963-448a-9d8e-8efd8dfa9576",
       });
+      
+      function shortdo(){
+    	  alert("쇼츠갤러리는 현재 구현중입니다.");
+      }
+      
     </script>
   </head>
   <body>
@@ -94,7 +99,7 @@
         <section class="second_section">
           <div class="second_header">
             <a href="<%= request.getContextPath()%>/photo/list.do"><div class="trip_info">포토갤러리</div></a>
-            <a href="<%= request.getContextPath()%>/short/list.do"><div class="board">쇼츠갤러리</div></a>
+            <button onclick="shortdo()"><div class="board">쇼츠갤러리</div></button>
           </div>
         </section>
       </section>

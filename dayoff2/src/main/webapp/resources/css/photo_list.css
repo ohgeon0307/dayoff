@@ -552,7 +552,7 @@ footer button {
   overflow: hidden;
 }
 
-.title button{
+.hashtag button{
 	float:right;
 	font-size: 14px;
 }
@@ -569,6 +569,7 @@ footer button {
   background-color: #eeeeee;
   color: #767676;
   margin-right: 5px;
+  font-size: 16px;
 }
 
 .imgList {

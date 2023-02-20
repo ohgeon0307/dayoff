@@ -70,7 +70,8 @@
       
       /* 게시글 삭제*/
       function DoDelete(idx){  
-    	  alert("정말 삭제하시겠습니까?");
+    	  if (confirm("정말 삭제 하시겠습니까?") == true){ 
+    		   //true는 확인버튼을 눌렀을 때 코드 작성
     	  
     	  var form = document.createElement("form");
     	  form.setAttribute("id", "form");
@@ -89,7 +90,18 @@
     	  form.submit();
     	  
     	  document.getElementById("form").remove();
+
+    		 }else{
+    		   // false는 취소버튼을 눌렀을 때, 취소됨
+    		   console.log("취소되었습니다");
+    		 }
       }
+      
+      function shortdo(){
+    	  alert("쇼츠갤러리는 현재 구현중입니다.");
+      }
+      
+      
     </script>
   </head>
   <body>
@@ -125,7 +137,7 @@
         <section class="second_section">
           <div class="second_header">
             <a href="<%= request.getContextPath()%>/photo/list.do"><div class="trip_info">포토갤러리</div></a>
-            <a href="<%= request.getContextPath()%>/short/list.do"><div class="board">쇼츠갤러리</div></a>
+            <button onclick="shortdo()"><div class="board">쇼츠갤러리</div></button>
           </div>
         </section>
       </section>
@@ -163,20 +175,20 @@
 							</div>
 						<div class="content">
 							<div class="writer">
-								<a href="#">${vo.pWriter}</a>
+								<i class="xi-profile"></i>&nbsp;<a href="#">${vo.pWriter}</a>
 							</div>
 							<div>
-								<i class="xi-heart-o"></i>&nbsp;${vo.pLike}
+								<i class="xi-heart"></i>&nbsp;${vo.pLike}
 							</div>
 						</div>
 						<div class="title">${vo.pTitle}
+						</div>
+						<div class="hashtag">
+						<a href="#">${vo.pHashTag}</a>
 							<c:if test="${login.name == vo.pWriter}">
 								<button class="delete" onclick="DoDelete(${vo.pidx});">삭제</button>
 								<button class="modify" onclick="location.href='modify.do?pidx=${vo.pidx}'">수정</button>
 							</c:if>
-						</div>
-						<div class="hashtag">
-						<a href="#">${vo.pHashTag}</a>
 						</div>
 					</div>
 				</c:forEach>
