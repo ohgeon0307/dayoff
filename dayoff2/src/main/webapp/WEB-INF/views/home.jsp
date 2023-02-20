@@ -177,35 +177,35 @@
         </div>
         <div class="photo_zone">
           <div class="gallery">
-            <img src="${path }/resources/img/photozone01.webp" alt="" />
+            <img src="${path }/resources/img/rawkkim-JrUPwkbIIx8-unsplash.jpg" alt="" />
             <div class="gallery_text">
               <b class="gallery_text_green"> 포토갤러리 </b>
-              <div class="photo_title">아름다운 싱가폴 뷰</div>
-              <div class="user_name">김은준</div>
+              <div class="photo_title">밤거리</div>
+              <div class="user_name">전주</div>
             </div>
           </div>
           <div class="gallery">
-            <img src="${path }/resources/img/photozone02.webp" alt="" />
+            <img src="${path }/resources/img/yeonhee-VWLhifg5VMA-unsplash.jpg" alt="" />
             <div class="gallery_text">
               <b class="gallery_text_green"> 포토갤러리 </b>
-              <div class="photo_title">여행의 끝, 세비야</div>
-              <div class="user_name">김충언</div>
+              <div class="photo_title">화강암</div>
+              <div class="user_name">전주</div>
             </div>
           </div>
           <div class="gallery">
-            <img src="${path }/resources/img/photozone03.webp" alt="" />
+            <img src="${path }/resources/img/thomas-roger-lux-xRAEPmP9M8s-unsplash.jpg" alt="" />
             <div class="gallery_text">
               <b class="gallery_text_green"> 포토갤러리 </b>
-              <div class="photo_title">애버딘, 위스키와 칵테일</div>
-              <div class="user_name">임낙훈</div>
+              <div class="photo_title">바닷가에 있는 해동 용궁사</div>
+              <div class="user_name">부산</div>
             </div>
           </div>
           <div class="gallery">
-            <img src="${path }/resources/img/photozone04.webp" alt="" />
+            <img src="${path }/resources/img/rawkkim-KKz6NgO69yQ-unsplash.jpg" alt="" />
             <div class="gallery_text">
               <b class="gallery_text_green"> 포토갤러리 </b>
-              <div class="photo_title">풍경이 좋던 런던 하늘</div>
-              <div class="user_name">오건</div>
+              <div class="photo_title">해질녘</div>
+              <div class="user_name">전주</div>
             </div>
           </div>
         </div>
