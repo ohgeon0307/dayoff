@@ -1,19 +1,12 @@
 package edu.project.service;
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import edu.project.dao.TogetherDao;
 import edu.project.vo.SearchCriteria;
 import edu.project.vo.TogetherVo;
-
-
-
 @Service
 public class TogetherServiceImpl implements TogetherService{
-
 	@Autowired
 	private TogetherDao togetherDAO;
 	
@@ -22,7 +15,6 @@ public class TogetherServiceImpl implements TogetherService{
 		
 		return togetherDAO.insert(vo);
 	}
-
 	@Override
 	public List<TogetherVo> list(SearchCriteria scri) {
 		
@@ -30,25 +22,23 @@ public class TogetherServiceImpl implements TogetherService{
 		
 		return list;
 	}
-
 	@Override
 	public TogetherVo selectByTidx(int tidx) {
 		
 		
 		return togetherDAO.selectByTidx(tidx);
 	}
-
 	@Override
 	public int updateByTidx(TogetherVo vo) {
 		
 		return togetherDAO.updateByTidx(vo);
 	}
-
 	@Override
 	public int deleteByTidx(int tidx) {
 	
 		return togetherDAO.deleteByTidx(tidx);
 	}
+<<<<<<< HEAD
 
 	@Override
 	public int updatereviewcnt(int tidx) {
@@ -57,3 +47,6 @@ public class TogetherServiceImpl implements TogetherService{
 	}
 
 }
+=======
+}
+>>>>>>> branch 'master' of https://github.com/ohgeon0307/dayoff.git

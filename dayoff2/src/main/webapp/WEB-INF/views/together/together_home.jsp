@@ -266,7 +266,7 @@
 	          </form>
 	          </div>
           <ul class="Accompany" type="portrait">
-          	<% 
+          	<%
           		for(TogetherVo vo : list){
           			%>
 	            <div type="portrait" class="AccompanyItem">

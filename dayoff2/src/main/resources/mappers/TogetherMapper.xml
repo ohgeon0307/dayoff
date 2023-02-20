@@ -2,9 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
 <mapper namespace="edu.project.mapper.togetherMapper">
-
 	<insert id="togetherInsert" parameterType="togetherVo">
 		INSERT INTO togethertable(
 			 ttitle
@@ -56,19 +54,18 @@
     		FROM togethertable
     		WHERE tidx = #{tidx}	<!-- DAO에서 파라미터로 넘긴 변수명 -->
     </select>
-    
     <update id="updateByTidx" parameterType="togetherVo" >
     	UPDATE togethertable
     	   SET ttitle = #{tTitle}
     		 , tcontent= #{tContent}
-    	WHERE tidx = #{tidx} 
+    	WHERE tidx = #{tidx}
     </update>
-    
     <delete id="deleteByTidx" parameterType="int">
-    	DELETE 
+    	DELETE
     	FROM  togethertable
-    	WHERE tidx = #{tidx} 
+    	WHERE tidx = #{tidx}
     </delete>
+<<<<<<< HEAD
     
     <update id="updatereviewcnt">
 		update togethertable
@@ -113,5 +110,7 @@
 		trdelyn = 'Y' WHERE tridx = #{tridx}
 	</update>
     
+=======
+>>>>>>> branch 'master' of https://github.com/ohgeon0307/dayoff.git
 	
 </mapper>
