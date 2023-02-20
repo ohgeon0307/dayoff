@@ -68,9 +68,15 @@
     	function searchBtn() {
     		alert("통합 검색은 현재 준비중입니다🤗");
     	}	
+    	
     	function myPage() {
     		alert("마이페이지는 현재 준비중입니다!");
     	}
+    	
+    	function sangdam() {
+    		alert("1:1 상담은 오른쪽 하단 한바탕 전주 버튼을 눌러주세요!");
+    	}
+    	
     	
     </script>
   </head>
@@ -356,7 +362,7 @@
       <h3>데이오프</h3>
       <div class="footer_calling">
         <div class="phone_number">고객센터 010-3524-4305</div>
-        <button>1:1채팅상담</button>
+        <button onclick="sangdam()">1:1채팅상담</button>
         <div class="consulting">실시간 채팅상담 매일 09:00 ~ 24:00
           친절 유선 상담 평일 10:00 ~ 19:00 (12:00-13:00) 제외
         </div>
