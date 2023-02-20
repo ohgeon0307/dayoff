@@ -127,11 +127,11 @@
 	</select>
 	
 	<sql id="search">
-		<if test="searchType == 'title'">
-			where title LIKE CONCAT ('%', #{keyword},'%')
+		<if test="searchType == 'pTitle'">
+			where pTitle LIKE CONCAT ('%', #{keyword},'%')
 		</if>
-		<if test="searchType == 'content'">
-			where content LIKE CONCAT ('%', #{keyword} ,'%')
+		<if test="searchType == 'pHashTag'">
+			where pHashTag LIKE CONCAT ('%', #{keyword} ,'%')
 		</if>
 	</sql>
 

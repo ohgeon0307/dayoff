@@ -140,18 +140,14 @@
         <div class="asdf">
           <p>포토갤러리</p>
         </div>
-        <div class="subject">
-          <h2>전라북도</h2>
-          <h2>전주</h2>
-          <h2>한옥마을</h2>
-        </div>
+
       </section>
       <section class="board_list">
         <div class="board_header">
           <form action="list.do" method="GET" class="form_item">
           <select name="searchType">
             <option value="pTitle" <c:if test="${param.searchType == 'pTitle' }">selected</c:if>>제목</option>
-            <option value="pHashtag" <c:if test="${param.searchType == 'pHashtag' }">selected</c:if>>해시태그</option>
+            <option value="pHashTag" <c:if test="${param.searchType == 'pHashTag' }">selected</c:if>>해시태그</option>
           </select>
           <input type="text" class ="search_input" name="keyword" placeholder ="검색어를 입력하세요.." value="${param.keyword }">
           <button class="search_btn">게시글 검색</button>
