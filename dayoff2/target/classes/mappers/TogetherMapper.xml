@@ -31,9 +31,19 @@
 	
     	SELECT *
     	FROM togethertable
+    	<include refid="search"></include>
     	order by tidx desc
     		
     </select>
+    
+    <sql id="search">
+		<if test="searchType == 'title'">
+			where ttitle LIKE CONCAT ('%', #{keyword},'%')
+		</if>
+		<if test="searchType == 'content'">
+			where tcontent LIKE CONCAT ('%', #{keyword} ,'%')
+		</if>
+	</sql>
 	
 	<select id="selectByTidx" parameterType="int" resultType="togetherVo">
     	SELECT tidx
@@ -60,6 +70,48 @@
     	WHERE tidx = #{tidx} 
     </delete>
     
+    <update id="updatereviewcnt">
+		update togethertable
+		set 
+		thit = thit + 1 
+		where tidx = #{tidx}
+	</update>
+    
+    <select id="treplyList" parameterType="int" resultType="treplyVo">
+		SELECT *
+		FROM togetherreplytable WHERE tidx=#{tidx} and trdelyn = 'N'
+	</select>
+
+	<insert id="tinsertReply" parameterType="treplyVo">
+		INSERT INTO togetherreplytable(
+		 trContent
+		, tredate
+		, writer
+		, tidx
+		, trdelyn
+		, uidx
+		)VALUES(
+	    #{trContent}
+		, now()
+		, #{writer}
+		, #{tidx}
+		, 'N'
+		, #{uidx}
+		)
+	</insert>
+	
+	<update id="tupdateReply" parameterType="treplyVo">
+		UPDATE togetherreplytable
+		SET 
+		trContent = #{trContent}
+		WHERE tridx = #{tridx}
+	</update>
+	
+	<update id="tdeleteReply" parameterType="int">
+		update togetherreplytable
+		SET
+		trdelyn = 'Y' WHERE tridx = #{tridx}
+	</update>
     
 	
 </mapper>

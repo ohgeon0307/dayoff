@@ -33,7 +33,7 @@ public class TogetherController {
 		 
 		TogetherVo togethervo = togetherService.selectByTidx(tidx);
 		
-		
+		togetherService.updatereviewcnt(tidx);
 		
 		model.addAttribute("togethervo", togethervo); 
 		

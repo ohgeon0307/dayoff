@@ -270,64 +270,29 @@
             <form name="delfrm" action="delete.do" method="post">
             	<input type="hidden" name="tidx" value="${togethervo.tidx }">
             </form>
-            <div class="AccompanyContainer_InputBox">
-              <div class="CommentInputBox">
-                <textarea
-                  placeholder="댓글을 입력해주세요."
-                  class="CommentInputBox_Input"
-                  style="height: 39px"
-                >
-                </textarea>
-                <button class="CommentInputBox_SubmitText">게시</button>
-              </div>
-            </div>
-            <div class="AccompanyContainer_CommentContainer">
-              <div class="AccompanyContainer_CommentInnerContainer">
-                <div class="Comment_Wrapper">
-                  <div class="Comment_ProfileContainer">
-                    <div class="Comment_UserImg">
-                      <div class="ShimmerImg">
-                        <div class="ShimmerImg1">
-                          <img
-                            class="ShimmerImg2"
-                            src="img/캡처.jpg"
-                            alt="프로필사진"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="Comment_BioContainer">
-                      <span class="Comment_UserName">알수없음</span>
-                      <span class="Comment_CreateAt">2023/01/12 13:17:22</span>
-                    </div>
-                  </div>
-                  <p class="Comment_Contents">아 올리셨구나 메세지 남겼어요!</p>
-                  <div class="Comment_OptionContainer">
-                    <div class="Comment_OptionMainContainer">
-                      <button class="Comment_Reply">답글 달기</button>
-                    </div>
-                    <div class="Comment_OptionLikeContainer">
-                      <p class="Comment_Like">좋아요 0개</p>
-                      <svg
-                        color="#6a6a6a"
-                        width="13"
-                        height="13"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rull="evenodd"
-                          clip-rule="evenodd"
-                          d="M1.40632 10.2375C-0.547821 8.05243 -0.465441 4.71746 1.65346 2.62939C3.85807 0.456869 7.43245 0.456868 9.63706 2.62939L10.0001 2.98712L10.3629 2.62962L11.4157 3.69802L10.0001 5.09306L8.5842 3.6978C6.96355 2.10073 4.32697 2.10073 2.70632 3.6978C1.0979 5.28281 1.0979 7.84339 2.70631 9.4284L4.15169 10.8527L9.99996 16.6161L17.2936 9.42862C18.902 7.84361 18.902 5.28303 17.2936 3.69802L18.3465 2.62962C20.5511 4.80214 20.5511 8.3245 18.3465 10.497L10.7122 18.0201C10.3189 18.4078 9.68107 18.4078 9.28769 18.0201L2.01636 10.8546L1.65346 10.4968C1.56847 10.4131 1.48676 10.3273 1.40832 10.2397C1.40765 10.2389 1.40699 10.2382 1.40632 10.2375ZM18.3465 2.62962C16.1418 0.457092 12.5675 0.45709 10.3629 2.62962L11.4157 3.69802C13.0364 2.10096 15.6729 2.10096 17.2936 3.69802L18.3465 2.62962Z"
-                          fill="#6a6a6a"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="container" style="margin-top: 15px;">
+					<label for="content">댓글</label>
+					<form name="commentInsertForm">
+						<div class="input-group">
+							<input type="hidden" name="tidx" value="${vo.tidx}" />
+							<input type="hidden" name="writer" value="${login.name }" />
+							<input type="hidden" name="uidx" value="${login.uidx }" />
+							 <input
+								type="text" class="form-control" id="trContent" name="trContent"
+								placeholder="내용을 입력하세요."> <span class="input-group-btn">
+								<button class="btn btn-default" type="button"
+									name="commentInsertBtn">등록</button>
+							</span>
+						</div>
+					</form>
+				</div>
+				<div class="container">
+					<div class="commentList"></div>
+				</div>
+
+				<%@ include file="treply.jsp"%>
+      
+           
           </div>
         </div>
         <div class="InnerSection_AreaRight">
@@ -436,6 +401,7 @@
           </div>
         </div>
       </div>
+     	
     </main>
     <footer class="footer">
       <h3>데이오프</h3>

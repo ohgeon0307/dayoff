@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.project.dao.TogetherDao;
+import edu.project.vo.SearchCriteria;
 import edu.project.vo.TogetherVo;
 
 
@@ -23,9 +24,9 @@ public class TogetherServiceImpl implements TogetherService{
 	}
 
 	@Override
-	public List<TogetherVo> list() {
+	public List<TogetherVo> list(SearchCriteria scri) {
 		
-		List<TogetherVo> list = togetherDAO.list();
+		List<TogetherVo> list = togetherDAO.list(scri);
 		
 		return list;
 	}
@@ -47,6 +48,12 @@ public class TogetherServiceImpl implements TogetherService{
 	public int deleteByTidx(int tidx) {
 	
 		return togetherDAO.deleteByTidx(tidx);
+	}
+
+	@Override
+	public int updatereviewcnt(int tidx) {
+	
+		return togetherDAO.updatereviewcnt(tidx);
 	}
 
 }

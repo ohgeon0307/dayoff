@@ -18,7 +18,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
-    <link href="${path}/resources/css/together_home.css" rel="stylesheet" />
+    <link href="${path}/resources/css/together_home.css?after" rel="stylesheet" />
    <link rel="shortcut icon" href="${path}/resources/img/favicon.png">
     <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
@@ -255,32 +255,16 @@
           class="WebSection"
           style="margin-top: 65px"
         >
-          <div class="WebSectionArea">
-            <button
-              width="auto"
-              font-size="16px"
-              font-weight="700"
-              class="ButtonWrapper"
-              style="border-radius: 30px"
-            >
-              모집중인 글만 보기
-            </button>
-            <div
-              class="SelectItem"
-              style="
-                width: 82px;
-                height: 37px;
-                padding: 0 7px;
-                margin: 0 10px 0 0;
-              "
-            >
-              <select class="SelectWrapper">
-                <option value="time" class="SelectOption">최신순</option>
-                <option value="view" class="SelectOption">조회순</option>
-              </select>
-            </div>
-            <p class="SearchFilter">정렬</p>
-          </div>
+             <div class="board_header">
+	           <form action="together" method="GET" class="form_item">
+		          <select name="searchType" id="searchArea">
+		            <option value="title" <c:if test="${param.searchType == 'title' }">selected</c:if>>제목</option>
+		            <option value="content" <c:if test="${patam.searchType == 'content' }">selected</c:if>>내용</option>
+		          </select>
+		          <input type="text" class ="search_input" name="keyword" placeholder ="검색어를 입력하세요.." value="${param.keyword }">
+		          <button class="search_btn">게시글 검색</button>
+	          </form>
+	          </div>
           <ul class="Accompany" type="portrait">
           	<% 
           		for(TogetherVo vo : list){
@@ -291,37 +275,6 @@
 	                  src=""
 	                  alt=""
 	                /></a>
-	                <div type="portrait" class="DateWrapper">
-	                  <div>
-	                    <div class="AreaWrapper">
-	                      <div
-	                        style="
-	                          width: 21px;
-	                          height: 21px;
-	                          background-color: rgb(248, 248, 248);
-	                          border-radius: 11px;
-	                          display: inline-flex;
-	                          align-items: center;
-	                          justify-content: center;
-	                        "
-	                      >
-	                        <svg
-	                          width="9"
-	                          height="13"
-	                          viewBox="0 0 9 13"
-	                          fill="null"
-	                        >
-	                          <path
-	                            d="M4.03748 12.4779C0.633075 7.35238 0.000785276 6.82628 0.000785276 4.942C-0.0217027 3.72595 0.439589 2.55072 1.28327 1.67465C2.12694 0.798575 3.28396 0.293348 4.5 0.27002C5.71604 0.293348 6.87306 0.798575 7.71673 1.67465C8.56041 2.55072 9.0217 3.72595 8.99922 4.942C8.99922 6.82568 8.36693 7.35178 4.96252 12.4779C4.91259 12.5551 4.8441 12.6187 4.76331 12.6627C4.68251 12.7066 4.59199 12.7297 4.5 12.7297C4.40801 12.7297 4.31749 12.7066 4.23669 12.6627C4.1559 12.6187 4.08741 12.5551 4.03748 12.4779ZM4.5 6.88926C5.00667 6.87949 5.48873 6.66896 5.84025 6.30394C6.19177 5.93893 6.38399 5.44928 6.37467 4.9426C6.38415 4.43583 6.192 3.94603 5.84046 3.58088C5.48892 3.21573 5.00677 3.00512 4.5 2.99534C3.99333 3.00512 3.51127 3.21564 3.15975 3.58066C2.80823 3.94568 2.61601 4.43533 2.62533 4.942C2.61585 5.44878 2.808 5.93858 3.15954 6.30373C3.51108 6.66888 3.99323 6.87949 4.5 6.88926Z"
-	                          ></path>
-	                        </svg>
-	                      </div>
-	                      <p class="Prevent" style="color: rgb(255, 255, 255)">
-	                        서울
-	                      </p>
-	                    </div>
-	                  </div>
-	                </div>
 	              </div>
 	              <div class="ContentWrapper" type="portrait">
 	                <div class="TitleWrapper">

@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import edu.project.vo.SearchCriteria;
 import edu.project.vo.TogetherVo;
 
 
@@ -17,12 +18,12 @@ public class TogetherDao {
 	@Autowired
 	private SqlSession sqlSession;
 
-	public List<TogetherVo> list(){
+	public List<TogetherVo> list(SearchCriteria scri){
 		
 		
 	
 		
-		return sqlSession.selectList("edu.project.mapper.togetherMapper.togetherlist");
+		return sqlSession.selectList("edu.project.mapper.togetherMapper.togetherlist", scri);
 	}
 	
 	public int insert(TogetherVo vo) {
@@ -48,6 +49,11 @@ public class TogetherDao {
 		
 		
 		return sqlSession.delete("edu.project.mapper.togetherMapper.deleteByTidx", tidx);
+	}
+	
+	public int updatereviewcnt(int tidx) {
+		
+		return sqlSession.update("edu.project.mapper.togetherMapper.updatereviewcnt", tidx);
 	}
 	
 	

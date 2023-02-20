@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.project.service.TogetherService;
 import edu.project.service.UserService;
+import edu.project.vo.SearchCriteria;
 import edu.project.vo.TogetherVo;
 import edu.project.vo.UserVo;
 
@@ -52,9 +53,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/together", method = RequestMethod.GET)
-	public String together(Model model) {
+	public String together(Model model, SearchCriteria scri) {
 		
-		List<TogetherVo> list = togetherService.list();
+		List<TogetherVo> list = togetherService.list(scri);
 		
 		List<UserVo> userlist = userService.list();
 		
