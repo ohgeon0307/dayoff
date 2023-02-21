@@ -3,23 +3,22 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-<<<<<<< HEAD
+
 
 import edu.project.vo.SearchCriteria;
-=======
->>>>>>> branch 'master' of https://github.com/ohgeon0307/dayoff.git
+
+
 import edu.project.vo.TogetherVo;
 @Repository
 public class TogetherDao {
 	
 	@Autowired
 	private SqlSession sqlSession;
-<<<<<<< HEAD
+
+	
 
 	public List<TogetherVo> list(SearchCriteria scri){
-=======
-	public List<TogetherVo> list(){
->>>>>>> branch 'master' of https://github.com/ohgeon0307/dayoff.git
+
 		
 		
 	

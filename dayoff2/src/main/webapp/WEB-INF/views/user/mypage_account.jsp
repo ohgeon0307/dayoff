@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
      <title>마이페이지_계정관리</title>
-    <link rel="stylesheet" href="css/mypage_account.css" />
+    <link rel="stylesheet" href="${path }/resources/css/mypage_account.css">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
@@ -56,6 +58,13 @@
         pluginKey: "440ad304-9963-448a-9d8e-8efd8dfa9576",
       });
     </script>
+    <script>
+    	
+    	function searchBtn() {
+    		alert("통합 검색은 현재 준비중입니다🤗");
+    	}
+    	
+    </script>
   </head>
   <body>
     <header>
@@ -70,7 +79,7 @@
           </div>
           <div class="right_header">
             <div class="item">
-              <button class="searchBtn">
+              <button class="searchBtn" onclick="searchBtn()">
                 <i class="xi-search xi-1x"></i>
               </button>
               <input type="text" placeholder="여행지를 찾아보세요!" />

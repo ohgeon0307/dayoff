@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import edu.project.dao.PhotoDao;
 import edu.project.vo.AttachImageVo;
 import edu.project.vo.PhotoVo;
+import edu.project.vo.SearchCriteria;
 
 @Service
 public class PhotoServiceImpl implements PhotoService{
@@ -15,22 +16,16 @@ public class PhotoServiceImpl implements PhotoService{
 	private PhotoDao photoDAO;
 	
 	@Override
-	public List<PhotoVo> list(PhotoVo photoVo) {
-		List<PhotoVo> list = photoDAO.list(photoVo);
+	public List<PhotoVo> list(SearchCriteria scri) {
+		List<PhotoVo> list = photoDAO.list(scri);
 		return list;
 	}
+
 	@Override
 	public PhotoVo selectByPidx(int pidx) {
 		return photoDAO.selectByPidx(pidx);
 	}
-	@Override
-	public int updateByPidx(PhotoVo vo) {
-		return photoDAO.updateByPidx(vo);
-	}
-	@Override
-	public int deleteByPidx(int pidx) {
-		return photoDAO.deleteByPidx(pidx);
-	}
+	
 	@Override
 	public int insert(PhotoVo vo) {
 		return photoDAO.insert(vo);
@@ -40,8 +35,38 @@ public class PhotoServiceImpl implements PhotoService{
 		return photoDAO.imageEnroll(vo);
 	}
 	@Override
-	public AttachImageVo imageList(int pidx) {
-		return photoDAO.imageList(pidx);
+	public AttachImageVo image(int pidx) {
+		return photoDAO.image(pidx);
 		
+	}
+	
+	@Override
+	public int modifyByPidx(PhotoVo vo) {
+		return photoDAO.modifyByPidx(vo);
+	}
+	
+	@Override
+	public int modifyImgByPidx(AttachImageVo vo) {
+		return photoDAO.modifyImgByPidx(vo);
+	}
+	
+	@Override
+	public int deleteImgByPidx(int pidx) {
+		return photoDAO.deleteImgByPidx(pidx);
+	}
+	
+	@Override
+	public int deleteByPidx(int pidx) {
+		return photoDAO.deleteByPidx(pidx);
+	}
+	
+	@Override
+	public int listCount(SearchCriteria scri) {
+		return photoDAO.listCount(scri);
+	}
+	
+	@Override
+	public int updatereviewcnt(int pidx) {
+		return photoDAO.updatereviewcnt(pidx);
 	}
 }

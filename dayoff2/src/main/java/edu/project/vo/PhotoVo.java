@@ -1,6 +1,5 @@
 package edu.project.vo;
 
-import java.util.List;
 
 public class PhotoVo {
 	private int pidx;
@@ -8,14 +7,15 @@ public class PhotoVo {
 	private int uidx;
 	private String pDelYn;
 	private String pHashTag;
-	private int pHit;
-	private List<AttachImageVo> imageList;
+	private int pLike;
+	private String pWriter;
 	
-	public List<AttachImageVo> getImageList() {
-		return imageList;
+	
+	public String getpWriter() {
+		return pWriter;
 	}
-	public void setImageList(List<AttachImageVo> imageList) {
-		this.imageList = imageList;
+	public void setpWriter(String pWriter) {
+		this.pWriter = pWriter;
 	}
 	public int getPidx() {
 		return pidx;
@@ -47,22 +47,19 @@ public class PhotoVo {
 	public void setpHashTag(String pHashTag) {
 		this.pHashTag = pHashTag;
 	}
-	public int getpHit() {
-		return pHit;
+	public int getpLike() {
+		return pLike;
 	}
-	public void setpHit(int pHit) {
-		this.pHit = pHit;
+	public void setpLike(int pLike) {
+		this.pLike = pLike;
 	}
-	
 	@Override
 	public String toString() {
 		return "PhotoVo [pidx=" + pidx + ", pTitle=" + pTitle + ", uidx=" + uidx + ", pDelYn=" + pDelYn + ", pHashTag="
-				+ pHashTag + ", pHit=" + pHit + ", imageList=" + imageList + "]";
+				+ pHashTag + ", pLike=" + pLike + ", pWriter=" + pWriter + "]";
 	}
 	
 
-	
-	
 
 
 }

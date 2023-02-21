@@ -33,13 +33,12 @@
 	<select id="boardList" resultType="boardVo" parameterType="scri">
 		SELECT * FROM boardtable 
 		<include refid="search"></include>
-		ORDER BY bidx DESC LIMIT 0,10
+		ORDER BY bidx DESC LIMIT #{rowStart}, #{rowEnd}
 	</select>
 
-	<select id="listCount" resultType="int">
+	<select id="listCount" resultType="int" parameterType = "scri">
 		SELECT count(bidx)
 		from boardtable
-		<include refid="search"></include>
 		WHERE bidx > 0
 	</select>
 

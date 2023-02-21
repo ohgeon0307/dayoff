@@ -38,7 +38,7 @@ public class TogetherServiceImpl implements TogetherService{
 	
 		return togetherDAO.deleteByTidx(tidx);
 	}
-<<<<<<< HEAD
+
 
 	@Override
 	public int updatereviewcnt(int tidx) {
@@ -46,7 +46,5 @@ public class TogetherServiceImpl implements TogetherService{
 		return togetherDAO.updatereviewcnt(tidx);
 	}
 
+
 }
-=======
-}
->>>>>>> branch 'master' of https://github.com/ohgeon0307/dayoff.git

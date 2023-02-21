@@ -20,7 +20,7 @@ public interface BoardService {
 	
 	int deleteByBidx(int bidx);
 	
-	int listCount();
+	int listCount(SearchCriteria scri);
 	
 	int updatereviewcnt(int bidx);
 	

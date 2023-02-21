@@ -52,7 +52,7 @@ public class HomeController {
 		return "home";
 	}
 	
-<<<<<<< HEAD
+
 	@RequestMapping(value = "/together", method = RequestMethod.GET)
 	public String together(Model model, SearchCriteria scri) {
 		
@@ -66,8 +66,7 @@ public class HomeController {
 		
 		return "together/together_home";
 	}
-=======
->>>>>>> branch 'master' of https://github.com/ohgeon0307/dayoff.git
+
 	
 	@RequestMapping(value = "/board", method = RequestMethod.GET)
 	
@@ -99,18 +98,6 @@ public class HomeController {
 		return "user/join";
 	}
 	
-	@RequestMapping(value = "/together", method = RequestMethod.GET)
-	public String together(Model model) {
-		
-		List<TogetherVo> list = togetherService.list();
-		
-		List<UserVo> userlist = userService.list();
-		
-		model.addAttribute("togetherlist", list);
-		
-		model.addAttribute("userlist", userlist);
-		
-		return "together/together_home";
-	}
+	
 	
 }

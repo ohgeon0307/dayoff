@@ -59,7 +59,26 @@
       ChannelIO("boot", {
         pluginKey: "440ad304-9963-448a-9d8e-8efd8dfa9576",
       });
-    </script>  
+    </script>
+    <script>
+    	function mainevent() {
+    		alert("현재 준비중입니다!");
+    	}
+    	
+    	function searchBtn() {
+    		alert("통합 검색은 현재 준비중입니다🤗");
+    	}	
+    	
+    	function myPage() {
+    		alert("마이페이지는 현재 준비중입니다!");
+    	}
+    	
+    	function sangdam() {
+    		alert("1:1 상담은 오른쪽 하단 한바탕 전주 버튼을 눌러주세요!");
+    	}
+    	
+    	
+    </script>
   </head>
   <body>
     <header>
@@ -72,7 +91,7 @@
           </div>
           <div class="right_header">
             <div class="item">
-              <button class="searchBtn">
+              <button class="searchBtn" onclick="searchBtn()">
                 <i class="xi-search xi-1x"></i>
               </button>
               <input type="text" placeholder="여행지를 찾아보세요!" />
@@ -85,7 +104,7 @@
             <c:if test="${login != null}">
             <a class="login_a" href="<%= request.getContextPath() %>/user/logout.do"><div class="item">로그아웃</div></a>
             <div class="bar">&#124;</div>
-            <a href="${path }/user/join.do" class="join_a"><div class="item">마이페이지</div></a>
+            <button class="join_a" onclick="myPage()"><div class="item">마이페이지</div></button>
             </c:if>
             <c:if test="${login == null && userId != null }">
             <a class="login_a" href="<%= request.getContextPath() %>/kakao/logout.do"><div class="item"> 로그아웃</div></a>
@@ -116,7 +135,7 @@
                 <p>1일 1만원대 렌트카 확인해보세요!</p>
               </div>
               <img src="${path }/resources/img/slideImg01.webp" alt="" />
-              <button>데이오프 렌터카 보러가기</button>
+              <button onclick="mainevent()">데이오프 렌터카 보러가기</button>
             </div>
             <div class="swiper-slide">
               <div class="second_slide">
@@ -125,7 +144,7 @@
                 <p>새해복 많이 받으세요 !!</p>
               </div>
               <img src="${path }/resources/img/slideImg02.webp" alt="" />
-              <button>이벤트 참여하기</button>
+              <button onclick="mainevent()">이벤트 참여하기</button>
             </div>
             <div class="swiper-slide">
               <div class="third_slide">
@@ -134,16 +153,16 @@
                 <p>맛집투어를 떠나봐요!</p>
               </div>
               <img src="${path }/resources/img/slideImg03.webp" alt="" />
-              <button>일본투어 보러가기</button>
+              <button onclick="mainevent()">국내투어 보러가기</button>
             </div>
             <div class="swiper-slide">
               <div class="fourth_slide">
                 <p>비행기를 타고 훨훨훨</p>
                 <p>같이 날아가볼까요?</p>
-                <p>test by Controller team.</p>
+                <p>Dayoff, trip service.</p>
               </div>
               <img src="${path }/resources/img/slideImg04.png" alt="" />
-              <button class="slide04_btn">질문 보러가기</button>
+              <button class="slide04_btn" onclick="mainevent()">질문 보러가기</button>
             </div>
           </div>
           <div class="swiper-button-next"></div>
@@ -158,35 +177,35 @@
         </div>
         <div class="photo_zone">
           <div class="gallery">
-            <img src="${path }/resources/img/photozone01.webp" alt="" />
+            <img src="${path }/resources/img/rawkkim-JrUPwkbIIx8-unsplash.jpg" alt="" />
             <div class="gallery_text">
               <b class="gallery_text_green"> 포토갤러리 </b>
-              <div class="photo_title">아름다운 싱가폴 뷰</div>
-              <div class="user_name">김은준</div>
+              <div class="photo_title">밤거리</div>
+              <div class="user_name">전주</div>
             </div>
           </div>
           <div class="gallery">
-            <img src="${path }/resources/img/photozone02.webp" alt="" />
+            <img src="${path }/resources/img/yeonhee-VWLhifg5VMA-unsplash.jpg" alt="" />
             <div class="gallery_text">
               <b class="gallery_text_green"> 포토갤러리 </b>
-              <div class="photo_title">여행의 끝, 세비야</div>
-              <div class="user_name">김충언</div>
+              <div class="photo_title">화강암</div>
+              <div class="user_name">전주</div>
             </div>
           </div>
           <div class="gallery">
-            <img src="${path }/resources/img/photozone03.webp" alt="" />
+            <img src="${path }/resources/img/thomas-roger-lux-xRAEPmP9M8s-unsplash.jpg" alt="" />
             <div class="gallery_text">
               <b class="gallery_text_green"> 포토갤러리 </b>
-              <div class="photo_title">애버딘, 위스키와 칵테일</div>
-              <div class="user_name">임낙훈</div>
+              <div class="photo_title">바닷가에 있는 해동 용궁사</div>
+              <div class="user_name">부산</div>
             </div>
           </div>
           <div class="gallery">
-            <img src="${path }/resources/img/photozone04.webp" alt="" />
+            <img src="${path }/resources/img/rawkkim-KKz6NgO69yQ-unsplash.jpg" alt="" />
             <div class="gallery_text">
               <b class="gallery_text_green"> 포토갤러리 </b>
-              <div class="photo_title">풍경이 좋던 런던 하늘</div>
-              <div class="user_name">오건</div>
+              <div class="photo_title">해질녘</div>
+              <div class="user_name">전주</div>
             </div>
           </div>
         </div>
@@ -236,8 +255,10 @@
       <section class="ad_slide">
         <div class="swiper ad_slider">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">slide banner 01</div>
-            <div class="swiper-slide">slide banner 02</div>
+            <div class="swiper-slide banner">
+             
+             </div>
+            <div class="swiper-slide banner2"></div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -328,7 +349,7 @@
               </div>
             </li>
             <li class="item">
-              <a href="#" class="more"
+              <a href="<%=request.getContextPath() %>/photo/list.do" class="more"
                 >더 보기 🛴
                 <i class="xi-long-arrow-right"></i>
               </a>
@@ -343,7 +364,7 @@
       <h3>데이오프</h3>
       <div class="footer_calling">
         <div class="phone_number">고객센터 010-3524-4305</div>
-        <button>1:1채팅상담</button>
+        <button onclick="sangdam()">1:1채팅상담</button>
         <div class="consulting">실시간 채팅상담 매일 09:00 ~ 24:00
           친절 유선 상담 평일 10:00 ~ 19:00 (12:00-13:00) 제외
         </div>

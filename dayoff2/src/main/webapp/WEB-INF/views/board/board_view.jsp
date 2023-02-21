@@ -81,6 +81,13 @@
     };
     
     </script>
+    <script>
+    	
+    	function searchBtn() {
+    		alert("통합 검색은 현재 준비중입니다🤗");
+    	}
+    	
+    </script>
 </head>
 <body>
 	<header>
@@ -98,7 +105,7 @@
 				</div>
 				<div class="right_header">
 					<div class="item">
-						<button class="searchBtn">
+						<button class="searchBtn" onclick="searchBtn()">
 							<i class="xi-search xi-1x"></i>
 						</button>
 						<input type="text" placeholder="여행지를 찾아보세요!" />
@@ -119,7 +126,7 @@
 			</div>
 			<section class="second_section">
 				<div class="second_header">
-					<a href="/dayoff"><div class="home">홈</div></a> <a
+					<a href="<%= request.getContextPath()%>/community.do"><div class="home">홈</div></a> <a
 						href="<%= request.getContextPath() %>/together.do"><div
 							class="trip_info">동행</div></a> <a
 						href="<%= request.getContextPath()%>/board/list.do"><div

@@ -6,6 +6,8 @@
 	<select id="list" resultType="photoVo" parameterType="photoVo">
 		select *
 		FROM phototable
+		<include refid="search"></include>
+		order by pidx desc LIMIT #{rowStart}, #{rowEnd}
 	</select>
 	
 	<select id="selectByPidx" resultType="photoVo" parameterType="int">
@@ -15,23 +17,11 @@
 			, uidx
 			, pDelYn
 			, pHashTag
-			, pHit
+			, pLike
+			, pWriter
 		FROM phototable
 		WHERE pidx = #{pidx}
 	</select>
-	
-	<update id="updateByPidx" parameterType="photoVo">
-		UPDATE phototable
-			SET pTitle = #{pTtitle}
-			, pHashTag = #{pHashTag}
-			WHERE pidx = #{pidx}
-	</update>
-	
-	<delete id="deleteByPidx" parameterType="int">
-		DELETE
-			FROM phototable
-		WHERE pidx = #{pidx}
-	</delete>
 	
 	<insert id="insert" parameterType="photoVo" useGeneratedKeys="true" keyProperty="pidx"> 	
 		
@@ -40,19 +30,20 @@
 			, pDate
 			, uidx
 			, pHashTag
-			, pHit
+			, pLike
+			, pWriter
 		) VALUES(
 			 #{pTitle}
 			, NOW()
-			, 1
+			, #{uidx}
 			, #{pHashTag}
-			, 0
+			, #{pLike}
+			, #{pWriter}
 		)
 <!--  		<selectKey keyProperty="pidx" resultType="Integer" order="AFTER">
 			SELECT LAST_INSERT_ID() as pidx
 		</selectKey>
  -->	</insert>
-	
 		<!-- 이미지 등록 -->
 	<insert id="imageEnroll" parameterType="AttachImageVo">
 		insert into imagetable(
@@ -62,7 +53,7 @@
 			)
 	</insert>
 	
-	<select id="imageList" resultType="AttachImageVo" parameterType="int">
+	<select id="image" resultType="AttachImageVo" parameterType="int">
 	
 		select
 			pidx,
@@ -73,5 +64,69 @@
 		where pidx = #{pidx}
 	</select>
 	
+	
+	<select id="updateByPidx" parameterType="int" resultType="photoVo">
+		SELECT pidx
+		, pTitle
+		, pHashTag
+		, uidx
+		, pDelYn
+		, pHashTag
+		, pLike
+		, pWriter
+		FROM phototable
+		WHERE pidx = #{pidx}
+	</select>
+	
+	
+	<update id="modifyByPidx" parameterType="photoVo">
+		UPDATE phototable SET
+		
+			pTitle = #{pTitle}
+		,	pHashTag = #{pHashTag}
+		,	pDate = NOW()
+		
+		WHERE pidx = #{pidx}
+		
+	</update>
+	
+	<update id="modifyImgByPidx" parameterType="AttachImageVo">
+		UPDATE imagetable SET
+		
+			fileName = #{fileName}
+		,	uploadPath = #{uploadPath}
+		,	uuid = #{uuid}
+
+		WHERE pidx = #{pidx}
+		
+	</update>
+	
+	<delete id="deleteImgByPidx" parameterType="int">
+		DELETE
+			FROM imagetable
+		WHERE pidx = #{pidx} and 1=1
+	</delete>
+	
+	<delete id="deleteByPidx" parameterType="int">
+		DELETE
+			FROM phototable
+		WHERE pidx = #{pidx}
+	</delete>
+	
+	<select id="listCount" resultType="int" parameterType = "scri">
+		SELECT count(pidx)
+		from phototable
+		WHERE pidx > 0
+	</select>
+	
+	<sql id="search">
+		<if test="searchType == 'pTitle'">
+			where pTitle LIKE CONCAT ('%', #{keyword},'%')
+		</if>
+		<if test="searchType == 'pHashTag'">
+			where pHashTag LIKE CONCAT ('%', #{keyword} ,'%')
+		</if>
+	</sql>
+
 	
 </mapper>

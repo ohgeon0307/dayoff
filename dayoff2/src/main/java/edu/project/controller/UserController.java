@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.project.service.UserService;
+import edu.project.service.sha256;
 import edu.project.vo.UserVo;
 
 @RequestMapping("/user")
@@ -28,6 +29,9 @@ public class UserController {
 	
 	@RequestMapping(value = "/login.do", method=RequestMethod.POST)
 	public String login(UserVo vo, HttpSession session) {
+		
+		String inputPwd = vo.getPassword();
+		vo.setPassword(sha256.encrypt(inputPwd));
 		
 		UserVo loginVo = userService.login(vo);
 		System.out.println(loginVo);
@@ -70,6 +74,12 @@ public class UserController {
 	
 	@RequestMapping(value = "/join.do", method = RequestMethod.POST)
 	public String join(UserVo vo) {
+		
+		String inputPwd = vo.getPassword();
+		String pwd = sha256.encrypt(inputPwd);
+		
+		vo.setPassword(pwd);
+		
 		
 		int result = userService.insertUser(vo);
 		

@@ -8,7 +8,7 @@ public class Criteria {
 
 	public Criteria() {
 		this.page = 1;
-		this.perPageNum = 10;
+		this.perPageNum = 8;
 	}
 
 	public void setPage(int page) {
@@ -46,12 +46,12 @@ public class Criteria {
 	}
 
 	public int getRowStart() {
-		rowStart = ((page - 1) * perPageNum) + 1;
+		rowStart = ((page-1) * perPageNum);
 		return rowStart;
 	}
 
 	public int getRowEnd() {
-		rowEnd = rowStart + perPageNum - 1;
+		rowEnd = perPageNum;
 		return rowEnd;
 	}
 }

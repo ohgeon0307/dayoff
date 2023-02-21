@@ -94,7 +94,7 @@
             <img class="logo" src="${path }/resources/img/login_logo.png" alt="" style="width:230px;">
             <p>내 취향에 딱 맞는 여행, DAY OFF</p>
             <button class="btn_join join_kakao">
-                <a class="p-2" href="https://kauth.kakao.com/oauth/authorize?client_id=5b665dada62338c2ffc08d6bf5298ed4&redirect_uri=http://localhost:8099/dayoff/kakao/kakao.do&response_type=code"><p>카카오로 간편 로그인</p></a>
+                <a class="p-2" href="https://kauth.kakao.com/oauth/authorize?client_id=5b665dada62338c2ffc08d6bf5298ed4&redirect_uri=http://localhost:8099/controller/kakao/kakao.do&response_type=code"><p>카카오로 간편 로그인</p></a>
             </button>
             <button class="btn_join join_email">
                 <a href="${path }/user/login_action.do"><p>이메일 또는 전화번호로 로그인</p></a>

@@ -53,7 +53,7 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/list.do")
-	public String list(Model model, SearchCriteria scri) {
+	public String list(Model model,SearchCriteria scri) {
 		
 		List<BoardVo> list = boardService.boardList(scri);
 		
@@ -71,7 +71,7 @@ public class BoardController {
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setScri(scri);
-		pageMaker.setTotalCount(boardService.listCount());
+		pageMaker.setTotalCount(boardService.listCount(scri));
 		model.addAttribute("pageMaker", pageMaker);
 		
 		return "board/board_list";

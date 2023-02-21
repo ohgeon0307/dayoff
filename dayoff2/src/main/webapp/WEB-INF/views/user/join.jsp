@@ -55,6 +55,11 @@
           pluginKey: "440ad304-9963-448a-9d8e-8efd8dfa9576",
         });
       </script>
+      <script>
+      function kakaoJoin() {
+    	  alert("카카오 가입은 현재 준비중입니다!");
+      }
+      </script>
 </head>
 <body>
     <header>
@@ -63,11 +68,11 @@
             <div class="left_header">
               <div class="item"><a href="${ path}/"><img src="${path}/resources/img/logo.png" alt="" /></a></div>
               <div class="item">커뮤니티</div>
-              <a href="<%=request.getContextPath()%>/photo.do"><div class="item">포토갤러리</div></a>
+              <a href="<%=request.getContextPath()%>/photo/list.do"><div class="item">포토갤러리</div></a>
             </div>
             <div class="right_header">
               <div class="item">
-                <button class="searchBtn">
+                <button class="searchBtn" onclick="searchBtn()">
                   <i class="xi-search xi-1x"></i>
                 </button>
                 <input type="text" placeholder="여행지를 찾아보세요!" />
@@ -93,7 +98,7 @@
             <p class="text_desc">마음에 쏙 드는 여행 참 어렵죠?</p>
             <img class="logo" src="${path }/resources/img/login_logo.png" alt="" style="width:230px;">
             <p>내 취향에 딱 맞는 여행, DAY OFF</p>
-            <button class="btn_join join_kakao">
+            <button class="btn_join join_kakao" onclick = "kakaoJoin()">
                 <p>카카오로 간편 가입</p>
             </button>
             <button class="btn_join join_email">

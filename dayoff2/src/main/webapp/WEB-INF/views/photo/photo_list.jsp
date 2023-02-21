@@ -12,6 +12,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <meta charset="UTF-8">
     <title>포토갤러리</title>
     <link
@@ -65,6 +66,42 @@
       ChannelIO("boot", {
         pluginKey: "440ad304-9963-448a-9d8e-8efd8dfa9576",
       }); 
+      
+      
+      /* 게시글 삭제*/
+      function DoDelete(idx){  
+    	  if (confirm("정말 삭제 하시겠습니까?") == true){ 
+    		   //true는 확인버튼을 눌렀을 때 코드 작성
+    	  
+    	  var form = document.createElement("form");
+    	  form.setAttribute("id", "form");
+    	  form.setAttribute("method", "post");
+    	  form.setAttribute("action", "delete.do");
+    	  
+    	  var hiddenField = document.createElement("input");
+    	  hiddenField.setAttribute("type", "hidden");
+    	  hiddenField.setAttribute("name", "pidx");
+    	  hiddenField.setAttribute("value", idx);
+    	  
+    	  form.appendChild(hiddenField);
+    	  
+    	  document.body.appendChild(form);
+
+    	  form.submit();
+    	  
+    	  document.getElementById("form").remove();
+
+    		 }else{
+    		   // false는 취소버튼을 눌렀을 때, 취소됨
+    		   console.log("취소되었습니다");
+    		 }
+      }
+      
+      function shortdo(){
+    	  alert("쇼츠갤러리는 현재 구현중입니다.");
+      }
+      
+      
     </script>
   </head>
   <body>
@@ -72,8 +109,8 @@
       <section class="first_section">
         <div class="header">
           <div class="left_header">
-            <div class="item"><img src="${path}/resources/img/logo.png" alt="" /></div>
-            <a href="<%= request.getContextPath()%>/" class="a_tag_color"><div class="item2">커뮤니티</div></a>
+            <a href="${path }/community.do"><div class="item"><img src="${path}/resources/img/logo.png" alt="" /></div></a>
+            <a href="<%= request.getContextPath()%>/community.do" class="a_tag_color"><div class="item2">커뮤니티</div></a>
             <a href="<%= request.getContextPath()%>/photo/list.do"><div class="item3">포토갤러리</div></a>
           </div>
           <div class="right_header">
@@ -83,16 +120,24 @@
               </button>
               <input type="text" placeholder="해시태그로 검색해보세요!" />
             </div>
-            <a href="<%= request.getContextPath()%>/login.do" class="login_a"><div class="item">로그인</div></a>
+             <c:if test="${login == null}">
+            <a href="${path }/user/login.do" class="login_a"><div class="item">로그인</div></a>
             <div class="bar">&#124;</div>
-            <a href="<%= request.getContextPath()%>/join.do" class="join_a"><div class="item">회원가입</div></a>
-            <a href="<%= request.getContextPath()%>/photo/write.do"><button class="header_write_btn">글쓰기</button></a>
+            <a href="${path }/user/join.do" class="join_a"><div class="item">회원가입</div></a>
+            </c:if>
+            <c:if test="${login != null}">
+            <a class="login_a" href="<%= request.getContextPath() %>/user/logout.do"><div class="item">로그아웃</div></a>
+            <div class="bar">&#124;</div>
+            <a href="${path }/user/join.do" class="join_a"><div class="item">마이페이지</div></a>
+            <a href="<%= request.getContextPath()%>/photo/write.do"
+              ><button class="header_write_btn">글쓰기</button></a> 
+            </c:if>
           </div>
         </div>
         <section class="second_section">
           <div class="second_header">
             <a href="<%= request.getContextPath()%>/photo/list.do"><div class="trip_info">포토갤러리</div></a>
-            <a href="<%= request.getContextPath()%>/short/list.do"><div class="board">쇼츠갤러리</div></a>
+            <button onclick="shortdo()"><div class="board">쇼츠갤러리</div></button>
           </div>
         </section>
       </section>
@@ -108,39 +153,42 @@
         <div class="asdf">
           <p>포토갤러리</p>
         </div>
-        <div class="subject">
-          <h2>전라북도</h2>
-          <h2>전주</h2>
-          <h2>한옥마을</h2>
-        </div>
+
       </section>
-      <section class="filter">
-        <p>정렬</p>
-        <select class="">
-          <option value="time" class="">최신순</option>
-          <option value="view" class="">조회순</option>
-          <option value="like" class="">좋아요순</option>
-        </select>
+      <section class="board_list">
+        <div class="board_header">
+          <form action="list.do" method="GET" class="form_item">
+          <select name="searchType">
+            <option value="pTitle" <c:if test="${param.searchType == 'pTitle' }">selected</c:if>>제목</option>
+            <option value="pHashTag" <c:if test="${param.searchType == 'pHashTag' }">selected</c:if>>해시태그</option>
+          </select>
+          <input type="text" class ="search_input" name="keyword" placeholder ="검색어를 입력하세요.." value="${param.keyword }">
+          <button class="search_btn">게시글 검색</button>
+          </form>
+        </div>
       </section>
 		<section class="images">
 				<c:forEach var="vo" items="${datalist}" varStatus="status">
 					<div class="imgList">
 							<div class="imgC">
-			           			<img src='<spring:url value="/image/${imagelist[status.index].uploadPath}/${imagelist[status.index].uuid}_${imagelist[status.index].fileName}"/>' alt="" class="img"/>
-					 <!-- 		<img src='<spring:url value="/image/2023/02/08/d893c56b-53d3-49e9-bbbf-b8aef15a5f12.jpg"/>' alt="" class="img"/>-->
+			           			<img src='<spring:url value="/image/${image[status.index].uploadPath}/${image[status.index].uuid}_${image[status.index].fileName}"/>' alt="" class="img"/>
 							</div>
 						<div class="content">
 							<div class="writer">
-								<i class="xi-profile-o"></i><a href="#">sonny</a>
+								<i class="xi-profile"></i>&nbsp;<a href="#">${vo.pWriter}</a>
 							</div>
 							<div>
-								<i class="xi-eye-o">${vo.pHit}</i>
+								<i class="xi-heart"></i>&nbsp;${vo.pLike}
 							</div>
 						</div>
 						<div class="title">${vo.pTitle}
 						</div>
 						<div class="hashtag">
-							<a href="#">${vo.pHashTag}</a>
+						<a href="#">${vo.pHashTag}</a>
+							<c:if test="${login.name == vo.pWriter}">
+								<button class="delete" onclick="DoDelete(${vo.pidx});">삭제</button>
+								<button class="modify" onclick="location.href='modify.do?pidx=${vo.pidx}'">수정</button>
+							</c:if>
 						</div>
 					</div>
 				</c:forEach>
@@ -150,6 +198,21 @@
       <img class="modal_content" id="img01">
     </div>
     </main>
+     <div class ="page">
+    <ul class="pagination">
+    	<c:if test="${pageMaker.prev }">
+    	<li class="first"><a href="list.do?page=${pageMaker.startPage -1 }">이전</a></li>
+    	</c:if>
+    	
+    	<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage }" var="idx">
+    		<li><a href="list.do?page=${idx }" class= "num">${idx }</a></li>
+    	</c:forEach>
+    	
+    	<c:if test="${pageMaker.next && pageMaker.endPage > 0 }">
+    		<li class="last"><a href="list.do?page=${pageMaker.endPage + 1 }">다음</a></li>
+    	</c:if>
+    	</ul>
+    </div>	
     <footer class="footer">
       <h3>데이오프</h3>
       <div class="footer_calling">
@@ -208,6 +271,7 @@
       
       
       <script>
+      /*모달창*/
         const modal = document.querySelector(".modal");
         const modal_img = document.querySelector(".modal_content");
         const span = document.querySelector(".close");
@@ -228,7 +292,7 @@
           }
           return img.nodeName === 'img';
         });
-            </script>
+       </script>
     </footer>
 </body>
 </html>

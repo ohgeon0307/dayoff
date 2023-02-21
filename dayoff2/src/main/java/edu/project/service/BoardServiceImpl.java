@@ -56,9 +56,9 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public int listCount() {
+	public int listCount(SearchCriteria scri) {
 		// TODO Auto-generated method stub
-		return boardDao.listCount();
+		return boardDao.listCount(scri);
 	}
 
 	@Override
