@@ -126,12 +126,7 @@
       </section>
     </header>
     <main class="CommunityView">
-      <section direction="vertical" class="Websection">
-        <img
-          src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA0MTBfMjA2%2FMDAxNjQ5NTc2NjAwMzAw.xvX0E-akmVI2YX9j_p1i_x3XRIN8pquIf-UoiFpfkIMg.vmBH_2owoAvDtLsrM9pEAPrsDit_p4hpj65Bd9viOF4g.JPEG.s7815947%2FDSC_7041_%25BA%25B9%25BB%25E7.jpg&type=sc960_832"
-          alt="이미지"
-        />
-      </section>
+    
       <div class="AccompanyId">
         <div class="InnerSection_AreaLeft">
           <div class="AccompanyContainer">
@@ -235,14 +230,6 @@
                       font-weight="500"
                     >
                       <p class="HashTag">#</p>
-                      <p class="HashTag">여성</p>
-                    </div>
-                    <div
-                      class="badge_HashTag2"
-                      font-size="13px"
-                      font-weight="500"
-                    >
-                      <p class="HashTag">#</p>
                       <p class="HashTag">20대</p>
                     </div>
                     <div
@@ -274,8 +261,8 @@
 					<label for="content">댓글</label>
 					<form name="commentInsertForm">
 						<div class="input-group">
-							<input type="hidden" name="tidx" value="${vo.tidx}" />
-							<input type="hidden" name="writer" value="${login.name }" />
+							<input type="hidden" name="tidx" value="${togethervo.tidx}" />
+							<input type="hidden" name="twriter" value="${login.name }" />
 							<input type="hidden" name="uidx" value="${login.uidx }" />
 							 <input
 								type="text" class="form-control" id="trContent" name="trContent"
@@ -367,37 +354,14 @@
 				</div>
               </div>
             </div>
-            <div class="Area_Middle">
-              <div class="Profile_click">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9 18C13.9706 18 18 13.9706 18 9C18 4.02944 13.9706 0 9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18Z"
-                    fill="#00CE7C"
-                  ></path>
-                  <path
-                    d="M7.77467 12.9015C7.78623 12.6612 7.86817 12.4295 8.01029 12.2353C8.15241 12.0411 8.34846 11.893 8.57407 11.8093C8.79968 11.7256 9.04491 11.71 9.27931 11.7645C9.5137 11.8189 9.72691 11.9411 9.89247 12.1157C10.058 12.2904 10.1686 12.5098 10.2105 12.7468C10.2524 12.9838 10.2237 13.2278 10.1281 13.4486C10.0324 13.6695 9.87403 13.8573 9.67253 13.9888C9.47102 14.1204 9.23531 14.1898 8.99467 14.1885C8.82916 14.1871 8.66563 14.1523 8.51386 14.0863C8.36209 14.0202 8.22519 13.9243 8.11132 13.8042C7.99745 13.684 7.90896 13.5422 7.85111 13.3871C7.79327 13.232 7.76727 13.0669 7.77467 12.9015ZM8.06967 5.67455L8.00267 3.81055H9.98667L9.91967 5.67455L9.63767 10.6215H8.35167L8.06967 5.67455Z"
-                    fill="white"
-                  ></path>
-                </svg>
-                <p class="ProfileCompanion">프로필 사진을 클릭해보세요!</p>
-              </div>
-              <div class="ButtonWrapper">
-                <button
-                  class="ButtonStyle"
-                  width="268px"
-                  height="55px"
-                  font-style="button"
-                >
-                  <a>동행 신청하기</a>
-                </button>
-              </div>
-            </div>
+            <div class="Area_Middle" style="padding-top:0;">
+					<div class="ButtonWrapper">
+						<button class="ButtonStyle modalClose" width="268px" height="55px"
+							font-style="button">
+							<a>나가기</a>
+						</button>
+					</div>
+			</div>
           </div>
         </div>
       </div>

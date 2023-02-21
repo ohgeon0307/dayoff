@@ -10,7 +10,7 @@ public class tReplyVo {
 	private int uidx;
 	private int tidx;
 	private String trdelyn;
-	private String writer;
+	private String twriter;
 	
 	public int getTridx() {
 		return tridx;
@@ -48,11 +48,11 @@ public class tReplyVo {
 	public void setTrdelyn(String trdelyn) {
 		this.trdelyn = trdelyn;
 	}
-	public String getWriter() {
-		return writer;
+	public String gettWriter() {
+		return twriter;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void settWriter(String twriter) {
+		this.twriter = twriter;
 	}
 	
 	

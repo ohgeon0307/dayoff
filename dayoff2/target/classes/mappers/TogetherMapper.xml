@@ -83,15 +83,15 @@
 	<insert id="tinsertReply" parameterType="treplyVo">
 		INSERT INTO togetherreplytable(
 		 trContent
-		, tredate
-		, writer
+		, trDate
+		, twriter
 		, tidx
-		, trdelyn
+		, trDelyn
 		, uidx
 		)VALUES(
 	    #{trContent}
 		, now()
-		, #{writer}
+		, #{twriter}
 		, #{tidx}
 		, 'N'
 		, #{uidx}

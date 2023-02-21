@@ -33,14 +33,14 @@ public class tReplyController {
      
     @ResponseBody
     @RequestMapping("/insert") //댓글 작성
-    private int insertReply(@RequestParam int tidx, @RequestParam String trContent, @RequestParam String writer, @RequestParam int uidx) throws Exception{
-        
+    private int tinsertReply(@RequestParam int tidx, @RequestParam String trContent, @RequestParam String twriter, @RequestParam int uidx) throws Exception{
+        System.out.println("call");
         tReplyVo vo = new tReplyVo();
         System.out.println("########"+ vo.toString());
         vo.setTidx(tidx);
         vo.setUidx(uidx);
         vo.setTrContent(trContent);
-        vo.setWriter(writer);
+        vo.settWriter(twriter);
         
         //로그인 기능을 구현했거나 따로 댓글 작성자를 입력받는 폼이 있다면 입력 받아온 값으로 사용하면 됩니다. 저는 따로 폼을 구현하지 않았기때문에 임시로 "test"라는 값을 입력해놨습니다.
      
@@ -50,7 +50,7 @@ public class tReplyController {
     
     @RequestMapping("/update") //댓글 수정  
     @ResponseBody
-    private int updateReply(@RequestParam int tridx, @RequestParam String trContent) throws Exception{
+    private int tupdateReply(@RequestParam int tridx, @RequestParam String trContent) throws Exception{
         
         tReplyVo vo = new tReplyVo();
         vo.setTridx(tridx);
@@ -61,7 +61,7 @@ public class tReplyController {
     
     @RequestMapping("/delete{tridx}") //댓글 삭제  
     @ResponseBody
-    private int deleteReply(@PathVariable int tridx) throws Exception{
+    private int tdeleteReply(@PathVariable int tridx) throws Exception{
         
         return treplyService.tdeleteReply(tridx);
     }

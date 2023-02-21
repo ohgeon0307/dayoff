@@ -18,7 +18,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <script>
-	var tidx = '${vo.tidx}'; //게시글 번호
+	var tidx = '${togethervo.tidx}'; //게시글 번호
 	var login_name = '<%= login_name %>';
 	
 	$('[name=commentInsertBtn]').click(function() { //댓글 등록 버튼 클릭시 
@@ -38,8 +38,8 @@
 			var a = '';
 			var list_form = "";
 			$.each(data,function(key, value) {
-				console.log('writer : ' + value.writer);
-				console.log('tContent : ' + value.trContent);
+				console.log('twriter : ' + value.tWriter);
+				console.log('trContent : ' + value.trContent);
 				console.log('tridx : ' + value.tridx);
 // 				list_form += `<div class="commentArea" style="border-bottom:1px solid darkgray; margin-bottom: 15px;">
 // 	<div class="commentInfo${value.ridx}">  작성자 : ${value.writer}
@@ -52,10 +52,10 @@
 				console.log(list_form);
 				
 				list_form += '<div class="commentArea" style="border-bottom:1px solid darkgray; margin-bottom: 15px;">';
-				list_form += '<div class="commentInfo' + value.tridx + '">' + '  작성자 : ' + value.writer;
+				list_form += '<div class="commentInfo' + value.tridx + '">' + '  작성자 : ' + value.tWriter;
 				list_form += '</div>';
 				list_form += '<div class="commentContent' + value.tridx + '"> <p> 내용 : ' + value.trContent + '</p>'
-				if ( login_name == value.writer )
+				if ( login_name == value.tWriter )
 				{
 					list_form += '<a onclick="commentUpdate(' + value.tridx + ',\'' + value.trContent + '\');"> 수정 </a>';
 					list_form += '<a onclick="commentDelete(' + value.tridx + ');"> 삭제 </a>';
@@ -75,8 +75,13 @@
 			success : function(data) {
 				if (data == 1) {
 					commentList(); //댓글 작성 후 댓글 목록 reload
-					$('[name=rContent]').val('');
+					$('[name=trContent]').val('');
 				}
+			},
+			error : function (jqXHR, textStatus, errorThrown){
+				console.log(jqXHR);  //응답 메시지
+				console.log(textStatus); //"error"로 고정인듯함
+				console.log(errorThrown);
 			}
 		});
 	}
@@ -97,7 +102,7 @@
 
 	//댓글 수정
 	function commentUpdateProc(tridx) {
-		var updateContent = $('[name=rContent_' + tridx + ']').val();
+		var updateContent = $('[name=trContent_' + tridx + ']').val();
 
 		$.ajax({
 			url : '<%=request.getContextPath()%>/together/view/reply/update',

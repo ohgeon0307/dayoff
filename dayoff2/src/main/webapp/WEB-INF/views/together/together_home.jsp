@@ -95,10 +95,10 @@
             <a class="login_a" href="<%= request.getContextPath() %>/user/logout.do"><div class="item">로그아웃</div></a>
             <div class="bar">&#124;</div>
             <a href="${path }/user/join.do" class="join_a"><div class="item">마이페이지</div></a>
-            </c:if>
+           
             <a href="<%= request.getContextPath() %>/together_write.do"
               ><button class="header_write_btn">글쓰기</button></a
-            >
+            > </c:if>
           </div>
         </div>
         <section class="second_section">
@@ -265,23 +265,21 @@
 		          <button class="search_btn">게시글 검색</button>
 	          </form>
 	          </div>
-          <ul class="Accompany" type="portrait">
+          <ul class="Accompany" type="portrait" >
           	<%
           		for(TogetherVo vo : list){
           			%>
-	            <div type="portrait" class="AccompanyItem">
-	              <div>
-	                <a href="together_view.do?tidx=<%=vo.getTidx() %>"><img
-	                  src=""
-	                  alt=""
-	                /></a>
-	              </div>
+	            <div type="portrait" class="AccompanyItem" style="margin-bottom:70px;">
+	              
+	                <a href="together_view.do?tidx=<%=vo.getTidx() %>">
+	       		
 	              <div class="ContentWrapper" type="portrait">
-	                <div class="TitleWrapper">
+	                <div class="TitleWrapper" style="color:#000;">
+	                	
 	                  <b class="PreVentDragB">모집중</b>
 	                  <%=vo.gettTitle() %>
 	                </div>
-	                <p type="portrait" class="DescWrapper">
+	                <p type="portrait" class="DescWrapper" style="margin:30px 0; color:#000;">
 	                  <%=vo.gettContent() %>
 	                </p>
 	                <div class="ViewWrapper">
@@ -335,7 +333,7 @@
 	                    </div>
 	                  </div>
 	                </div>
-	              </div>
+	              </div></a>
 	            </div>
 	            <%
           		}
