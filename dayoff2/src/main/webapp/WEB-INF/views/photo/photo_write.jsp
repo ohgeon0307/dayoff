@@ -133,7 +133,7 @@
           />
         </div>
         <div class="button_zone">
-          <button type="reset" class="cancel">취소</button>
+        <a href="list.do"><button class="cancel">취소</button></a>
           <button class="submit">작성하기</button>
 		</div>
       </form>
