@@ -129,7 +129,7 @@
         <div class="hashtag">
           <input
             type="text" name="pHashTag"
-            placeholder="&nbsp&nbsp태그입력  (100자 이내)"
+            placeholder="&nbsp&nbsp지역을 입력해주세요 예시(전주시 x) --> (전주) "
           />
         </div>
         <div class="button_zone">

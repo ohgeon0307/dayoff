@@ -160,7 +160,7 @@
           <form action="list.do" method="GET" class="form_item">
           <select name="searchType">
             <option value="pTitle" <c:if test="${param.searchType == 'pTitle' }">selected</c:if>>제목</option>
-            <option value="pHashTag" <c:if test="${param.searchType == 'pHashTag' }">selected</c:if>>해시태그</option>
+            <option value="pHashTag" <c:if test="${param.searchType == 'pHashTag' }">selected</c:if>>지역</option>
           </select>
           <input type="text" class ="search_input" name="keyword" placeholder ="검색어를 입력하세요.." value="${param.keyword }">
           <button class="search_btn">게시글 검색</button>
