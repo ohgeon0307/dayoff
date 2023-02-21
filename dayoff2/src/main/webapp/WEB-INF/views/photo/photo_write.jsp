@@ -124,7 +124,7 @@
         <div class="container">
         <img id="uploadView" style="width:auto; height:350px; border:none;" />
           	인생샷을 올려주세요💫
-           <input type="file" id ="fileItem" name='uploadFile' style="height: 30px;  border:none;" />
+           <input type="file" id ="fileItem" name='uploadFile' accept="image/*" style="height: 30px;  border:none;" />
         </div>
         <div class="hashtag">
           <input
