@@ -30,7 +30,7 @@
             <div class="aaa">
                 <a href="" class="btn_text">이메일 찾기</a>
                 <button class="searchPwd">비밀번호 찾기</button>
-                <a href="" class="aa">회원가입</a>
+                <a href="${path }/user/join.do" class="aa">회원가입</a>
             </div>
         </fieldset>
         </form>
