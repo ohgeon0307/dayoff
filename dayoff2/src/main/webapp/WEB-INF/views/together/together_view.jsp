@@ -135,50 +135,9 @@
             </div>
             
             <div class="AccompanyContainer_TempWrap">
-              <div class="AccompanyContainer_TempWrap1">
-                <svg
-                  width="15"
-                  heigth="15"
-                  viewBox="0 0 13 13"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 6.65217L5.58333 11L12 1"
-                    stroke="#00CE7C"
-                    stroke-width="1.5"
-                  ></path>
-                </svg>
-                <p>
-                  함께
-                  <span>맛집/카페 탐방, 핫플레이스 탐방</span>
-                  여행을 떠나려고 해요.
-                </p>
-              </div>
-              <div class="AccompanyContainer_TempWrap1">
-                <svg
-                  width="15"
-                  heigth="15"
-                  viewBox="0 0 13 13"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 6.65217L5.58333 11L12 1"
-                    stroke="#00CE7C"
-                    stroke-width="1.5"
-                  ></path>
-                </svg>
-                <p>
-                  저는
-                  <span>느긋한, 음주 선호</span>
-                  여행자에요
-                </p>
-              </div>
+           
             </div>
-            <p class="AccompanyContainer_ContentBox">
-             ${togethervo.tContent}
-            </p>
+            <p class="AccompanyContainer_ContentBox">${togethervo.tContent}</p>
             <div class="badge_HashTag">
               <div>
                 <div class="badge_HashTag1">
