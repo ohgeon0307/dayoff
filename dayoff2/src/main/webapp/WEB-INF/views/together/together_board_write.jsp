@@ -249,10 +249,7 @@
       </div>
       <section class="file_upload_section">
       	<form action="write.do" method="post">
-	        <div class="container">
-	          <img src="${path}/resources/img/picture.png" alt="" />
-	          배경 사진을 선택해주세요:
-	        </div>
+	        
 	        <div class="title">
 	          <input type="hidden" name="writer" value="${login.name }"/>
 	          <input type="hidden" name="uidx" value="${login.uidx }"/>

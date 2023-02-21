@@ -273,9 +273,9 @@
 	              
 	                <a href="together_view.do?tidx=<%=vo.getTidx() %>">
 	       		
-	              <div class="ContentWrapper" type="portrait">
+	              <div class="ContentWrapper" type="portrait" >
 	                <div class="TitleWrapper" style="color:#000;">
-	                	
+	                	 
 	                  <b class="PreVentDragB">모집중</b>
 	                  <%=vo.gettTitle() %>
 	                </div>
