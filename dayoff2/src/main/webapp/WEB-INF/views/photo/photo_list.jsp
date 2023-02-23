@@ -171,7 +171,8 @@
 				<c:forEach var="vo" items="${datalist}" varStatus="status">
 					<div class="imgList">
 							<div class="imgC">
-			           			<img src='<spring:url value="/image/${image[status.index].uploadPath}/${image[status.index].uuid}_${image[status.index].fileName}"/>' alt="" class="img"/>
+								<img src='${path}/resources/upload/${image[status.index].uploadPath}/${image[status.index].uuid}_${image[status.index].fileName}' alt="" class="img"/>
+			           			<!--<img src='<spring:url value="/image/${image[status.index].uploadPath}/${image[status.index].uuid}_${image[status.index].fileName}"/>' alt="" class="img"/>-->
 							</div>
 						<div class="content">
 							<div class="writer">

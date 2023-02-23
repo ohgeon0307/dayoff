@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -86,14 +87,14 @@ public class PhotoController {
 	}
 	
 	@RequestMapping(value = "/write.do", method = RequestMethod.POST )
-	public String fileupload(MultipartFile uploadFile, AttachImageVo vo, PhotoVo vo2, HttpSession session) {
+	public String fileupload(MultipartFile uploadFile, AttachImageVo vo, PhotoVo vo2, HttpSession session,HttpServletRequest req) {
 		
 		UserVo login = (UserVo)session.getAttribute("login");
 		int uidx = login.getUidx();
 		vo2.setUidx(uidx);
 		
-		
-		String uploadFolder = "\\\\502-1\\upload";
+		String uploadFolder = req.getSession().getServletContext().getRealPath("/resources/upload");
+//		String uploadFolder = "\\resources\\upload";
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = new Date();
 		String str = sdf.format(date);
@@ -148,7 +149,7 @@ public class PhotoController {
 	}
 	
 	@RequestMapping(value = "modify.do", method = RequestMethod.POST)
-	public String modify(MultipartFile uploadFile, AttachImageVo vo, PhotoVo vo2) {
+	public String modify(MultipartFile uploadFile, AttachImageVo vo, PhotoVo vo2,HttpServletRequest req) {
 		System.out.println("modify.do =====================================================================");
 //		System.out.println("modify.do / vo : " + vo);
 		System.out.println("modify.do / vo2 : " + vo2);
@@ -159,7 +160,8 @@ public class PhotoController {
 		{
 			System.out.println("modify.do file is not null =====================================================");
 			
-			String uploadFolder = "\\\\502-1\\upload";
+			String uploadFolder = req.getSession().getServletContext().getRealPath("/resources/upload");
+//			String uploadFolder = "\\resources\\upload";
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Date date = new Date();
 			String str = sdf.format(date);
